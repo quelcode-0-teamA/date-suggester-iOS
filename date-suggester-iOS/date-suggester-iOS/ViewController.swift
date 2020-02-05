@@ -8,12 +8,57 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController,UIPickerViewDelegate, UIPickerViewDataSource {
 
+    @IBOutlet weak var pickerView: UIPickerView!
+//    let yearList: [String] = ["1990","1991","1992","1993","1994"]
+//    let monthList: [Int] = (1...12)
+//    let dayList: [String] = ["1","2","3"]
+    //ここの配列を繰り返し処理とかにできますか？
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        // Delegate設定
+        pickerView.delegate = self
+        pickerView.dataSource = self
     }
+    
+    // UIPickerViewの列の数
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 3
+    }
+    
+    // UIPickerViewの行数、リストの数
+    func pickerView(_ pickerView: UIPickerView,
+                    numberOfRowsInComponent component: Int) -> Int {
+        switch component {
+        case 0:
+            return yearList.count
+        case 1:
+            return monthList.count
+        case 2:
+            return dayList.count
+        default:
+            return 0
+        }
+    }
+    
+    // ドラムロールの各タイトル
+      func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+          switch component {
+          case 0:
+              return yearList[row]
+          case 1:
+              return monthList[row]
+          case 2:
+            return dayList[row]
+          default:
+              return "error"
+          }
+      }
+    
 
 
 }

@@ -15,6 +15,11 @@
 		720D080423E984AE00569622 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 720D080223E984AE00569622 /* LaunchScreen.storyboard */; };
 		720D080F23E984AE00569622 /* date_suggester_iOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720D080E23E984AE00569622 /* date_suggester_iOSTests.swift */; };
 		720D081A23E984AF00569622 /* date_suggester_iOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720D081923E984AF00569622 /* date_suggester_iOSUITests.swift */; };
+		720D082A23E9A83F00569622 /* TutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720D082923E9A83F00569622 /* TutorialViewController.swift */; };
+		720D082C23E9A84E00569622 /* TutorialViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 720D082B23E9A84D00569622 /* TutorialViewController.storyboard */; };
+		7276AEE023EAA9B7008864D7 /* SimplePlanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7276AEDF23EAA9B7008864D7 /* SimplePlanViewController.swift */; };
+		7276AEE323EAA9DE008864D7 /* SimplePlanViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7276AEE223EAA9DE008864D7 /* SimplePlanViewController.storyboard */; };
+		7276AEE523EAACC0008864D7 /* DatePlanSuggestionViewControlller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7276AEE423EAACC0008864D7 /* DatePlanSuggestionViewControlller.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +54,11 @@
 		720D081523E984AF00569622 /* date-suggester-iOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "date-suggester-iOSUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		720D081923E984AF00569622 /* date_suggester_iOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = date_suggester_iOSUITests.swift; sourceTree = "<group>"; };
 		720D081B23E984AF00569622 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		720D082923E9A83F00569622 /* TutorialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialViewController.swift; sourceTree = "<group>"; };
+		720D082B23E9A84D00569622 /* TutorialViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TutorialViewController.storyboard; sourceTree = "<group>"; };
+		7276AEDF23EAA9B7008864D7 /* SimplePlanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimplePlanViewController.swift; sourceTree = "<group>"; };
+		7276AEE223EAA9DE008864D7 /* SimplePlanViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SimplePlanViewController.storyboard; sourceTree = "<group>"; };
+		7276AEE423EAACC0008864D7 /* DatePlanSuggestionViewControlller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePlanSuggestionViewControlller.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +109,9 @@
 		720D07F623E984AE00569622 /* date-suggester-iOS */ = {
 			isa = PBXGroup;
 			children = (
+				7276AEE123EAA9C1008864D7 /* SimplePlan Page */,
+				720D082823E9A7DD00569622 /* Tutorial Page */,
+				720D082723E9A7CA00569622 /* common */,
 				720D07F723E984AE00569622 /* AppDelegate.swift */,
 				720D07F923E984AE00569622 /* SceneDelegate.swift */,
 				720D07FB23E984AE00569622 /* ViewController.swift */,
@@ -126,6 +139,32 @@
 				720D081B23E984AF00569622 /* Info.plist */,
 			);
 			path = "date-suggester-iOSUITests";
+			sourceTree = "<group>";
+		};
+		720D082723E9A7CA00569622 /* common */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = common;
+			sourceTree = "<group>";
+		};
+		720D082823E9A7DD00569622 /* Tutorial Page */ = {
+			isa = PBXGroup;
+			children = (
+				720D082923E9A83F00569622 /* TutorialViewController.swift */,
+				720D082B23E9A84D00569622 /* TutorialViewController.storyboard */,
+			);
+			path = "Tutorial Page";
+			sourceTree = "<group>";
+		};
+		7276AEE123EAA9C1008864D7 /* SimplePlan Page */ = {
+			isa = PBXGroup;
+			children = (
+				7276AEDF23EAA9B7008864D7 /* SimplePlanViewController.swift */,
+				7276AEE423EAACC0008864D7 /* DatePlanSuggestionViewControlller.swift */,
+				7276AEE223EAA9DE008864D7 /* SimplePlanViewController.storyboard */,
+			);
+			path = "SimplePlan Page";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -233,6 +272,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				720D080423E984AE00569622 /* LaunchScreen.storyboard in Resources */,
+				7276AEE323EAA9DE008864D7 /* SimplePlanViewController.storyboard in Resources */,
+				720D082C23E9A84E00569622 /* TutorialViewController.storyboard in Resources */,
 				720D080123E984AE00569622 /* Assets.xcassets in Resources */,
 				720D07FF23E984AE00569622 /* Main.storyboard in Resources */,
 			);
@@ -259,8 +300,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7276AEE023EAA9B7008864D7 /* SimplePlanViewController.swift in Sources */,
 				720D07FC23E984AE00569622 /* ViewController.swift in Sources */,
+				7276AEE523EAACC0008864D7 /* DatePlanSuggestionViewControlller.swift in Sources */,
 				720D07F823E984AE00569622 /* AppDelegate.swift in Sources */,
+				720D082A23E9A83F00569622 /* TutorialViewController.swift in Sources */,
 				720D07FA23E984AE00569622 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
