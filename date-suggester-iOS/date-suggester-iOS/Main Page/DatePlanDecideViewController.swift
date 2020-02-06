@@ -21,10 +21,10 @@ class DatePlanDecideViewController: UIViewController {
     }
     
     @IBAction func gotoDatailPlan(_ sender: Any) {
-        let storyboard = UIStoryboard(name: "DatailPlanViewController", bundle: nil)
-        let DatailPlanViewController = storyboard.instantiateViewController(identifier: "DatailPlanViewController")
-        DatailPlanViewController.modalPresentationStyle = .fullScreen
-        present(DatailPlanViewController, animated: true, completion: nil)
+        let storyboard = UIStoryboard(name: "DetailPlanViewController", bundle: nil)
+        let DetailPlanViewController = storyboard.instantiateViewController(withIdentifier: "DetailPlanViewController")
+        DetailPlanViewController.modalPresentationStyle = .fullScreen
+        self.present(DetailPlanViewController, animated: true, completion: nil)
     }
     
     override func viewDidLoad() {

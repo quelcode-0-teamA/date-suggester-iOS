@@ -15,7 +15,7 @@ class SimplePlanViewController2: UIViewController {
         let storyboard = UIStoryboard(name: "SimplePlanViewController", bundle: nil)
         let SimplePlanViewController3 = storyboard.instantiateViewController(withIdentifier: "SimplePlanViewController3")
         SimplePlanViewController3.modalPresentationStyle = .fullScreen
-        self.present(SimplePlanViewController3, animated: true, completion: nil)
+        self.present(SimplePlanViewController3, animated: false, completion: nil)
     }
     override func viewDidLoad() {
            super.viewDidLoad()

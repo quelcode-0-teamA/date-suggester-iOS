@@ -93,33 +93,64 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="日付がはいります" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s2H-eN-30V">
-                                <rect key="frame" x="0.0" y="61" width="414" height="38"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="日付がはいります" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s2H-eN-30V">
+                                <rect key="frame" x="0.0" y="75" width="414" height="20.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20.5" id="2hb-3X-di0"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="CEz-aO-Eas">
-                                <rect key="frame" x="0.0" y="110" width="418" height="683"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="CEz-aO-Eas">
+                                <rect key="frame" x="0.0" y="95.5" width="414" height="766.5"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="L50-Xy-aVY">
-                                        <rect key="frame" x="0.0" y="28" width="418" height="44"/>
+                                        <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="L50-Xy-aVY" id="WpA-yf-P3N">
-                                            <rect key="frame" x="0.0" y="0.0" width="418" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="B9R-Ze-Zpj">
+                                <rect key="frame" x="0.0" y="44" width="414" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="31" id="gj0-Tb-jNT"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="スケジュール"/>
+                                    <segment title="マップ"/>
+                                </segments>
+                                <connections>
+                                    <action selector="segmentChanged:" destination="JRE-XS-wMQ" eventType="valueChanged" id="6M9-nc-xbg"/>
+                                </connections>
+                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="Gld-vi-ViT" firstAttribute="trailing" secondItem="s2H-eN-30V" secondAttribute="trailing" id="AyD-1a-JVK"/>
+                            <constraint firstItem="B9R-Ze-Zpj" firstAttribute="leading" secondItem="N0U-UR-aUV" secondAttribute="leading" id="Bsy-J6-fK3"/>
+                            <constraint firstItem="CEz-aO-Eas" firstAttribute="bottom" secondItem="Gld-vi-ViT" secondAttribute="bottom" id="XpJ-YO-KbJ"/>
+                            <constraint firstAttribute="trailing" secondItem="CEz-aO-Eas" secondAttribute="trailing" id="bh9-rc-sA4"/>
+                            <constraint firstItem="s2H-eN-30V" firstAttribute="top" secondItem="B9R-Ze-Zpj" secondAttribute="bottom" id="gwh-1B-NJg"/>
+                            <constraint firstItem="CEz-aO-Eas" firstAttribute="top" secondItem="s2H-eN-30V" secondAttribute="bottom" id="l02-T6-hcA"/>
+                            <constraint firstItem="B9R-Ze-Zpj" firstAttribute="top" secondItem="Gld-vi-ViT" secondAttribute="top" id="p2N-g7-iic"/>
+                            <constraint firstItem="CEz-aO-Eas" firstAttribute="leading" secondItem="N0U-UR-aUV" secondAttribute="leading" id="pqm-6x-6lx"/>
+                            <constraint firstItem="Gld-vi-ViT" firstAttribute="trailing" secondItem="B9R-Ze-Zpj" secondAttribute="trailing" id="z09-GS-hxO"/>
+                            <constraint firstItem="s2H-eN-30V" firstAttribute="leading" secondItem="N0U-UR-aUV" secondAttribute="leading" id="zaQ-Ot-sUO"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Gld-vi-ViT"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="しおり" image="book" catalog="system" selectedImage="book" id="zUr-ci-p65"/>
+                    <connections>
+                        <outlet property="dateText" destination="s2H-eN-30V" id="Ypg-3R-CfK"/>
+                        <outlet property="labelHeightConstraint" destination="gwh-1B-NJg" id="NfF-v4-3Me"/>
+                        <outlet property="segmentedControl" destination="B9R-Ze-Zpj" id="Ico-av-Ebr"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pHa-5a-8Pj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

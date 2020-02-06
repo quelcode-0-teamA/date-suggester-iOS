@@ -21,7 +21,7 @@ class ViewController: UIViewController,UIPickerViewDelegate, UIPickerViewDataSou
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        UIDatePicker
+//        UIDatePicker 
         // Delegate設定
         pickerView.delegate = self
         pickerView.dataSource = self
