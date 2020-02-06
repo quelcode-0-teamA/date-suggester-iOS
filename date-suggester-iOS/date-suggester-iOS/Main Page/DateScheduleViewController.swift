@@ -1,20 +1,16 @@
 //
-//  SimplePlanViewController.swift
+//  DateScheduleViewController.swift
 //  date-suggester-iOS
 //
-//  Created by saya on 2020/02/05.
+//  Created by saya on 2020/02/06.
 //  Copyright © 2020 saya. All rights reserved.
 //
 
 import UIKit
+class DateScheduleViewController: UIViewController {
 
-class SimplePlanViewController: UIViewController {
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-
     }
     
 }
-

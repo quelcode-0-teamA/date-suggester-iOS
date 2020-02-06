@@ -11,15 +11,17 @@ import UIKit
 class ViewController: UIViewController,UIPickerViewDelegate, UIPickerViewDataSource {
 
     @IBOutlet weak var pickerView: UIPickerView!
-//    let yearList: [String] = ["1990","1991","1992","1993","1994"]
-//    let monthList: [Int] = (1...12)
-//    let dayList: [String] = ["1","2","3"]
+    let yearList: [String] = ["1990","1991","1992","1993","1994"]
+    let monthList: [String] = ["1","2","3"]
+//    let monthList: [Int] = [1...12]
+    let dayList: [String] = ["1","2","3"]
     //ここの配列を繰り返し処理とかにできますか？
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+//        UIDatePicker
         // Delegate設定
         pickerView.delegate = self
         pickerView.dataSource = self
@@ -51,7 +53,8 @@ class ViewController: UIViewController,UIPickerViewDelegate, UIPickerViewDataSou
           case 0:
               return yearList[row]
           case 1:
-              return monthList[row]
+            return monthList[row]
+//              return monthList[""] as? String
           case 2:
             return dayList[row]
           default:
