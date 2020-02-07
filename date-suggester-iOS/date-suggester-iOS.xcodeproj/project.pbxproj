@@ -36,6 +36,8 @@
 		72BED50A23EC065200A254BC /* LoginViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 72BED50923EC065200A254BC /* LoginViewController.storyboard */; };
 		72BED50C23EC073600A254BC /* TutorialViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72BED50B23EC073600A254BC /* TutorialViewController2.swift */; };
 		72BED50E23EC075000A254BC /* TutorialViewController3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72BED50D23EC075000A254BC /* TutorialViewController3.swift */; };
+		72BED51023ED1F4900A254BC /* DetailNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72BED50F23ED1F4900A254BC /* DetailNavigationController.swift */; };
+		72BED51223ED5D6500A254BC /* DateDetailScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72BED51123ED5D6500A254BC /* DateDetailScheduleViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -91,6 +93,8 @@
 		72BED50923EC065200A254BC /* LoginViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LoginViewController.storyboard; sourceTree = "<group>"; };
 		72BED50B23EC073600A254BC /* TutorialViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialViewController2.swift; sourceTree = "<group>"; };
 		72BED50D23EC075000A254BC /* TutorialViewController3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialViewController3.swift; sourceTree = "<group>"; };
+		72BED50F23ED1F4900A254BC /* DetailNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailNavigationController.swift; sourceTree = "<group>"; };
+		72BED51123ED5D6500A254BC /* DateDetailScheduleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateDetailScheduleViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -200,6 +204,7 @@
 			children = (
 				72513F6123EBF120007B1499 /* DetailPlanViewController.swift */,
 				72513F6323EBF148007B1499 /* DetailPlanViewController.storyboard */,
+				72BED50F23ED1F4900A254BC /* DetailNavigationController.swift */,
 			);
 			path = "DetailPlan  Page";
 			sourceTree = "<group>";
@@ -226,6 +231,7 @@
 				7276AEED23EAD1B1008864D7 /* DateplanListViewController.swift */,
 				7276AEEF23EAD63C008864D7 /* DatePlanDecideViewController.swift */,
 				7276AEF123EBBB99008864D7 /* DateScheduleViewController.swift */,
+				72BED51123ED5D6500A254BC /* DateDetailScheduleViewController.swift */,
 			);
 			path = "Main Page";
 			sourceTree = "<group>";
@@ -375,12 +381,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				72BED51023ED1F4900A254BC /* DetailNavigationController.swift in Sources */,
 				7276AEE023EAA9B7008864D7 /* SimplePlanViewController1.swift in Sources */,
 				7276AEEC23EACE65008864D7 /* MainPageViewController.swift in Sources */,
 				72513F6223EBF120007B1499 /* DetailPlanViewController.swift in Sources */,
 				72513F5C23EBCFA9007B1499 /* SimplePlanViewController4.swift in Sources */,
 				7276AEF023EAD63C008864D7 /* DatePlanDecideViewController.swift in Sources */,
 				720D07FC23E984AE00569622 /* ViewController.swift in Sources */,
+				72BED51223ED5D6500A254BC /* DateDetailScheduleViewController.swift in Sources */,
 				7276AEE523EAACC0008864D7 /* DatePlanSuggestionViewControlller.swift in Sources */,
 				72513F5E23EBD548007B1499 /* SimplePlanViewController5.swift in Sources */,
 				720D07F823E984AE00569622 /* AppDelegate.swift in Sources */,
