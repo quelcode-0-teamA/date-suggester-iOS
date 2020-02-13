@@ -10,18 +10,37 @@ import UIKit
 
 class SimplePlanViewController3: UIViewController {
     
-    @IBAction func goto4potiPage(_ sender: Any) {
+    
+    @IBOutlet weak var allDayButton: UIButton!
+    @IBOutlet weak var lunchButton: UIButton!
+    @IBOutlet weak var nightButton: UIButton!
+    
+    
+    @IBAction func allDayButtonTap(_ sender: Any) {
         let storyboard = UIStoryboard(name: "SimplePlanViewController", bundle: nil)
         let SimplePlanViewController4 = storyboard.instantiateViewController(withIdentifier: "SimplePlanViewController4")
-        SimplePlanViewController4.modalPresentationStyle = .fullScreen
-        self.present(SimplePlanViewController4, animated: false, completion: nil)
-        
+        self.navigationController?.pushViewController(SimplePlanViewController4, animated: true)
+    }
+    
+    @IBAction func lunchButtonTap(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "SimplePlanViewController", bundle: nil)
+        let SimplePlanViewController4 = storyboard.instantiateViewController(withIdentifier: "SimplePlanViewController4")
+        self.navigationController?.pushViewController(SimplePlanViewController4, animated: true)
+    }
+    
+    @IBAction func dinnerButtonTap(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "SimplePlanViewController", bundle: nil)
+        let SimplePlanViewController4 = storyboard.instantiateViewController(withIdentifier: "SimplePlanViewController4")
+        self.navigationController?.pushViewController(SimplePlanViewController4, animated: true)
     }
 
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        self.allDayButton.layer.cornerRadius = 30
+        self.lunchButton.layer.cornerRadius = 30
+        self.nightButton.layer.cornerRadius = 30
         
     }
 }

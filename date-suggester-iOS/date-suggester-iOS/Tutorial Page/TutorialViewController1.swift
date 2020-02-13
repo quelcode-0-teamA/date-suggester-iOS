@@ -32,7 +32,7 @@ class TutorialViewController1: UIViewController {
         let storyboard = UIStoryboard(name: "TutorialViewController", bundle: nil)
         let TutorialViewController2 = storyboard.instantiateViewController(withIdentifier: "TutorialViewController2")
         TutorialViewController2.modalPresentationStyle = .fullScreen
-        self.present(TutorialViewController2, animated: true, completion: nil)
+        self.present(TutorialViewController2, animated: false, completion: nil)
         
     }
     
@@ -41,20 +41,63 @@ class TutorialViewController1: UIViewController {
         let storyboard = UIStoryboard(name: "SimplePlanViewController", bundle: nil)
         let controller = storyboard.instantiateViewController(identifier: "DatePlanViewController")
         controller.modalPresentationStyle = .fullScreen
-        present(controller, animated: true, completion: nil)
+        present(controller, animated: false, completion: nil)
     }
     
     override func viewDidLoad() {
-        
         super.viewDidLoad()
         
+        self.ManButton.layer.cornerRadius = 5
+        self.WomanButton.layer.cornerRadius = 5
         print("成功")
-//        ManButton.frame = CGRect(x: 100, y: 100, width: 200, height: 200)  // 1
-//        ManButton.center = self.view.center  // 2
-//
-//        ManButton.backgroundColor = .red  // 3
-//        ManButton.layer.cornerRadius = 10
+        
+        // 表示したい画像の名前(拡張子含む)を引数とする。
+        self.view.addBackground(name: "Full")
+        
+//        let rgba = UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha: 1.0)
+        
+        //外枠の色を指定
+        self.ManButton.layer.borderColor = UIColor.white.cgColor
+        //外枠の太さを指定
+        self.ManButton.layer.borderWidth = 1.0
+        
+        //外枠の色を指定
+        self.WomanButton.layer.borderColor = UIColor.white.cgColor
+        //外枠の太さを指定
+        self.WomanButton.layer.borderWidth = 1.0
+
         
     }
     
+}
+
+extension UIView {
+    func addBackground(name: String) {
+        // スクリーンサイズの取得
+        let width = UIScreen.main.bounds.size.width
+        let height = UIScreen.main.bounds.size.height
+
+        // スクリーンサイズにあわせてimageViewの配置
+        let imageViewBackground = UIImageView(frame: CGRect(x: 0, y: 0, width: width, height: height))
+        //imageViewに背景画像を表示
+        imageViewBackground.image = UIImage(named: name)
+
+        // 画像の表示モードを変更。
+        imageViewBackground.contentMode = UIView.ContentMode.scaleAspectFill
+
+        // subviewをメインビューに追加
+        self.addSubview(imageViewBackground)
+        // 加えたsubviewを、最背面に設置する
+        self.sendSubviewToBack(imageViewBackground)
+    }
+}
+
+open class CustomLabel: UILabel {
+    @IBInspectable open var spacing:CGFloat = 0 {
+        didSet {
+            let attributedString = NSMutableAttributedString(string: self.text!)
+            attributedString.addAttribute(NSAttributedString.Key.kern, value: self.spacing, range: NSRange(location: 0, length: attributedString.length))
+            self.attributedText = attributedString
+        }
+    }
 }

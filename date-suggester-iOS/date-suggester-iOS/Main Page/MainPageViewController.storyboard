@@ -17,29 +17,29 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="YE7-8U-vAg">
-                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="JKy-Xy-Xw3">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="1" minimumInteritemSpacing="0.0" id="Dfe-CY-ZB8">
-                                    <size key="itemSize" width="167" height="128"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="nsR-fM-4dA">
+                                    <size key="itemSize" width="174" height="278"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="datePlanListCell" id="7vr-pp-blz" customClass="datePlanListCell" customModule="date_suggester_iOS" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="167" height="128"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="rpl-Q5-e1o" customClass="datePlanListCell" customModule="date_suggester_iOS" customModuleProvider="target">
-                                            <rect key="frame" x="0.0" y="0.0" width="167" height="128"/>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="datePlanListCell" id="eAy-ev-bqa" customClass="datePlanListCell" customModule="date_suggester_iOS" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="174" height="278"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="rue-cy-d2T">
+                                            <rect key="frame" x="0.0" y="0.0" width="174" height="278"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="1" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WBU-Xm-ta6">
-                                                    <rect key="frame" x="0.0" y="0.0" width="167" height="128"/>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="1" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CCQ-HJ-knT">
+                                                    <rect key="frame" x="0.0" y="0.0" width="174" height="236"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="タイトル" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hWi-7J-QyM">
-                                                    <rect key="frame" x="60" y="151" width="70" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wU7-hH-f02">
+                                                    <rect key="frame" x="63" y="250" width="42" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -47,31 +47,31 @@
                                                 </label>
                                             </subviews>
                                         </collectionViewCellContentView>
-                                        <size key="customSize" width="167" height="128"/>
+                                        <size key="customSize" width="174" height="278"/>
                                         <connections>
-                                            <outlet property="dateListTitle" destination="hWi-7J-QyM" id="abZ-3v-oZ9"/>
-                                            <outlet property="imageView" destination="WBU-Xm-ta6" id="7D0-Ut-XcQ"/>
+                                            <outlet property="photoImageView" destination="CCQ-HJ-knT" id="1mP-OT-cMs"/>
+                                            <outlet property="titleLabel" destination="wU7-hH-f02" id="lpV-Pr-KkM"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
                                 <connections>
-                                    <outlet property="dataSource" destination="Kk2-eY-6LZ" id="XYo-be-xz0"/>
-                                    <outlet property="delegate" destination="Kk2-eY-6LZ" id="7Av-As-NmI"/>
+                                    <outlet property="dataSource" destination="Kk2-eY-6LZ" id="wr7-Ax-o1U"/>
+                                    <outlet property="delegate" destination="Kk2-eY-6LZ" id="JfU-4g-a72"/>
                                 </connections>
                             </collectionView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="gyS-q4-gQz" firstAttribute="trailing" secondItem="YE7-8U-vAg" secondAttribute="trailing" id="CQU-zl-xJk"/>
-                            <constraint firstItem="YE7-8U-vAg" firstAttribute="leading" secondItem="gyS-q4-gQz" secondAttribute="leading" id="IRq-4X-Xwy"/>
-                            <constraint firstItem="gyS-q4-gQz" firstAttribute="bottom" secondItem="YE7-8U-vAg" secondAttribute="bottom" id="Kdc-Qb-VgA"/>
-                            <constraint firstItem="YE7-8U-vAg" firstAttribute="top" secondItem="gyS-q4-gQz" secondAttribute="top" id="frJ-Vt-M9M"/>
+                            <constraint firstItem="JKy-Xy-Xw3" firstAttribute="top" secondItem="Ano-sn-2em" secondAttribute="top" id="2LY-VN-5gi"/>
+                            <constraint firstAttribute="bottom" secondItem="JKy-Xy-Xw3" secondAttribute="bottom" id="GJF-er-Mgm"/>
+                            <constraint firstItem="JKy-Xy-Xw3" firstAttribute="trailing" secondItem="gyS-q4-gQz" secondAttribute="trailing" id="Pjg-hy-pj1"/>
+                            <constraint firstItem="JKy-Xy-Xw3" firstAttribute="leading" secondItem="gyS-q4-gQz" secondAttribute="leading" id="Zpj-gF-6ke"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="gyS-q4-gQz"/>
                     </view>
                     <navigationItem key="navigationItem" title="デートプラン一覧" id="GCw-lo-GnU"/>
                     <connections>
-                        <outlet property="collectionView" destination="YE7-8U-vAg" id="TKg-C0-dZX"/>
+                        <outlet property="CollectionView" destination="JKy-Xy-Xw3" id="t19-Mg-QF7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dxh-Wu-kT8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -81,9 +81,9 @@
         <!--しおり-->
         <scene sceneID="0yS-9u-IlF">
             <objects>
-                <navigationController id="irf-8R-UKE" sceneMemberID="viewController">
+                <navigationController id="irf-8R-UKE" customClass="AppNavigationController" customModule="date_suggester_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="しおり" image="book" catalog="system" selectedImage="book" id="f0m-OS-jPC">
-                        <color key="badgeColor" name="MainColor"/>
+                        <color key="badgeColor" name="こうほ"/>
                     </tabBarItem>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="EJe-7t-089">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -205,8 +205,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <color key="tintColor" name="MainColor"/>
-                        <color key="selectedImageTintColor" name="MainColor"/>
+                        <color key="tintColor" name="こうほ"/>
+                        <color key="selectedImageTintColor" name="こうほ"/>
                     </tabBar>
                     <connections>
                         <segue destination="irf-8R-UKE" kind="relationship" relationship="viewControllers" id="R9o-4k-2xz"/>
@@ -247,7 +247,7 @@
                         <viewLayoutGuide key="safeArea" id="K5O-w4-k4S"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="デートを決める" image="heart" catalog="system" selectedImage="heart" id="eVK-Kk-o6l">
-                        <color key="badgeColor" name="MainColor"/>
+                        <color key="badgeColor" name="こうほ"/>
                     </tabBarItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="APa-KC-1MP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -265,7 +265,7 @@
                         <viewLayoutGuide key="safeArea" id="zqp-CJ-TMQ"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="マイページ" image="person.circle" catalog="system" selectedImage="person.circle" id="pI2-rt-dtg">
-                        <color key="badgeColor" name="MainColor"/>
+                        <color key="badgeColor" name="こうほ"/>
                     </tabBarItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hmK-RS-ndf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -352,8 +352,8 @@
         <image name="book" catalog="system" width="64" height="50"/>
         <image name="heart" catalog="system" width="64" height="54"/>
         <image name="person.circle" catalog="system" width="64" height="60"/>
-        <namedColor name="MainColor">
-            <color red="0.9649999737739563" green="0.18000000715255737" blue="0.60399997234344482" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <namedColor name="こうほ">
+            <color red="0.99599999189376831" green="0.32899999618530273" blue="0.57300001382827759" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>
