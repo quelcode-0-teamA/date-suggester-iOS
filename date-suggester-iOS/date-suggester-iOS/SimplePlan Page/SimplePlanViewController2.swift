@@ -17,18 +17,11 @@ class SimplePlanViewController2: UIViewController {
     @IBOutlet weak var normalButton: UIButton!
     @IBOutlet weak var richButton: UIButton!
     
-//    @IBAction func normalButtonTauch(_ sender: Any) {
-//        print("ボタンが押されています")
-//        checkMark.isHidden = false
-//    }
-    
     @IBAction func normalButtonTap(_ sender: Any) {
         print("ふつうボタンがおされました")
         let storyboard = UIStoryboard(name: "SimplePlanViewController", bundle: nil)
         let SimplePlanViewController3 = storyboard.instantiateViewController(withIdentifier: "SimplePlanViewController3")
-//        SimplePlanViewController3.modalPresentationStyle = .fullScreen
         self.navigationController?.pushViewController(SimplePlanViewController3, animated: true)
-//        self.present(SimplePlanViewController3, animated: false, completion: nil)
     }
     
     
@@ -36,9 +29,7 @@ class SimplePlanViewController2: UIViewController {
         //        checkMark.isHidden = !checkMark.isHidden
         let storyboard = UIStoryboard(name: "SimplePlanViewController", bundle: nil)
         let SimplePlanViewController3 = storyboard.instantiateViewController(withIdentifier: "SimplePlanViewController3")
-//        SimplePlanViewController3.modalPresentationStyle = .fullScreen
          self.navigationController?.pushViewController(SimplePlanViewController3, animated: true)
-//        self.present(SimplePlanViewController3, animated: false, completion: nil)
         print("せつやくボタンがおされました")
     }
     
@@ -46,8 +37,7 @@ class SimplePlanViewController2: UIViewController {
         //        checkMark.isHidden = !checkMark.isHidden
         let storyboard = UIStoryboard(name: "SimplePlanViewController", bundle: nil)
         let SimplePlanViewController3 = storyboard.instantiateViewController(withIdentifier: "SimplePlanViewController3")
-        SimplePlanViewController3.modalPresentationStyle = .fullScreen
-        self.present(SimplePlanViewController3, animated: false, completion: nil)
+        self.navigationController?.pushViewController(SimplePlanViewController3, animated: true)
         print("りっちボタンがおされました")
     }
     

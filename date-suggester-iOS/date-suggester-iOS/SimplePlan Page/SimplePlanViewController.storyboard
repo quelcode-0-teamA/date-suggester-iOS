@@ -120,7 +120,6 @@
                                 </state>
                                 <connections>
                                     <action selector="normalButtonTap:" destination="Oz1-AM-QgG" eventType="touchUpInside" id="eYO-Fk-J8z"/>
-                                    <action selector="savingButtonTap:" destination="Oz1-AM-QgG" eventType="touchUpInside" id="DAq-Tb-csN"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UZj-ZA-ugb">
@@ -133,7 +132,6 @@
                                 </state>
                                 <connections>
                                     <action selector="richButtonTap:" destination="Oz1-AM-QgG" eventType="touchUpInside" id="CM9-2w-EqD"/>
-                                    <action selector="savingButtonTap:" destination="Oz1-AM-QgG" eventType="touchUpInside" id="gxA-J3-yKy"/>
                                 </connections>
                             </button>
                             <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3gd-M1-Ax0">
