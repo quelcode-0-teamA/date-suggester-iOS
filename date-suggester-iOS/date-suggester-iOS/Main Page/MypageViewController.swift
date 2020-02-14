@@ -14,9 +14,9 @@ class MypageViewController: UIViewController {
     
     @IBAction func barRightButtonTap(_ sender: Any) {
         let storyboard = UIStoryboard(name: "MainPageViewController", bundle: nil)
-        let SignInViewController = storyboard.instantiateViewController(withIdentifier: "SignInViewController")
-        SignInViewController.modalPresentationStyle = .fullScreen
-        self.present(SignInViewController, animated: true, completion: nil)
+        let SignUpViewController = storyboard.instantiateViewController(withIdentifier: "SignUpViewController")
+        SignUpViewController.modalPresentationStyle = .fullScreen
+        self.present(SignUpViewController, animated: true, completion: nil)
     }
     
     @IBAction func profileEditButtonTap(_ sender: Any) {
@@ -55,13 +55,6 @@ class MypageViewController: UIViewController {
         
 //        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "登録", style: .plain, target: self, action: #selector(self.move))
     }
-    
-//    @objc func move(){
-//        let storyboard = UIStoryboard(name: "MainPageViewController", bundle: nil)
-//        let SignInViewController = storyboard.instantiateViewController(withIdentifier: "SignInViewController")
-//        SignInViewController.modalPresentationStyle = .fullScreen
-//        self.present(SignInViewController, animated: true, completion: nil)
-//    }
     
 
 }

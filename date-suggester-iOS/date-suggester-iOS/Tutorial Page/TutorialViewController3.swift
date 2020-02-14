@@ -13,10 +13,14 @@ class TutorialViewController3: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var nickName: CustomTextField!
     
     @IBAction func gotoSinplePlan(_ sender: Any) {
+
+        
         let storyboard = UIStoryboard(name: "SimplePlanViewController", bundle: nil)
         let controller = storyboard.instantiateViewController(identifier: "DatePlanViewController")
         controller.modalPresentationStyle = .fullScreen
         present(controller, animated: true, completion: nil)
+        
+
         
     }
     override func viewDidLoad() {

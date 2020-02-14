@@ -14,8 +14,11 @@ class TutorialViewController1: UIViewController {
     @IBOutlet weak var ManButton: UIButton!
     @IBOutlet weak var WomanButton: UIButton!
     
-    @IBAction func ManButtonPushR(_ sender: Any) {
+    @IBAction func ManButtonPush(_ sender: Any) {
         //API処理
+        //選択されたジェンダーをユーザーデフォルトに保存
+        let defaults = UserDefaults.standard
+        defaults.set(1, forKey: "responsegender")
         
         //画面遷移
         let storyboard = UIStoryboard(name: "TutorialViewController", bundle: nil)
@@ -25,8 +28,13 @@ class TutorialViewController1: UIViewController {
         
     }
     
+    //どのボタンが押されたかわかるようにする
+    
     @IBAction func WomanButtonPush(_ sender: Any) {
         //API処理
+        //選択されたジェンダーをユーザーデフォルトに保存
+        let defaults = UserDefaults.standard
+        defaults.set(2, forKey: "responsegender")
         
         //画面遷移
         let storyboard = UIStoryboard(name: "TutorialViewController", bundle: nil)
