@@ -37,13 +37,16 @@ class TutorialViewController2: UIViewController, UIPickerViewDelegate, UIPickerV
             let data1 = self.pickerView(pickerView, titleForRow: pickerView.selectedRow(inComponent: 0), forComponent: 0)
             print("\(data1)えらばれたよ")
             print("row: \(row)")
+            
+            //選択された生まれ年をユーザーデフォルトに保存
+            let defaults = UserDefaults.standard
+            defaults.set(data1, forKey: "responseBirthYear")
            }
     
     
 
     let years = (1965...2020).map { $0 }
 
-    @IBOutlet weak var datePicker: UIDatePicker!
     @IBOutlet weak var yearPickerView: UIPickerView!
     
     @IBOutlet weak var nextButton: UIButton!

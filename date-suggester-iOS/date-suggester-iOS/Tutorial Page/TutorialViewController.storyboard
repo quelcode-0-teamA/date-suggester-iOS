@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="YkC-RE-z9A">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="DUH-t6-QyA">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
@@ -8,6 +8,30 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--First View Controller-->
+        <scene sceneID="fOw-AI-dz6">
+            <objects>
+                <viewController storyboardIdentifier="FirstViewController" id="DUH-t6-QyA" customClass="FirstViewController" customModule="date_suggester_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="coH-he-UW2">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="読み込み中" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gh6-ez-Ecu">
+                                <rect key="frame" x="165" y="408" width="87" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <viewLayoutGuide key="safeArea" id="c7J-rb-glh"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QH4-Sk-nBN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1764" y="61"/>
+        </scene>
         <!--Tutorial View Controller1-->
         <scene sceneID="T81-DJ-4RP">
             <objects>
@@ -34,9 +58,8 @@
                             <view contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="vVY-t3-aWR">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S93-f6-GnM">
+                                    <button opaque="NO" tag="1" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S93-f6-GnM">
                                         <rect key="frame" x="65" y="350" width="119" height="82"/>
-                                        <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="82" id="Vcr-TC-hQy"/>
                                             <constraint firstAttribute="width" constant="119" id="iBd-3U-sXJ"/>
@@ -47,12 +70,11 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
-                                            <action selector="ManButtonPush:" destination="YkC-RE-z9A" eventType="touchUpInside" id="Wq6-7M-LjU"/>
+                                            <action selector="ManButtonPush:" destination="YkC-RE-z9A" eventType="touchUpInside" id="eSQ-Lw-mes"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="it6-Ga-FBD">
+                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="it6-Ga-FBD">
                                         <rect key="frame" x="230" y="350" width="119" height="82"/>
-                                        <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="119" id="Xgl-tv-Er3"/>
                                             <constraint firstAttribute="height" constant="82" id="Xnw-Vt-TEe"/>
@@ -97,7 +119,7 @@
                                     <constraint firstAttribute="width" constant="414" id="xiI-Oi-PvG"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="HiraginoSans-W3" family="Hiragino Sans" pointSize="17"/>
-                                <state key="normal" title="Skip">
+                                <state key="normal" title="アカウントをお持ちの方はこちら">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
@@ -151,10 +173,10 @@
             </objects>
             <point key="canvasLocation" x="-833.33333333333337" y="39.508928571428569"/>
         </scene>
-        <!--View Controller-->
+        <!--Terms Of Service View Controller-->
         <scene sceneID="Mex-jN-gcT">
             <objects>
-                <viewController id="S0m-6p-dRj" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TermsOfServiceViewController" id="S0m-6p-dRj" customClass="TermsOfServiceViewController" customModule="date_suggester_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3iQ-3u-XK6">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -191,6 +213,9 @@
                                 <state key="normal" title="同意する">
                                     <color key="titleColor" name="こうほ"/>
                                 </state>
+                                <connections>
+                                    <action selector="agreeButtonTap:" destination="S0m-6p-dRj" eventType="touchUpInside" id="SnU-ea-F8F"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -199,7 +224,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="alf-TB-vQl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-368.11594202898556" y="715.84821428571422"/>
+            <point key="canvasLocation" x="-1235" y="757"/>
         </scene>
         <!--Tutorial View Controller2-->
         <scene sceneID="esW-vE-lxp">

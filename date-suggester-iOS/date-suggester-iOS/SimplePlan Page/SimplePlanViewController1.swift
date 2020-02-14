@@ -28,6 +28,10 @@ class SimplePlanViewController1: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        let defaults = UserDefaults.standard
+        let tutorialStatus = defaults.string(forKey: "tutorialStatus")!
+        print("tutorialStatus:\(tutorialStatus)")
+        
         self.far.layer.cornerRadius = 30
         self.near.layer.cornerRadius = 30
         
