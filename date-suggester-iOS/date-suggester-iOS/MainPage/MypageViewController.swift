@@ -49,7 +49,7 @@ class MypageViewController: UIViewController {
         
         
         //ボタン装飾
-        self.profileEditButton.layer.borderColor = UIColor.lightGray.cgColor
+        self.profileEditButton.layer.borderColor = UIColor.init(red: 254.0/255, green: 84.0/255, blue: 146.0/255, alpha: 1.0).cgColor
         self.profileEditButton.layer.borderWidth = 1.0
         self.profileEditButton.layer.cornerRadius = 10
         

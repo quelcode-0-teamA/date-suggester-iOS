@@ -10,8 +10,11 @@ import UIKit
 
 class SimplePlanViewController1: UIViewController {
      
+    @IBOutlet weak var RoundProgressBar: UIProgressView!
+    
     @IBOutlet weak var near: UIButton!
     @IBOutlet weak var far: UIButton!
+    @IBOutlet weak var test: UIImageView!
     
     @IBAction func nearButton(_ sender: Any) {
         let storyboard = UIStoryboard(name: "SimplePlanViewController", bundle: nil)
@@ -28,9 +31,15 @@ class SimplePlanViewController1: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let defaults = UserDefaults.standard
-        let tutorialStatus = defaults.string(forKey: "tutorialStatus")!
-        print("tutorialStatus:\(tutorialStatus)")
+//        let defaults = UserDefaults.standard
+//        let tutorialStatus = defaults.string(forKey: "tutorialStatus")!
+//        print("tutorialStatus:\(tutorialStatus)")
+        
+//        self.test.center = self.view.center
+//        UIView.animate(withDuration: 1.0, delay: 0.0, options: .autoreverse, animations: {
+//            self.test.center.y += 100.0
+//        }, completion: nil)
+        
         
         self.far.layer.cornerRadius = 30
         self.near.layer.cornerRadius = 30
@@ -53,6 +62,14 @@ class SimplePlanViewController1: UIViewController {
             action: nil
         )
         
+//        RoundProgressBar.layer.cornerRadius = 100
+        
+        RoundProgressBar.transform = RoundProgressBar.transform.scaledBy(x: 1, y: 8)
+        RoundProgressBar.layer.cornerRadius = 16
+        RoundProgressBar.clipsToBounds = true
+        RoundProgressBar.layer.sublayers![1].cornerRadius = 16
+        RoundProgressBar.subviews[1].clipsToBounds = true
+        
     }
     
 //    @IBAction func tapAction(_ sender: Any) {
@@ -65,7 +82,6 @@ class SimplePlanViewController1: UIViewController {
    
     
 }
-
 
 
 

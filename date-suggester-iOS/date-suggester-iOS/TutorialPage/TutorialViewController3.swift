@@ -32,6 +32,11 @@ class TutorialViewController3: UIViewController, UITextFieldDelegate {
         self.nextButton.layer.cornerRadius = 5
         
         nickName.delegate = self
+        
+        //外枠の色を指定
+        self.nextButton.layer.borderColor = UIColor.white.cgColor
+        //外枠の太さを指定
+        self.nextButton.layer.borderWidth = 1.0
 
         
     }

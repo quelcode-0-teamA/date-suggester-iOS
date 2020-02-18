@@ -88,16 +88,6 @@
                                             <action selector="WomanButtonPush:" destination="YkC-RE-z9A" eventType="touchUpInside" id="6as-qR-rGE"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="※入力されると、最適な提案に近くなります。" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5qw-En-a5g">
-                                        <rect key="frame" x="25" y="790" width="335" height="16"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="16" id="T0K-bZ-pQc"/>
-                                            <constraint firstAttribute="width" constant="335" id="wYx-nD-r9r"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="HiraginoSans-W3" family="Hiragino Sans" pointSize="16"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.096467251712328755" colorSpace="custom" customColorSpace="displayP3"/>
                                 <rect key="contentStretch" x="0.0" y="0.0" width="0.0" height="0.0"/>
@@ -105,10 +95,8 @@
                                     <constraint firstItem="S93-f6-GnM" firstAttribute="top" secondItem="vVY-t3-aWR" secondAttribute="top" constant="350" id="3Be-Cc-MQT"/>
                                     <constraint firstItem="it6-Ga-FBD" firstAttribute="leading" secondItem="S93-f6-GnM" secondAttribute="trailing" constant="46" id="9lA-ZO-ujk"/>
                                     <constraint firstItem="it6-Ga-FBD" firstAttribute="leading" secondItem="S93-f6-GnM" secondAttribute="trailing" constant="46" id="EBx-47-CDx"/>
-                                    <constraint firstAttribute="bottom" secondItem="5qw-En-a5g" secondAttribute="bottom" constant="90" id="QCa-59-TE1"/>
                                     <constraint firstItem="S93-f6-GnM" firstAttribute="baseline" secondItem="it6-Ga-FBD" secondAttribute="baseline" id="g60-g9-34H"/>
                                     <constraint firstAttribute="trailing" secondItem="it6-Ga-FBD" secondAttribute="trailing" constant="65" id="qD5-B4-0Xf"/>
-                                    <constraint firstItem="5qw-En-a5g" firstAttribute="leading" secondItem="vVY-t3-aWR" secondAttribute="leading" constant="25" id="to0-mT-f6S"/>
                                     <constraint firstItem="S93-f6-GnM" firstAttribute="leading" secondItem="vVY-t3-aWR" secondAttribute="leading" constant="65" id="uEn-Uo-kBv"/>
                                 </constraints>
                             </view>
@@ -245,27 +233,16 @@
                                             <constraint firstAttribute="width" constant="414" id="zk2-Do-lbD"/>
                                         </constraints>
                                     </pickerView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="※入力されると、最適な提案に近くなります。" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ReO-G5-pP5">
-                                        <rect key="frame" x="25" y="790" width="335" height="16"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="16" id="cYj-Qc-1E0"/>
-                                            <constraint firstAttribute="width" constant="335" id="rYl-Yy-ecq"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="HiraginoSans-W3" family="Hiragino Sans" pointSize="16"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YOc-3M-NBe">
                                         <rect key="frame" x="25" y="531" width="364" height="60"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="60" id="bvb-75-Rv7"/>
                                             <constraint firstAttribute="width" constant="364" id="s1P-KN-M85"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="HiraginoSans-W3" family="Hiragino Sans" pointSize="17"/>
+                                        <fontDescription key="fontDescription" name="HiraginoSans-W6" family="Hiragino Sans" pointSize="17"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="つぎへ">
-                                            <color key="titleColor" name="こうほ"/>
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
                                             <action selector="nextPage:" destination="8at-cS-52S" eventType="touchUpInside" id="DES-eW-fRY"/>
@@ -275,24 +252,22 @@
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.10000000000000001" colorSpace="custom" customColorSpace="displayP3"/>
                                 <rect key="contentStretch" x="0.0" y="0.0" width="0.0" height="0.0"/>
                                 <constraints>
-                                    <constraint firstItem="ReO-G5-pP5" firstAttribute="leading" secondItem="ANp-GZ-mhF" secondAttribute="leading" constant="25" id="5Rm-BT-CTO"/>
                                     <constraint firstItem="Oc7-QO-fp0" firstAttribute="top" secondItem="ANp-GZ-mhF" secondAttribute="top" constant="280" id="7qh-tF-FXa"/>
                                     <constraint firstItem="YOc-3M-NBe" firstAttribute="top" secondItem="Oc7-QO-fp0" secondAttribute="bottom" constant="35" id="P2Y-NK-sKq"/>
                                     <constraint firstItem="Oc7-QO-fp0" firstAttribute="leading" secondItem="ANp-GZ-mhF" secondAttribute="leading" id="PGh-NJ-JId"/>
-                                    <constraint firstAttribute="bottom" secondItem="ReO-G5-pP5" secondAttribute="bottom" constant="90" id="VNO-cw-97M"/>
                                     <constraint firstAttribute="trailing" secondItem="Oc7-QO-fp0" secondAttribute="trailing" id="Vtl-Tm-bCG"/>
                                     <constraint firstItem="YOc-3M-NBe" firstAttribute="top" secondItem="Oc7-QO-fp0" secondAttribute="bottom" constant="35" id="d2a-qM-R72"/>
                                     <constraint firstItem="YOc-3M-NBe" firstAttribute="leading" secondItem="ANp-GZ-mhF" secondAttribute="leading" constant="25" id="jF7-fF-5Xc"/>
                                     <constraint firstAttribute="trailing" secondItem="YOc-3M-NBe" secondAttribute="trailing" constant="25" id="oPI-yg-SEU"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="生まれ年を入力してください" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d99-N7-pEO" customClass="CustomLabel" customModule="date_suggester_iOS" customModuleProvider="target">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="あなたの生まれ年は？" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d99-N7-pEO" customClass="CustomLabel" customModule="date_suggester_iOS" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="216" width="414" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="414" id="bK7-8v-79S"/>
                                     <constraint firstAttribute="height" constant="20" id="yCj-vY-quK"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="HiraginoSans-W3" family="Hiragino Sans" pointSize="20"/>
+                                <fontDescription key="fontDescription" name="HiraginoSans-W6" family="Hiragino Sans" pointSize="26"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                                 <userDefinedRuntimeAttributes>
@@ -346,29 +321,18 @@
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Sf-uJ-6t7">
                                         <rect key="frame" x="25" y="504" width="364" height="60"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="364" id="gmD-yw-RQv"/>
                                             <constraint firstAttribute="height" constant="60" id="lL5-JO-391"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="HiraginoSans-W3" family="Hiragino Sans" pointSize="17"/>
+                                        <fontDescription key="fontDescription" name="HiraginoSans-W6" family="Hiragino Sans" pointSize="17"/>
                                         <state key="normal" title="デートプランをきめる">
-                                            <color key="titleColor" name="こうほ"/>
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
                                             <action selector="gotoSinplePlan:" destination="zaE-H4-8YU" eventType="touchUpInside" id="L2b-q1-Uyj"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="※入力されると、最適な提案に近くなります。" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jhn-Z2-Y5Q">
-                                        <rect key="frame" x="25" y="790" width="335" height="16"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="16" id="4q6-xi-umN"/>
-                                            <constraint firstAttribute="width" constant="335" id="NnQ-Kt-Ciy"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="HiraginoSans-W3" family="Hiragino Sans" pointSize="16"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.10000000000000001" colorSpace="custom" customColorSpace="displayP3"/>
                                 <rect key="contentStretch" x="0.0" y="0.0" width="0.0" height="0.0"/>
@@ -378,18 +342,16 @@
                                     <constraint firstItem="yO3-ay-D5Z" firstAttribute="leading" secondItem="OHf-gp-4pP" secondAttribute="leading" constant="50" id="KIj-pE-GIK"/>
                                     <constraint firstItem="7Sf-uJ-6t7" firstAttribute="top" secondItem="yO3-ay-D5Z" secondAttribute="bottom" constant="170" id="NZc-qB-Bkw"/>
                                     <constraint firstAttribute="trailing" secondItem="7Sf-uJ-6t7" secondAttribute="trailing" constant="25" id="R2q-E0-PnR"/>
-                                    <constraint firstItem="Jhn-Z2-Y5Q" firstAttribute="leading" secondItem="OHf-gp-4pP" secondAttribute="leading" constant="25" id="YnC-NM-sOG"/>
                                     <constraint firstItem="yO3-ay-D5Z" firstAttribute="top" secondItem="OHf-gp-4pP" secondAttribute="top" constant="300" id="hRQ-vI-rxD"/>
-                                    <constraint firstAttribute="bottom" secondItem="Jhn-Z2-Y5Q" secondAttribute="bottom" constant="90" id="zeg-cQ-y1L"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="よく行く場所はどこですか？" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0hQ-hu-f5p" customClass="CustomLabel" customModule="date_suggester_iOS" customModuleProvider="target">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="よく行く場所は？" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0hQ-hu-f5p" customClass="CustomLabel" customModule="date_suggester_iOS" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="216" width="414" height="17"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="17" id="Esu-ox-k3u"/>
                                     <constraint firstAttribute="width" constant="414" id="IAA-68-cE2"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="HiraginoSans-W3" family="Hiragino Sans" pointSize="20"/>
+                                <fontDescription key="fontDescription" name="HiraginoSans-W6" family="Hiragino Sans" pointSize="26"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                                 <userDefinedRuntimeAttributes>
@@ -425,7 +387,7 @@
         <image name="女性マーク" width="32" height="32"/>
         <image name="男性マーク" width="32" height="32"/>
         <namedColor name="こうほ">
-            <color red="0.99599999189376831" green="0.32899999618530273" blue="0.57300001382827759" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.99607843137254903" green="0.32941176470588235" blue="0.5725490196078431" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

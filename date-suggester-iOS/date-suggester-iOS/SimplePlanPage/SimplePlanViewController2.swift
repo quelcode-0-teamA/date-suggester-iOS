@@ -13,6 +13,7 @@ class SimplePlanViewController2: UIViewController {
     var CheckedButtonTag = 0  //チェックされているボタンのタグ
     
 
+    @IBOutlet weak var RoundProgressBar: UIProgressView!
     @IBOutlet weak var savingButton: UIButton!
     @IBOutlet weak var normalButton: UIButton!
     @IBOutlet weak var richButton: UIButton!
@@ -54,6 +55,13 @@ class SimplePlanViewController2: UIViewController {
             target: nil,
             action: nil
         )
+        
+        RoundProgressBar.transform = RoundProgressBar.transform.scaledBy(x: 1, y: 8)
+        RoundProgressBar.layer.cornerRadius = 16
+        RoundProgressBar.clipsToBounds = true
+        RoundProgressBar.layer.sublayers![1].cornerRadius = 16
+        RoundProgressBar.subviews[1].clipsToBounds = true
+        
        }
 
 }

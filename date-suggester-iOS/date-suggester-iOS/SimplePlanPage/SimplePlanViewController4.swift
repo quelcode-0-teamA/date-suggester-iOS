@@ -10,6 +10,7 @@ import UIKit
 
 class SimplePlanViewController4: UIViewController {
     
+    @IBOutlet weak var RoundProgressBar: UIProgressView!
     @IBOutlet weak var mealButton: UIButton!
     @IBOutlet weak var outDoorButton: UIButton!
     @IBOutlet weak var relaxButton: UIButton!
@@ -29,7 +30,9 @@ class SimplePlanViewController4: UIViewController {
     @IBAction func relaxButton(_ sender: Any) {
         let storyboard = UIStoryboard(name: "SimplePlanViewController", bundle: nil)
         let DatePlanSuggestionViewControlller = storyboard.instantiateViewController(withIdentifier: "DatePlanSuggestionViewControlller")
-        self.navigationController?.pushViewController(DatePlanSuggestionViewControlller, animated: true)
+        DatePlanSuggestionViewControlller.modalPresentationStyle = .fullScreen
+        present(DatePlanSuggestionViewControlller, animated: true, completion: nil)
+//        self.navigationController?.pushViewController(DatePlanSuggestionViewControlller, animated: true)
     }
     
     
@@ -40,6 +43,11 @@ class SimplePlanViewController4: UIViewController {
         self.outDoorButton.layer.cornerRadius = 30
         self.relaxButton.layer.cornerRadius = 30
         
+        RoundProgressBar.transform = RoundProgressBar.transform.scaledBy(x: 1, y: 8)
+        RoundProgressBar.layer.cornerRadius = 16
+        RoundProgressBar.clipsToBounds = true
+        RoundProgressBar.layer.sublayers![1].cornerRadius = 16
+        RoundProgressBar.subviews[1].clipsToBounds = true
         
     }
 }

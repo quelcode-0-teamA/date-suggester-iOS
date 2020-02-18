@@ -63,12 +63,18 @@ class TutorialViewController2: UIViewController, UIPickerViewDelegate, UIPickerV
         super.viewDidLoad()
         self.view.addBackground(name: "Full")
         self.nextButton.layer.cornerRadius = 5
+
         // ピッカー設定
         self.yearPickerView.delegate = self
         self.yearPickerView.dataSource = self
         
         yearPickerView.selectRow(30, inComponent: 0, animated: false)
         yearPickerView.layer.borderColor = UIColor(red: 0.86, green: 0.86, blue: 0.86, alpha: 1.0).cgColor
+        
+        //外枠の色を指定
+        self.nextButton.layer.borderColor = UIColor.white.cgColor
+        //外枠の太さを指定
+        self.nextButton.layer.borderWidth = 1.0
        
     }
     

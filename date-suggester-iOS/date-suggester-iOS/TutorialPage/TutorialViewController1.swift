@@ -49,7 +49,7 @@ class TutorialViewController1: UIViewController {
         let storyboard = UIStoryboard(name: "MainPageViewController", bundle: nil)
         let LoginViewController = storyboard.instantiateViewController(identifier: "LoginViewController")
         LoginViewController.modalPresentationStyle = .fullScreen
-        present(LoginViewController, animated: false, completion: nil)
+        present(LoginViewController, animated: true, completion: nil)
     }
     
     override func viewDidLoad() {
