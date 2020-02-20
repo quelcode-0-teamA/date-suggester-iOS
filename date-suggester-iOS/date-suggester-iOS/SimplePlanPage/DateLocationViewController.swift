@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SimplePlanViewController1: UIViewController {
+class DateLocationViewController: UIViewController {
      
     @IBOutlet weak var RoundProgressBar: UIProgressView!
     
@@ -18,14 +18,14 @@ class SimplePlanViewController1: UIViewController {
     
     @IBAction func nearButton(_ sender: Any) {
         let storyboard = UIStoryboard(name: "SimplePlanViewController", bundle: nil)
-        let SimplePlanViewController2 = storyboard.instantiateViewController(withIdentifier: "SimplePlanViewController2")
-        self.navigationController?.pushViewController(SimplePlanViewController2, animated: true)
+        let DateBudgetViewController = storyboard.instantiateViewController(withIdentifier: "DateBudgetViewController")
+        self.navigationController?.pushViewController(DateBudgetViewController, animated: true)
     }
     
     @IBAction func farButton(_ sender: Any) {
         let storyboard = UIStoryboard(name: "SimplePlanViewController", bundle: nil)
-        let SimplePlanViewController2 = storyboard.instantiateViewController(withIdentifier: "SimplePlanViewController2")
-        self.navigationController?.pushViewController(SimplePlanViewController2, animated: true)
+        let DateBudgetViewController = storyboard.instantiateViewController(withIdentifier: "DateBudgetViewController")
+        self.navigationController?.pushViewController(DateBudgetViewController, animated: true)
     }
     
     
@@ -41,8 +41,8 @@ class SimplePlanViewController1: UIViewController {
 //        }, completion: nil)
         
         
-        self.far.layer.cornerRadius = 30
-        self.near.layer.cornerRadius = 30
+        self.far.layer.cornerRadius = 10
+        self.near.layer.cornerRadius = 10
         
         // 背景画像の設定
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(named: "test"), for: .default)
@@ -64,11 +64,12 @@ class SimplePlanViewController1: UIViewController {
         
 //        RoundProgressBar.layer.cornerRadius = 100
         
-        RoundProgressBar.transform = RoundProgressBar.transform.scaledBy(x: 1, y: 8)
-        RoundProgressBar.layer.cornerRadius = 16
+        RoundProgressBar.transform = RoundProgressBar.transform.scaledBy(x: 1, y: 2)
+        RoundProgressBar.layer.cornerRadius = 4
         RoundProgressBar.clipsToBounds = true
-        RoundProgressBar.layer.sublayers![1].cornerRadius = 16
+        RoundProgressBar.layer.sublayers![1].cornerRadius = 4
         RoundProgressBar.subviews[1].clipsToBounds = true
+        
         
     }
     
@@ -83,5 +84,18 @@ class SimplePlanViewController1: UIViewController {
     
 }
 
+class CustomButton: UIButton {
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        
+        self.layer.masksToBounds = false
+        self.layer.shadowRadius = 3.0
+        //            self.layer.masksToBounds = true
+        self.layer.cornerRadius = 5.0
+        self.layer.shadowColor = UIColor.gray.cgColor
+        self.layer.shadowOffset = CGSize(width: 0.0, height: 1.0)
+        self.layer.shadowOpacity = 0.5
+    }
+}
 
 

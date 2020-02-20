@@ -11,6 +11,11 @@ class DateplanListViewController: UIViewController,UICollectionViewDataSource, U
 
     var response: [[String: Any]]?
     
+    @IBOutlet weak var popUp: UIButton!
+    @IBAction func popUpClose(_ sender: Any) {
+         self.dismiss(animated: true, completion: nil)
+        
+    }
     @IBOutlet weak var CollectionView: UICollectionView!
     
     private let photos = ["1","2","3","4","5"]
@@ -37,6 +42,9 @@ class DateplanListViewController: UIViewController,UICollectionViewDataSource, U
         ]
         
         CollectionView.reloadData()
+        
+        
+               
         
 
         /*
@@ -84,6 +92,14 @@ class DateplanListViewController: UIViewController,UICollectionViewDataSource, U
 //
 //        }
 //        task.resume()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        let storyboard = UIStoryboard(name: "MainPageViewController", bundle: nil)
+        let controller = storyboard.instantiateViewController(identifier: "PopupViewController")
+        controller.modalPresentationStyle = .fullScreen
+        present(controller, animated: true, completion: nil)
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
@@ -190,19 +206,10 @@ class DateplanListViewController: UIViewController,UICollectionViewDataSource, U
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
 
         let numberOfMargin: CGFloat = 3.0
-        let titleHeight: CGFloat = 24.0
-        let imageRatio: CGFloat = 1.0
         
         let cellWidth = (UIScreen.main.bounds.width - 12.0 * numberOfMargin) / itemsPerRow
-        let cellHeight = cellWidth * imageRatio + titleHeight
-        return CGSize(width: cellWidth, height: cellHeight)
+        return CGSize(width: cellWidth, height: cellWidth)
         
-        
-//        let paddingSpace = sectionInsets.left * (itemsPerRow + 1)
-//        let availableWidth = view.frame.width - paddingSpace
-//        let widthPerItem = availableWidth / itemsPerRow
-//        print("widthPerItem;", widthPerItem)
-//        return CGSize(width: widthPerItem, height: widthPerItem + 42)
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {

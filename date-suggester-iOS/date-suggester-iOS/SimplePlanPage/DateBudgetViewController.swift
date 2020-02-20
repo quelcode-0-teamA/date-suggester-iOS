@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SimplePlanViewController2: UIViewController {
+class DateBudgetViewController: UIViewController {
     var NumberOfButtons: Int = 3  //ボタンの数
     var CheckedButtonTag = 0  //チェックされているボタンのタグ
     
@@ -21,32 +21,32 @@ class SimplePlanViewController2: UIViewController {
     @IBAction func normalButtonTap(_ sender: Any) {
         print("ふつうボタンがおされました")
         let storyboard = UIStoryboard(name: "SimplePlanViewController", bundle: nil)
-        let SimplePlanViewController3 = storyboard.instantiateViewController(withIdentifier: "SimplePlanViewController3")
-        self.navigationController?.pushViewController(SimplePlanViewController3, animated: true)
+        let DateTimeViewController = storyboard.instantiateViewController(withIdentifier: "DateTimeViewController")
+        self.navigationController?.pushViewController(DateTimeViewController, animated: true)
     }
     
     
     @IBAction func savingButtonTap(_ sender: Any) {
         //        checkMark.isHidden = !checkMark.isHidden
         let storyboard = UIStoryboard(name: "SimplePlanViewController", bundle: nil)
-        let SimplePlanViewController3 = storyboard.instantiateViewController(withIdentifier: "SimplePlanViewController3")
-         self.navigationController?.pushViewController(SimplePlanViewController3, animated: true)
+        let DateTimeViewController = storyboard.instantiateViewController(withIdentifier: "DateTimeViewController")
+         self.navigationController?.pushViewController(DateTimeViewController, animated: true)
         print("せつやくボタンがおされました")
     }
     
     @IBAction func richButtonTap(_ sender: Any) {
         //        checkMark.isHidden = !checkMark.isHidden
         let storyboard = UIStoryboard(name: "SimplePlanViewController", bundle: nil)
-        let SimplePlanViewController3 = storyboard.instantiateViewController(withIdentifier: "SimplePlanViewController3")
-        self.navigationController?.pushViewController(SimplePlanViewController3, animated: true)
+        let DateTimeViewController = storyboard.instantiateViewController(withIdentifier: "DateTimeViewController")
+        self.navigationController?.pushViewController(DateTimeViewController, animated: true)
         print("りっちボタンがおされました")
     }
     
     override func viewDidLoad() {
            super.viewDidLoad()
-        self.savingButton.layer.cornerRadius = 30
-        self.normalButton.layer.cornerRadius = 30
-        self.richButton.layer.cornerRadius = 30
+        self.savingButton.layer.cornerRadius = 5
+        self.normalButton.layer.cornerRadius = 5
+        self.richButton.layer.cornerRadius = 5
         
         // 次の画面のBackボタンを「戻る」に変更
         self.navigationItem.backBarButtonItem = UIBarButtonItem(
@@ -56,10 +56,10 @@ class SimplePlanViewController2: UIViewController {
             action: nil
         )
         
-        RoundProgressBar.transform = RoundProgressBar.transform.scaledBy(x: 1, y: 8)
-        RoundProgressBar.layer.cornerRadius = 16
+        RoundProgressBar.transform = RoundProgressBar.transform.scaledBy(x: 1, y: 2)
+        RoundProgressBar.layer.cornerRadius = 4
         RoundProgressBar.clipsToBounds = true
-        RoundProgressBar.layer.sublayers![1].cornerRadius = 16
+        RoundProgressBar.layer.sublayers![1].cornerRadius = 4
         RoundProgressBar.subviews[1].clipsToBounds = true
         
        }

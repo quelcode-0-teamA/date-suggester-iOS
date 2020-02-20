@@ -42,9 +42,6 @@ class DatePlanSuggestionViewControlller: UIViewController, UITableViewDelegate, 
         datePlanSuggestTV.delegate = self
         datePlanSuggestTV.dataSource = self
         
-//        gotoMypage.layer.cornerRadius = 10
-//        self.gotoDatailPage.layer.cornerRadius = 10
-        
         self.gotoMypage.layer.cornerRadius = 5
         self.gotoMypage.layer.borderColor = UIColor.white.cgColor
         self.gotoMypage.layer.borderWidth = 1.0
@@ -106,10 +103,25 @@ class DatePlanSuggestionViewControlller: UIViewController, UITableViewDelegate, 
     
 }
 
+
+
 class DateListCustomCell: UITableViewCell {
     @IBOutlet weak var location: UILabel!
     @IBOutlet weak var timeIcon: UIImageView!
     @IBOutlet weak var time: UILabel!
     @IBOutlet weak var area: UILabel!
     @IBOutlet weak var mapIcon: UIImageView!
+}
+
+class DatePlanSuggestionCustom: UIButton {
+        override func layoutSubviews() {
+            super.layoutSubviews()
+
+            self.layer.masksToBounds = false
+            self.layer.shadowRadius = 3.0
+            self.layer.cornerRadius = 5.0
+            self.layer.shadowColor = UIColor.gray.cgColor
+            self.layer.shadowOffset = CGSize(width: 0.0, height: 1.0)
+            self.layer.shadowOpacity = 0.5
+        }
 }

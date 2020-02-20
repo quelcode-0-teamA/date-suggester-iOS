@@ -7,7 +7,7 @@
 //
 
 import UIKit
-class TutorialViewController3: UIViewController, UITextFieldDelegate {
+class ListenLocationViewController: UIViewController, UITextFieldDelegate {
     let underline: UIView = UIView()
     @IBOutlet weak var nextButton: UIButton!
     @IBOutlet weak var nickName: CustomTextField!
@@ -37,8 +37,6 @@ class TutorialViewController3: UIViewController, UITextFieldDelegate {
         self.nextButton.layer.borderColor = UIColor.white.cgColor
         //外枠の太さを指定
         self.nextButton.layer.borderWidth = 1.0
-
-        
     }
     
     //キーボードを閉じる

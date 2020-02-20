@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TutorialViewController2: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+class ListenBirthyearViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
      // UIPickerViewの列の数
            func numberOfComponents(in pickerView: UIPickerView) -> Int {
                return 1
@@ -54,13 +54,21 @@ class TutorialViewController2: UIViewController, UIPickerViewDelegate, UIPickerV
         
         //画面遷移
         let storyboard = UIStoryboard(name: "TutorialViewController", bundle: nil)
-        let TutorialViewController3 = storyboard.instantiateViewController(withIdentifier: "TutorialViewController3")
-        TutorialViewController3.modalPresentationStyle = .fullScreen
-        self.present(TutorialViewController3, animated: false, completion: nil)
+        let ListenLocationViewController = storyboard.instantiateViewController(withIdentifier: "ListenLocationViewController")
+        ListenLocationViewController.modalPresentationStyle = .fullScreen
+        self.present(ListenLocationViewController, animated: false, completion: nil)
+    }
+    
+    @IBAction func loginButton(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "MainPageViewController", bundle: nil)
+        let LoginViewController = storyboard.instantiateViewController(identifier: "LoginViewController")
+        LoginViewController.modalPresentationStyle = .fullScreen
+        present(LoginViewController, animated: true, completion: nil)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         self.view.addBackground(name: "Full")
         self.nextButton.layer.cornerRadius = 5
 

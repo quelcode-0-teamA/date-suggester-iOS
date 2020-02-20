@@ -12,8 +12,10 @@ class DatePlanListCollectionViewCell: UICollectionViewCell {
 
     @IBOutlet weak var photoImageView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
-
+    @IBOutlet weak var titleBackground: UIImageView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
+
     }
 }

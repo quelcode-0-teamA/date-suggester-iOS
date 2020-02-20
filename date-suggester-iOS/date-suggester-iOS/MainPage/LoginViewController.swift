@@ -12,6 +12,7 @@ class LoginViewController: UIViewController {
     
     @IBOutlet weak var myEmail: SignInCustomTextField!
     @IBOutlet weak var myPassword: SignInCustomTextField!
+    @IBOutlet weak var loginButton: UIButton!
     
     //func ifNotnil throw -> {}
     
@@ -132,6 +133,12 @@ class LoginViewController: UIViewController {
             self.view.endEditing(true)
         }
         
+
+        let picture = UIImage(named: "test")
+        self.loginButton.setBackgroundImage(picture, for: .normal)
+        self.loginButton.layer.masksToBounds = true
+        self.loginButton.layer.cornerRadius = 5.0
+        
     }
     
     @IBAction func backButton(_ sender: Any) {
@@ -144,7 +151,7 @@ class SignInCustomTextField: UITextField {
         override func layoutSubviews() {
             super.layoutSubviews()
 
-            self.frame.size.height = 50 // ここ変える
+            self.frame.size.height = 60 // ここ変える
             self.borderStyle = .none
             
 //            self.layer.borderWidth = 1
@@ -152,7 +159,9 @@ class SignInCustomTextField: UITextField {
 //            self.layer.cornerRadius = 3
 
             self.layer.masksToBounds = false
-//            self.layer.shadowRadius = 3.0
+            self.layer.shadowRadius = 3.0
+            self.layer.masksToBounds = true
+            self.layer.cornerRadius = 5.0
             self.layer.shadowColor = UIColor.gray.cgColor
             self.layer.shadowOffset = CGSize(width: 0.0, height: 1.0)
             self.layer.shadowOpacity = 0.5
