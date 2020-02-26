@@ -24,5 +24,13 @@ class AppNavigationController: UINavigationController {
 //        let label = UILabel()
 //                label.text = text
         
+        // 背景画像の設定
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(named: "test"), for: .default)
+        // タイトルテキストの装飾設定
+        self.navigationController?.navigationBar.titleTextAttributes = [
+            // 文字の色
+            .foregroundColor: UIColor.white
+        ]
+        
     }
 }

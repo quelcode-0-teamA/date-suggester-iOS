@@ -13,6 +13,7 @@ class DetailPlanViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        title = "デートプラン詳細に決める画面に遷移成功だよー"
         print("デートプラン詳細に決める画面に遷移成功だよー")
 
     }
