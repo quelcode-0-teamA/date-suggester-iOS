@@ -13,6 +13,11 @@ class TutorialViewController3: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var nickName: CustomTextField!
     
     @IBAction func gotoSinplePlan(_ sender: Any) {
+        
+        //チュートリアル終了状況をユーザーデフォルトに保存
+        // let defaults = UserDefaults.standard
+        // defaults.set(true, forKey: "tutorialStatus")
+        
         let storyboard = UIStoryboard(name: "SimplePlanViewController", bundle: nil)
         let controller = storyboard.instantiateViewController(identifier: "DatePlanViewController")
         controller.modalPresentationStyle = .fullScreen

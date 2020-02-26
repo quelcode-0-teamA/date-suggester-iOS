@@ -12,8 +12,6 @@ class ProfileEditViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        print("あああ")
 
         
     }

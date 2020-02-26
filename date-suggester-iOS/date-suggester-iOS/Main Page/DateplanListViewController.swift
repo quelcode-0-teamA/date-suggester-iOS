@@ -16,7 +16,7 @@ class DateplanListViewController: UIViewController,UICollectionViewDataSource, U
     private let titles = ["パンケーキ", "ラーメン", "サンドウィッチ", "人参とポテト", "プレートランチ"]
     
     // レイアウト設定　UIEdgeInsets については下記の参考図を参照。
-    private let sectionInsets = UIEdgeInsets(top: 10.0, left: 2.0, bottom: 2.0, right: 2.0)
+    //private let sectionInsets = UIEdgeInsets(top: 10.0, left: 2.0, bottom: 2.0, right: 2.0)
     // 1行あたりのアイテム数
     private let itemsPerRow: CGFloat = 2
     
@@ -27,6 +27,7 @@ class DateplanListViewController: UIViewController,UICollectionViewDataSource, U
         
         CollectionView.delegate = self
         CollectionView.dataSource = self
+        CollectionView.register(UINib(nibName: "DatePlanListCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "DatePlanListCollectionViewCell")
         
         // 背景画像の設定
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(named: "test"), for: .default)
@@ -35,6 +36,8 @@ class DateplanListViewController: UIViewController,UICollectionViewDataSource, U
             // 文字の色
             .foregroundColor: UIColor.white
         ]
+        
+        CollectionView.reloadData()
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
@@ -49,7 +52,7 @@ class DateplanListViewController: UIViewController,UICollectionViewDataSource, U
 
         func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
             // "Cell" の部分は　Storyboard でつけた cell の identifier。
-            let datePlanListCell: UICollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: "datePlanListCell", for: indexPath)
+            let datePlanListCell: UICollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: "DatePlanListCollectionViewCell", for: indexPath) as! DatePlanListCollectionViewCell
 
             // Tag番号を使ってインスタンスをつくる
             let photoImageView = datePlanListCell.contentView.viewWithTag(1)  as! UIImageView
@@ -70,24 +73,32 @@ class DateplanListViewController: UIViewController,UICollectionViewDataSource, U
     // Screenサイズに応じたセルサイズを返す
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
 
-        let paddingSpace = sectionInsets.left * (itemsPerRow + 1)
-        let availableWidth = view.frame.width - paddingSpace
-        let widthPerItem = availableWidth / itemsPerRow
-        return CGSize(width: widthPerItem, height: widthPerItem + 42)
+        let numberOfMargin: CGFloat = 3.0
+        let titleHeight: CGFloat = 24.0
+        let imageRatio: CGFloat = 1.0
+        
+        let cellWidth = (UIScreen.main.bounds.width - 12.0 * numberOfMargin) / itemsPerRow
+        let cellHeight = cellWidth * imageRatio + titleHeight
+        return CGSize(width: cellWidth, height: cellHeight)
+        
+        
+//        let paddingSpace = sectionInsets.left * (itemsPerRow + 1)
+//        let availableWidth = view.frame.width - paddingSpace
+//        let widthPerItem = availableWidth / itemsPerRow
+//        print("widthPerItem;", widthPerItem)
+//        return CGSize(width: widthPerItem, height: widthPerItem + 42)
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return sectionInsets
+        return UIEdgeInsets(top: 12.0, left: 12.0, bottom: 12.0, right: 12.0)
     }
-
-    // セルの行間の設定
+    //水平方向の余白
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 10.0
+        return 12.0
     }
-    
-}
 
-class datePlanListCell: UICollectionViewCell {
-    @IBOutlet weak var photoImageView: UIImageView!
-    @IBOutlet weak var titleLabel: UILabel!
+    //垂直方向の余白
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return 12.0
+    }
 }
