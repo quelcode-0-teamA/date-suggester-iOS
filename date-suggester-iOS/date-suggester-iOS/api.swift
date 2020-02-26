@@ -20,6 +20,9 @@ class Api {
         var req: URLRequest = URLRequest(url: url)
         req.httpMethod = method
         //ヘッダーを付与
+        if token != "" {
+            req.setValue("Bearer " + token, forHTTPHeaderField: "Authorization")
+        }
         req.setValue("application/json", forHTTPHeaderField: "Content-Type")
         req.httpBody = try! JSONSerialization.data(withJSONObject: parameter, options: .prettyPrinted)
         return req
@@ -162,7 +165,7 @@ class Api {
 
     }
     
-    func datePlanFix(parameter:[String : Any], completion:((String?, Error?)->Void)?=nil){
+    func datePlanFix(parameter:[String : Any], completion:((Any?, Error?)->Void)?=nil){
         let endpoint = "/v1/mypage/my_plans"
         
         let defaults = UserDefaults.standard
@@ -196,7 +199,9 @@ class Api {
 //                    return
 //                }
 //
-//                completion?(tokenValue, nil)
+                completion?(response, nil)
+
+                
             }
             catch{
                 completion?(nil, NSError.init(domain: "error", code: 0, userInfo: nil))

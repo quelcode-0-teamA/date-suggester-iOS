@@ -18,52 +18,97 @@ class DatePlanSuggestionViewControlller: UIViewController, UITableViewDelegate, 
     @IBOutlet var gotoDatailPage: UIView!
     
     @IBAction func gotoMypage(_ sender: Any) {
+//        let config: URLSessionConfiguration = URLSessionConfiguration.default
+//
+//        let session: URLSession = URLSession(configuration: config)
+//        //その変数たちを集めた変数をつくって、それをJSON形式でボディに付与する（1つめの辞書）
+//       let planId = response["id"]!
+//        debugPrint(planId)
+//
+//        let planFixParams = [
+//             "plan_id": planId
+//            ] as [String : Any]
+//
+//        //URLオブジェクトの生成
+//
+//        let url = URL(string: "https://api-date-suggester-dev.herokuapp.com/v1/mypage/my_plans")!
+//        //URLRequestの生成
+//        var req: URLRequest = URLRequest(url: url)
+//        req.httpMethod = "POST"
+//
+//        //ヘッダーを付与
+//        let defaults = UserDefaults.standard
+//        let myToken = defaults.string(forKey: "responseToken")!
+//        req.setValue("application/json", forHTTPHeaderField: "Content-Type")
+//        req.setValue("Bearer " + myToken, forHTTPHeaderField: "Authorization")
+//
+//        //ボディーを付与（2つめの辞書）
+//        let parameter = ["plan": planFixParams]
+//
+//        req.httpBody = try! JSONSerialization.data(withJSONObject: parameter, options: .prettyPrinted)
+//
+//        print(String(data: req.httpBody!, encoding: .utf8))
+//
+//        //APIを呼ぶよ
+//        let task = session.dataTask(with: req){(data, response, error) in
+//            print(data)
+//            print(error)
+//
+//            let responseString: String =  String(data: data!, encoding: .utf8)!
+//            print(responseString)
+//
+//
+//            do {
+//                let response: [String: Any] = try JSONSerialization.jsonObject(with: data!, options: []) as! [String: Any]
+//
+//                print(response)
+//
+//                DispatchQueue.main.async {
+//                    let storyboard = UIStoryboard(name: "MainPageViewController", bundle: nil)
+//                    let MainPageViewController = storyboard.instantiateViewController(withIdentifier: "MainPageViewController")
+//                    MainPageViewController.modalPresentationStyle = .fullScreen
+//                    self.present(MainPageViewController, animated: true, completion: nil)
+//                }
+//
+//            } catch{
+//
+//            }
+//
+//        }
+//        task.resume()
+        
         
         //デートプランをリストに加えるAPI
 
     
         
-//        let defaults = UserDefaults.standard
-//        let responsegender = defaults.string(forKey: "responsegender")!
-//        let responseBirthYear = defaults.string(forKey: "responseBirthYear")!
+
         let planId = response["id"]!
         debugPrint(planId)
-        
+
         let planFixParams = [
              "plan_id": planId
             ] as [String : Any]
-        
+//
         let parameter = ["plan": planFixParams]
-        
+
         Api().datePlanFix(parameter: parameter, completion: {(token, error) in
-            
+
             if let _error = error {
                 // アラートを出す
                 return
             }
+
+//            guard let _token = token else {
+//                // アラートを出す
+//                return
+//            }
+               
             
-            guard let _token = token else {
-                // アラートを出す
-                return
-            }
             
-            //            辞書からtokenを取り出す
-            //            let tokenValue = response["token"]
-            //            let idValue = response["id"]
-            //            let nameValue = response["name"]
-            //            print(tokenValue!)
-            
-            //取り出したtokenをユーザーデフォルトに保存する
-            //            let defaults = UserDefaults.standard
-            //            defaults.set(tokenValue!, forKey: "responseToken")
-            //            defaults.set(idValue!, forKey: "responseId")
-            //            defaults.set(nameValue!, forKey: "responseName")
-            
-            //            print("ユーザーデフォルトにtokenとidを保存したよ")
-            //            print(defaults.string(forKey: "responseName"))
-            print("デートプランを決定したよー")
-            
+//
             DispatchQueue.main.async {
+                print("デートプランを決定したよー")
                 let storyboard = UIStoryboard(name: "MainPageViewController", bundle: nil)
                 let MainPageViewController = storyboard.instantiateViewController(withIdentifier: "MainPageViewController")
                 MainPageViewController.modalPresentationStyle = .fullScreen
