@@ -19,63 +19,72 @@
                             <imageView clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="redraw" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="location" translatesAutoresizingMaskIntoConstraints="NO" id="Vf5-cL-Wxt">
                                 <rect key="frame" x="92" y="144" width="230" height="217"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="217" id="0bc-kp-3yf"/>
-                                    <constraint firstAttribute="width" constant="230" id="2G2-QL-YvP"/>
+                                    <constraint firstAttribute="height" constant="217" id="JyX-bD-mEs"/>
+                                    <constraint firstAttribute="width" constant="230" id="a3f-9p-Dg6"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="どこでデートする？" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QqP-39-pYc">
-                                <rect key="frame" x="112.5" y="391" width="189" height="21"/>
+                                <rect key="frame" x="113" y="390" width="188.5" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="188.5" id="Weu-E3-xFd"/>
+                                    <constraint firstAttribute="height" constant="21" id="yZb-Fd-ona"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="HiraginoSans-W6" family="Hiragino Sans" pointSize="21"/>
                                 <color key="textColor" name="こうほ"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="right" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X3Q-yL-dzD" customClass="CustomButton" customModule="date_suggester_iOS" customModuleProvider="target">
-                                <rect key="frame" x="50" y="482" width="314" height="60"/>
-                                <color key="backgroundColor" name="Color-1"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="z3e-Gc-fmT">
+                                <rect key="frame" x="50" y="482" width="314" height="150"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="right" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X3Q-yL-dzD" customClass="CustomButton" customModule="date_suggester_iOS" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="314" height="60"/>
+                                        <color key="backgroundColor" name="Color-1"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="4ym-ou-Pdu"/>
+                                            <constraint firstAttribute="width" constant="314" id="udG-Ca-IuW"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="HiraginoSans-W6" family="Hiragino Sans" pointSize="21"/>
+                                        <state key="normal" title="ちかく">
+                                            <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="nearButton:" destination="D01-Eu-ozo" eventType="touchUpInside" id="tlh-8g-6Ko"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N7v-jp-lHw" customClass="CustomButton" customModule="date_suggester_iOS" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="90" width="314" height="60"/>
+                                        <color key="backgroundColor" name="Color-1"/>
+                                        <fontDescription key="fontDescription" name="HiraginoSans-W6" family="Hiragino Sans" pointSize="21"/>
+                                        <state key="normal" title="日帰り遠出">
+                                            <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="farButton:" destination="D01-Eu-ozo" eventType="touchUpInside" id="rs7-Dr-C78"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="314" id="cRk-xk-zJB"/>
-                                    <constraint firstAttribute="height" constant="60" id="sFF-lX-Dk2"/>
+                                    <constraint firstItem="X3Q-yL-dzD" firstAttribute="height" secondItem="N7v-jp-lHw" secondAttribute="height" id="I3H-Zy-8WA"/>
+                                    <constraint firstItem="X3Q-yL-dzD" firstAttribute="width" secondItem="N7v-jp-lHw" secondAttribute="width" id="cOJ-D0-iIA"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="HiraginoSans-W6" family="Hiragino Sans" pointSize="21"/>
-                                <state key="normal" title="ちかく">
-                                    <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="nearButton:" destination="D01-Eu-ozo" eventType="touchUpInside" id="tlh-8g-6Ko"/>
-                                </connections>
-                            </button>
+                            </stackView>
                             <progressView opaque="NO" contentMode="scaleAspectFit" verticalHuggingPriority="750" progress="0.25" progressImage="test" translatesAutoresizingMaskIntoConstraints="NO" id="sIU-eE-IXU" customClass="CustomProgressView" customModule="date_suggester_iOS" customModuleProvider="target">
                                 <rect key="frame" x="62" y="808" width="290" height="2"/>
                             </progressView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N7v-jp-lHw" customClass="CustomButton" customModule="date_suggester_iOS" customModuleProvider="target">
-                                <rect key="frame" x="50" y="572" width="314" height="60"/>
-                                <color key="backgroundColor" name="Color-1"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="314" id="9Xy-dK-D6h"/>
-                                    <constraint firstAttribute="height" constant="60" id="UAt-lM-1UD"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="HiraginoSans-W6" family="Hiragino Sans" pointSize="21"/>
-                                <state key="normal" title="日帰り遠出">
-                                    <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="farButton:" destination="D01-Eu-ozo" eventType="touchUpInside" id="rs7-Dr-C78"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="Vf5-cL-Wxt" firstAttribute="top" secondItem="aWG-hF-qaE" secondAttribute="top" constant="56" id="4X6-QX-hGF"/>
-                            <constraint firstItem="QqP-39-pYc" firstAttribute="centerX" secondItem="yA3-fs-s4J" secondAttribute="centerX" id="8Pe-SE-FfQ"/>
-                            <constraint firstItem="N7v-jp-lHw" firstAttribute="centerX" secondItem="yA3-fs-s4J" secondAttribute="centerX" id="Ig4-cx-RLT"/>
-                            <constraint firstItem="X3Q-yL-dzD" firstAttribute="centerX" secondItem="yA3-fs-s4J" secondAttribute="centerX" id="T0R-eh-bal"/>
-                            <constraint firstItem="X3Q-yL-dzD" firstAttribute="top" secondItem="QqP-39-pYc" secondAttribute="bottom" constant="70" id="V3a-hM-m3J"/>
-                            <constraint firstItem="Vf5-cL-Wxt" firstAttribute="centerX" secondItem="yA3-fs-s4J" secondAttribute="centerX" id="Y8C-Qp-PfI"/>
-                            <constraint firstItem="N7v-jp-lHw" firstAttribute="top" secondItem="X3Q-yL-dzD" secondAttribute="bottom" constant="30" id="ZtV-OV-LAB"/>
+                            <constraint firstItem="z3e-Gc-fmT" firstAttribute="top" secondItem="QqP-39-pYc" secondAttribute="bottom" constant="71" id="0PZ-v2-j8b"/>
+                            <constraint firstItem="Vf5-cL-Wxt" firstAttribute="centerX" secondItem="yA3-fs-s4J" secondAttribute="centerX" id="4JC-Wh-UGJ"/>
+                            <constraint firstItem="QqP-39-pYc" firstAttribute="centerX" secondItem="yA3-fs-s4J" secondAttribute="centerX" id="4e9-Ut-sMS"/>
+                            <constraint firstItem="Vf5-cL-Wxt" firstAttribute="top" secondItem="aWG-hF-qaE" secondAttribute="top" constant="56" id="7Og-zG-2t8"/>
+                            <constraint firstItem="z3e-Gc-fmT" firstAttribute="centerX" secondItem="yA3-fs-s4J" secondAttribute="centerX" id="a7Z-br-AFC"/>
+                            <constraint firstItem="sIU-eE-IXU" firstAttribute="top" relation="lessThanOrEqual" secondItem="z3e-Gc-fmT" secondAttribute="bottom" constant="176" id="eKA-hv-Bf7"/>
                             <constraint firstItem="aWG-hF-qaE" firstAttribute="bottom" secondItem="sIU-eE-IXU" secondAttribute="bottom" constant="52" id="hMU-hA-Sfy"/>
+                            <constraint firstItem="sIU-eE-IXU" firstAttribute="leading" secondItem="z3e-Gc-fmT" secondAttribute="trailing" constant="-302" id="haj-PM-d0G"/>
+                            <constraint firstItem="QqP-39-pYc" firstAttribute="bottom" secondItem="Vf5-cL-Wxt" secondAttribute="bottom" constant="50" id="hhY-tZ-RbO"/>
                             <constraint firstAttribute="trailingMargin" secondItem="sIU-eE-IXU" secondAttribute="trailing" constant="42" id="ica-t7-xCP"/>
                             <constraint firstItem="sIU-eE-IXU" firstAttribute="leading" secondItem="yA3-fs-s4J" secondAttribute="leadingMargin" constant="42" id="mZt-tH-UF2"/>
-                            <constraint firstItem="QqP-39-pYc" firstAttribute="top" secondItem="Vf5-cL-Wxt" secondAttribute="bottom" constant="30" id="woW-9c-4hU"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="aWG-hF-qaE"/>
                     </view>
@@ -716,7 +725,7 @@
     <resources>
         <image name="2" width="1920" height="1440"/>
         <image name="linkIcon" width="32" height="32"/>
-        <image name="location" width="256" height="256"/>
+        <image name="location" width="128" height="128"/>
         <image name="mapIcon" width="32" height="32"/>
         <image name="money" width="256" height="256"/>
         <image name="move" width="256" height="256"/>

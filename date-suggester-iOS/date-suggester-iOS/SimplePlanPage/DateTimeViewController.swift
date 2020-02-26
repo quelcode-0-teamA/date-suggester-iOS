@@ -9,7 +9,7 @@
 import UIKit
 
 class DateTimeViewController: UIViewController {
-    
+    var youserAnswer: AnswerModel = .init()
     
     @IBOutlet weak var RoundProgressBar: UIProgressView!
     @IBOutlet weak var allDayButton: UIButton!
@@ -18,26 +18,32 @@ class DateTimeViewController: UIViewController {
     
     
     @IBAction func allDayButtonTap(_ sender: Any) {
-        let storyboard = UIStoryboard(name: "SimplePlanViewController", bundle: nil)
-        let DateFeelingViewController = storyboard.instantiateViewController(withIdentifier: "DateFeelingViewController")
-        self.navigationController?.pushViewController(DateFeelingViewController, animated: true)
+        gotoDateFeelingVC(selectAnserNumber:0)
     }
     
     @IBAction func lunchButtonTap(_ sender: Any) {
-        let storyboard = UIStoryboard(name: "SimplePlanViewController", bundle: nil)
-        let DateFeelingViewController = storyboard.instantiateViewController(withIdentifier: "DateFeelingViewController")
-        self.navigationController?.pushViewController(DateFeelingViewController, animated: true)
+        gotoDateFeelingVC(selectAnserNumber:1)
     }
     
     @IBAction func dinnerButtonTap(_ sender: Any) {
-        let storyboard = UIStoryboard(name: "SimplePlanViewController", bundle: nil)
-        let DateFeelingViewController = storyboard.instantiateViewController(withIdentifier: "DateFeelingViewController")
-        self.navigationController?.pushViewController(DateFeelingViewController, animated: true)
+        gotoDateFeelingVC(selectAnserNumber:2)
     }
-
+    
+    private func gotoDateFeelingVC(selectAnserNumber: Int) {
+        youserAnswer.answer3 = selectAnserNumber
+        let storyboard = UIStoryboard(name: "SimplePlanViewController", bundle: nil)
+        guard let dateFeelingViewController = storyboard.instantiateViewController(withIdentifier: "DateFeelingViewController") as? DateFeelingViewController else {
+            return
+        }
+        dateFeelingViewController.youserAnswer = youserAnswer
+        print(youserAnswer.answer3)
+        self.navigationController?.pushViewController(dateFeelingViewController, animated: true)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        debugPrint("\(#function), \(#line)")
+        print("前の画面から\(youserAnswer.answer1)と\(youserAnswer.answer2)という値が渡されました")
         
         self.allDayButton.layer.cornerRadius = 5
         self.lunchButton.layer.cornerRadius = 5

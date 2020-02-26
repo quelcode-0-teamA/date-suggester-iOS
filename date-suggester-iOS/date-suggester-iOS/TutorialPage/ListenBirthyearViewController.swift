@@ -51,12 +51,11 @@ class ListenBirthyearViewController: UIViewController, UIPickerViewDelegate, UIP
     
     @IBOutlet weak var nextButton: UIButton!
     @IBAction func nextPage(_ sender: Any) {
-        
         //画面遷移
         let storyboard = UIStoryboard(name: "TutorialViewController", bundle: nil)
-        let ListenLocationViewController = storyboard.instantiateViewController(withIdentifier: "ListenLocationViewController")
-        ListenLocationViewController.modalPresentationStyle = .fullScreen
-        self.present(ListenLocationViewController, animated: false, completion: nil)
+        let listenLocationViewController = storyboard.instantiateViewController(withIdentifier: "ListenLocationViewController")
+        listenLocationViewController.modalPresentationStyle = .fullScreen
+        self.present(listenLocationViewController, animated: false, completion: nil)
     }
     
     @IBAction func loginButton(_ sender: Any) {

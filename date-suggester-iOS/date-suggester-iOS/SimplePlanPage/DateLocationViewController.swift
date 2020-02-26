@@ -9,25 +9,34 @@
 import UIKit
 
 class DateLocationViewController: UIViewController {
-     
-    @IBOutlet weak var RoundProgressBar: UIProgressView!
+    var youserAnswer: AnswerModel = .init()
     
+    @IBOutlet weak var RoundProgressBar: UIProgressView!
     @IBOutlet weak var near: UIButton!
     @IBOutlet weak var far: UIButton!
     @IBOutlet weak var test: UIImageView!
     
+    
     @IBAction func nearButton(_ sender: Any) {
-        let storyboard = UIStoryboard(name: "SimplePlanViewController", bundle: nil)
-        let DateBudgetViewController = storyboard.instantiateViewController(withIdentifier: "DateBudgetViewController")
-        self.navigationController?.pushViewController(DateBudgetViewController, animated: true)
+        a(selectAnserNumber:0)
     }
+    
     
     @IBAction func farButton(_ sender: Any) {
-        let storyboard = UIStoryboard(name: "SimplePlanViewController", bundle: nil)
-        let DateBudgetViewController = storyboard.instantiateViewController(withIdentifier: "DateBudgetViewController")
-        self.navigationController?.pushViewController(DateBudgetViewController, animated: true)
+        a(selectAnserNumber:1)
     }
-    
+    //共通化(private書いてなければ他のクラスで呼んでるんだなと思われる、改修するときは他のクラスに影響がないか調べないといけない)
+    //TODO: あとでaの名前を変える
+    private func a(selectAnserNumber: Int) {
+        youserAnswer.answer1 = selectAnserNumber // ここで代入してる
+        let storyboard = UIStoryboard(name: "SimplePlanViewController", bundle: nil)
+        guard let dateBudgetViewController = storyboard.instantiateViewController(withIdentifier: "DateBudgetViewController") as? DateBudgetViewController else {
+            return
+        }//これが保証されたら71行めにいく
+        dateBudgetViewController.youserAnswer = youserAnswer
+        print(youserAnswer.answer1)
+        self.navigationController?.pushViewController(dateBudgetViewController, animated: true)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -84,18 +93,7 @@ class DateLocationViewController: UIViewController {
     
 }
 
-class CustomButton: UIButton {
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        
-        self.layer.masksToBounds = false
-        self.layer.shadowRadius = 3.0
-        //            self.layer.masksToBounds = true
-        self.layer.cornerRadius = 5.0
-        self.layer.shadowColor = UIColor.gray.cgColor
-        self.layer.shadowOffset = CGSize(width: 0.0, height: 1.0)
-        self.layer.shadowOpacity = 0.5
-    }
-}
+
+
 
 

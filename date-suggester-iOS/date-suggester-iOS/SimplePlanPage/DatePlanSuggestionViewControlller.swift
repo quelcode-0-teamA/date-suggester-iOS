@@ -9,6 +9,8 @@
 import UIKit
 
 class DatePlanSuggestionViewControlller: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    //受け取る値を格納するもの
+    var response: [String: Any] = [:]
     
     @IBOutlet weak var gotoMypage: UIButton!
     @IBOutlet weak var againButton: UIButton!
@@ -18,12 +20,58 @@ class DatePlanSuggestionViewControlller: UIViewController, UITableViewDelegate, 
     @IBAction func gotoMypage(_ sender: Any) {
         
         //デートプランをリストに加えるAPI
+
+    
         
-        //画面遷移
-        let storyboard = UIStoryboard(name: "MainPageViewController", bundle: nil)
-        let MainPageViewController = storyboard.instantiateViewController(withIdentifier: "MainPageViewController")
-        MainPageViewController.modalPresentationStyle = .fullScreen
-        self.present(MainPageViewController, animated: true, completion: nil)
+//        let defaults = UserDefaults.standard
+//        let responsegender = defaults.string(forKey: "responsegender")!
+//        let responseBirthYear = defaults.string(forKey: "responseBirthYear")!
+        let planId = response["id"]!
+        debugPrint(planId)
+        
+        let planFixParams = [
+             "plan_id": planId
+            ] as [String : Any]
+        
+        let parameter = ["plan": planFixParams]
+        
+        Api().datePlanFix(parameter: parameter, completion: {(token, error) in
+            
+            if let _error = error {
+                // アラートを出す
+                return
+            }
+            
+            guard let _token = token else {
+                // アラートを出す
+                return
+            }
+            
+            //            辞書からtokenを取り出す
+            //            let tokenValue = response["token"]
+            //            let idValue = response["id"]
+            //            let nameValue = response["name"]
+            //            print(tokenValue!)
+            
+            //取り出したtokenをユーザーデフォルトに保存する
+            //            let defaults = UserDefaults.standard
+            //            defaults.set(tokenValue!, forKey: "responseToken")
+            //            defaults.set(idValue!, forKey: "responseId")
+            //            defaults.set(nameValue!, forKey: "responseName")
+            
+            //            print("ユーザーデフォルトにtokenとidを保存したよ")
+            //            print(defaults.string(forKey: "responseName"))
+            print("デートプランを決定したよー")
+            
+            DispatchQueue.main.async {
+                let storyboard = UIStoryboard(name: "MainPageViewController", bundle: nil)
+                let MainPageViewController = storyboard.instantiateViewController(withIdentifier: "MainPageViewController")
+                MainPageViewController.modalPresentationStyle = .fullScreen
+                self.present(MainPageViewController, animated: true, completion: nil)
+            }
+        })
+        
+       
     }
     
     @IBAction func againButton(_ sender: Any) {
@@ -38,6 +86,7 @@ class DatePlanSuggestionViewControlller: UIViewController, UITableViewDelegate, 
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        debugPrint("前の画面から渡されたレスポンス：\(response)")
         
         datePlanSuggestTV.delegate = self
         datePlanSuggestTV.dataSource = self
@@ -63,7 +112,10 @@ class DatePlanSuggestionViewControlller: UIViewController, UITableViewDelegate, 
         if let myCell: DateListCustomCell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier) as? DateListCustomCell {
             
 //            myCell.location?.text = (response?[indexPath.row]["user"] as? [String:Any])?["name"] as? String
-            myCell.location?.text = "てまりのおうちあにゃんこにゃんこにゃんこにゃんこにゃんこにゃんこにゃんこにゃんこにゃんこにゃんこにゃんこにゃんこ"
+            
+            
+            
+            myCell.location?.text = (response["spots"] as? [[String: Any]])?[indexPath.row]["name"] as? String
             myCell.timeIcon?.image = UIImage(named: "timeIcon")!
             myCell.mapIcon?.image = UIImage(named: "mapIcon")
             
@@ -78,7 +130,7 @@ class DatePlanSuggestionViewControlller: UIViewController, UITableViewDelegate, 
         
         let myCell = DateListCustomCell(style: .default, reuseIdentifier: "DateListCustomCell")
 //        myCell.location?.text = (response?[indexPath.row]["user"] as? [String:Any])?["name"] as? String
-        myCell.location?.text = "てまりのおうちあにゃんこにゃんこにゃんこにゃんこにゃんこにゃんこにゃんこにゃんこにゃんこにゃんこにゃんこにゃんこ"
+        myCell.location?.text = (response["spots"] as? [[String: Any]])?[indexPath.row]["name"] as? String
         myCell.timeIcon?.image = UIImage(named: "timeIcon")!
         myCell.mapIcon?.image = UIImage(named: "mapIcon")
         
