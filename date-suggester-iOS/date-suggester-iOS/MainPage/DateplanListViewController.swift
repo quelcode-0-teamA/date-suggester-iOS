@@ -96,10 +96,10 @@ class DateplanListViewController: UIViewController,UICollectionViewDataSource, U
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        let storyboard = UIStoryboard(name: "MainPageViewController", bundle: nil)
-        let controller = storyboard.instantiateViewController(identifier: "PopupViewController")
-        controller.modalPresentationStyle = .fullScreen
-        present(controller, animated: true, completion: nil)
+//        let storyboard = UIStoryboard(name: "MainPageViewController", bundle: nil)
+//        let controller = storyboard.instantiateViewController(identifier: "PopupViewController")
+//        controller.modalPresentationStyle = .fullScreen
+//        present(controller, animated: true, completion: nil)
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
