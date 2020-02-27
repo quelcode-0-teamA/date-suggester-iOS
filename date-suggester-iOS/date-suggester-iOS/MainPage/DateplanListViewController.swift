@@ -14,8 +14,9 @@ class DateplanListViewController: UIViewController,UICollectionViewDataSource, U
     @IBOutlet weak var popUp: UIButton!
     @IBAction func popUpClose(_ sender: Any) {
          self.dismiss(animated: true, completion: nil)
-        
     }
+    
+    
     @IBOutlet weak var CollectionView: UICollectionView!
     
     private let photos = ["1","2","3","4","5"]
@@ -50,14 +51,14 @@ class DateplanListViewController: UIViewController,UICollectionViewDataSource, U
          */
         let config: URLSessionConfiguration = URLSessionConfiguration.default
         let session: URLSession = URLSession(configuration: config)
-
+        
         //URLを組み立てている
         var urlComponents = URLComponents()
         urlComponents.scheme = "https"
         urlComponents.host = "api-date-suggester-dev.herokuapp.com"
         urlComponents.path = "/v1/mypage/my_plans"
-        urlComponents.queryItems = [
-        ]
+//        urlComponents.queryItems = [
+//        ]
         
         let url: URL = urlComponents.url!
         var req: URLRequest = URLRequest(url: url)
@@ -216,10 +217,6 @@ class DateplanListViewController: UIViewController,UICollectionViewDataSource, U
         return 12.0
     }
     
-    @IBAction func deleteDatePlan(_ sender: Any) {
-        
-        
-    }
     
 }
 
