@@ -57,9 +57,7 @@ class DateplanListViewController: UIViewController,UICollectionViewDataSource, U
         urlComponents.scheme = "https"
         urlComponents.host = "api-date-suggester-dev.herokuapp.com"
         urlComponents.path = "/v1/mypage/my_plans"
-//        urlComponents.queryItems = [
-//        ]
-        
+
         let url: URL = urlComponents.url!
         var req: URLRequest = URLRequest(url: url)
         req.httpMethod = "GET"
@@ -105,12 +103,13 @@ class DateplanListViewController: UIViewController,UICollectionViewDataSource, U
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         // スタンプが押された時の処理を書く
         print("スタンプがおされたよ")
-        let storyboard = UIStoryboard(name: "MainPageViewController", bundle: nil)
-        let DateScheduleViewController = storyboard.instantiateViewController(withIdentifier: "DateScheduleViewController")
-        self.navigationController?.pushViewController(DateScheduleViewController, animated: true)
+//        let storyboard = UIStoryboard(name: "MainPageViewController", bundle: nil)
+//        let DateScheduleViewController = storyboard.instantiateViewController(withIdentifier: "DateScheduleViewController")
+//        self.navigationController?.pushViewController(DateScheduleViewController, animated: true)
         
-        //アクション実装
+        //APIアクション実装
 //        print("\(indexPath.row)番目の行が選択されました")
+//        print("\(response?[indexPath.row]["id"]!)番目のリストが選択されました")
 //        print("ここにindexPath.rowばんめの辞書をそのまま出したい")
 //        let indexRowDictionary = (response?[indexPath.row])!
 //        print(indexRowDictionary)
@@ -118,62 +117,19 @@ class DateplanListViewController: UIViewController,UICollectionViewDataSource, U
 //        print(indexRowDictionaryId)
         
         //セルの選択を解除
-//        CollectionView.deselectItem(at: indexPath, animated: true)
+        CollectionView.deselectItem(at: indexPath, animated: true)
         
-        /*
-         選択したデートリスト取得API
-         */
-//        let config: URLSessionConfiguration = URLSessionConfiguration.default
-//        let session: URLSession = URLSession(configuration: config)
-//
-//        //URLオブジェクトの生成
-//        let myplan_id = indexRowDictionaryId
+        let myplan_id = (response?[indexPath.row]["id"])! // ここで代入してる
+        print(myplan_id)
+        let storyboard = UIStoryboard(name: "MainPageViewController", bundle: nil)
+        guard let dateScheduleViewController = storyboard.instantiateViewController(withIdentifier: "DateScheduleViewController") as? DateScheduleViewController else {
+            return
+        }//これが保証されたら71行めにいく
+        dateScheduleViewController.myplan_id = myplan_id
 //        print(myplan_id)
-//        let url = URL(string: "https://api-date-suggester-dev.herokuapp.com/v1/mypage/plans/\(myplan_id)")!
-//        //URLRequestの生成
-//        var req: URLRequest = URLRequest(url: url)
-//        req.httpMethod = "GET"
-//
-//        //ヘッダーを付与
-//        let defaults = UserDefaults.standard
-//        let myToken = defaults.string(forKey: "responseToken")!
-//        req.setValue("application/json", forHTTPHeaderField: "Content-Type")
-//        req.setValue("Bearer " + myToken, forHTTPHeaderField: "Authorization")
-//
-//
-//        //APIを呼ぶよ
-//        let task = session.dataTask(with: req){(data, response, error) in
-//
-//            let responseString: String =  String(data: data!, encoding: .utf8)!
-//            print(responseString)
-//
-//
-//            do {
-//                let response: [String: Any] = try JSONSerialization.jsonObject(with: data!, options: []) as! [String: Any]
-//
-//                print(response)
-//
-//                //取得したmyPlanIDを保存する
-//                let defaults = UserDefaults.standard
-//                defaults.set(indexRowDictionaryId, forKey: "myPlanId")
-//                print("ユーザーデフォルトにマイプランidを保存したよ")
-//                print(defaults.string(forKey: "myPlanId")!)
-//
-//
-//                //別の画面に遷移
-//                DispatchQueue.main.async {
-//                    let storyboard = UIStoryboard(name: "MainPageViewController", bundle: nil)
-//                    let DateScheduleViewController = storyboard.instantiateViewController(withIdentifier: "DateScheduleViewController")
-//                    self.navigationController?.pushViewController(DateScheduleViewController, animated: true)
-//                    print("デートプラン詳細画面への画面遷移成功だよ")
-//                }
-//
-//            } catch{
-//
-//            }
-//
-//        }
-//        task.resume()
+        self.navigationController?.pushViewController(dateScheduleViewController, animated: true)
+        
+        
         
     }
     

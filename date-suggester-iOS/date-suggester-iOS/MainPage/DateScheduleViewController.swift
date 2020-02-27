@@ -8,34 +8,7 @@
 
 import UIKit
 class DateScheduleViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-    
-//    @IBOutlet weak var segmentedControl: UISegmentedControl!
-//
-//    @IBAction func segmentChanged(_ sender: Any) {
-//        //セグメントが変更されたときの処理
-////        /選択されているセグメントのインデックス
-//        let selectedIndex = segmentedControl.selectedSegmentIndex
-//        print(selectedIndex)
-//
-//        switch selectedIndex {
-//        case 0:
-//            print("スケジュールだすよ")
-////            dateText.isHidden = false;
-////            labelHeightConstraint.constant = 20.5
-////            dateText.text = "日付がはいります"
-//        default:
-//            print("地図をだすよ")
-////            dateText.isHidden = true;
-////            labelHeightConstraint.constant = 0
-//            //ここにテーブルビューつめるコードをかく
-//            //カスタムセルを新たにつくる、一つにする、地図を表示する
-//
-////            let storyboard = UIStoryboard(name: "SimplePlanViewController", bundle: nil)
-////            let controller = storyboard.instantiateViewController(identifier: "DatePlanViewController")
-////            controller.modalPresentationStyle = .fullScreen
-////            present(controller, animated: false, completion: nil)
-//        }
-//    }
+    var myplan_id: Any?
     
     @IBOutlet weak var dateScheduleTV: UITableView!
     
@@ -44,11 +17,52 @@ class DateScheduleViewController: UIViewController, UITableViewDelegate, UITable
         
         dateScheduleTV.delegate = self
         dateScheduleTV.dataSource = self
-        //ここにもすぐスケジュールだす(地図画面から遷移してきたときのために、スイッチにもかくよ）
         
-        DispatchQueue.main.async {
-            self.dateScheduleTV.reloadData()
+        /*
+         選択したデートリスト取得API
+         */
+        let config: URLSessionConfiguration = URLSessionConfiguration.default
+        let session: URLSession = URLSession(configuration: config)
+        
+        //URLオブジェクトの生成
+//        let myplan_id = (response?[indexPath.row]["id"])!
+        print(myplan_id)
+        let url = URL(string: "https://api-date-suggester-dev.herokuapp.com/v1/mypage/my_plans/\(String(describing: myplan_id!))")!
+        print(url)
+        //URLRequestの生成
+        var req: URLRequest = URLRequest(url: url)
+        req.httpMethod = "GET"
+        
+        //ヘッダーを付与
+        let defaults = UserDefaults.standard
+        let myToken = defaults.string(forKey: "responseToken")!
+        req.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        req.setValue("Bearer " + myToken, forHTTPHeaderField: "Authorization")
+        
+        
+        //APIを呼ぶよ
+        let task = session.dataTask(with: req){(data, response, error) in
+            
+            let responseString: String =  String(data: data!, encoding: .utf8)!
+            print(responseString)
+            
+            
+            do {
+                let response: [String: Any] = try JSONSerialization.jsonObject(with: data!, options: []) as! [String: Any]
+                
+                print(response)
+                
+                DispatchQueue.main.async {
+                    self.dateScheduleTV.reloadData()
+                    print("テーブルビューを更新したよ")
+                }
+                
+            } catch{
+                
+            }
+            
         }
+        task.resume()
     }
     
 
@@ -110,7 +124,9 @@ class DateScheduleViewController: UIViewController, UITableViewDelegate, UITable
         //URLオブジェクトの生成
         let defaults = UserDefaults.standard
         //        let myplan_id = defaults.string(forKey: "responseMyPlanId")!
-        let myplan_id = 56
+        //TODO:削除はレスポンスが現在返ってこないので、セルリロードにいかない
+        //TODO:ここをリストい詳細で取得したmyplanIDに変える
+        let myplan_id = 66
         print(myplan_id)
         let url = URL(string: "https://api-date-suggester-dev.herokuapp.com/v1/mypage/my_plans/\(myplan_id)")!
         print(url)
@@ -125,20 +141,18 @@ class DateScheduleViewController: UIViewController, UITableViewDelegate, UITable
         
         //APIを呼ぶよ
         let task = session.dataTask(with: req){(data, response, error) in
-            
             do {
-                let response: [String: Any] = try JSONSerialization.jsonObject(with: data!, options: []) as! [String: Any]
-                
-                print(response)
+//                let response: [String: Any] = try JSONSerialization.jsonObject(with: data!, options: []) as! [String: Any]
+                 let httpResponse = response as? HTTPURLResponse
+                 debugPrint(httpResponse!.statusCode)
                 
                 debugPrint("デートプランがリストから削除されたよ")
                 DispatchQueue.main.async {
-                    self.dismiss(animated: true, completion: nil)
+//                    self.dismiss(animated: true, completion: nil)
                     self.dateScheduleTV.reloadData()
                 }
                 
             } catch{
-                
             }
             
         }
