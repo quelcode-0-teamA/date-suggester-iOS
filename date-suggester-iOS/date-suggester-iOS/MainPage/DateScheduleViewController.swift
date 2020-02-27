@@ -103,6 +103,47 @@ class DateScheduleViewController: UIViewController, UITableViewDelegate, UITable
     }
     
 
+    @IBAction func deleteMyDatePlan(_ sender: Any) {
+        let config: URLSessionConfiguration = URLSessionConfiguration.default
+        let session: URLSession = URLSession(configuration: config)
+        
+        //URLオブジェクトの生成
+        let defaults = UserDefaults.standard
+        //        let myplan_id = defaults.string(forKey: "responseMyPlanId")!
+        let myplan_id = 56
+        print(myplan_id)
+        let url = URL(string: "https://api-date-suggester-dev.herokuapp.com/v1/mypage/my_plans/\(myplan_id)")!
+        print(url)
+        //URLRequestの生成
+        var req: URLRequest = URLRequest(url: url)
+        req.httpMethod = "DELETE"
+        
+        //ヘッダーを付与
+        let myToken = defaults.string(forKey: "responseToken")!
+        req.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        req.setValue("Bearer " + myToken, forHTTPHeaderField: "Authorization")
+        
+        //APIを呼ぶよ
+        let task = session.dataTask(with: req){(data, response, error) in
+            
+            do {
+                let response: [String: Any] = try JSONSerialization.jsonObject(with: data!, options: []) as! [String: Any]
+                
+                print(response)
+                
+                debugPrint("デートプランがリストから削除されたよ")
+                DispatchQueue.main.async {
+                    self.dismiss(animated: true, completion: nil)
+                    self.dateScheduleTV.reloadData()
+                }
+                
+            } catch{
+                
+            }
+            
+        }
+        task.resume()
+    }
     
 }
 
