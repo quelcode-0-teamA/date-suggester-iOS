@@ -8,6 +8,8 @@
 
 import UIKit
 class ListenLocationViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+    
+    var activityIndicatorView = UIActivityIndicatorView()
 
     var values = [String]()
     var response: [[String: Any]]?
@@ -117,6 +119,14 @@ class ListenLocationViewController: UIViewController, UIPickerViewDelegate, UIPi
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        view.backgroundColor = .lightGray
+        activityIndicatorView.center = view.center
+        activityIndicatorView.style = .whiteLarge
+        activityIndicatorView.color = .white
+
+        view.addSubview(activityIndicatorView)
+        activityIndicatorView.startAnimating()
+        
         a()
                 
         // ピッカー設定
@@ -172,12 +182,9 @@ class ListenLocationViewController: UIViewController, UIPickerViewDelegate, UIPi
             
             DispatchQueue.main.async {
                 self.areaPickerView.reloadAllComponents()
+                // 非同期処理などが終了したらメインスレッドでアニメーション終了
+                self.activityIndicatorView.stopAnimating()
             }
-            
-
-
-
-
 
         } catch{
 
@@ -187,6 +194,8 @@ class ListenLocationViewController: UIViewController, UIPickerViewDelegate, UIPi
 
     task.resume()
     }
+    
+
 }
     
     

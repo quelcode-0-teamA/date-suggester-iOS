@@ -9,8 +9,7 @@
 import UIKit
 
 class SignUpViewController: UIViewController {
-    
-    @IBOutlet weak var myName: SignUpCustomTextField!
+
     @IBOutlet weak var myEmail: SignUpCustomTextField!
     @IBOutlet weak var myPassword: SignUpCustomTextField!
     @IBOutlet weak var myPasswordConfirmation: SignUpCustomTextField!
@@ -41,28 +40,24 @@ class SignUpViewController: UIViewController {
 
     @IBAction func signUpTapAction(_ sender: Any) {
 
-        let name = myName.text
         let email = myEmail.text
         let password = myPassword.text
         let passwordConfirmation = myPasswordConfirmation.text
         
-        let defaults = UserDefaults.standard
-        let responsegender = defaults.string(forKey: "responsegender")!
-        let responseBirthYear = defaults.string(forKey: "responseBirthYear")!
+//        let defaults = UserDefaults.standard
+//        let responsegender = defaults.string(forKey: "responsegender")!
+//        let responseBirthYear = defaults.string(forKey: "responseBirthYear")!
+//        let responseToken = defaults.string(forKey: "responseToken")!
         
         let signUpParams = [
-            "name": name,
-            "birth_year": responseBirthYear,
-            "gender": responsegender,
-            "area_id": 1,
-            "email": email,
-            "password": password,
-            "password_confirmation": passwordConfirmation
+            "email": email!,
+            "password": password!,
+            "password_confirmation": passwordConfirmation!
             ] as [String : Any]
         
-        let parameter = ["user": signUpParams]
+        let parameter = ["formal_user": signUpParams]
         
-        Api().signUp(parameter: parameter, completion: {(token, error) in
+        Api().fomalSignUp(parameter: parameter, completion: {(token, error) in
             
             if let _error = error {
                 // アラートを出す
@@ -95,6 +90,7 @@ class SignUpViewController: UIViewController {
                 let MainPageViewController = storyboard.instantiateViewController(withIdentifier: "MainPageViewController")
                 MainPageViewController.modalPresentationStyle = .fullScreen
                 self.present(MainPageViewController, animated: true, completion: nil)
+                debugPrint("サインアップ完了")
             }
         })
         

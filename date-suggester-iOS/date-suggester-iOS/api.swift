@@ -40,13 +40,17 @@ class Api {
         }
     }
     
-    func signUp(parameter:[String : Any], completion:((String?, Error?)->Void)?=nil){
-        let endpoint = "/v1/sign_up"
+    func fomalSignUp(parameter:[String : Any], completion:((Any?, Error?)->Void)?=nil){
+        let endpoint = "/v1/formal_sign_up"
+        
+        let defaults = UserDefaults.standard
+        let myToken = defaults.string(forKey: "responseToken")!
+        debugPrint(myToken)
         
         //URLオブジェクトの生成
         let url = URL(string: host + endpoint)!
         
-        let req = createRequest(url: url, method: postMethod, parameter: parameter, token:"")
+        let req = createRequest(url: url, method: postMethod, parameter: parameter, token: myToken)
         //APIを呼ぶよ
         let task = session.dataTask(with: req){(data, response, error) in
             //例外処理
@@ -63,13 +67,7 @@ class Api {
                 
                 print(response)
                 
-                //辞書からtokenを取り出す
-                guard let tokenValue = response["token"] as? String else {
-                    completion?(nil, NSError.init(domain: "error", code: 0, userInfo: nil))
-                    return
-                }
-                
-                completion?(tokenValue, nil)
+                completion?(response, nil)
             }
             catch{
                 completion?(nil, NSError.init(domain: "error", code: 0, userInfo: nil))

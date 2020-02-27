@@ -485,7 +485,6 @@
                     <connections>
                         <outlet property="entry" destination="Yrg-s9-lOw" id="oGT-OL-aDI"/>
                         <outlet property="myEmail" destination="pkg-fd-Y72" id="b8T-G4-5Td"/>
-                        <outlet property="myName" destination="dok-Zl-u2k" id="X1c-oL-8Az"/>
                         <outlet property="myPassword" destination="JBY-47-jP7" id="nWg-Jc-EnM"/>
                         <outlet property="myPasswordConfirmation" destination="MPV-vy-YEU" id="mAc-qd-IHw"/>
                     </connections>
