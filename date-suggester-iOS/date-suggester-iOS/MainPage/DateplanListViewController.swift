@@ -19,7 +19,7 @@ class DateplanListViewController: UIViewController,UICollectionViewDataSource, U
     @IBOutlet weak var CollectionView: UICollectionView!
     
     private let photos = ["1","2","3","4","5"]
-    private let titles = ["恵比寿ガーデンプレイス", "カフェめぐり", "話題の表参道カフェ", "浅草", "上野動物園"]
+//    private let titles = ["恵比寿ガーデンプレイス", "カフェめぐり", "話題の表参道カフェ", "浅草", "上野動物園"]
     
     // 1行あたりのアイテム数
     private let itemsPerRow: CGFloat = 2
@@ -43,55 +43,54 @@ class DateplanListViewController: UIViewController,UICollectionViewDataSource, U
         
         CollectionView.reloadData()
         
-        
-               
-        
+         
 
         /*
          デートリスト取得API
          */
-//        let config: URLSessionConfiguration = URLSessionConfiguration.default
-//        let session: URLSession = URLSession(configuration: config)
-//        //URLを組み立てている
-//        var urlComponents = URLComponents()
-//        urlComponents.scheme = "https"
-//        urlComponents.host = "api-date-suggester-dev.herokuapp.com"
-//        urlComponents.path = "/v1/mypage/plans"
-//        urlComponents.queryItems = [
-//        ]
-//
-//        let url: URL = urlComponents.url!
-//        var req: URLRequest = URLRequest(url: url)
-//        req.httpMethod = "GET"
-//
-//        print(url)
-//
-//        //ヘッダーを付与
-//        let defaults = UserDefaults.standard
-//        let myToken = defaults.string(forKey: "responseToken")!
-//        req.setValue("application/json", forHTTPHeaderField: "Content-Type")
-//        req.setValue("Bearer " + myToken, forHTTPHeaderField: "Authorization")
-//
-//
-//        //APIを呼ぶよ
-//        let task = session.dataTask(with: req){(data, response, error) in
-//
-//            do {
-//                let response: [[String: Any]] = try JSONSerialization.jsonObject(with: data!, options: []) as! [[String: Any]]
-//
-//                print(response)
-//                self.response = response
-//
-//                DispatchQueue.main.async {
-//                self.CollectionView.reloadData()
-//                }
-//
-//            } catch{
-//
-//            }
-//
-//        }
-//        task.resume()
+        let config: URLSessionConfiguration = URLSessionConfiguration.default
+        let session: URLSession = URLSession(configuration: config)
+
+        //URLを組み立てている
+        var urlComponents = URLComponents()
+        urlComponents.scheme = "https"
+        urlComponents.host = "api-date-suggester-dev.herokuapp.com"
+        urlComponents.path = "/v1/mypage/my_plans"
+        urlComponents.queryItems = [
+        ]
+        
+        let url: URL = urlComponents.url!
+        var req: URLRequest = URLRequest(url: url)
+        req.httpMethod = "GET"
+        
+        print(url)
+        
+        //ヘッダーを付与
+        let defaults = UserDefaults.standard
+        let myToken = defaults.string(forKey: "responseToken")!
+        req.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        req.setValue("Bearer " + myToken, forHTTPHeaderField: "Authorization")
+        
+        
+        //APIを呼ぶよ
+        let task = session.dataTask(with: req){(data, response, error) in
+            
+            do {
+                let response: [[String: Any]] = try JSONSerialization.jsonObject(with: data!, options: []) as! [[String: Any]]
+                
+                print(response)
+                self.response = response
+                
+                DispatchQueue.main.async {
+                    self.CollectionView.reloadData()
+                }
+                
+            } catch{
+                
+            }
+            
+        }
+        task.resume()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -179,11 +178,13 @@ class DateplanListViewController: UIViewController,UICollectionViewDataSource, U
     
     // １つのセクションの中に表示するセル（要素）の数。
         func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-            return photos.count
+            guard let response = response else {
+                return 0
+            }
+            return response.count
         }
 
         func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-            // "Cell" の部分は　Storyboard でつけた cell の identifier。
             let datePlanListCell: UICollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: "DatePlanListCollectionViewCell", for: indexPath) as! DatePlanListCollectionViewCell
 
             // Tag番号を使ってインスタンスをつくる
@@ -192,26 +193,17 @@ class DateplanListViewController: UIViewController,UICollectionViewDataSource, U
             photoImageView.image = photoImage
             
             let titleLabel = datePlanListCell.contentView.viewWithTag(2) as! UILabel
-            titleLabel.text = titles[indexPath.row]
+            titleLabel.text = (response?[indexPath.row]["plan"] as? [String:Any])?["title"] as? String
 
             return datePlanListCell
         }
     
- 
-    
-    
-    
-    
     // Screenサイズに応じたセルサイズを返す
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-
         let numberOfMargin: CGFloat = 3.0
-        
         let cellWidth = (UIScreen.main.bounds.width - 12.0 * numberOfMargin) / itemsPerRow
         return CGSize(width: cellWidth, height: cellWidth)
-        
     }
-
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         return UIEdgeInsets(top: 12.0, left: 12.0, bottom: 12.0, right: 12.0)
     }
@@ -219,11 +211,16 @@ class DateplanListViewController: UIViewController,UICollectionViewDataSource, U
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 12.0
     }
-
     //垂直方向の余白
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         return 12.0
     }
+    
+    @IBAction func deleteDatePlan(_ sender: Any) {
+        
+        
+    }
+    
 }
 
 
