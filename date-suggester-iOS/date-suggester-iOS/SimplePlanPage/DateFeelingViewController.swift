@@ -47,9 +47,8 @@ class DateFeelingViewController: UIViewController {
                var urlComponents = URLComponents()
                urlComponents.scheme = "https"
                urlComponents.host = "api-date-suggester-dev.herokuapp.com"
-               urlComponents.path = "/v1/date-suggest"
+               urlComponents.path = "/v1/plans/suggest"
                urlComponents.queryItems = [
-//                URLQueryItem(name: "user_area", value: String(1)),
                 URLQueryItem(name: "date_area", value: String(youserAnswer.answer1)),
                 URLQueryItem(name: "date_budget", value: String(youserAnswer.answer2)),
                 URLQueryItem(name: "date_time", value: String(youserAnswer.answer3)),
@@ -83,15 +82,8 @@ class DateFeelingViewController: UIViewController {
                             return
                         }
                         datePlanSuggestionViewControlller.response = response
+//                         self.navigationController?.pushViewController(datePlanSuggestionViewControlller, animated: true)
                         self.present(datePlanSuggestionViewControlller, animated: true, completion: nil)
-                        
-                        
-//                        let storyboard = UIStoryboard(name: "SimplePlanViewController", bundle: nil)
-//                        let DatePlanSuggestionViewControlller = storyboard.instantiateViewController(withIdentifier: "DatePlanSuggestionViewControlller")
-//                        DatePlanSuggestionViewControlller.modalPresentationStyle = .fullScreen
-//                        self.present(DatePlanSuggestionViewControlller, animated: true, completion: nil)
-                    
-   
                     }
 
                    } catch{
@@ -102,9 +94,8 @@ class DateFeelingViewController: UIViewController {
                task.resume()
         print("デートプラン提案成功してるよ")
         
-//        datePlanSuggestionViewControlller.youserAnswer = youserAnswer
-//        print(youserAnswer.answer3)
-//        self.navigationController?.pushViewController(datePlanSuggestionViewControlller, animated: true)
+        /* デートプラン提案API省略形 */
+
     }
     
     override func viewDidLoad() {
@@ -113,6 +104,14 @@ class DateFeelingViewController: UIViewController {
         self.mealButton.layer.cornerRadius = 5
         self.outDoorButton.layer.cornerRadius = 5
         self.relaxButton.layer.cornerRadius = 5
+        
+        // 次の画面のBackボタンを「戻る」に変更
+        self.navigationItem.backBarButtonItem = UIBarButtonItem(
+            title:  "戻る",
+            style:  .plain,
+            target: nil,
+            action: nil
+        )
         
         RoundProgressBar.transform = RoundProgressBar.transform.scaledBy(x: 1, y: 2)
         RoundProgressBar.layer.cornerRadius = 4

@@ -20,8 +20,7 @@ class DateplanListViewController: UIViewController,UICollectionViewDataSource, U
     @IBOutlet weak var CollectionView: UICollectionView!
     
     private let photos = ["1","2","3","4","5"]
-//    private let titles = ["恵比寿ガーデンプレイス", "カフェめぐり", "話題の表参道カフェ", "浅草", "上野動物園"]
-    
+
     // 1行あたりのアイテム数
     private let itemsPerRow: CGFloat = 2
     
@@ -29,6 +28,19 @@ class DateplanListViewController: UIViewController,UICollectionViewDataSource, U
     override func viewDidLoad() {
         super.viewDidLoad()
         print("デートプランリストがでる画面だよ〜")
+        
+        DispatchQueue.main.asyncAfter(deadline: .now()+1, execute: {
+            let defaults = UserDefaults.standard
+            let popUp = defaults.bool(forKey: "popUp")
+            
+            if popUp {
+                let storyboard = UIStoryboard(name: "MainPageViewController", bundle: nil)
+                let controller = storyboard.instantiateViewController(identifier: "PopupViewController")
+                controller.modalPresentationStyle = .fullScreen
+                self.present(controller, animated: true, completion: nil)
+                defaults.set(false, forKey: "popUp")
+            }
+        })
         
         CollectionView.delegate = self
         CollectionView.dataSource = self
@@ -42,10 +54,16 @@ class DateplanListViewController: UIViewController,UICollectionViewDataSource, U
             .foregroundColor: UIColor.white
         ]
         
+        // 次の画面のBackボタンを「戻る」に変更
+        self.navigationItem.backBarButtonItem = UIBarButtonItem(
+            title:  "戻る",
+            style:  .plain,
+            target: nil,
+            action: nil
+        )
+        
         CollectionView.reloadData()
         
-         
-
         /*
          デートリスト取得API
          */
@@ -56,7 +74,7 @@ class DateplanListViewController: UIViewController,UICollectionViewDataSource, U
         var urlComponents = URLComponents()
         urlComponents.scheme = "https"
         urlComponents.host = "api-date-suggester-dev.herokuapp.com"
-        urlComponents.path = "/v1/mypage/my_plans"
+        urlComponents.path = "/v1/my_plans"
 
         let url: URL = urlComponents.url!
         var req: URLRequest = URLRequest(url: url)
@@ -69,7 +87,6 @@ class DateplanListViewController: UIViewController,UICollectionViewDataSource, U
         let myToken = defaults.string(forKey: "responseToken")!
         req.setValue("application/json", forHTTPHeaderField: "Content-Type")
         req.setValue("Bearer " + myToken, forHTTPHeaderField: "Authorization")
-        
         
         //APIを呼ぶよ
         let task = session.dataTask(with: req){(data, response, error) in
@@ -85,52 +102,53 @@ class DateplanListViewController: UIViewController,UICollectionViewDataSource, U
                 }
                 
             } catch{
-                
             }
-            
         }
         task.resume()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-//        let storyboard = UIStoryboard(name: "MainPageViewController", bundle: nil)
-//        let controller = storyboard.instantiateViewController(identifier: "PopupViewController")
-//        controller.modalPresentationStyle = .fullScreen
-//        present(controller, animated: true, completion: nil)
+        DispatchQueue.main.asyncAfter(deadline: .now()+1, execute: {
+            let defaults = UserDefaults.standard
+            let popUp = defaults.bool(forKey: "popUp")
+
+            if popUp {
+                let storyboard = UIStoryboard(name: "MainPageViewController", bundle: nil)
+                let controller = storyboard.instantiateViewController(identifier: "PopupViewController")
+                controller.modalPresentationStyle = .fullScreen
+                self.present(controller, animated: true, completion: nil)
+                defaults.set(false, forKey: "popUp")
+            }
+        })
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         // スタンプが押された時の処理を書く
         print("スタンプがおされたよ")
-//        let storyboard = UIStoryboard(name: "MainPageViewController", bundle: nil)
-//        let DateScheduleViewController = storyboard.instantiateViewController(withIdentifier: "DateScheduleViewController")
-//        self.navigationController?.pushViewController(DateScheduleViewController, animated: true)
-        
-        //APIアクション実装
-//        print("\(indexPath.row)番目の行が選択されました")
-//        print("\(response?[indexPath.row]["id"]!)番目のリストが選択されました")
-//        print("ここにindexPath.rowばんめの辞書をそのまま出したい")
-//        let indexRowDictionary = (response?[indexPath.row])!
-//        print(indexRowDictionary)
-//        let indexRowDictionaryId = indexRowDictionary["id"]!
-//        print(indexRowDictionaryId)
-        
         //セルの選択を解除
         CollectionView.deselectItem(at: indexPath, animated: true)
-        
-        let myplan_id = (response?[indexPath.row]["id"])! // ここで代入してる
-        print(myplan_id)
+
+        let my_plan_id = (response?[indexPath.row]["id"])// ここで代入してる
+        print(my_plan_id)
         let storyboard = UIStoryboard(name: "MainPageViewController", bundle: nil)
         guard let dateScheduleViewController = storyboard.instantiateViewController(withIdentifier: "DateScheduleViewController") as? DateScheduleViewController else {
             return
         }//これが保証されたら71行めにいく
-        dateScheduleViewController.myplan_id = myplan_id
-//        print(myplan_id)
+        print(my_plan_id)
+        dateScheduleViewController.my_plan_id = my_plan_id
         self.navigationController?.pushViewController(dateScheduleViewController, animated: true)
-        
-        
-        
+    }
+    
+    func getImageByUrl(url: String) -> UIImage{
+        let url = URL(string: url)
+        do {
+            let data = try Data(contentsOf: url!)
+            return UIImage(data: data)!
+        } catch let err {
+            print("Error : \(err.localizedDescription)")
+        }
+        return UIImage()
     }
     
     // １つのセクションの中に表示するセル（要素）の数。
@@ -142,11 +160,18 @@ class DateplanListViewController: UIViewController,UICollectionViewDataSource, U
         }
 
         func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+//            guard let response = self.response as? [[String: Any]]? else{
+//                return
+//            }
+                
+//            let spotsThumbImage:UIImage = getImageByUrl(url:((self.response?["plan"] as? [[String: Any]])?[indexPath.row]["thumb"] as? String)!)
+            
             let datePlanListCell: UICollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: "DatePlanListCollectionViewCell", for: indexPath) as! DatePlanListCollectionViewCell
 
             // Tag番号を使ってインスタンスをつくる
             let photoImageView = datePlanListCell.contentView.viewWithTag(1)  as! UIImageView
             let photoImage = UIImage(named: photos[indexPath.row])
+//            let photoImage = spotsThumbImage
             photoImageView.image = photoImage
             
             let titleLabel = datePlanListCell.contentView.viewWithTag(2) as! UILabel
@@ -172,8 +197,4 @@ class DateplanListViewController: UIViewController,UICollectionViewDataSource, U
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         return 12.0
     }
-    
-    
 }
-
-

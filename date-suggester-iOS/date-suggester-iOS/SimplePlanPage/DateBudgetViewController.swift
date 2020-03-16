@@ -56,7 +56,7 @@ class DateBudgetViewController: UIViewController {
         
         // 次の画面のBackボタンを「戻る」に変更
         self.navigationItem.backBarButtonItem = UIBarButtonItem(
-            title:  "Back",
+            title:  "戻る",
             style:  .plain,
             target: nil,
             action: nil

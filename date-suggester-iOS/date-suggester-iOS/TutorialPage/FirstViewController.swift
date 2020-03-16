@@ -9,28 +9,36 @@
 import UIKit
 
 class FirstViewController: UIViewController {
- 
+
+    @IBOutlet weak var dateDecideButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
+        self.view.addBackground(name: "Full")
+        
+        self.dateDecideButton.layer.cornerRadius = 40
         
         let defaults = UserDefaults.standard
-        defaults.set(nil, forKey: "tutorialStatus")
+        defaults.removeObject(forKey: "responseToken")
+    }
+    
+
+    @IBAction func dateDecideButton(_ sender: Any) {
+//        let defaults = UserDefaults.standard
         
-        if UserDefaults.standard.string(forKey: "tutorialStatus") == nil{
-            let storyboard = UIStoryboard(name: "TutorialViewController", bundle: nil)
-            let TutorialViewController1 = storyboard.instantiateViewController(withIdentifier: "TutorialViewController1")
-            TutorialViewController1.modalPresentationStyle = .fullScreen
-            self.present(TutorialViewController1, animated: false, completion: nil)
-            
-        } else{
+        if UserDefaults.standard.string(forKey: "responseToken") != nil{
             let storyboard = UIStoryboard(name: "SimplePlanViewController", bundle: nil)
             let controller = storyboard.instantiateViewController(identifier: "DatePlanViewController")
             controller.modalPresentationStyle = .fullScreen
-            present(controller, animated: false, completion: nil)
+            present(controller, animated: true, completion: nil)
+            
+        } else{
+            let storyboard = UIStoryboard(name: "TutorialViewController", bundle: nil)
+            let listenBirthyearViewController = storyboard.instantiateViewController(withIdentifier: "ListenBirthyearViewController")
+            listenBirthyearViewController.modalPresentationStyle = .fullScreen
+            self.present(listenBirthyearViewController, animated: true, completion: nil)
+            
         }
+        
     }
+
 }

@@ -10,13 +10,14 @@ import UIKit
 
 class LoginViewController: UIViewController {
     
-    @IBOutlet weak var myEmail: SignInCustomTextField!
-    @IBOutlet weak var myPassword: SignInCustomTextField!
+    @IBOutlet weak var myEmail: CustomUnderlineTextField!
+    @IBOutlet weak var myPassword: UITextField!
+
     @IBOutlet weak var loginButton: UIButton!
+    @IBOutlet weak var backGroundImage: UIImageView!
+    @IBOutlet weak var subView: UIView!
     
-    //func ifNotnil throw -> {}
-    
-    
+
     @IBAction func loginButtonTap(_ sender: Any) {
         //テキストフィールドに入力されたStringと取得して変数にいれる
         let email = myEmail.text
@@ -32,7 +33,7 @@ class LoginViewController: UIViewController {
         
         Api().login(parameter: parameter, completion: {(token, error) in
             
-            if let _error = error {
+            if error != nil {
                 // アラートを出す
                 return
             }
@@ -45,6 +46,7 @@ class LoginViewController: UIViewController {
             //取り出したtokenをユーザーデフォルトに保存する
             let defaults = UserDefaults.standard
             defaults.set(_token, forKey: "responseToken")
+//            defaults.set(true, forKey: "tempStatus")
 
             DispatchQueue.main.async {
                 let storyboard = UIStoryboard(name: "SimplePlanViewController", bundle: nil)
@@ -53,75 +55,10 @@ class LoginViewController: UIViewController {
                 self.present(controller, animated: true, completion: nil)
             }
         })
-        
-//        //URLオブジェクトの生成
-//        let url = URL(string: "https://api-date-suggester-dev.herokuapp.com/v1/login")!
-//        //URLRequestの生成
-//        var req: URLRequest = URLRequest(url: url)
-//        req.httpMethod = "POST"
-//
-//        //ヘッダーを付与
-//        req.setValue("application/json", forHTTPHeaderField: "Content-Type")
-//
-//        //ボディーを付与（2つめの辞書）
-//        let parameter = ["user": signInParams]
-//
-//        req.httpBody = try! JSONSerialization.data(withJSONObject: parameter, options: .prettyPrinted)
-//
-//
-//        print(String(data: req.httpBody!, encoding: .utf8))
-//
-//        //APIを呼ぶよ
-//        let task = session.dataTask(with: req){(data, response, error) in
-//            debugPrint("a  \(data)")
-//            print("b  \(error)")
-//
-//            //例外処理
-//            guard let _data = data else {
-//                debugPrint("era-dayo")
-//                return
-//            }
-//
-//            do {
-//                guard let response: [String: Any] = try JSONSerialization.jsonObject(with: _data, options: []) as? [String: Any] else {
-//                    debugPrint("serial error")
-//                    return
-//                }
-//
-//                print(response)
-//
-//                //辞書からtokenを取り出す
-//                guard let tokenValue = response["token"] else {
-//                    debugPrint("token error")
-//                    return
-//                }
-//
-//                print(tokenValue)
-//
-//                //取り出したtokenをユーザーデフォルトに保存する
-//                let defaults = UserDefaults.standard
-//                defaults.set(tokenValue, forKey: "responseToken")
-//
-//                print("ユーザーデフォルトにtokenを保存したよ")
-//                print("ログインしました")
-//
-//                DispatchQueue.main.async {
-//                    let storyboard = UIStoryboard(name: "SimplePlanViewController", bundle: nil)
-//                    let controller = storyboard.instantiateViewController(identifier: "DatePlanViewController")
-//                    controller.modalPresentationStyle = .fullScreen
-//                    self.present(controller, animated: true, completion: nil)
-//                }
-//
-//            } catch{
-//            }
-//
-//        }
-//        task.resume()
+
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-//        self.frame.size.height = 50 // ここ変える
         
         //キーボードを閉じる
         func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -137,7 +74,17 @@ class LoginViewController: UIViewController {
         let picture = UIImage(named: "test")
         self.loginButton.setBackgroundImage(picture, for: .normal)
         self.loginButton.layer.masksToBounds = true
-        self.loginButton.layer.cornerRadius = 5.0
+        self.loginButton.layer.cornerRadius = 30
+        
+        self.backGroundImage.layer.cornerRadius = 30
+        subView.layer.cornerRadius = 30
+        subView.layer.shadowRadius = 3.0
+        subView.layer.masksToBounds = false
+        subView.layer.shadowColor = UIColor.gray.cgColor
+        subView.layer.shadowOffset = CGSize(width: 0.0, height: 5.0)
+        subView.layer.shadowOpacity = 0.3
+
+        myEmail.loginunderline.backgroundColor = UIColor.init(red: 254.0/255, green: 84.0/255, blue: 146.0/255, alpha: 1.0)
         
     }
     
@@ -146,38 +93,24 @@ class LoginViewController: UIViewController {
     }
 }
 
-
-class SignInCustomTextField: UITextField {
-        override func layoutSubviews() {
-            super.layoutSubviews()
-
-            self.frame.size.height = 60 // ここ変える
-            self.borderStyle = .none
-            
-//            self.layer.borderWidth = 1
-//            self.layer.borderColor = UIColor.white.cgColor
-//            self.layer.cornerRadius = 3
-
-            self.layer.masksToBounds = false
-            self.layer.shadowRadius = 3.0
-            self.layer.masksToBounds = true
-            self.layer.cornerRadius = 5.0
-            self.layer.shadowColor = UIColor.gray.cgColor
-            self.layer.shadowOffset = CGSize(width: 0.0, height: 1.0)
-            self.layer.shadowOpacity = 0.5
-        }
-    
-    let padding = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 5)
-
-    override open func textRect(forBounds bounds: CGRect) -> CGRect {
-        return bounds.inset(by: padding)
+class CustomUnderlineTextField: UITextField {
+    // 下線用のUIViewを作っておく
+    let loginunderline: UIView = UIView()
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        self.frame.size.height = 50 // ここ変える
+        composeUnderline() // 下線のスタイルセットおよび追加処理
+        self.borderStyle = .none
     }
 
-    override open func placeholderRect(forBounds bounds: CGRect) -> CGRect {
-        return bounds.inset(by: padding)
-    }
-
-    override open func editingRect(forBounds bounds: CGRect) -> CGRect {
-        return bounds.inset(by: padding)
+     func composeUnderline() {
+        self.loginunderline.frame = CGRect(
+            x: 0,                    // x, yの位置指定は親要素,
+            y: self.frame.height,    // この場合はCustomTextFieldを基準にする
+            width: self.frame.width,
+            height: 2.5)
+        loginunderline.backgroundColor = UIColor.init(red: 254.0/255, green: 84.0/255, blue: 146.0/255, alpha: 0.9)
+        self.addSubview(self.loginunderline)
+        self.bringSubviewToFront(self.loginunderline)
     }
 }
