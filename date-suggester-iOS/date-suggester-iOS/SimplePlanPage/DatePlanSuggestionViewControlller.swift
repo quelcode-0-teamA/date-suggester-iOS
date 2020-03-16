@@ -9,8 +9,8 @@
 import UIKit
 
 class DatePlanSuggestionViewControlller: UIViewController, UITableViewDelegate, UITableViewDataSource {
-    //受け取る値を格納するもの
-    var response: [String: Any] = [:]
+    
+    var suggetsPlan: Plan?
     
     //ボタンOutlet
     @IBOutlet weak var gotoMypage: UIButton!
@@ -30,22 +30,20 @@ class DatePlanSuggestionViewControlller: UIViewController, UITableViewDelegate, 
     
     @IBAction func gotoMypage(_ sender: Any) {
         //デートプランをリストに加えるAPI
-        let planId = response["id"]
-        
         let planFixParams = [
-             "plan_id": planId
+            "plan_id": self.suggetsPlan?.id
             ] as [String : Any]
         
         let parameter = ["plan": planFixParams]
-
+        
         Api().datePlanFix(parameter: parameter, completion: {(token, error) in
-
+            
             if let _error = error {
                 // アラートを出す
                 return
             }
             DispatchQueue.main.async {
-                print("デートプランを決定したよー")
+                debugPrint("デートプランを決定したよー")
                 let defaults = UserDefaults.standard
                 defaults.set(true, forKey: "popUp")
                 let storyboard = UIStoryboard(name: "MainPageViewController", bundle: nil)
@@ -81,13 +79,12 @@ class DatePlanSuggestionViewControlller: UIViewController, UITableViewDelegate, 
         controller.modalPresentationStyle = .fullScreen
         present(controller, animated: true, completion: nil)
     }
-
-        @IBOutlet weak var datePlanSuggestTV: UITableView!
+    
+    @IBOutlet weak var datePlanSuggestTV: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let thumbImage:UIImage = getImageByUrl(url:self.response["thumb"] as! String)
-        debugPrint("前の画面から渡されたレスポンス：\(response)")
+        let thumbImage:UIImage = getImageByUrl(url:self.suggetsPlan!.thumb)
         
         datePlanSuggestTV.delegate = self
         datePlanSuggestTV.dataSource = self
@@ -96,66 +93,59 @@ class DatePlanSuggestionViewControlller: UIViewController, UITableViewDelegate, 
         self.gotoMypage.layer.cornerRadius = 30
         self.gotoMypage.layer.borderColor = UIColor.white.cgColor
         self.gotoMypage.layer.borderWidth = 1.0
-
+        
         self.againButton.layer.borderColor = UIColor.init(red: 254.0/255, green: 84.0/255, blue: 146.0/255, alpha: 1.0).cgColor
         self.againButton.layer.borderWidth = 1.0
         self.againButton.layer.cornerRadius = 30
         
         DispatchQueue.main.async {
             self.datePlanSuggestTV.reloadData()
-            self.datePlanTitle.text = (self.response["title"] as! String)
-            self.datePlanDescription.text = (self.response["description"] as! String)
-            self.totalBudget.text = (self.response["total_budget"] as! String)
-            self.datePlanArea.text = (self.response["area"] as! String)
+            self.datePlanTitle.text = self.suggetsPlan?.title
+            self.datePlanDescription.text = self.suggetsPlan?.des
+            self.totalBudget.text = self.suggetsPlan?.totalBudget
+            self.datePlanArea.text = self.suggetsPlan?.area
             self.datePlanImage.image = thumbImage
         }
         
     }
-
+    
     //カスタムセルの作成
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cellIdentifier: String = "DateListCustomCell"
-        let spotsThumbImage:UIImage = getImageByUrl(url:((self.response["spots"] as? [[String: Any]])?[indexPath.row]["thumb"] as? String)!)
+        let spotsThumbImage:UIImage = getImageByUrl(url:((self.suggetsPlan?.spots[indexPath.row].thumb)!))
         if let myCell: DateListCustomCell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier) as? DateListCustomCell {
-
+            
             myCell.thumbnail?.image = spotsThumbImage
-            myCell.location?.text = (response["spots"] as? [[String: Any]])?[indexPath.row]["name"] as? String
-            myCell.dateDescription?.text = (response["spots"] as? [[String: Any]])?[indexPath.row]["description"] as? String
+            myCell.location?.text = self.suggetsPlan?.spots[indexPath.row].name
             myCell.moneyIcon?.image = UIImage(named: "moneyIcon")!
-            myCell.budget?.text = (response["spots"] as? [[String: Any]])?[indexPath.row]["budget"] as? String
+            myCell.budget?.text = self.suggetsPlan?.spots[indexPath.row].budget
             myCell.linkIcon?.image = UIImage(named: "linkIcon")
             myCell.url?.text = "URL//image/path/.."
-
+            
             return myCell
         }
         
         let myCell = DateListCustomCell(style: .default, reuseIdentifier: "DateListCustomCell")
-
+        
         myCell.thumbnail?.image = spotsThumbImage
-        myCell.location?.text = (response["spots"] as? [[String: Any]])?[indexPath.row]["name"] as? String
-        myCell.dateDescription?.text = (response["spots"] as? [[String: Any]])?[indexPath.row]["description"] as? String
+        myCell.location?.text = self.suggetsPlan?.spots[indexPath.row].name
         myCell.moneyIcon?.image = UIImage(named: "moneyIcon")!
-        myCell.budget?.text = (response["spots"] as? [[String: Any]])?[indexPath.row]["budget"] as? String
+        myCell.budget?.text = self.suggetsPlan?.spots[indexPath.row].budget
         myCell.linkIcon?.image = UIImage(named: "linkIcon")
         myCell.url?.text = "URL//image/path/.."
         
         return myCell
     }
     
-    //生成するセルの個数
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        guard let response = response else {
-//          return 0
-//        }
-        return 2
+        return self.suggetsPlan?.spots.count ?? 0
     }
-
     
-    //1つ1つのセルの高さ
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return UITableView.automaticDimension //自動設定
+        return UITableView.automaticDimension
     }
+    
 }
 
 class DateListCustomCell: UITableViewCell {

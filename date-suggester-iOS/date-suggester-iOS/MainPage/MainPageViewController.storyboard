@@ -931,8 +931,8 @@
         <image name="2" width="1920" height="1440"/>
         <image name="Full" width="414" height="896"/>
         <image name="book" catalog="system" width="64" height="50"/>
-        <image name="heart" width="128" height="128"/>
         <image name="heart" catalog="system" width="64" height="54"/>
+        <image name="heart" width="128" height="128"/>
         <image name="heartMark" width="512" height="512"/>
         <image name="linkIcon" width="32" height="32"/>
         <image name="moneyIcon" width="16" height="16"/>
