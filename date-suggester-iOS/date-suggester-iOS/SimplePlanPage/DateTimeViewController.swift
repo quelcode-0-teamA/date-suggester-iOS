@@ -49,6 +49,14 @@ class DateTimeViewController: UIViewController {
         self.lunchButton.layer.cornerRadius = 5
         self.nightButton.layer.cornerRadius = 5
         
+        // 次の画面のBackボタンを「戻る」に変更
+        self.navigationItem.backBarButtonItem = UIBarButtonItem(
+            title:  "戻る",
+            style:  .plain,
+            target: nil,
+            action: nil
+        )
+        
         RoundProgressBar.transform = RoundProgressBar.transform.scaledBy(x: 1, y: 2)
         RoundProgressBar.layer.cornerRadius = 4
         RoundProgressBar.clipsToBounds = true

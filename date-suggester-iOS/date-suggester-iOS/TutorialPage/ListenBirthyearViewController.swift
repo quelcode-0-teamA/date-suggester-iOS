@@ -13,7 +13,7 @@ class ListenBirthyearViewController: UIViewController, UIPickerViewDelegate, UIP
            func numberOfComponents(in pickerView: UIPickerView) -> Int {
                return 1
            }
-            
+    
            // UIPickerViewの行数、要素の全数
            func pickerView(_ pickerView: UIPickerView,
                            numberOfRowsInComponent component: Int) -> Int {
@@ -32,7 +32,7 @@ class ListenBirthyearViewController: UIViewController, UIPickerViewDelegate, UIP
            func pickerView(_ pickerView: UIPickerView,
                            didSelectRow row: Int,
                            inComponent component: Int) {
-               // 処理
+            // 処理
             //コンポーネントごとに現在選択されているデータを取得する。
             let data1 = self.pickerView(pickerView, titleForRow: pickerView.selectedRow(inComponent: 0), forComponent: 0)
             print("\(data1)えらばれたよ")
@@ -42,16 +42,13 @@ class ListenBirthyearViewController: UIViewController, UIPickerViewDelegate, UIP
             let defaults = UserDefaults.standard
             defaults.set(data1, forKey: "responseBirthYear")
            }
-    
-    
 
-    let years = (1965...2020).map { $0 }
+    let years = (1965...2005).map { $0 }
 
     @IBOutlet weak var yearPickerView: UIPickerView!
-    
     @IBOutlet weak var nextButton: UIButton!
+    
     @IBAction func nextPage(_ sender: Any) {
-        //画面遷移
         let storyboard = UIStoryboard(name: "TutorialViewController", bundle: nil)
         let listenLocationViewController = storyboard.instantiateViewController(withIdentifier: "ListenLocationViewController")
         listenLocationViewController.modalPresentationStyle = .fullScreen
@@ -69,7 +66,7 @@ class ListenBirthyearViewController: UIViewController, UIPickerViewDelegate, UIP
         super.viewDidLoad()
         
         self.view.addBackground(name: "Full")
-        self.nextButton.layer.cornerRadius = 5
+        self.nextButton.layer.cornerRadius = 30
 
         // ピッカー設定
         self.yearPickerView.delegate = self
@@ -82,12 +79,5 @@ class ListenBirthyearViewController: UIViewController, UIPickerViewDelegate, UIP
         self.nextButton.layer.borderColor = UIColor.white.cgColor
         //外枠の太さを指定
         self.nextButton.layer.borderWidth = 1.0
-       
     }
-    
-    
 }
-
-
-
-

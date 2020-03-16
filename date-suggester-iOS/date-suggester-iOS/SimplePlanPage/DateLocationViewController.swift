@@ -71,7 +71,6 @@ class DateLocationViewController: UIViewController {
             action: nil
         )
         
-//        RoundProgressBar.layer.cornerRadius = 100
         
         RoundProgressBar.transform = RoundProgressBar.transform.scaledBy(x: 1, y: 2)
         RoundProgressBar.layer.cornerRadius = 4

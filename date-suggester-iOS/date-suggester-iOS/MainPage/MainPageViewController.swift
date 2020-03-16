@@ -14,7 +14,6 @@ class MainPageViewController: UITabBarController {
         super.viewDidLoad()
         
     }
-    
 
 
 }

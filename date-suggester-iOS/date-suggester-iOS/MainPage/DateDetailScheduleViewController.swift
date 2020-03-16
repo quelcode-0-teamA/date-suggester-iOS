@@ -13,8 +13,8 @@ class DateDetailScheduleViewController: UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        dateScheduleTV.delegate = self
-//        dateScheduleTV.dataSource = self
+//        dateSScheduleTV.delegate = self
+//        datecheduleTV.dataSource = self
     }
     
     
