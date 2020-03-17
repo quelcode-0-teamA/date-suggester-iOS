@@ -11,37 +11,52 @@ import UIKit
 class DateFeelingViewController: UIViewController {
     var youserAnswer: AnswerModel = .init()
     
-    @IBOutlet weak var RoundProgressBar: UIProgressView!
+    @IBOutlet weak var roundProgressBar: UIProgressView!
     @IBOutlet weak var mealButton: UIButton!
     @IBOutlet weak var outDoorButton: UIButton!
     @IBOutlet weak var relaxButton: UIButton!
-    
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        mealButton.layer.cornerRadius = 5
+        outDoorButton.layer.cornerRadius = 5
+        relaxButton.layer.cornerRadius = 5
+        navigationItem.backBarButtonItem = UIBarButtonItem(
+            title:  "戻る",
+            style:  .plain,
+            target: nil,
+            action: nil
+        )
+        
+        roundProgressBar.transform = roundProgressBar.transform.scaledBy(x: 1, y: 2)
+        roundProgressBar.layer.cornerRadius = 4
+        roundProgressBar.clipsToBounds = true
+        roundProgressBar.layer.sublayers![1].cornerRadius = 4
+        roundProgressBar.subviews[1].clipsToBounds = true
+    }
     
     @IBAction func mealButtonTap(_ sender: Any) {
-        let storyboard = UIStoryboard(name: "SimplePlanViewController", bundle: nil)
-        let DatePlanSuggestionViewControlller = storyboard.instantiateViewController(withIdentifier: "DatePlanSuggestionViewControlller")
-        DatePlanSuggestionViewControlller.modalPresentationStyle = .fullScreen
-        present(DatePlanSuggestionViewControlller, animated: true, completion: nil)
+        gotoDatePlanSuggestionVC(selectAnserNumber:0)
     }
     
     @IBAction func outDoorButton(_ sender: Any) {
-        let storyboard = UIStoryboard(name: "SimplePlanViewController", bundle: nil)
-        let DatePlanSuggestionViewControlller = storyboard.instantiateViewController(withIdentifier: "DatePlanSuggestionViewControlller")
-        DatePlanSuggestionViewControlller.modalPresentationStyle = .fullScreen
-        present(DatePlanSuggestionViewControlller, animated: true, completion: nil)
+        gotoDatePlanSuggestionVC(selectAnserNumber:1)
     }
+    
     @IBAction func relaxButton(_ sender: Any) {
-        gotoDatePlanSuggestionVC(selectAnserNumber:0)
+        gotoDatePlanSuggestionVC(selectAnserNumber:2)
     }
     
     private func gotoDatePlanSuggestionVC(selectAnserNumber: Int) {
         youserAnswer.answer4 = selectAnserNumber
         
-        /* デートプラン提案API */
+        /*
+         デートプラン提案API
+         */
         let config: URLSessionConfiguration = URLSessionConfiguration.default
         let session: URLSession = URLSession(configuration: config)
         
-        //URLを組み立てている
         var urlComponents = URLComponents()
         urlComponents.scheme = "https"
         urlComponents.host = "api-date-suggester-dev.herokuapp.com"
@@ -57,13 +72,11 @@ class DateFeelingViewController: UIViewController {
         var req: URLRequest = URLRequest(url: url)
         req.httpMethod = "GET"
         
-        //ヘッダーを付与
         let defaults = UserDefaults.standard
         let myToken = defaults.string(forKey: "responseToken")!
         req.setValue("application/json", forHTTPHeaderField: "Content-Type")
         req.setValue("Bearer " + myToken, forHTTPHeaderField: "Authorization")
         
-        //APIを呼ぶよ
         let task = session.dataTask(with: req){(data, response, error) in
             
             do {
@@ -78,39 +91,11 @@ class DateFeelingViewController: UIViewController {
                     datePlanSuggestionViewControlller.suggetsPlan = Plan(planDicitionary: response)
                     self.present(datePlanSuggestionViewControlller, animated: true, completion: nil)
                 }
-                
             } catch{
-                
             }
-            
         }
         task.resume()
         print("デートプラン提案成功してるよ")
-        
         /* デートプラン提案API省略形 */
-        
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        self.mealButton.layer.cornerRadius = 5
-        self.outDoorButton.layer.cornerRadius = 5
-        self.relaxButton.layer.cornerRadius = 5
-        
-        // 次の画面のBackボタンを「戻る」に変更
-        self.navigationItem.backBarButtonItem = UIBarButtonItem(
-            title:  "戻る",
-            style:  .plain,
-            target: nil,
-            action: nil
-        )
-        
-        RoundProgressBar.transform = RoundProgressBar.transform.scaledBy(x: 1, y: 2)
-        RoundProgressBar.layer.cornerRadius = 4
-        RoundProgressBar.clipsToBounds = true
-        RoundProgressBar.layer.sublayers![1].cornerRadius = 4
-        RoundProgressBar.subviews[1].clipsToBounds = true
-        
     }
 }

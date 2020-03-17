@@ -8,24 +8,42 @@
 
 import UIKit
 
-
 class DateBudgetViewController: UIViewController {
     var youserAnswer: AnswerModel = .init()
-    var NumberOfButtons: Int = 3  //ボタンの数
-    var CheckedButtonTag = 0  //チェックされているボタンのタグ
+    var NumberOfButtons: Int = 3
+    var CheckedButtonTag = 0
     
-
-    @IBOutlet weak var RoundProgressBar: UIProgressView!
+    @IBOutlet weak var roundProgressBar: UIProgressView!
     @IBOutlet weak var savingButton: UIButton!
     @IBOutlet weak var normalButton: UIButton!
     @IBOutlet weak var richButton: UIButton!
     
-
-    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        print("前の画面から\(youserAnswer.answer1)という値が渡されました")
+        
+        savingButton.layer.cornerRadius = 5
+        normalButton.layer.cornerRadius = 5
+        richButton.layer.cornerRadius = 5
+        
+        navigationItem.backBarButtonItem = UIBarButtonItem(
+            title:  "戻る",
+            style:  .plain,
+            target: nil,
+            action: nil
+        )
+        
+        roundProgressBar.transform = roundProgressBar.transform.scaledBy(x: 1, y: 2)
+        roundProgressBar.layer.cornerRadius = 4
+        roundProgressBar.clipsToBounds = true
+        roundProgressBar.layer.sublayers![1].cornerRadius = 4
+        roundProgressBar.subviews[1].clipsToBounds = true
+    }
     
     @IBAction func savingButtonTap(_ sender: Any) {
         gotoDateTimeVC(selectAnserNumber:0)
     }
+    
     @IBAction func normalButtonTap(_ sender: Any) {
         gotoDateTimeVC(selectAnserNumber:1)
     }
@@ -41,33 +59,6 @@ class DateBudgetViewController: UIViewController {
             return
         }
         dateTimeViewController.youserAnswer = youserAnswer
-        print(youserAnswer.answer2)
         self.navigationController?.pushViewController(dateTimeViewController, animated: true)
-       }
-    
-    override func viewDidLoad() {
-           super.viewDidLoad()
-        debugPrint("\(#function), \(#line)")
-        print("前の画面から\(youserAnswer.answer1)という値が渡されました")
-        
-        self.savingButton.layer.cornerRadius = 5
-        self.normalButton.layer.cornerRadius = 5
-        self.richButton.layer.cornerRadius = 5
-        
-        // 次の画面のBackボタンを「戻る」に変更
-        self.navigationItem.backBarButtonItem = UIBarButtonItem(
-            title:  "戻る",
-            style:  .plain,
-            target: nil,
-            action: nil
-        )
-        
-        RoundProgressBar.transform = RoundProgressBar.transform.scaledBy(x: 1, y: 2)
-        RoundProgressBar.layer.cornerRadius = 4
-        RoundProgressBar.clipsToBounds = true
-        RoundProgressBar.layer.sublayers![1].cornerRadius = 4
-        RoundProgressBar.subviews[1].clipsToBounds = true
-        
-       }
-
+    }
 }

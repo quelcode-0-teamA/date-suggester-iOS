@@ -150,12 +150,10 @@ class Api {
                     completion?(nil, nil, NSError.init(domain: "error", code: 0, userInfo: nil))
                     return
                 }
-//
+                
                 debugPrint(userId)
-                //取り出したtokenをユーザーデフォルトに保存する
                 let defaults = UserDefaults.standard
                 defaults.set(tokenValue, forKey: "responseToken")
-//                defaults.set(userId, forKey: "responseUserId")
                 debugPrint("userIdとトークン保存したよー")
                 
                 completion?(tokenValue, userId, nil)
@@ -165,8 +163,6 @@ class Api {
             }
         }
         task.resume()
-        
-
     }
     
     func datePlanFix(parameter:[String : Any], completion:((Any?, Error?)->Void)?=nil){

@@ -15,7 +15,6 @@
 		720D080423E984AE00569622 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 720D080223E984AE00569622 /* LaunchScreen.storyboard */; };
 		720D080F23E984AE00569622 /* date_suggester_iOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720D080E23E984AE00569622 /* date_suggester_iOSTests.swift */; };
 		720D081A23E984AF00569622 /* date_suggester_iOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720D081923E984AF00569622 /* date_suggester_iOSUITests.swift */; };
-		720D082A23E9A83F00569622 /* InformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720D082923E9A83F00569622 /* InformationViewController.swift */; };
 		720D082C23E9A84E00569622 /* TutorialViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 720D082B23E9A84D00569622 /* TutorialViewController.storyboard */; };
 		721336EA240CE48400F8E967 /* CustomUnderlineTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 721336E9240CE48400F8E967 /* CustomUnderlineTextField.swift */; };
 		7215FF14240D600400AB3BBB /* SignUpCustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7215FF13240D600400AB3BBB /* SignUpCustomTextField.swift */; };
@@ -41,12 +40,12 @@
 		7281E60C241F4FB200886634 /* Plan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7281E60B241F4FB200886634 /* Plan.swift */; };
 		7281E60E241F502900886634 /* Spot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7281E60D241F502900886634 /* Spot.swift */; };
 		7291BD2B23FE2D80001047D8 /* PopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7291BD2A23FE2D80001047D8 /* PopupViewController.swift */; };
+		729984B52420A6E70026E041 /* AddBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 729984B42420A6E70026E041 /* AddBackground.swift */; };
 		72A4E17E23F5344800B7607C /* ProfileEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A4E17D23F5344800B7607C /* ProfileEditViewController.swift */; };
 		72A4E18123F57BB800B7607C /* DatePlanListCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A4E17F23F57BB800B7607C /* DatePlanListCollectionViewCell.swift */; };
 		72A4E18223F57BB800B7607C /* DatePlanListCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 72A4E18023F57BB800B7607C /* DatePlanListCollectionViewCell.xib */; };
 		72A4E18423F668B600B7607C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A4E18323F668B600B7607C /* LoginViewController.swift */; };
 		72A4E18623F68D4D00B7607C /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A4E18523F68D4D00B7607C /* FirstViewController.swift */; };
-		72A4E18823F6996700B7607C /* TermsOfServiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A4E18723F6996700B7607C /* TermsOfServiceViewController.swift */; };
 		72A4E18A23F7E3AB00B7607C /* api.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A4E18923F7E3AB00B7607C /* api.swift */; };
 		72BED50823EC062E00A254BC /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72BED50723EC062E00A254BC /* SignUpViewController.swift */; };
 		72BED50A23EC065200A254BC /* LoginViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 72BED50923EC065200A254BC /* LoginViewController.storyboard */; };
@@ -88,7 +87,6 @@
 		720D081523E984AF00569622 /* date-suggester-iOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "date-suggester-iOSUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		720D081923E984AF00569622 /* date_suggester_iOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = date_suggester_iOSUITests.swift; sourceTree = "<group>"; };
 		720D081B23E984AF00569622 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		720D082923E9A83F00569622 /* InformationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationViewController.swift; sourceTree = "<group>"; };
 		720D082B23E9A84D00569622 /* TutorialViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TutorialViewController.storyboard; sourceTree = "<group>"; };
 		721336E9240CE48400F8E967 /* CustomUnderlineTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomUnderlineTextField.swift; sourceTree = "<group>"; };
 		7215FF13240D600400AB3BBB /* SignUpCustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpCustomTextField.swift; sourceTree = "<group>"; };
@@ -114,12 +112,12 @@
 		7281E60B241F4FB200886634 /* Plan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Plan.swift; sourceTree = "<group>"; };
 		7281E60D241F502900886634 /* Spot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spot.swift; sourceTree = "<group>"; };
 		7291BD2A23FE2D80001047D8 /* PopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupViewController.swift; sourceTree = "<group>"; };
+		729984B42420A6E70026E041 /* AddBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBackground.swift; sourceTree = "<group>"; };
 		72A4E17D23F5344800B7607C /* ProfileEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileEditViewController.swift; sourceTree = "<group>"; };
 		72A4E17F23F57BB800B7607C /* DatePlanListCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePlanListCollectionViewCell.swift; sourceTree = "<group>"; };
 		72A4E18023F57BB800B7607C /* DatePlanListCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DatePlanListCollectionViewCell.xib; sourceTree = "<group>"; };
 		72A4E18323F668B600B7607C /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		72A4E18523F68D4D00B7607C /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
-		72A4E18723F6996700B7607C /* TermsOfServiceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsOfServiceViewController.swift; sourceTree = "<group>"; };
 		72A4E18923F7E3AB00B7607C /* api.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = api.swift; sourceTree = "<group>"; };
 		72BED50723EC062E00A254BC /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		72BED50923EC065200A254BC /* LoginViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LoginViewController.storyboard; sourceTree = "<group>"; };
@@ -225,6 +223,7 @@
 				7281E609241F4F5100886634 /* MyPlan.swift */,
 				7281E60B241F4FB200886634 /* Plan.swift */,
 				7281E60D241F502900886634 /* Spot.swift */,
+				729984B42420A6E70026E041 /* AddBackground.swift */,
 			);
 			path = common;
 			sourceTree = "<group>";
@@ -232,12 +231,10 @@
 		720D082823E9A7DD00569622 /* TutorialPage */ = {
 			isa = PBXGroup;
 			children = (
-				720D082923E9A83F00569622 /* InformationViewController.swift */,
+				72A4E18523F68D4D00B7607C /* FirstViewController.swift */,
 				72BED50B23EC073600A254BC /* ListenBirthyearViewController.swift */,
 				72BED50D23EC075000A254BC /* ListenLocationViewController.swift */,
 				720D082B23E9A84D00569622 /* TutorialViewController.storyboard */,
-				72A4E18523F68D4D00B7607C /* FirstViewController.swift */,
-				72A4E18723F6996700B7607C /* TermsOfServiceViewController.swift */,
 			);
 			path = TutorialPage;
 			sourceTree = "<group>";
@@ -255,8 +252,8 @@
 		7276AEE123EAA9C1008864D7 /* SimplePlanPage */ = {
 			isa = PBXGroup;
 			children = (
-				7276AEDF23EAA9B7008864D7 /* DateLocationViewController.swift */,
 				72A4E17F23F57BB800B7607C /* DatePlanListCollectionViewCell.swift */,
+				7276AEDF23EAA9B7008864D7 /* DateLocationViewController.swift */,
 				7276AEF523EBCADE008864D7 /* DateBudgetViewController.swift */,
 				7276AEF723EBCE4A008864D7 /* DateTimeViewController.swift */,
 				72513F5B23EBCFA9007B1499 /* DateFeelingViewController.swift */,
@@ -451,7 +448,6 @@
 				72A4E18123F57BB800B7607C /* DatePlanListCollectionViewCell.swift in Sources */,
 				720D07F823E984AE00569622 /* AppDelegate.swift in Sources */,
 				72BED50E23EC075000A254BC /* ListenLocationViewController.swift in Sources */,
-				720D082A23E9A83F00569622 /* InformationViewController.swift in Sources */,
 				7276AEF823EBCE4A008864D7 /* DateTimeViewController.swift in Sources */,
 				72BED50C23EC073600A254BC /* ListenBirthyearViewController.swift in Sources */,
 				72A4E17E23F5344800B7607C /* ProfileEditViewController.swift in Sources */,
@@ -461,9 +457,9 @@
 				72A4E18A23F7E3AB00B7607C /* api.swift in Sources */,
 				7276AEEE23EAD1B1008864D7 /* DateplanListViewController.swift in Sources */,
 				7276AEF223EBBB99008864D7 /* DateScheduleViewController.swift in Sources */,
+				729984B52420A6E70026E041 /* AddBackground.swift in Sources */,
 				7281E60E241F502900886634 /* Spot.swift in Sources */,
 				720D07FA23E984AE00569622 /* SceneDelegate.swift in Sources */,
-				72A4E18823F6996700B7607C /* TermsOfServiceViewController.swift in Sources */,
 				72A4E18423F668B600B7607C /* LoginViewController.swift in Sources */,
 				721D100123F509DD006DA520 /* MypageViewController.swift in Sources */,
 			);
