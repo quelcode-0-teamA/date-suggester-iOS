@@ -90,10 +90,10 @@
                     </view>
                     <navigationItem key="navigationItem" title="さくっとデートプラン" id="x03-ME-aA2"/>
                     <connections>
-                        <outlet property="RoundProgressBar" destination="sIU-eE-IXU" id="r3k-PM-dT3"/>
                         <outlet property="far" destination="N7v-jp-lHw" id="ePn-z9-VNl"/>
+                        <outlet property="imageIcon" destination="Vf5-cL-Wxt" id="i0C-9w-l4v"/>
                         <outlet property="near" destination="X3Q-yL-dzD" id="9mT-nE-KPP"/>
-                        <outlet property="test" destination="Vf5-cL-Wxt" id="1ke-3j-RsM"/>
+                        <outlet property="roundProgressBar" destination="sIU-eE-IXU" id="EBo-KV-SFL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yUd-Y9-D6v" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -199,9 +199,9 @@
                     </view>
                     <navigationItem key="navigationItem" title="さくっとデートプラン" id="vLA-kC-QyT"/>
                     <connections>
-                        <outlet property="RoundProgressBar" destination="aVc-3H-WM3" id="eGC-MS-Uiz"/>
                         <outlet property="normalButton" destination="LQg-oy-IKH" id="ZZ7-am-xfw"/>
                         <outlet property="richButton" destination="UZj-ZA-ugb" id="qpU-DM-AhW"/>
+                        <outlet property="roundProgressBar" destination="aVc-3H-WM3" id="bUB-2y-8Qk"/>
                         <outlet property="savingButton" destination="xvb-Zs-tf0" id="EKx-XY-eeX"/>
                     </connections>
                 </viewController>
@@ -303,10 +303,10 @@
                     </view>
                     <navigationItem key="navigationItem" title="さくっとデートプラン" id="tAT-6G-bbV"/>
                     <connections>
-                        <outlet property="RoundProgressBar" destination="y5X-NB-d3O" id="oJk-cp-W1k"/>
                         <outlet property="allDayButton" destination="rAk-C7-4JA" id="ceY-Q7-idB"/>
                         <outlet property="lunchButton" destination="YNC-Zn-pTO" id="vwG-MU-NJ4"/>
                         <outlet property="nightButton" destination="ShL-3z-A24" id="0p7-XB-v4W"/>
+                        <outlet property="roundProgressBar" destination="y5X-NB-d3O" id="Ba0-wx-gc7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KAQ-d8-BwL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -461,10 +461,10 @@
                     </view>
                     <navigationItem key="navigationItem" title="さくっとデートプラン" id="Zol-pG-mge"/>
                     <connections>
-                        <outlet property="RoundProgressBar" destination="sZm-oZ-Htq" id="8DE-tZ-YZn"/>
                         <outlet property="mealButton" destination="lFL-po-UdW" id="MHH-R8-5cc"/>
                         <outlet property="outDoorButton" destination="tKB-IR-bVx" id="CdI-dO-Lkt"/>
                         <outlet property="relaxButton" destination="M9v-8t-ley" id="qbG-Xl-09s"/>
+                        <outlet property="roundProgressBar" destination="sZm-oZ-Htq" id="8do-Fx-rvL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RXr-CC-fnc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

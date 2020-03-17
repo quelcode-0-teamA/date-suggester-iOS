@@ -17,6 +17,7 @@ class SignUpViewController: UIViewController {
     @IBOutlet weak var signUpButton: UIButton!
     
     @IBAction func signUpButton(_ sender: Any) {
+    
         let email = myEmail.text
         let password = myPassword.text
         let passwordConfirmation = myPasswordConfirmation.text
@@ -28,14 +29,16 @@ class SignUpViewController: UIViewController {
         
         let parameter = ["formal_user": signUpParams]
         
+        // くるくるをだす SVProgressHUD.show()
+        
+        //isUserInteractionEnabledはタッチ可能かどうかをコントロールする
+        self.view.isUserInteractionEnabled = false
+        
         Api().fomalSignUp(parameter: parameter, completion: {(token, error) in
+            self.view.isUserInteractionEnabled = true
+            //くるくる消す
             
             if let _error = error {
-                // アラートを出す
-                return
-            }
-            
-            guard let _token = token else {
                 // アラートを出す
                 return
             }
@@ -45,9 +48,9 @@ class SignUpViewController: UIViewController {
                 defaults.set(true, forKey: "signUpStatus")
                 
                 let storyboard = UIStoryboard(name: "MainPageViewController", bundle: nil)
-                let MainPageViewController = storyboard.instantiateViewController(withIdentifier: "MainPageViewController")
-                MainPageViewController.modalPresentationStyle = .fullScreen
-                self.present(MainPageViewController, animated: true, completion: nil)
+                let mainPageViewController = storyboard.instantiateViewController(withIdentifier: "MainPageViewController")
+                mainPageViewController.modalPresentationStyle = .fullScreen
+                self.present(mainPageViewController, animated: true, completion: nil)
                 debugPrint("サインアップ完了")
             }
         })
@@ -56,8 +59,8 @@ class SignUpViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.signUpButton.layer.masksToBounds = true
-        self.signUpButton.layer.cornerRadius = 30
+        signUpButton.layer.masksToBounds = true
+        signUpButton.layer.cornerRadius = 30
         
         subView.layer.cornerRadius = 30
         subView.layer.shadowRadius = 3.0

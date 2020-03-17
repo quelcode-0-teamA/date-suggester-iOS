@@ -61,34 +61,6 @@
             </objects>
             <point key="canvasLocation" x="-1630" y="41"/>
         </scene>
-        <!--Information View Controller-->
-        <scene sceneID="T81-DJ-4RP">
-            <objects>
-                <viewController storyboardIdentifier="InformationViewController" id="YkC-RE-z9A" customClass="InformationViewController" customModule="date_suggester_iOS" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="FSQ-P6-qBg">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <view contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="vVY-t3-aWR">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.096467251712328755" colorSpace="custom" customColorSpace="displayP3"/>
-                                <rect key="contentStretch" x="0.0" y="0.0" width="0.0" height="0.0"/>
-                            </view>
-                        </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <constraints>
-                            <constraint firstItem="vVY-t3-aWR" firstAttribute="top" secondItem="FSQ-P6-qBg" secondAttribute="top" id="04Z-8e-fRR"/>
-                            <constraint firstAttribute="bottom" secondItem="vVY-t3-aWR" secondAttribute="bottom" id="D1D-o0-hBD"/>
-                            <constraint firstItem="vVY-t3-aWR" firstAttribute="leading" secondItem="wBH-de-KTA" secondAttribute="leading" id="Jgf-uC-Ti8"/>
-                            <constraint firstAttribute="trailing" secondItem="vVY-t3-aWR" secondAttribute="trailing" id="l2f-5N-MRm"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="wBH-de-KTA"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="zka-GL-HQS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-930" y="40"/>
-        </scene>
         <!--Terms Of Service View Controller-->
         <scene sceneID="Mex-jN-gcT">
             <objects>
@@ -129,9 +101,6 @@
                                 <state key="normal" title="同意する">
                                     <color key="titleColor" name="こうほ"/>
                                 </state>
-                                <connections>
-                                    <action selector="agreeButtonTap:" destination="S0m-6p-dRj" eventType="touchUpInside" id="SnU-ea-F8F"/>
-                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -140,7 +109,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="alf-TB-vQl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1235" y="757"/>
+            <point key="canvasLocation" x="-1968" y="1352"/>
         </scene>
         <!--Listen Birthyear View Controller-->
         <scene sceneID="esW-vE-lxp">
@@ -233,7 +202,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="k5t-ch-98g" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-199" y="39"/>
+            <point key="canvasLocation" x="-884" y="43"/>
         </scene>
         <!--Listen Location View Controller-->
         <scene sceneID="69f-eY-ojf">
@@ -317,7 +286,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xb3-Bu-PeV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="486.95652173913049" y="40.848214285714285"/>
+            <point key="canvasLocation" x="-197" y="46"/>
         </scene>
     </scenes>
     <resources>

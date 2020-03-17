@@ -9,45 +9,11 @@
 import UIKit
 
 class ListenBirthyearViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
-     // UIPickerViewの列の数
-           func numberOfComponents(in pickerView: UIPickerView) -> Int {
-               return 1
-           }
-    
-           // UIPickerViewの行数、要素の全数
-           func pickerView(_ pickerView: UIPickerView,
-                           numberOfRowsInComponent component: Int) -> Int {
-               return years.count
-           }
-            
-           // UIPickerViewに表示する配列
-           func pickerView(_ pickerView: UIPickerView,
-                           titleForRow row: Int,
-                           forComponent component: Int) -> String? {
-               
-               return String(years[row])
-           }
-            
-           // UIPickerViewのRowが選択された時の挙動
-           func pickerView(_ pickerView: UIPickerView,
-                           didSelectRow row: Int,
-                           inComponent component: Int) {
-            // 処理
-            //コンポーネントごとに現在選択されているデータを取得する。
-            let data1 = self.pickerView(pickerView, titleForRow: pickerView.selectedRow(inComponent: 0), forComponent: 0)
-            print("\(data1)えらばれたよ")
-            print("row: \(row)")
-            
-            //選択された生まれ年をユーザーデフォルトに保存
-            let defaults = UserDefaults.standard
-            defaults.set(data1, forKey: "responseBirthYear")
-           }
-
-    let years = (1965...2005).map { $0 }
-
     @IBOutlet weak var yearPickerView: UIPickerView!
     @IBOutlet weak var nextButton: UIButton!
     
+    let years = (1965...2005).map { $0 }
+
     @IBAction func nextPage(_ sender: Any) {
         let storyboard = UIStoryboard(name: "TutorialViewController", bundle: nil)
         let listenLocationViewController = storyboard.instantiateViewController(withIdentifier: "ListenLocationViewController")
@@ -66,18 +32,48 @@ class ListenBirthyearViewController: UIViewController, UIPickerViewDelegate, UIP
         super.viewDidLoad()
         
         self.view.addBackground(name: "Full")
-        self.nextButton.layer.cornerRadius = 30
-
+        nextButton.layer.cornerRadius = 30
+        
         // ピッカー設定
-        self.yearPickerView.delegate = self
-        self.yearPickerView.dataSource = self
+        yearPickerView.delegate = self
+        yearPickerView.dataSource = self
         
         yearPickerView.selectRow(30, inComponent: 0, animated: false)
         yearPickerView.layer.borderColor = UIColor(red: 0.86, green: 0.86, blue: 0.86, alpha: 1.0).cgColor
         
-        //外枠の色を指定
-        self.nextButton.layer.borderColor = UIColor.white.cgColor
-        //外枠の太さを指定
-        self.nextButton.layer.borderWidth = 1.0
+        nextButton.layer.borderColor = UIColor.white.cgColor
+        nextButton.layer.borderWidth = 1.0
+    }
+    
+    // UIPickerViewの列の数
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    // UIPickerViewの行数、要素の全数
+    func pickerView(_ pickerView: UIPickerView,
+                    numberOfRowsInComponent component: Int) -> Int {
+        return years.count
+    }
+    
+    // UIPickerViewに表示する配列
+    func pickerView(_ pickerView: UIPickerView,
+                    titleForRow row: Int,
+                    forComponent component: Int) -> String? {
+        
+        return String(years[row])
+    }
+    
+    // UIPickerViewのRowが選択された時の挙動
+    func pickerView(_ pickerView: UIPickerView,
+                    didSelectRow row: Int,
+                    inComponent component: Int) {
+        // 処理
+        let data1 = self.pickerView(pickerView, titleForRow: pickerView.selectedRow(inComponent: 0), forComponent: 0)
+        print("\(data1)えらばれたよ")
+        print("row: \(row)")
+        
+        let defaults = UserDefaults.standard
+        defaults.set(data1, forKey: "responseBirthYear")
     }
 }
