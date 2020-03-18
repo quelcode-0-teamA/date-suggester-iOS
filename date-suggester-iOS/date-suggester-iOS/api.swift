@@ -59,7 +59,18 @@ class Api {
                 return
             }
             
+            let httpResponse = response as? HTTPURLResponse
+            if httpResponse!.statusCode != 200 {
+                completion?(nil, NSError.init(domain: "error", code: 0, userInfo: nil))
+                return
+            }
+            debugPrint(httpResponse!.statusCode)
             do {
+                if error != nil {
+                    completion?(response, error)
+                    return
+                }
+               
                 guard let response: [String: Any] = try JSONSerialization.jsonObject(with: _data, options: []) as? [String: Any] else {
                     completion?(nil, NSError.init(domain: "error", code: 0, userInfo: nil))
                     return
@@ -69,6 +80,7 @@ class Api {
                 
                 completion?(response, nil)
             }
+                
             catch{
                 completion?(nil, NSError.init(domain: "error", code: 0, userInfo: nil))
             }
