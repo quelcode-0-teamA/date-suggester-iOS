@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SignUpViewController: UIViewController {
+class SignUpViewController: UIViewController, UITextFieldDelegate {
     
     var activityIndicatorView = UIActivityIndicatorView()
     
@@ -20,6 +20,10 @@ class SignUpViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        myEmail.delegate = self
+        myPassword.delegate = self
+        myPasswordConfirmation.delegate = self
+        
         signUpButton.isEnabled = true
         
         activityIndicatorView.center = view.center
@@ -37,8 +41,31 @@ class SignUpViewController: UIViewController {
         subView.layer.shadowOffset = CGSize(width: 0.0, height: 5.0)
         subView.layer.shadowOpacity = 0.3
         
-        //setButton()
+        
     }
+    
+//    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+//        setButton()
+//        return true
+//    }
+//
+//    func checkInput() -> Bool {
+//        if myEmail.text! == "" && myPassword.text! == "" && myPasswordConfirmation.text! == "" {
+//            return true
+//        }
+//        return false
+//    }
+//
+//    func setButton() {
+//        let inputValid = checkInput()
+//
+//        if inputValid == true {
+//            signUpButton.isEnabled = true
+//
+//        } else {
+//            signUpButton.isEnabled = false
+//        }
+//    }
     
     //キーボードを閉じる
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -50,25 +77,15 @@ class SignUpViewController: UIViewController {
         self.view.endEditing(true)
     }
     
-    func checkInput() -> Bool {
-        if myEmail.text! == "" && myPassword.text! == "" && myPasswordConfirmation.text! == "" {
-            return true
-        }
-        return false
-    }
-
-    func setButton() {
-        let inputValid = checkInput()
-
-        if inputValid == false {
-            signUpButton.isEnabled = true
-
-        } else {
-            signUpButton.isEnabled = false
-        }
-    }
-    
     @IBAction func signUpButton(_ sender: Any) {
+        
+        func displayMyAlertMessage(userMessage: String){
+            let myAlert = UIAlertController(title:"Alert", message: userMessage, preferredStyle:  UIAlertController.Style.alert)
+            let okAction = UIAlertAction(title:"OK", style: UIAlertAction.Style.default, handler:nil)
+            myAlert.addAction(okAction);
+            self.present(myAlert,animated:true, completion:nil)
+        }
+        
         let email = myEmail.text
         let password = myPassword.text
         let passwordConfirmation = myPasswordConfirmation.text
@@ -80,8 +97,10 @@ class SignUpViewController: UIViewController {
         
         let parameter = ["formal_user": signUpParams]
         
-        if password != passwordConfirmation {
-            print("パスワードが一致しません。")
+
+        if(password != passwordConfirmation){
+            displayMyAlertMessage(userMessage: "パスワードが一致していません。")
+            return
         }
         
         // くるくるをだす SVProgressHUD.show()
@@ -92,7 +111,7 @@ class SignUpViewController: UIViewController {
         
         Api().fomalSignUp(parameter: parameter, completion: {(token, error) in
             
-            if let _error = error {
+            if error != nil {
                 // アラートを出す
                 DispatchQueue.main.async {
                     self.view.isUserInteractionEnabled = true
@@ -101,17 +120,9 @@ class SignUpViewController: UIViewController {
                     alert.title = "エラーが発生しました"
                     alert.message = "SignUpをやり直してください"
                     alert.addAction(
-                        UIAlertAction(
-                            title: "悲しいです",
-                            style: .cancel,
-                            handler: nil)
+                        UIAlertAction(title: "悲しいです", style: .cancel, handler: nil)
                     )
-                    
-                    self.present(
-                        alert,
-                        animated: true,
-                        completion: {
-                    })
+                    self.present(alert,animated: true,completion: nil)
                 }
                 
                 return
