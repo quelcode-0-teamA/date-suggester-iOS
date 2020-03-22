@@ -24,7 +24,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
         myPassword.delegate = self
         myPasswordConfirmation.delegate = self
         
-        signUpButton.isEnabled = true
+        signUpButton.isEnabled = false
         
         activityIndicatorView.center = view.center
         activityIndicatorView.style = .whiteLarge
@@ -40,32 +40,17 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
         subView.layer.shadowColor = UIColor.gray.cgColor
         subView.layer.shadowOffset = CGSize(width: 0.0, height: 5.0)
         subView.layer.shadowOpacity = 0.3
-        
-        
     }
     
-//    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-//        setButton()
-//        return true
-//    }
-//
-//    func checkInput() -> Bool {
-//        if myEmail.text! == "" && myPassword.text! == "" && myPasswordConfirmation.text! == "" {
-//            return true
-//        }
-//        return false
-//    }
-//
-//    func setButton() {
-//        let inputValid = checkInput()
-//
-//        if inputValid == true {
-//            signUpButton.isEnabled = true
-//
-//        } else {
-//            signUpButton.isEnabled = false
-//        }
-//    }
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        signUpButton.isEnabled = checkInput()
+        return true
+    }
+
+    func checkInput() -> Bool {
+        let isA = myEmail.text! == "" || myPassword.text! == "" || myPasswordConfirmation.text! == ""
+        return !isA
+    }
     
     //キーボードを閉じる
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
