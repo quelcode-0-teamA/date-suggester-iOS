@@ -19,8 +19,6 @@ class DateLocationViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        print("画面遷移成功")
-        
         far.layer.cornerRadius = 10
         near.layer.cornerRadius = 10
         

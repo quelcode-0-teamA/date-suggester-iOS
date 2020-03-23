@@ -68,6 +68,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
             let myAlert = UIAlertController(title:"Alert", message: userMessage, preferredStyle:  UIAlertController.Style.alert)
             let okAction = UIAlertAction(title:"OK", style: UIAlertAction.Style.default, handler:nil)
             myAlert.addAction(okAction);
+            myAlert.view.tintColor = UIColor.init(red: 254.0/255, green: 84.0/255, blue: 146.0/255, alpha: 1.0)
             self.present(myAlert,animated:true, completion:nil)
         }
         
@@ -101,6 +102,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
                     self.view.isUserInteractionEnabled = true
                     self.activityIndicatorView.stopAnimating()
                     let alert = UIAlertController(title: nil, message: nil, preferredStyle: .alert)
+                    alert.view.tintColor = UIColor.init(red: 254.0/255, green: 84.0/255, blue: 146.0/255, alpha: 1.0)
                     alert.title = "エラーが発生しました"
                     alert.message = "SignUpをやり直してください"
                     alert.addAction(

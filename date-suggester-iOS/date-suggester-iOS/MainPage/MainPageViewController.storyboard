@@ -50,11 +50,11 @@
             </objects>
             <point key="canvasLocation" x="-1414.4927536231885" y="801.5625"/>
         </scene>
-        <!--しおり-->
+        <!--デートプラン一覧-->
         <scene sceneID="0yS-9u-IlF">
             <objects>
                 <navigationController id="irf-8R-UKE" customClass="AppNavigationController" customModule="date_suggester_iOS" customModuleProvider="target" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="しおり" image="book" catalog="system" selectedImage="book" id="f0m-OS-jPC">
+                    <tabBarItem key="tabBarItem" title="デートプラン一覧" image="book" catalog="system" selectedImage="book" id="f0m-OS-jPC">
                         <color key="badgeColor" name="MainColor"/>
                     </tabBarItem>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="EJe-7t-089">
