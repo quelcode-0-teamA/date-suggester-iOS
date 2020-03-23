@@ -48,8 +48,8 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
     }
 
     func checkInput() -> Bool {
-        let isA = myEmail.text! == "" || myPassword.text! == "" || myPasswordConfirmation.text! == ""
-        return !isA
+        let textCheck = myEmail.text! == "" || myPassword.text! == "" || myPasswordConfirmation.text! == ""
+        return !textCheck
     }
     
     //キーボードを閉じる
@@ -81,7 +81,6 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
             ] as [String : Any]
         
         let parameter = ["formal_user": signUpParams]
-        
 
         if(password != passwordConfirmation){
             displayMyAlertMessage(userMessage: "パスワードが一致していません。")
@@ -109,7 +108,6 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
                     )
                     self.present(alert,animated: true,completion: nil)
                 }
-                
                 return
             }
             

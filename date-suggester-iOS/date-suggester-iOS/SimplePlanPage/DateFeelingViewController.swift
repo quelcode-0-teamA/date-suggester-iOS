@@ -56,7 +56,7 @@ class DateFeelingViewController: UIViewController {
          */
         let config: URLSessionConfiguration = URLSessionConfiguration.default
         let session: URLSession = URLSession(configuration: config)
-        
+
         var urlComponents = URLComponents()
         urlComponents.scheme = "https"
         urlComponents.host = "api-date-suggester-dev.herokuapp.com"
@@ -67,21 +67,21 @@ class DateFeelingViewController: UIViewController {
             URLQueryItem(name: "date_time", value: String(youserAnswer.answer3)),
             URLQueryItem(name: "date_type", value: String(youserAnswer.answer4))
         ]
-        
+
         let url: URL = urlComponents.url!
         var req: URLRequest = URLRequest(url: url)
         req.httpMethod = "GET"
-        
+
         let defaults = UserDefaults.standard
         let myToken = defaults.string(forKey: "responseToken")!
         req.setValue("application/json", forHTTPHeaderField: "Content-Type")
         req.setValue("Bearer " + myToken, forHTTPHeaderField: "Authorization")
-        
+
         let task = session.dataTask(with: req){(data, response, error) in
-            
+
             do {
                 let response: [String: Any] = try (JSONSerialization.jsonObject(with: data!, options: []) as! [String: Any])
-                
+
                 print(response)
                 DispatchQueue.main.async {
                     let storyboard = UIStoryboard(name: "SimplePlanViewController", bundle: nil)
@@ -96,6 +96,5 @@ class DateFeelingViewController: UIViewController {
         }
         task.resume()
         print("デートプラン提案成功してるよ")
-        /* デートプラン提案API省略形 */
     }
 }

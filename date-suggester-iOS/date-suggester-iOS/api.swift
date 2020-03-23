@@ -28,32 +28,17 @@ class Api {
         return req
     }
     
-    func aaa(parameter:[String : Any], completion:((String?, Error?)->Void)?=nil){
-        let endpoint = "/v1/aaa"
-        
-        //URLオブジェクトの生成
-        let url = URL(string: host + endpoint)!
-
-        let req = createRequest(url: url, method: postMethod, parameter: parameter, token:"")
-        //APIを呼ぶよ
-        let task = session.dataTask(with: req){(data, response, error) in
-        }
-    }
-    
     func fomalSignUp(parameter:[String : Any], completion:((Any?, Error?)->Void)?=nil){
         let endpoint = "/v1/formal_user/sign_up"
         
         let defaults = UserDefaults.standard
         let myToken = defaults.string(forKey: "responseToken")!
-        debugPrint(myToken)
-        
-        //URLオブジェクトの生成
+
         let url = URL(string: host + endpoint)!
         
         let req = createRequest(url: url, method: postMethod, parameter: parameter, token: myToken)
-        //APIを呼ぶよ
+
         let task = session.dataTask(with: req){(data, response, error) in
-            //例外処理
             guard let _data = data else {
                 completion?(nil, NSError.init(domain: "error", code: 0, userInfo: nil))
                 return
@@ -70,17 +55,13 @@ class Api {
                     completion?(response, error)
                     return
                 }
-               
+                
                 guard let response: [String: Any] = try JSONSerialization.jsonObject(with: _data, options: []) as? [String: Any] else {
                     completion?(nil, NSError.init(domain: "error", code: 0, userInfo: nil))
                     return
                 }
-                
-                print(response)
-                
                 completion?(response, nil)
             }
-                
             catch{
                 completion?(nil, NSError.init(domain: "error", code: 0, userInfo: nil))
             }
@@ -89,17 +70,15 @@ class Api {
     }
     
     
-
+    
     func login(parameter:[String : Any], completion:((String?, Error?)->Void)?=nil){
         let endpoint = "/v1/sign_in"
-        
-        //URLオブジェクトの生成
         let url = URL(string: host + endpoint)!
         
         let req = createRequest(url: url, method: postMethod, parameter: parameter, token:"")
-        //APIを呼ぶよ
+
         let task = session.dataTask(with: req){(data, response, error) in
-            //例外処理
+
             guard let _data = data else {
                 completion?(nil, NSError.init(domain: "error", code: 0, userInfo: nil))
                 return
@@ -110,16 +89,10 @@ class Api {
                     completion?(nil, NSError.init(domain: "error", code: 0, userInfo: nil))
                     return
                 }
-                
-                print(response)
-                
-                //辞書からtokenを取り出す
                 guard let tokenValue = response["token"] as? String else {
                     completion?(nil, NSError.init(domain: "error", code: 0, userInfo: nil))
                     return
                 }
-                
-                
                 completion?(tokenValue, nil)
             }
             catch{
@@ -132,13 +105,11 @@ class Api {
     func tempLogin(parameter:[String : Any], completion:((String?, Int?, Error?)->Void)?=nil){
         let endpoint = "/v1/temp_user/sign_up"
         
-        //URLオブジェクトの生成
         let url = URL(string: host + endpoint)!
-
+        
         let req = createRequest(url: url, method: postMethod, parameter: parameter, token:"")
-        //APIを呼ぶよ
+
         let task = session.dataTask(with: req){(data, response, error) in
-            //例外処理
             guard let _data = data else {
                 completion?(nil, nil, NSError.init(domain: "error", code: 0, userInfo: nil))
                 return
@@ -150,23 +121,20 @@ class Api {
                     return
                 }
                 
-                print(response)
-                
                 //辞書からtokenを取り出す
                 guard let tokenValue = response["token"] as? String else {
                     completion?(nil, nil, NSError.init(domain: "error", code: 0, userInfo: nil))
                     return
                 }
-                debugPrint(tokenValue)
+                debugPrint("トークン：\(tokenValue)")
                 guard let userId = response["id"] as? Int else {
                     completion?(nil, nil, NSError.init(domain: "error", code: 0, userInfo: nil))
                     return
                 }
                 
-                debugPrint(userId)
+                debugPrint("userId:\(userId)")
                 let defaults = UserDefaults.standard
                 defaults.set(tokenValue, forKey: "responseToken")
-                debugPrint("userIdとトークン保存したよー")
                 
                 completion?(tokenValue, userId, nil)
             }
@@ -182,49 +150,34 @@ class Api {
         
         let defaults = UserDefaults.standard
         let myToken = defaults.string(forKey: "responseToken")!
-
+        
         debugPrint(myToken)
-        //URLオブジェクトの生成
+
         let url = URL(string: host + endpoint)!
         
         let req = createRequest(url: url, method: postMethod, parameter: parameter, token: myToken)
-       print(url)
-        //APIを呼ぶよ
+
         let task = session.dataTask(with: req){(data, response, error) in
-            //例外処理
             guard let _data = data else {
                 completion?(nil, NSError.init(domain: "error", code: 0, userInfo: nil))
                 return
             }
-            
             do {
                 guard let response: [String: Any] = try JSONSerialization.jsonObject(with: _data, options: []) as? [String: Any] else {
                     completion?(nil, NSError.init(domain: "error", code: 0, userInfo: nil))
                     return
                 }
-                
-                print(response)
-                
-//                辞書からtokenを取り出す
-//                guard let tokenValue = response["token"] as? String else {
-//                    completion?(nil, NSError.init(domain: "error", code: 0, userInfo: nil))
-//                    return
-//                }
-//
                 completion?(response, nil)
-
-                
             }
             catch{
                 completion?(nil, NSError.init(domain: "error", code: 0, userInfo: nil))
             }
         }
         task.resume()
-
     }
     
-
-func area(parameter:[String : Any], completion:((String?, Error?)->Void)?=nil){
+    
+    func area(parameter:[String : Any], completion:((String?, Error?)->Void)?=nil){
         let endpoint = "/v1/areas"
         
         let defaults = UserDefaults.standard
@@ -233,10 +186,8 @@ func area(parameter:[String : Any], completion:((String?, Error?)->Void)?=nil){
         let url = URL(string: host + endpoint)!
         
         let req = createRequest(url: url, method: getMethod, parameter: parameter, token: myToken)
-       print(url)
-        //APIを呼ぶよ
+
         let task = session.dataTask(with: req){(data, response, error) in
-            //例外処理
             guard let _data = data else {
                 completion?(nil, NSError.init(domain: "error", code: 0, userInfo: nil))
                 return
@@ -250,7 +201,6 @@ func area(parameter:[String : Any], completion:((String?, Error?)->Void)?=nil){
                 
                 print(response)
                 
-                //辞書からtokenを取り出す
                 guard let tokenValue = response["token"] as? String else {
                     completion?(nil, NSError.init(domain: "error", code: 0, userInfo: nil))
                     return
@@ -270,14 +220,12 @@ func area(parameter:[String : Any], completion:((String?, Error?)->Void)?=nil){
         
         let defaults = UserDefaults.standard
         let myToken = defaults.string(forKey: "responseToken")!
-        //URLオブジェクトの生成
+
         let url = URL(string: host + endpoint)!
         
         let req = createRequest(url: url, method: getMethod, parameter: parameter, token: myToken)
-        print(url)
-        //APIを呼ぶよ
+
         let task = session.dataTask(with: req){(data, response, error) in
-            //例外処理
             guard let _data = data else {
                 completion?(nil, NSError.init(domain: "error", code: 0, userInfo: nil))
                 return
@@ -299,6 +247,4 @@ func area(parameter:[String : Any], completion:((String?, Error?)->Void)?=nil){
         }
         task.resume()
     }
-    
-
 }

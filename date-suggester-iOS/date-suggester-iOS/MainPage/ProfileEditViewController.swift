@@ -13,6 +13,7 @@ class ProfileEditViewController: UIViewController {
     @IBOutlet weak var myName: CustomPlofielTextField!
     @IBOutlet weak var myEmail: CustomPlofielTextField!
     @IBOutlet weak var logoutButton: UIButton!
+    
     @IBOutlet weak var plofileEditButton: UIButton!
     
     override func viewDidLoad() {
@@ -20,8 +21,11 @@ class ProfileEditViewController: UIViewController {
         
         //入力フォームにj初期値で現在の名前、自己紹介を表示させる
 //        let defaults = UserDefaults.standard
-//        editName.placeholder = defaults.string(forKey: "responseName")
-//        editBio.placeholder = defaults.string(forKey: "responseBio")
+//        if defaults.string(forKey: "responseName") !== {
+//            myName.placeholder = defaults.string(forKey: "responseName")
+//        }
+//
+//        myEmail.placeholder = defaults.string(forKey: "responseBio")
 
         //外枠の色を指定
         self.plofileEditButton.layer.borderColor = UIColor.white.cgColor
