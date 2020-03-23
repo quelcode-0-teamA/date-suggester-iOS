@@ -37,6 +37,7 @@ class FirstViewController: UIViewController {
         //トークンがなかった場合に最初に表示させる画面を確認するため、暫定的に書いている
         let defaults = UserDefaults.standard
         defaults.removeObject(forKey: "responseToken")
+        defaults.removeObject(forKey: "signUpStatus")
     }
 }
 

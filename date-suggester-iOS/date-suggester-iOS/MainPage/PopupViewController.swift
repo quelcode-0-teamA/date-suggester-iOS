@@ -16,7 +16,6 @@ class PopupViewController: UIViewController {
         popUpView.layer.masksToBounds = false
         popUpView.layer.cornerRadius = 30
     }
-    
 
     @IBAction func popupCloseButton(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
