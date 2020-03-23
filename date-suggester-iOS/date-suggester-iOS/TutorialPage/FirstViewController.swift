@@ -12,9 +12,18 @@ class FirstViewController: UIViewController {
     
     @IBOutlet weak var dateDecideButton: UIButton!
     
-    @IBAction func dateDecideButton(_ sender: Any) {
-        //        let defaults = UserDefaults.standard
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.view.addBackground(name: "Full")
+        dateDecideButton.layer.cornerRadius = 40
         
+        //トークンがなかった場合に最初に表示させる画面を確認するため、暫定的に書いている
+        let defaults = UserDefaults.standard
+        defaults.removeObject(forKey: "responseToken")
+        defaults.removeObject(forKey: "signUpStatus")
+    }
+    
+    @IBAction func dateDecideButton(_ sender: Any) {
         if UserDefaults.standard.string(forKey: "responseToken") != nil{
             let storyboard = UIStoryboard(name: "SimplePlanViewController", bundle: nil)
             let controller = storyboard.instantiateViewController(identifier: "DatePlanViewController")
@@ -27,17 +36,6 @@ class FirstViewController: UIViewController {
             listenBirthyearViewController.modalPresentationStyle = .fullScreen
             self.present(listenBirthyearViewController, animated: true, completion: nil)
         }
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        self.view.addBackground(name: "Full")
-        dateDecideButton.layer.cornerRadius = 40
-        
-        //トークンがなかった場合に最初に表示させる画面を確認するため、暫定的に書いている
-        let defaults = UserDefaults.standard
-        defaults.removeObject(forKey: "responseToken")
-        defaults.removeObject(forKey: "signUpStatus")
     }
 }
 

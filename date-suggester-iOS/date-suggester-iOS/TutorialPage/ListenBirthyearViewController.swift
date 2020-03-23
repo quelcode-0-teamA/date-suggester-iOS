@@ -13,20 +13,6 @@ class ListenBirthyearViewController: UIViewController, UIPickerViewDelegate, UIP
     @IBOutlet weak var nextButton: UIButton!
     
     let years = (1965...2005).map { $0 }
-
-    @IBAction func nextPage(_ sender: Any) {
-        let storyboard = UIStoryboard(name: "TutorialViewController", bundle: nil)
-        let listenLocationViewController = storyboard.instantiateViewController(withIdentifier: "ListenLocationViewController")
-        listenLocationViewController.modalPresentationStyle = .fullScreen
-        self.present(listenLocationViewController, animated: false, completion: nil)
-    }
-    
-    @IBAction func loginButton(_ sender: Any) {
-        let storyboard = UIStoryboard(name: "MainPageViewController", bundle: nil)
-        let LoginViewController = storyboard.instantiateViewController(identifier: "LoginViewController")
-        LoginViewController.modalPresentationStyle = .fullScreen
-        present(LoginViewController, animated: true, completion: nil)
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,6 +30,20 @@ class ListenBirthyearViewController: UIViewController, UIPickerViewDelegate, UIP
         nextButton.layer.borderColor = UIColor.white.cgColor
         nextButton.layer.borderWidth = 1.0
     }
+
+    @IBAction func nextPage(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "TutorialViewController", bundle: nil)
+        let listenLocationViewController = storyboard.instantiateViewController(withIdentifier: "ListenLocationViewController")
+        listenLocationViewController.modalPresentationStyle = .fullScreen
+        self.present(listenLocationViewController, animated: false, completion: nil)
+    }
+    
+    @IBAction func loginButton(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "MainPageViewController", bundle: nil)
+        let LoginViewController = storyboard.instantiateViewController(identifier: "LoginViewController")
+        LoginViewController.modalPresentationStyle = .fullScreen
+        present(LoginViewController, animated: true, completion: nil)
+    }
     
     // UIPickerViewの列の数
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -60,10 +60,8 @@ class ListenBirthyearViewController: UIViewController, UIPickerViewDelegate, UIP
     func pickerView(_ pickerView: UIPickerView,
                     titleForRow row: Int,
                     forComponent component: Int) -> String? {
-        
         return String(years[row])
     }
-    
     // UIPickerViewのRowが選択された時の挙動
     func pickerView(_ pickerView: UIPickerView,
                     didSelectRow row: Int,

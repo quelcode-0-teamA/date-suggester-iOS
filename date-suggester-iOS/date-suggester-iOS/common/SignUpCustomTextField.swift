@@ -12,7 +12,7 @@ class SignUpCustomTextField: UITextField {
         override func layoutSubviews() {
             super.layoutSubviews()
 
-            self.frame.size.height = 50 // ここ変える
+            self.frame.size.height = 50
             self.borderStyle = .none
             self.layer.masksToBounds = false
             self.layer.shadowColor = UIColor.gray.cgColor
