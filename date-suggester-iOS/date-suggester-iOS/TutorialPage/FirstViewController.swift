@@ -15,8 +15,9 @@ class FirstViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.addBackground(name: "Full")
-        dateDecideButton.layer.cornerRadius = 40
-        
+        dateDecideButton.layer.cornerRadius = 25
+        self.dateDecideButton.layer.borderColor = UIColor.init(red: 255/255, green: 255/255, blue: 255/255, alpha: 1.0).cgColor
+        self.dateDecideButton.layer.borderWidth = 1.0
         //トークンがなかった場合に最初に表示させる画面を確認するため、暫定的に書いている
         let defaults = UserDefaults.standard
         defaults.removeObject(forKey: "responseToken")

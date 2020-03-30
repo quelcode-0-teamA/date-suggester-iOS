@@ -19,6 +19,10 @@ class ListenBirthyearViewController: UIViewController, UIPickerViewDelegate, UIP
         
         self.view.addBackground(name: "Full")
         nextButton.layer.cornerRadius = 30
+        nextButton.layer.shadowOffset = CGSize(width: 0.0, height: 6.0)
+        nextButton.layer.shadowColor = UIColor.init(red: 217.0/255, green: 196.0/255, blue: 125.0/255, alpha: 1.0).cgColor
+        nextButton.layer.shadowOpacity = 1.0
+        nextButton.layer.shadowRadius = 0
         
         // ピッカー設定
         yearPickerView.delegate = self
@@ -27,8 +31,8 @@ class ListenBirthyearViewController: UIViewController, UIPickerViewDelegate, UIP
         yearPickerView.selectRow(30, inComponent: 0, animated: false)
         yearPickerView.layer.borderColor = UIColor(red: 0.86, green: 0.86, blue: 0.86, alpha: 1.0).cgColor
         
-        nextButton.layer.borderColor = UIColor.white.cgColor
-        nextButton.layer.borderWidth = 1.0
+//        nextButton.layer.borderColor = UIColor.white.cgColor
+//        nextButton.layer.borderWidth = 1.0
     }
 
     @IBAction func nextPage(_ sender: Any) {

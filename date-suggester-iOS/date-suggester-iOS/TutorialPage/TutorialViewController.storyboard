@@ -1,30 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="DUH-t6-QyA">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="sGL-44-hWg">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="NotoSans-Bold.ttf">
+            <string>NotoSans-Bold</string>
+        </array>
+        <array key="NotoSans-BoldItalic.ttf">
+            <string>NotoSans-BoldItalic</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--First View Controller-->
         <scene sceneID="fOw-AI-dz6">
             <objects>
                 <viewController storyboardIdentifier="FirstViewController" id="DUH-t6-QyA" customClass="FirstViewController" customModule="date_suggester_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="coH-he-UW2">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cII-8x-bkT">
-                                <rect key="frame" x="0.0" y="1" width="414" height="899"/>
+                                <rect key="frame" x="0.0" y="1" width="375" height="899"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.10000000000000001" colorSpace="custom" customColorSpace="displayP3"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Date Suggester" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U0U-4q-Ick" customClass="CustomLabel" customModule="date_suggester_iOS" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="444" width="414" height="73"/>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.69999999999999996" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Date Suggester" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U0U-4q-Ick" customClass="CustomLabel" customModule="date_suggester_iOS" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="59" width="375" height="73"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="HiraginoSans-W6" family="Hiragino Sans" pointSize="40"/>
+                                <fontDescription key="fontDescription" name="NotoSans-BoldItalic" family="Noto Sans" pointSize="33"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                                 <userDefinedRuntimeAttributes>
@@ -33,40 +41,41 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="topIcon" translatesAutoresizingMaskIntoConstraints="NO" id="0RE-5g-Q9M">
-                                <rect key="frame" x="89" y="155" width="250" height="250"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="mainIcon" translatesAutoresizingMaskIntoConstraints="NO" id="0RE-5g-Q9M">
+                                <rect key="frame" x="-168" y="421.5" width="631" height="420"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z7S-qc-FcF">
-                                <rect key="frame" x="50" y="623" width="314" height="80"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R9V-Rm-UWS">
+                                <rect key="frame" x="32" y="161" width="311" height="57"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" name="HiraginoSans-W7" family="Hiragino Sans" pointSize="23"/>
-                                <state key="normal" title="デートを決める">
-                                    <color key="titleColor" name="MainColor"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name="NotoSans-Bold" family="Noto Sans" pointSize="21"/>
+                                <state key="normal" title="早速デートプランを探す">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <action selector="dateDecideButton:" destination="DUH-t6-QyA" eventType="touchUpInside" id="3Wn-Op-3Y3"/>
+                                    <action selector="dateDecideButton:" destination="DUH-t6-QyA" eventType="touchUpInside" id="ljC-7g-Jhd"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="c7J-rb-glh"/>
                     </view>
+                    <navigationItem key="navigationItem" id="1MM-Fc-frq"/>
                     <connections>
-                        <outlet property="dateDecideButton" destination="Z7S-qc-FcF" id="fa4-lI-S6m"/>
+                        <outlet property="dateDecideButton" destination="R9V-Rm-UWS" id="dGB-lN-hgS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QH4-Sk-nBN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1630" y="41"/>
+            <point key="canvasLocation" x="-692" y="40.929535232383813"/>
         </scene>
         <!--Terms Of Service View Controller-->
         <scene sceneID="Mex-jN-gcT">
             <objects>
                 <viewController storyboardIdentifier="TermsOfServiceViewController" id="S0m-6p-dRj" customClass="TermsOfServiceViewController" customModule="date_suggester_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3iQ-3u-XK6">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="利用規約" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JVF-HL-WYY">
@@ -116,37 +125,33 @@
             <objects>
                 <viewController storyboardIdentifier="ListenBirthyearViewController" id="8at-cS-52S" customClass="ListenBirthyearViewController" customModule="date_suggester_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="DWt-qH-xmH">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="ANp-GZ-mhF">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            <view contentMode="scaleAspectFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ANp-GZ-mhF">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Oc7-QO-fp0">
-                                        <rect key="frame" x="0.0" y="280" width="414" height="216"/>
+                                    <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Oc7-QO-fp0">
+                                        <rect key="frame" x="0.0" y="280" width="375" height="216"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="tintColor" red="0.50980392159999999" green="0.52156862749999999" blue="0.52549019610000003" alpha="1" colorSpace="calibratedRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="216" id="QzS-h8-YPz"/>
-                                            <constraint firstAttribute="width" constant="414" id="zk2-Do-lbD"/>
-                                        </constraints>
                                     </pickerView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YOc-3M-NBe">
-                                        <rect key="frame" x="50" y="531" width="314" height="60"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="314" id="7Cp-YY-0R6"/>
-                                            <constraint firstAttribute="height" constant="60" id="Sff-rv-6yT"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="HiraginoSans-W6" family="Hiragino Sans" pointSize="17"/>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YOc-3M-NBe" customClass="CustomYerrowButton" customModule="date_suggester_iOS" customModuleProvider="target">
+                                        <rect key="frame" x="30.5" y="531" width="314" height="60"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" name="ButtonColor"/>
+                                        <fontDescription key="fontDescription" name="NotoSans-Bold" family="Noto Sans" pointSize="21"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <state key="normal" title="つぎへ">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="次へ">
+                                            <color key="titleColor" name="TextColor"/>
                                         </state>
                                         <connections>
                                             <action selector="nextPage:" destination="8at-cS-52S" eventType="touchUpInside" id="DES-eW-fRY"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="0Sf-Zw-SCr">
-                                        <rect key="frame" x="0.0" y="765" width="414" height="29"/>
+                                        <rect key="frame" x="-9" y="600" width="423" height="29"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="HiraginoSans-W3" family="Hiragino Sans" pointSize="17"/>
                                         <state key="normal" title="アカウントをお持ちの方はこちら">
@@ -156,23 +161,17 @@
                                             <action selector="loginButton:" destination="8at-cS-52S" eventType="touchUpInside" id="ioq-wV-bFe"/>
                                         </connections>
                                     </button>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1gb-AK-vSk">
+                                        <rect key="frame" x="67" y="115" width="240" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
                                 </subviews>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.10000000000000001" colorSpace="custom" customColorSpace="displayP3"/>
                                 <rect key="contentStretch" x="0.0" y="0.0" width="0.0" height="0.0"/>
-                                <constraints>
-                                    <constraint firstItem="Oc7-QO-fp0" firstAttribute="top" secondItem="ANp-GZ-mhF" secondAttribute="top" constant="280" id="7qh-tF-FXa"/>
-                                    <constraint firstItem="Oc7-QO-fp0" firstAttribute="leading" secondItem="ANp-GZ-mhF" secondAttribute="leading" id="PGh-NJ-JId"/>
-                                    <constraint firstAttribute="trailing" secondItem="Oc7-QO-fp0" secondAttribute="trailing" id="Vtl-Tm-bCG"/>
-                                    <constraint firstItem="YOc-3M-NBe" firstAttribute="top" secondItem="Oc7-QO-fp0" secondAttribute="bottom" constant="35" id="cOV-oh-s98"/>
-                                    <constraint firstItem="YOc-3M-NBe" firstAttribute="centerX" secondItem="ANp-GZ-mhF" secondAttribute="centerX" id="ce7-hX-3Jn"/>
-                                </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="あなたの生まれ年は？" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d99-N7-pEO" customClass="CustomLabel" customModule="date_suggester_iOS" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="216" width="414" height="20"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="414" id="bK7-8v-79S"/>
-                                    <constraint firstAttribute="height" constant="20" id="yCj-vY-quK"/>
-                                </constraints>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="あなたの生まれた年は？" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d99-N7-pEO" customClass="CustomLabel" customModule="date_suggester_iOS" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="216" width="375" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="HiraginoSans-W6" family="Hiragino Sans" pointSize="26"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -184,15 +183,6 @@
                             </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <constraints>
-                            <constraint firstItem="ANp-GZ-mhF" firstAttribute="leading" secondItem="DWt-qH-xmH" secondAttribute="leading" id="EI9-iR-DHF"/>
-                            <constraint firstItem="d99-N7-pEO" firstAttribute="trailing" secondItem="DZE-6f-d6V" secondAttribute="trailing" id="H20-3k-yAo"/>
-                            <constraint firstItem="d99-N7-pEO" firstAttribute="leading" secondItem="DZE-6f-d6V" secondAttribute="leading" id="cGI-kY-EtM"/>
-                            <constraint firstItem="DZE-6f-d6V" firstAttribute="trailing" secondItem="ANp-GZ-mhF" secondAttribute="trailing" id="fP3-P1-Fd4"/>
-                            <constraint firstAttribute="bottom" secondItem="ANp-GZ-mhF" secondAttribute="bottom" id="pjX-VH-rL1"/>
-                            <constraint firstItem="d99-N7-pEO" firstAttribute="top" secondItem="DWt-qH-xmH" secondAttribute="top" constant="216" id="upc-9k-YJJ"/>
-                            <constraint firstItem="ANp-GZ-mhF" firstAttribute="top" secondItem="DWt-qH-xmH" secondAttribute="top" id="ybo-4f-lbr"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="DZE-6f-d6V"/>
                     </view>
                     <connections>
@@ -202,21 +192,22 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="k5t-ch-98g" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-884" y="43"/>
+            <point key="canvasLocation" x="55.200000000000003" y="42.728635682158924"/>
         </scene>
         <!--Listen Location View Controller-->
         <scene sceneID="69f-eY-ojf">
             <objects>
                 <viewController storyboardIdentifier="ListenLocationViewController" id="zaE-H4-8YU" customClass="ListenLocationViewController" customModule="date_suggester_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="7pn-6T-VyX">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="OHf-gp-4pP">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            <view contentMode="scaleAspectFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OHf-gp-4pP">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Sf-uJ-6t7">
-                                        <rect key="frame" x="50" y="531" width="314" height="60"/>
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Sf-uJ-6t7">
+                                        <rect key="frame" x="30.5" y="531" width="314" height="60"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="314" id="3dP-n2-Yga"/>
                                             <constraint firstAttribute="height" constant="60" id="fQ6-Wb-zkJ"/>
@@ -229,7 +220,7 @@
                                             <action selector="gotoSinplePlan:" destination="zaE-H4-8YU" eventType="touchUpInside" id="L2b-q1-Uyj"/>
                                         </connections>
                                     </button>
-                                    <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gqT-en-yI2">
+                                    <pickerView contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gqT-en-yI2">
                                         <rect key="frame" x="0.0" y="280" width="414" height="216"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="216" id="WJn-xl-rex"/>
@@ -244,19 +235,12 @@
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.10000000000000001" colorSpace="custom" customColorSpace="displayP3"/>
                                 <rect key="contentStretch" x="0.0" y="0.0" width="0.0" height="0.0"/>
                                 <constraints>
-                                    <constraint firstItem="gqT-en-yI2" firstAttribute="leading" secondItem="OHf-gp-4pP" secondAttribute="leading" id="8vc-ua-IgI"/>
                                     <constraint firstItem="7Sf-uJ-6t7" firstAttribute="top" secondItem="gqT-en-yI2" secondAttribute="bottom" constant="35" id="Iay-BZ-ia5"/>
-                                    <constraint firstAttribute="trailing" secondItem="gqT-en-yI2" secondAttribute="trailing" id="Teo-UM-IeL"/>
-                                    <constraint firstItem="gqT-en-yI2" firstAttribute="top" secondItem="OHf-gp-4pP" secondAttribute="top" constant="280" id="e6I-rx-jnw"/>
-                                    <constraint firstItem="7Sf-uJ-6t7" firstAttribute="centerX" secondItem="OHf-gp-4pP" secondAttribute="centerX" id="vU6-3h-yYc"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="よく行く場所は？" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0hQ-hu-f5p" customClass="CustomLabel" customModule="date_suggester_iOS" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="216" width="414" height="17"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="17" id="Esu-ox-k3u"/>
-                                    <constraint firstAttribute="width" constant="414" id="IAA-68-cE2"/>
-                                </constraints>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="よく行く場所は？" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0hQ-hu-f5p" customClass="CustomLabel" customModule="date_suggester_iOS" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="216" width="375" height="17"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="HiraginoSans-W6" family="Hiragino Sans" pointSize="26"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -268,15 +252,6 @@
                             </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <constraints>
-                            <constraint firstItem="0hQ-hu-f5p" firstAttribute="top" secondItem="7pn-6T-VyX" secondAttribute="top" constant="216" id="5kq-5F-IeG"/>
-                            <constraint firstItem="OHf-gp-4pP" firstAttribute="top" secondItem="7pn-6T-VyX" secondAttribute="top" id="NBZ-cP-FP3"/>
-                            <constraint firstItem="0hQ-hu-f5p" firstAttribute="trailing" secondItem="cx9-tf-Gtu" secondAttribute="trailing" id="ail-fg-82o"/>
-                            <constraint firstItem="OHf-gp-4pP" firstAttribute="leading" secondItem="7pn-6T-VyX" secondAttribute="leading" id="ofb-SN-jqN"/>
-                            <constraint firstItem="0hQ-hu-f5p" firstAttribute="leading" secondItem="cx9-tf-Gtu" secondAttribute="leading" id="uOk-95-213"/>
-                            <constraint firstAttribute="bottom" secondItem="OHf-gp-4pP" secondAttribute="bottom" id="vQq-Dg-tga"/>
-                            <constraint firstItem="cx9-tf-Gtu" firstAttribute="trailing" secondItem="OHf-gp-4pP" secondAttribute="trailing" id="zMW-AV-glV"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="cx9-tf-Gtu"/>
                     </view>
                     <connections>
@@ -286,13 +261,34 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xb3-Bu-PeV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-197" y="46"/>
+            <point key="canvasLocation" x="741.60000000000002" y="45.42728635682159"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="77D-0H-2RN">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="sGL-44-hWg" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="gEp-af-2oO">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="DUH-t6-QyA" kind="relationship" relationship="rootViewController" id="rxZ-s4-7ef"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zel-Yo-cXx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1631.2" y="40.929535232383813"/>
         </scene>
     </scenes>
     <resources>
-        <image name="topIcon" width="128" height="128"/>
-        <namedColor name="MainColor">
-            <color red="0.99599999189376831" green="0.32899999618530273" blue="0.57300001382827759" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <image name="mainIcon" width="631" height="420"/>
+        <namedColor name="ButtonColor">
+            <color red="1" green="0.90196078431372551" blue="0.56862745098039214" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="TextColor">
+            <color red="0.0" green="0.0" blue="0.0" alpha="0.87" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <namedColor name="こうほ">
             <color red="0.99607843137254903" green="0.32941176470588235" blue="0.5725490196078431" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

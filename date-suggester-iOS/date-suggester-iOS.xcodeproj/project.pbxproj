@@ -21,6 +21,10 @@
 		721D100123F509DD006DA520 /* MypageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 721D100023F509DD006DA520 /* MypageViewController.swift */; };
 		721D100323F50E6A006DA520 /* UIColorHex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 721D100223F50E6A006DA520 /* UIColorHex.swift */; };
 		72513F5C23EBCFA9007B1499 /* DateFeelingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72513F5B23EBCFA9007B1499 /* DateFeelingViewController.swift */; };
+		726903EF2431DB4F006312E6 /* NotoSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 726903EC2431DAF5006312E6 /* NotoSans-Bold.ttf */; };
+		726903F02431DB4F006312E6 /* NotoSans-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 726903EE2431DAF6006312E6 /* NotoSans-BoldItalic.ttf */; };
+		726903F12431DB4F006312E6 /* NotoSans-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 726903ED2431DAF6006312E6 /* NotoSans-Italic.ttf */; };
+		726903F22431DB4F006312E6 /* NotoSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 726903EB2431DAF5006312E6 /* NotoSans-Regular.ttf */; };
 		7276AEE023EAA9B7008864D7 /* DateLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7276AEDF23EAA9B7008864D7 /* DateLocationViewController.swift */; };
 		7276AEE323EAA9DE008864D7 /* SimplePlanViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7276AEE223EAA9DE008864D7 /* SimplePlanViewController.storyboard */; };
 		7276AEE523EAACC0008864D7 /* DatePlanSuggestionViewControlller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7276AEE423EAACC0008864D7 /* DatePlanSuggestionViewControlller.swift */; };
@@ -87,6 +91,10 @@
 		721D100023F509DD006DA520 /* MypageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MypageViewController.swift; sourceTree = "<group>"; };
 		721D100223F50E6A006DA520 /* UIColorHex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorHex.swift; sourceTree = "<group>"; };
 		72513F5B23EBCFA9007B1499 /* DateFeelingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFeelingViewController.swift; sourceTree = "<group>"; };
+		726903EB2431DAF5006312E6 /* NotoSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSans-Regular.ttf"; sourceTree = "<group>"; };
+		726903EC2431DAF5006312E6 /* NotoSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSans-Bold.ttf"; sourceTree = "<group>"; };
+		726903ED2431DAF6006312E6 /* NotoSans-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSans-Italic.ttf"; sourceTree = "<group>"; };
+		726903EE2431DAF6006312E6 /* NotoSans-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSans-BoldItalic.ttf"; sourceTree = "<group>"; };
 		7276AEDF23EAA9B7008864D7 /* DateLocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateLocationViewController.swift; sourceTree = "<group>"; };
 		7276AEE223EAA9DE008864D7 /* SimplePlanViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SimplePlanViewController.storyboard; sourceTree = "<group>"; };
 		7276AEE423EAACC0008864D7 /* DatePlanSuggestionViewControlller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePlanSuggestionViewControlller.swift; sourceTree = "<group>"; };
@@ -143,6 +151,10 @@
 		720D07EB23E984AE00569622 = {
 			isa = PBXGroup;
 			children = (
+				726903EC2431DAF5006312E6 /* NotoSans-Bold.ttf */,
+				726903EE2431DAF6006312E6 /* NotoSans-BoldItalic.ttf */,
+				726903ED2431DAF6006312E6 /* NotoSans-Italic.ttf */,
+				726903EB2431DAF5006312E6 /* NotoSans-Regular.ttf */,
 				720D07F623E984AE00569622 /* date-suggester-iOS */,
 				720D080D23E984AE00569622 /* date-suggester-iOSTests */,
 				720D081823E984AF00569622 /* date-suggester-iOSUITests */,
@@ -360,6 +372,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				726903EF2431DB4F006312E6 /* NotoSans-Bold.ttf in Resources */,
+				726903F02431DB4F006312E6 /* NotoSans-BoldItalic.ttf in Resources */,
+				726903F12431DB4F006312E6 /* NotoSans-Italic.ttf in Resources */,
+				726903F22431DB4F006312E6 /* NotoSans-Regular.ttf in Resources */,
 				720D080423E984AE00569622 /* LaunchScreen.storyboard in Resources */,
 				7276AEE323EAA9DE008864D7 /* SimplePlanViewController.storyboard in Resources */,
 				720D082C23E9A84E00569622 /* TutorialViewController.storyboard in Resources */,
