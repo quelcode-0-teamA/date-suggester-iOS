@@ -7,17 +7,23 @@
 //
 
 import UIKit
+import SVGKit
 
 class ListenBirthyearViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     @IBOutlet weak var yearPickerView: UIPickerView!
     @IBOutlet weak var nextButton: UIButton!
+    @IBOutlet weak var svgImageView: UIImageView!
     
     let years = (1965...2005).map { $0 }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.view.addBackground(name: "Full")
+//        let svgImage = SVGKImage(named: "birthIcon")
+//        svgImage?.size = svgImageView.bounds.size
+//        svgImageView.image = svgImage?.uiImage
+        
+//        self.view.addBackground(name: "Full")
         nextButton.layer.cornerRadius = 30
         nextButton.layer.shadowOffset = CGSize(width: 0.0, height: 6.0)
         nextButton.layer.shadowColor = UIColor.init(red: 217.0/255, green: 196.0/255, blue: 125.0/255, alpha: 1.0).cgColor
@@ -33,6 +39,13 @@ class ListenBirthyearViewController: UIViewController, UIPickerViewDelegate, UIP
         
 //        nextButton.layer.borderColor = UIColor.white.cgColor
 //        nextButton.layer.borderWidth = 1.0
+        self.navigationItem.hidesBackButton = true
+        self.navigationController?.setNavigationBarHidden(false, animated: false)
+        navigationController?.navigationBar.setBackgroundImage(UIImage(named: "NavBarBG"), for: .default)
+        self.navigationItem.title = "Date Suggester"
+        navigationController?.navigationBar.titleTextAttributes = [
+            .foregroundColor: UIColor.white
+        ]
     }
 
     @IBAction func nextPage(_ sender: Any) {

@@ -7,35 +7,47 @@
 //
 
 import UIKit
+import SVGKit
 
 class FirstViewController: UIViewController {
     
     @IBOutlet weak var dateDecideButton: UIButton!
-    
+    @IBOutlet weak var svgImageView: UIImageView!
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let svgImage = SVGKImage(named: "mainImage")
+        svgImage?.size = svgImageView.bounds.size
+        svgImageView.image = svgImage?.uiImage
+        
         self.view.addBackground(name: "Full")
-        dateDecideButton.layer.cornerRadius = 25
+        dateDecideButton.layer.cornerRadius = 29
         self.dateDecideButton.layer.borderColor = UIColor.init(red: 255/255, green: 255/255, blue: 255/255, alpha: 1.0).cgColor
         self.dateDecideButton.layer.borderWidth = 1.0
+        
         //トークンがなかった場合に最初に表示させる画面を確認するため、暫定的に書いている
         let defaults = UserDefaults.standard
         defaults.removeObject(forKey: "responseToken")
         defaults.removeObject(forKey: "signUpStatus")
+        
+        self.navigationController?.setNavigationBarHidden(true, animated: false)
     }
     
     @IBAction func dateDecideButton(_ sender: Any) {
         if UserDefaults.standard.string(forKey: "responseToken") != nil{
             let storyboard = UIStoryboard(name: "SimplePlanViewController", bundle: nil)
             let controller = storyboard.instantiateViewController(identifier: "DatePlanViewController")
-            controller.modalPresentationStyle = .fullScreen
-            present(controller, animated: true, completion: nil)
+            self.navigationController?.pushViewController(controller, animated: true)
+//            controller.modalPresentationStyle = .fullScreen
+//            present(controller, animated: true, completion: nil)
             
         } else{
             let storyboard = UIStoryboard(name: "TutorialViewController", bundle: nil)
             let listenBirthyearViewController = storyboard.instantiateViewController(withIdentifier: "ListenBirthyearViewController")
-            listenBirthyearViewController.modalPresentationStyle = .fullScreen
-            self.present(listenBirthyearViewController, animated: true, completion: nil)
+            self.navigationController?.pushViewController(listenBirthyearViewController, animated: true)
+//            listenBirthyearViewController.modalPresentationStyle = .fullScreen
+//            self.present(listenBirthyearViewController, animated: true, completion: nil)
         }
     }
 }

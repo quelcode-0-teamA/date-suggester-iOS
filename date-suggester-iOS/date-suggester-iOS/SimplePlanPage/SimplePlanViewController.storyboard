@@ -884,7 +884,7 @@
         <image name="time2" width="256" height="256"/>
         <image name="ハートマークの無料アイコン素材 10" width="256" height="256"/>
         <namedColor name="Color-1">
-            <color red="0.85098039215686272" green="0.76862745098039209" blue="0.49019607843137253" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.85100001096725464" green="0.76899999380111694" blue="0.49000000953674316" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="MainColor">
             <color red="0.99599999189376831" green="0.32899999618530273" blue="0.57300001382827759" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

@@ -40,6 +40,7 @@ class DateplanListViewController: UIViewController,UICollectionViewDataSource, U
         self.navigationController?.navigationBar.titleTextAttributes = [
             .foregroundColor: UIColor.white
         ]
+        self.navigationItem.title = "Date Suggester"
         self.navigationItem.backBarButtonItem = UIBarButtonItem(
             title:  "戻る",
             style:  .plain,

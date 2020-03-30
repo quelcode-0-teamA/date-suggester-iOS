@@ -12,7 +12,7 @@ class AppNavigationController: UINavigationController {
     
     override func viewDidLoad() {
         // 背景画像の設定
-        self.navigationController?.navigationBar.setBackgroundImage(UIImage(named: "test"), for: .default)
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(named: "NavBarBG"), for: .default)
         // タイトルテキストの装飾設定
         self.navigationController?.navigationBar.titleTextAttributes = [
             // 文字の色
