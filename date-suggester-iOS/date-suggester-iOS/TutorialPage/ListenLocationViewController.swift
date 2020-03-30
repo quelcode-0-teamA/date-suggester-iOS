@@ -19,10 +19,10 @@ class ListenLocationViewController: UIViewController, UIPickerViewDelegate, UIPi
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = .lightGray
+//        view.backgroundColor = .lightGray
         activityIndicatorView.center = view.center
         activityIndicatorView.style = .whiteLarge
-        activityIndicatorView.color = .white
+        activityIndicatorView.color = .gray
 
         view.addSubview(activityIndicatorView)
         activityIndicatorView.startAnimating()
@@ -35,11 +35,13 @@ class ListenLocationViewController: UIViewController, UIPickerViewDelegate, UIPi
         areaPickerView.selectRow(30, inComponent: 0, animated: false)
         areaPickerView.layer.borderColor = UIColor(red: 0.86, green: 0.86, blue: 0.86, alpha: 1.0).cgColor
         
-        self.view.addBackground(name: "Full")
-        
-        nextButton.layer.cornerRadius = 30
-        nextButton.layer.borderColor = UIColor.white.cgColor
-        nextButton.layer.borderWidth = 1.0
+        self.navigationItem.hidesBackButton = true
+        self.navigationController?.setNavigationBarHidden(false, animated: false)
+        navigationController?.navigationBar.setBackgroundImage(UIImage(named: "NavBarBG"), for: .default)
+        self.navigationItem.title = "Date Suggester"
+        navigationController?.navigationBar.titleTextAttributes = [
+            .foregroundColor: UIColor.white
+        ]
     }
     
     func areasList(){

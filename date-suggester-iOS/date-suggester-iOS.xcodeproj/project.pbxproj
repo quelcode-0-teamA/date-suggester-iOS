@@ -39,7 +39,7 @@
 		7276AEF623EBCADE008864D7 /* DateBudgetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7276AEF523EBCADE008864D7 /* DateBudgetViewController.swift */; };
 		7276AEF823EBCE4A008864D7 /* DateTimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7276AEF723EBCE4A008864D7 /* DateTimeViewController.swift */; };
 		727C4A5B240362300058AE58 /* AnswerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 727C4A5A240362300058AE58 /* AnswerModel.swift */; };
-		727C4A5D240362890058AE58 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 727C4A5C240362890058AE58 /* CustomButton.swift */; };
+		727C4A5D240362890058AE58 /* CustomYerrowButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 727C4A5C240362890058AE58 /* CustomYerrowButton.swift */; };
 		7281E60A241F4F5100886634 /* MyPlan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7281E609241F4F5100886634 /* MyPlan.swift */; };
 		7281E60C241F4FB200886634 /* Plan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7281E60B241F4FB200886634 /* Plan.swift */; };
 		7281E60E241F502900886634 /* Spot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7281E60D241F502900886634 /* Spot.swift */; };
@@ -114,7 +114,7 @@
 		7276AEF523EBCADE008864D7 /* DateBudgetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateBudgetViewController.swift; sourceTree = "<group>"; };
 		7276AEF723EBCE4A008864D7 /* DateTimeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateTimeViewController.swift; sourceTree = "<group>"; };
 		727C4A5A240362300058AE58 /* AnswerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerModel.swift; sourceTree = "<group>"; };
-		727C4A5C240362890058AE58 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
+		727C4A5C240362890058AE58 /* CustomYerrowButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomYerrowButton.swift; sourceTree = "<group>"; };
 		7281E609241F4F5100886634 /* MyPlan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPlan.swift; sourceTree = "<group>"; };
 		7281E60B241F4FB200886634 /* Plan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Plan.swift; sourceTree = "<group>"; };
 		7281E60D241F502900886634 /* Spot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spot.swift; sourceTree = "<group>"; };
@@ -247,7 +247,7 @@
 				7276AEF323EBC1CD008864D7 /* AppNavigationController.swift */,
 				721D100223F50E6A006DA520 /* UIColorHex.swift */,
 				727C4A5A240362300058AE58 /* AnswerModel.swift */,
-				727C4A5C240362890058AE58 /* CustomButton.swift */,
+				727C4A5C240362890058AE58 /* CustomYerrowButton.swift */,
 				721336E9240CE48400F8E967 /* CustomUnderlineTextField.swift */,
 				7215FF13240D600400AB3BBB /* SignUpCustomTextField.swift */,
 				7281E609241F4F5100886634 /* MyPlan.swift */,
@@ -576,7 +576,7 @@
 				7276AEE023EAA9B7008864D7 /* DateLocationViewController.swift in Sources */,
 				721336EA240CE48400F8E967 /* CustomUnderlineTextField.swift in Sources */,
 				7276AEEC23EACE65008864D7 /* MainPageViewController.swift in Sources */,
-				727C4A5D240362890058AE58 /* CustomButton.swift in Sources */,
+				727C4A5D240362890058AE58 /* CustomYerrowButton.swift in Sources */,
 				7291BD2B23FE2D80001047D8 /* PopupViewController.swift in Sources */,
 				7281E60C241F4FB200886634 /* Plan.swift in Sources */,
 				72513F5C23EBCFA9007B1499 /* DateFeelingViewController.swift in Sources */,

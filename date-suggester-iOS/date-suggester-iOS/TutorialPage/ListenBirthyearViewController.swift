@@ -23,12 +23,11 @@ class ListenBirthyearViewController: UIViewController, UIPickerViewDelegate, UIP
 //        svgImage?.size = svgImageView.bounds.size
 //        svgImageView.image = svgImage?.uiImage
         
-//        self.view.addBackground(name: "Full")
-        nextButton.layer.cornerRadius = 30
-        nextButton.layer.shadowOffset = CGSize(width: 0.0, height: 6.0)
-        nextButton.layer.shadowColor = UIColor.init(red: 217.0/255, green: 196.0/255, blue: 125.0/255, alpha: 1.0).cgColor
-        nextButton.layer.shadowOpacity = 1.0
-        nextButton.layer.shadowRadius = 0
+//        nextButton.layer.cornerRadius = 30
+//        nextButton.layer.shadowOffset = CGSize(width: 0.0, height: 6.0)
+//        nextButton.layer.shadowColor = UIColor.init(red: 217.0/255, green: 196.0/255, blue: 125.0/255, alpha: 1.0).cgColor
+//        nextButton.layer.shadowOpacity = 1.0
+//        nextButton.layer.shadowRadius = 0
         
         // ピッカー設定
         yearPickerView.delegate = self
@@ -37,8 +36,6 @@ class ListenBirthyearViewController: UIViewController, UIPickerViewDelegate, UIP
         yearPickerView.selectRow(30, inComponent: 0, animated: false)
         yearPickerView.layer.borderColor = UIColor(red: 0.86, green: 0.86, blue: 0.86, alpha: 1.0).cgColor
         
-//        nextButton.layer.borderColor = UIColor.white.cgColor
-//        nextButton.layer.borderWidth = 1.0
         self.navigationItem.hidesBackButton = true
         self.navigationController?.setNavigationBarHidden(false, animated: false)
         navigationController?.navigationBar.setBackgroundImage(UIImage(named: "NavBarBG"), for: .default)
@@ -51,8 +48,7 @@ class ListenBirthyearViewController: UIViewController, UIPickerViewDelegate, UIP
     @IBAction func nextPage(_ sender: Any) {
         let storyboard = UIStoryboard(name: "TutorialViewController", bundle: nil)
         let listenLocationViewController = storyboard.instantiateViewController(withIdentifier: "ListenLocationViewController")
-        listenLocationViewController.modalPresentationStyle = .fullScreen
-        self.present(listenLocationViewController, animated: false, completion: nil)
+        self.navigationController?.pushViewController(listenLocationViewController, animated: true)
     }
     
     @IBAction func loginButton(_ sender: Any) {
