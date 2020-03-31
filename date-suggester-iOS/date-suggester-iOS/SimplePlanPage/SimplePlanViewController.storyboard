@@ -7,8 +7,13 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="NotoSans-Bold.ttf">
+            <string>NotoSans-Bold</string>
+        </array>
+    </customFonts>
     <scenes>
-        <!--さくっとデートプラン-->
+        <!-- Date Suggester-->
         <scene sceneID="swE-EO-0BH">
             <objects>
                 <viewController storyboardIdentifier="DateLocationViewController" id="D01-Eu-ozo" customClass="DateLocationViewController" customModule="date_suggester_iOS" customModuleProvider="target" sceneMemberID="viewController">
@@ -16,21 +21,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="redraw" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="location" translatesAutoresizingMaskIntoConstraints="NO" id="Vf5-cL-Wxt">
-                                <rect key="frame" x="112.5" y="100" width="150" height="150"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="150" id="JyX-bD-mEs"/>
-                                    <constraint firstAttribute="width" constant="150" id="a3f-9p-Dg6"/>
-                                </constraints>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="どこでデートする？" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QqP-39-pYc">
-                                <rect key="frame" x="92.5" y="279" width="190" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="どこでデートする？" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QqP-39-pYc">
+                                <rect key="frame" x="92.5" y="274" width="190" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="190" id="Weu-E3-xFd"/>
                                     <constraint firstAttribute="height" constant="21" id="yZb-Fd-ona"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="HiraginoSans-W6" family="Hiragino Sans" pointSize="21"/>
-                                <color key="textColor" name="こうほ"/>
+                                <fontDescription key="fontDescription" name="NotoSans-Bold" family="Noto Sans" pointSize="19"/>
+                                <color key="textColor" name="MainColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <progressView opaque="NO" contentMode="scaleAspectFit" verticalHuggingPriority="750" progress="0.25" progressImage="test" translatesAutoresizingMaskIntoConstraints="NO" id="sIU-eE-IXU" customClass="CustomProgressView" customModule="date_suggester_iOS" customModuleProvider="target">
@@ -39,54 +37,61 @@
                                     <constraint firstAttribute="height" constant="2" id="rS2-9d-IXx"/>
                                 </constraints>
                             </progressView>
-                            <button opaque="NO" contentMode="right" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2vu-FV-Ocu" customClass="CustomButton" customModule="date_suggester_iOS" customModuleProvider="target">
-                                <rect key="frame" x="40" y="371" width="295" height="60"/>
-                                <color key="backgroundColor" name="Color-1"/>
+                            <button opaque="NO" contentMode="right" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2vu-FV-Ocu" customClass="CustomYerrowButton" customModule="date_suggester_iOS" customModuleProvider="target">
+                                <rect key="frame" x="30" y="365" width="314" height="60"/>
+                                <color key="backgroundColor" name="ButtonColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="Xsx-sH-7QF"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="HiraginoSans-W6" family="Hiragino Sans" pointSize="21"/>
+                                <fontDescription key="fontDescription" name="NotoSans-Bold" family="Noto Sans" pointSize="21"/>
                                 <state key="normal" title="近く">
-                                    <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="titleColor" name="TextColor"/>
                                 </state>
                                 <connections>
                                     <action selector="nearButton:" destination="D01-Eu-ozo" eventType="touchUpInside" id="taA-3P-onv"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N7v-jp-lHw" customClass="CustomButton" customModule="date_suggester_iOS" customModuleProvider="target">
-                                <rect key="frame" x="40" y="451" width="295" height="60"/>
-                                <color key="backgroundColor" name="Color-1"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N7v-jp-lHw" customClass="CustomYerrowButton" customModule="date_suggester_iOS" customModuleProvider="target">
+                                <rect key="frame" x="30" y="445" width="314" height="60"/>
+                                <color key="backgroundColor" name="ButtonColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="GRN-Gs-wVb"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="HiraginoSans-W6" family="Hiragino Sans" pointSize="21"/>
+                                <fontDescription key="fontDescription" name="NotoSans-Bold" family="Noto Sans" pointSize="21"/>
                                 <state key="normal" title="遠く">
-                                    <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="titleColor" name="TextColor"/>
                                 </state>
                                 <connections>
                                     <action selector="farButton:" destination="D01-Eu-ozo" eventType="touchUpInside" id="rs7-Dr-C78"/>
                                 </connections>
                             </button>
+                            <imageView clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="location" translatesAutoresizingMaskIntoConstraints="NO" id="Vf5-cL-Wxt">
+                                <rect key="frame" x="103.5" y="101" width="168" height="144"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="144" id="JyX-bD-mEs"/>
+                                    <constraint firstAttribute="width" constant="168" id="a3f-9p-Dg6"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="2vu-FV-Ocu" firstAttribute="top" secondItem="QqP-39-pYc" secondAttribute="bottom" constant="71" id="1px-Nd-Saf"/>
+                            <constraint firstItem="2vu-FV-Ocu" firstAttribute="top" secondItem="QqP-39-pYc" secondAttribute="bottom" constant="70" id="1px-Nd-Saf"/>
                             <constraint firstItem="Vf5-cL-Wxt" firstAttribute="centerX" secondItem="yA3-fs-s4J" secondAttribute="centerX" id="4JC-Wh-UGJ"/>
                             <constraint firstItem="QqP-39-pYc" firstAttribute="centerX" secondItem="yA3-fs-s4J" secondAttribute="centerX" id="4e9-Ut-sMS"/>
-                            <constraint firstItem="Vf5-cL-Wxt" firstAttribute="top" secondItem="aWG-hF-qaE" secondAttribute="top" constant="56" id="7Og-zG-2t8"/>
+                            <constraint firstItem="Vf5-cL-Wxt" firstAttribute="top" secondItem="aWG-hF-qaE" secondAttribute="top" constant="57" id="7Og-zG-2t8"/>
                             <constraint firstItem="sIU-eE-IXU" firstAttribute="leading" secondItem="yA3-fs-s4J" secondAttribute="leadingMargin" constant="42" id="EBb-Yv-Osj"/>
-                            <constraint firstItem="2vu-FV-Ocu" firstAttribute="leading" secondItem="aWG-hF-qaE" secondAttribute="leading" constant="40" id="I94-xs-vFG"/>
-                            <constraint firstItem="aWG-hF-qaE" firstAttribute="trailing" secondItem="2vu-FV-Ocu" secondAttribute="trailing" constant="40" id="LIo-jr-g56"/>
-                            <constraint firstItem="N7v-jp-lHw" firstAttribute="leading" secondItem="aWG-hF-qaE" secondAttribute="leading" constant="40" id="Nhe-We-ilT"/>
+                            <constraint firstItem="2vu-FV-Ocu" firstAttribute="leading" secondItem="aWG-hF-qaE" secondAttribute="leading" constant="30" id="I94-xs-vFG"/>
+                            <constraint firstItem="aWG-hF-qaE" firstAttribute="trailing" secondItem="2vu-FV-Ocu" secondAttribute="trailing" constant="31" id="LIo-jr-g56"/>
+                            <constraint firstItem="N7v-jp-lHw" firstAttribute="leading" secondItem="aWG-hF-qaE" secondAttribute="leading" constant="30" id="Nhe-We-ilT"/>
                             <constraint firstItem="N7v-jp-lHw" firstAttribute="top" secondItem="2vu-FV-Ocu" secondAttribute="bottom" constant="20" id="aIj-G7-bo9"/>
                             <constraint firstAttribute="trailingMargin" secondItem="sIU-eE-IXU" secondAttribute="trailing" constant="42" id="gYI-rE-Ab1"/>
-                            <constraint firstItem="aWG-hF-qaE" firstAttribute="trailing" secondItem="N7v-jp-lHw" secondAttribute="trailing" constant="40" id="hRf-81-D7V"/>
+                            <constraint firstItem="aWG-hF-qaE" firstAttribute="trailing" secondItem="N7v-jp-lHw" secondAttribute="trailing" constant="31" id="hRf-81-D7V"/>
                             <constraint firstItem="QqP-39-pYc" firstAttribute="top" secondItem="Vf5-cL-Wxt" secondAttribute="bottom" constant="29" id="mTe-GY-cag"/>
                             <constraint firstItem="aWG-hF-qaE" firstAttribute="bottom" secondItem="sIU-eE-IXU" secondAttribute="bottom" constant="80" id="vAV-Tj-f7g"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="aWG-hF-qaE"/>
                     </view>
-                    <navigationItem key="navigationItem" title="さくっとデートプラン" id="x03-ME-aA2"/>
+                    <navigationItem key="navigationItem" title=" Date Suggester" id="x03-ME-aA2"/>
                     <connections>
                         <outlet property="far" destination="N7v-jp-lHw" id="ePn-z9-VNl"/>
                         <outlet property="imageIcon" destination="Vf5-cL-Wxt" id="i0C-9w-l4v"/>
@@ -187,7 +192,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eAC-ON-2Qq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1215.9420289855072" y="-796.20535714285711"/>
+            <point key="canvasLocation" x="-1218" y="-1576"/>
         </scene>
         <!--さくっとデートプラン-->
         <scene sceneID="q87-Xg-MY7">
@@ -344,7 +349,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="M7G-XO-jJF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1168" y="-806"/>
+            <point key="canvasLocation" x="1025" y="-1709"/>
         </scene>
         <!--さくっとデートプラン-->
         <scene sceneID="g4K-Kk-6tB">
@@ -725,7 +730,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="E3r-xv-90g" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="789.60000000000002" y="-94.902548725637189"/>
+            <point key="canvasLocation" x="132" y="-54"/>
         </scene>
         <!--App Navigation Controller-->
         <scene sceneID="Bsg-o2-LCU">
@@ -759,7 +764,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="r5j-XL-QcC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2371" y="-103"/>
+            <point key="canvasLocation" x="-2372" y="-54"/>
         </scene>
         <!--さくっとデートプラン-->
         <scene sceneID="vLa-py-Xjy">
@@ -866,7 +871,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6xq-Ij-PN7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1217" y="-125"/>
+            <point key="canvasLocation" x="-1218" y="-795"/>
         </scene>
     </scenes>
     <resources>
@@ -883,11 +888,17 @@
         <image name="test" width="465.33334350585938" height="93"/>
         <image name="time2" width="256" height="256"/>
         <image name="ハートマークの無料アイコン素材 10" width="256" height="256"/>
+        <namedColor name="ButtonColor">
+            <color red="1" green="0.90200001001358032" blue="0.5690000057220459" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="Color-1">
             <color red="0.85100001096725464" green="0.76899999380111694" blue="0.49000000953674316" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="MainColor">
             <color red="0.99599999189376831" green="0.32899999618530273" blue="0.57300001382827759" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="TextColor">
+            <color red="0.0" green="0.0" blue="0.0" alpha="0.87000000476837158" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <namedColor name="こうほ">
             <color red="0.99607843137254903" green="0.32941176470588235" blue="0.5725490196078431" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

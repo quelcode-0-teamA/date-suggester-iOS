@@ -47,11 +47,14 @@ class ListenLocationViewController: UIViewController, UIPickerViewDelegate, UIPi
     func areasList(){
         let config: URLSessionConfiguration = URLSessionConfiguration.default
         let session: URLSession = URLSession(configuration: config)
-        
+
         var urlComponents = URLComponents()
-        urlComponents.scheme = "https"
-        urlComponents.host = "api-date-suggester-dev.herokuapp.com"
+        urlComponents.scheme = "http"
+        urlComponents.host = "datesuggestersta-env.eba-tjsexdfx.ap-northeast-1.elasticbeanstalk.com"
         urlComponents.path = "/v1/areas"
+//        urlComponents.scheme = "https"
+//        urlComponents.host = "api-date-suggester-dev.herokuapp.com"
+//        urlComponents.path = "/v1/areas"
         urlComponents.queryItems = [
         ]
         
@@ -131,7 +134,7 @@ class ListenLocationViewController: UIViewController, UIPickerViewDelegate, UIPi
         
         Api().tempLogin(parameter: parameter, completion: {(token, id, error) in
             
-            if let _error = error {
+            if error != nil {
                 // アラートを出す
                 print("エラーがおこったよ")
                 return
@@ -139,9 +142,11 @@ class ListenLocationViewController: UIViewController, UIPickerViewDelegate, UIPi
             DispatchQueue.main.async {
                 let storyboard = UIStoryboard(name: "SimplePlanViewController", bundle: nil)
                 let controller = storyboard.instantiateViewController(identifier: "DatePlanViewController")
+//                self.navigationController?.pushViewController(controller, animated: true)
                 controller.modalPresentationStyle = .fullScreen
                 self.present(controller, animated: true, completion: nil)
             }
+            
         })
     }
 }

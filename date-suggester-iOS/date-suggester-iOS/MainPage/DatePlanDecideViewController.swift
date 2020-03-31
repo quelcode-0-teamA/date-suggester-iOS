@@ -7,10 +7,11 @@
 //
 
 import UIKit
+import SVGKit
+
 class DatePlanDecideViewController: UIViewController {
 
-    @IBOutlet weak var subView: UIView!
-    @IBOutlet weak var heartMark: UIImageView!
+    @IBOutlet weak var mainImage: UIImageView!
     @IBOutlet weak var gotoSimplePlanButtom: UIButton!
     
     @IBAction func simplePlan(_ sender: Any) {
@@ -23,7 +24,10 @@ class DatePlanDecideViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.subView.layer.cornerRadius = 30
+        let svgImage = SVGKImage(named: "mainImage")
+        svgImage?.size = mainImage.bounds.size
+        mainImage.image = svgImage?.uiImage
+        
         self.gotoSimplePlanButtom.layer.masksToBounds = true
         self.gotoSimplePlanButtom.layer.cornerRadius = 40
     }
