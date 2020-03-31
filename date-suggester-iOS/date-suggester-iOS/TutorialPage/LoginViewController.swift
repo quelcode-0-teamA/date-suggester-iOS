@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SVGKit
 
 class LoginViewController: UIViewController, UITextFieldDelegate {
     
@@ -15,11 +16,17 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var myEmail: CustomUnderlineTextField!
     @IBOutlet weak var myPassword: UITextField!
     @IBOutlet weak var loginButton: UIButton!
-    @IBOutlet weak var backGroundImage: UIImageView!
-    @IBOutlet weak var subView: UIView!
+    @IBOutlet weak var svgImageView: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        myEmail.attributedPlaceholder = NSAttributedString(string: "mail", attributes: [NSAttributedString.Key.foregroundColor : UIColor.white])
+        myPassword.attributedPlaceholder = NSAttributedString(string: "pass", attributes: [NSAttributedString.Key.foregroundColor : UIColor.white])
+        
+        let svgImage = SVGKImage(named: "mainImage")
+        svgImage?.size = svgImageView.bounds.size
+        svgImageView.image = svgImage?.uiImage
         
         myEmail.delegate = self
         myPassword.delegate = self
@@ -38,21 +45,26 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
             self.view.endEditing(true)
         }
+
+        self.loginButton.layer.cornerRadius = 24
         
-        let picture = UIImage(named: "test")
-        self.loginButton.setBackgroundImage(picture, for: .normal)
-        self.loginButton.layer.masksToBounds = true
-        self.loginButton.layer.cornerRadius = 30
-        
-        self.backGroundImage.layer.cornerRadius = 30
-        subView.layer.cornerRadius = 30
-        subView.layer.shadowRadius = 3.0
-        subView.layer.masksToBounds = false
-        subView.layer.shadowColor = UIColor.gray.cgColor
-        subView.layer.shadowOffset = CGSize(width: 0.0, height: 5.0)
-        subView.layer.shadowOpacity = 0.3
-        
-        myEmail.loginunderline.backgroundColor = UIColor.init(red: 254.0/255, green: 84.0/255, blue: 146.0/255, alpha: 1.0)
+        myEmail.loginunderline.backgroundColor = UIColor.init(red: 255/255, green: 255/255, blue: 255/255, alpha: 1.0)
+//        
+//        self.navigationItem.title = "Date Suggester"
+//        navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white]
+//        self.navigationController?.navigationBar.tintColor = UIColor.white
+//        self.navigationController?.navigationBar.barTintColor = UIColor.init(red: 222/255, green: 67/255, blue: 106/255, alpha: 1.0)
+//         self.navigationController?.setNavigationBarHidden(true, animated: false)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: false)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        navigationController?.setNavigationBarHidden(false, animated: false)
     }
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
@@ -123,6 +135,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func backButton(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
+//        self.navigationController?.popToRootViewController(animated: true)
+        self.navigationController?.popViewController(animated: true)
+//        self.dismiss(animated: true, completion: nil)
     }
 }

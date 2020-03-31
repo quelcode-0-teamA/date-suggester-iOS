@@ -263,6 +263,7 @@
 				72A4E18523F68D4D00B7607C /* FirstViewController.swift */,
 				72BED50B23EC073600A254BC /* ListenBirthyearViewController.swift */,
 				72BED50D23EC075000A254BC /* ListenLocationViewController.swift */,
+				72A4E18323F668B600B7607C /* LoginViewController.swift */,
 				720D082B23E9A84D00569622 /* TutorialViewController.storyboard */,
 			);
 			path = TutorialPage;
@@ -294,7 +295,6 @@
 				721D100023F509DD006DA520 /* MypageViewController.swift */,
 				72A4E17D23F5344800B7607C /* ProfileEditViewController.swift */,
 				72A4E18023F57BB800B7607C /* DatePlanListCollectionViewCell.xib */,
-				72A4E18323F668B600B7607C /* LoginViewController.swift */,
 				7291BD2A23FE2D80001047D8 /* PopupViewController.swift */,
 			);
 			path = MainPage;

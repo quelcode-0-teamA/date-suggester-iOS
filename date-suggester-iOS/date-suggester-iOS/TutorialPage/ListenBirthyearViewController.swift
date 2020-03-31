@@ -38,11 +38,10 @@ class ListenBirthyearViewController: UIViewController, UIPickerViewDelegate, UIP
         
         self.navigationItem.hidesBackButton = true
         self.navigationController?.setNavigationBarHidden(false, animated: false)
-        navigationController?.navigationBar.setBackgroundImage(UIImage(named: "NavBarBG"), for: .default)
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(named: "NavBarBG"), for: .default)
         self.navigationItem.title = "Date Suggester"
-        navigationController?.navigationBar.titleTextAttributes = [
-            .foregroundColor: UIColor.white
-        ]
+        navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white]
+        navigationItem.backBarButtonItem = UIBarButtonItem(title:  "", style:  .plain, target: nil, action: nil)
     }
 
     @IBAction func nextPage(_ sender: Any) {
@@ -52,10 +51,14 @@ class ListenBirthyearViewController: UIViewController, UIPickerViewDelegate, UIP
     }
     
     @IBAction func loginButton(_ sender: Any) {
-        let storyboard = UIStoryboard(name: "MainPageViewController", bundle: nil)
-        let LoginViewController = storyboard.instantiateViewController(identifier: "LoginViewController")
-        LoginViewController.modalPresentationStyle = .fullScreen
-        present(LoginViewController, animated: true, completion: nil)
+        let storyboard = UIStoryboard(name: "TutorialViewController", bundle: nil)
+        let loginViewController = storyboard.instantiateViewController(withIdentifier: "LoginViewController")
+        self.navigationController?.pushViewController(loginViewController, animated: true)
+        
+//        let storyboard = UIStoryboard(name: "MainPageViewController", bundle: nil)
+//        let LoginViewController = storyboard.instantiateViewController(identifier: "LoginViewController")
+//        LoginViewController.modalPresentationStyle = .fullScreen
+//        present(LoginViewController, animated: true, completion: nil)
     }
     
     // UIPickerViewの列の数

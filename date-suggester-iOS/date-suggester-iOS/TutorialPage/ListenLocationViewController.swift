@@ -42,6 +42,7 @@ class ListenLocationViewController: UIViewController, UIPickerViewDelegate, UIPi
         navigationController?.navigationBar.titleTextAttributes = [
             .foregroundColor: UIColor.white
         ]
+        
     }
     
     func areasList(){
@@ -49,12 +50,12 @@ class ListenLocationViewController: UIViewController, UIPickerViewDelegate, UIPi
         let session: URLSession = URLSession(configuration: config)
 
         var urlComponents = URLComponents()
-        urlComponents.scheme = "http"
-        urlComponents.host = "datesuggestersta-env.eba-tjsexdfx.ap-northeast-1.elasticbeanstalk.com"
-        urlComponents.path = "/v1/areas"
-//        urlComponents.scheme = "https"
-//        urlComponents.host = "api-date-suggester-dev.herokuapp.com"
+//        urlComponents.scheme = "http"
+//        urlComponents.host = "datesuggestersta-env.eba-tjsexdfx.ap-northeast-1.elasticbeanstalk.com"
 //        urlComponents.path = "/v1/areas"
+        urlComponents.scheme = "https"
+        urlComponents.host = "api-date-suggester-dev.herokuapp.com"
+        urlComponents.path = "/v1/areas"
         urlComponents.queryItems = [
         ]
         

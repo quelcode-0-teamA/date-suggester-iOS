@@ -22,8 +22,8 @@ class CustomUnderlineTextField: UITextField {
             x: 0,                    // x, yの位置指定は親要素,
             y: self.frame.height,    // この場合はCustomTextFieldを基準にする
             width: self.frame.width,
-            height: 2.5)
-        loginunderline.backgroundColor = UIColor.init(red: 254.0/255, green: 84.0/255, blue: 146.0/255, alpha: 0.9)
+            height: 1.0)
+        loginunderline.backgroundColor = UIColor.init(red: 255/255, green: 255/255, blue: 255/255, alpha: 0.9)
         self.addSubview(self.loginunderline)
         self.bringSubviewToFront(self.loginunderline)
     }
