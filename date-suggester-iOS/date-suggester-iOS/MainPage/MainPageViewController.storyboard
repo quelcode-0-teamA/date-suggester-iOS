@@ -133,7 +133,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="L9p-Am-nzU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2143.4782608695655" y="1479.9107142857142"/>
+            <point key="canvasLocation" x="-2287" y="1868"/>
         </scene>
         <!--しおり-->
         <scene sceneID="EmG-oG-1De">
@@ -185,7 +185,7 @@
                                                     <color key="textColor" red="0.18039215689999999" green="0.18823529410000001" blue="0.19215686269999999" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="2" translatesAutoresizingMaskIntoConstraints="NO" id="bES-zQ-Puh">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bES-zQ-Puh">
                                                     <rect key="frame" x="15" y="13.666666666666671" width="135" height="135"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="135" id="7P0-2w-meY"/>
@@ -359,7 +359,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gx7-KR-i4w" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1557.9710144927537" y="681.69642857142856"/>
+            <point key="canvasLocation" x="1558" y="797"/>
         </scene>
         <!--Date Suggester-->
         <scene sceneID="Hcw-rf-tU5">
@@ -370,32 +370,29 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="プロフィール" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tv6-Kq-LGO">
-                                <rect key="frame" x="129" y="124" width="117" height="18"/>
+                                <rect key="frame" x="129" y="200" width="117" height="18"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="NotoSans-Bold" family="Noto Sans" pointSize="18"/>
                                 <color key="textColor" name="SubTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hSc-YI-XWz">
-                                <rect key="frame" x="53" y="542" width="269" height="41"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="HiraginoSans-W3" family="Hiragino Sans" pointSize="16"/>
-                                <state key="normal" title="プロフィールを編集する">
-                                    <color key="titleColor" name="こうほ"/>
-                                    <color key="titleShadowColor" name="こうほ"/>
-                                </state>
-                            </button>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="名もなき恋愛の達人" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ytZ-h4-AKc">
-                                <rect key="frame" x="90" y="408" width="194" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="textColor" name="SubTextColor"/>
-                                <fontDescription key="fontDescription" name="NotoSans" family="Noto Sans" pointSize="16"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ハートマークの無料アイコン素材 10" translatesAutoresizingMaskIntoConstraints="NO" id="0Lx-Js-mYL">
-                                <rect key="frame" x="115" y="196" width="144" height="144"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="userIcon" translatesAutoresizingMaskIntoConstraints="NO" id="0Lx-Js-mYL">
+                                <rect key="frame" x="115" y="270" width="144" height="144"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="名もなき恋愛の達人" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fQ3-bA-70c">
+                                <rect key="frame" x="109" y="460" width="144" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="NotoSans" family="Noto Sans" pointSize="16"/>
+                                <color key="textColor" name="SubTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MRH-tm-q1f">
+                                <rect key="frame" x="67" y="493" width="240" height="1"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" name="SubTextColor"/>
+                                <color key="tintColor" name="SubTextColor"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="zqp-CJ-TMQ"/>
@@ -403,11 +400,22 @@
                     <tabBarItem key="tabBarItem" title="マイページ" image="person.circle" catalog="system" selectedImage="person.circle" id="pI2-rt-dtg">
                         <color key="badgeColor" name="こうほ"/>
                     </tabBarItem>
-                    <navigationItem key="navigationItem" title="Date Suggester" id="oBo-oK-iVU"/>
+                    <navigationItem key="navigationItem" title="Date Suggester" id="oBo-oK-iVU">
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="setting" id="QPk-iZ-eUO">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="gotoProfileEditButton:" destination="Miq-KR-ZyF" id="4xQ-Y0-gGN"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="userIcon" destination="0Lx-Js-mYL" id="wU7-J7-pd9"/>
+                        <outlet property="userName" destination="fQ3-bA-70c" id="2xf-Wx-1hP"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hmK-RS-ndf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2231.1999999999998" y="681.40929535232385"/>
+            <point key="canvasLocation" x="2231" y="797"/>
         </scene>
         <!--Sign Up View Controller-->
         <scene sceneID="6Bq-in-HZC">
@@ -484,7 +492,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="U4D-bZ-OlI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2230" y="1400"/>
+            <point key="canvasLocation" x="2231" y="1488"/>
         </scene>
         <!--プロフィール設定-->
         <scene sceneID="rBa-z8-vd0">
@@ -563,7 +571,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ハートマークの無料アイコン素材 10" translatesAutoresizingMaskIntoConstraints="NO" id="sBI-ah-BTZ">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="userIcon" translatesAutoresizingMaskIntoConstraints="NO" id="sBI-ah-BTZ">
                                 <rect key="frame" x="115" y="168" width="144" height="144"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -587,7 +595,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lFZ-nl-Qsv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2944.8000000000002" y="680.5097451274363"/>
+            <point key="canvasLocation" x="2945" y="801"/>
         </scene>
         <!--しおり-->
         <scene sceneID="Cb8-OI-oCk">
@@ -955,7 +963,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="2" width="1920" height="1440"/>
         <image name="Full" width="414" height="896"/>
         <image name="book" catalog="system" width="64" height="50"/>
         <image name="heart" catalog="system" width="64" height="54"/>
@@ -963,7 +970,8 @@
         <image name="linkIcon" width="32" height="32"/>
         <image name="moneyIcon" width="10.666666984558105" height="10.666666984558105"/>
         <image name="person.circle" catalog="system" width="64" height="60"/>
-        <image name="ハートマークの無料アイコン素材 10" width="256" height="256"/>
+        <image name="setting" width="16" height="16"/>
+        <image name="userIcon" width="1245" height="1080"/>
         <namedColor name="MainColor">
             <color red="0.99599999189376831" green="0.32899999618530273" blue="0.57300001382827759" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

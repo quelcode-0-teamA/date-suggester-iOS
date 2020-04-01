@@ -12,7 +12,6 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
     
     var activityIndicatorView = UIActivityIndicatorView()
     
-    @IBOutlet weak var subView: UIView!
     @IBOutlet weak var myEmail: SignUpCustomTextField!
     @IBOutlet weak var myPassword: SignUpCustomTextField!
     @IBOutlet weak var myPasswordConfirmation: SignUpCustomTextField!
@@ -25,21 +24,13 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
         myPasswordConfirmation.delegate = self
         
         signUpButton.isEnabled = false
+        signUpButton.layer.masksToBounds = true
+        signUpButton.layer.cornerRadius = 30
         
         activityIndicatorView.center = view.center
         activityIndicatorView.style = .whiteLarge
         activityIndicatorView.color = .darkGray
         view.addSubview(activityIndicatorView)
-        
-        signUpButton.layer.masksToBounds = true
-        signUpButton.layer.cornerRadius = 30
-        
-        subView.layer.cornerRadius = 30
-        subView.layer.shadowRadius = 3.0
-        subView.layer.masksToBounds = false
-        subView.layer.shadowColor = UIColor.gray.cgColor
-        subView.layer.shadowOffset = CGSize(width: 0.0, height: 5.0)
-        subView.layer.shadowOpacity = 0.3
     }
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {

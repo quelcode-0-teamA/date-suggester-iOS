@@ -19,6 +19,7 @@
 		720D081A23E984AF00569622 /* date_suggester_iOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720D081923E984AF00569622 /* date_suggester_iOSUITests.swift */; };
 		720D082C23E9A84E00569622 /* TutorialViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 720D082B23E9A84D00569622 /* TutorialViewController.storyboard */; };
 		721336EA240CE48400F8E967 /* CustomUnderlineTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 721336E9240CE48400F8E967 /* CustomUnderlineTextField.swift */; };
+		7214C7892434802C003EA80B /* userIcon.svg in Resources */ = {isa = PBXBuildFile; fileRef = 7214C7882434802C003EA80B /* userIcon.svg */; };
 		7215FF14240D600400AB3BBB /* SignUpCustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7215FF13240D600400AB3BBB /* SignUpCustomTextField.swift */; };
 		721D100123F509DD006DA520 /* MypageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 721D100023F509DD006DA520 /* MypageViewController.swift */; };
 		721D100323F50E6A006DA520 /* UIColorHex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 721D100223F50E6A006DA520 /* UIColorHex.swift */; };
@@ -43,7 +44,6 @@
 		7281E60A241F4F5100886634 /* MyPlan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7281E609241F4F5100886634 /* MyPlan.swift */; };
 		7281E60C241F4FB200886634 /* Plan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7281E60B241F4FB200886634 /* Plan.swift */; };
 		7281E60E241F502900886634 /* Spot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7281E60D241F502900886634 /* Spot.swift */; };
-		728562912431FF3900806867 /* birthIcon.svg in Resources */ = {isa = PBXBuildFile; fileRef = 7285628F2431FF3900806867 /* birthIcon.svg */; };
 		728562922431FF3900806867 /* mainImage.svg in Resources */ = {isa = PBXBuildFile; fileRef = 728562902431FF3900806867 /* mainImage.svg */; };
 		7291BD2B23FE2D80001047D8 /* PopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7291BD2A23FE2D80001047D8 /* PopupViewController.swift */; };
 		72A4E17E23F5344800B7607C /* ProfileEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A4E17D23F5344800B7607C /* ProfileEditViewController.swift */; };
@@ -94,6 +94,7 @@
 		720D081B23E984AF00569622 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		720D082B23E9A84D00569622 /* TutorialViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TutorialViewController.storyboard; sourceTree = "<group>"; };
 		721336E9240CE48400F8E967 /* CustomUnderlineTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomUnderlineTextField.swift; sourceTree = "<group>"; };
+		7214C7882434802C003EA80B /* userIcon.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = userIcon.svg; sourceTree = "<group>"; };
 		7215FF13240D600400AB3BBB /* SignUpCustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpCustomTextField.swift; sourceTree = "<group>"; };
 		721D100023F509DD006DA520 /* MypageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MypageViewController.swift; sourceTree = "<group>"; };
 		721D100223F50E6A006DA520 /* UIColorHex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorHex.swift; sourceTree = "<group>"; };
@@ -118,7 +119,6 @@
 		7281E609241F4F5100886634 /* MyPlan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPlan.swift; sourceTree = "<group>"; };
 		7281E60B241F4FB200886634 /* Plan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Plan.swift; sourceTree = "<group>"; };
 		7281E60D241F502900886634 /* Spot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spot.swift; sourceTree = "<group>"; };
-		7285628F2431FF3900806867 /* birthIcon.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = birthIcon.svg; sourceTree = "<group>"; };
 		728562902431FF3900806867 /* mainImage.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = mainImage.svg; sourceTree = "<group>"; };
 		7291BD2A23FE2D80001047D8 /* PopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupViewController.swift; sourceTree = "<group>"; };
 		72A4E17D23F5344800B7607C /* ProfileEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileEditViewController.swift; sourceTree = "<group>"; };
@@ -303,7 +303,7 @@
 		7285628C2431FE6D00806867 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				7285628F2431FF3900806867 /* birthIcon.svg */,
+				7214C7882434802C003EA80B /* userIcon.svg */,
 				728562902431FF3900806867 /* mainImage.svg */,
 			);
 			path = Resources;
@@ -440,10 +440,10 @@
 				7276AEE323EAA9DE008864D7 /* SimplePlanViewController.storyboard in Resources */,
 				720D082C23E9A84E00569622 /* TutorialViewController.storyboard in Resources */,
 				720D080123E984AE00569622 /* Assets.xcassets in Resources */,
-				728562912431FF3900806867 /* birthIcon.svg in Resources */,
 				72A4E18223F57BB800B7607C /* DatePlanListCollectionViewCell.xib in Resources */,
 				720D07FF23E984AE00569622 /* Main.storyboard in Resources */,
 				7276AEEA23EABC17008864D7 /* MainPageViewController.storyboard in Resources */,
+				7214C7892434802C003EA80B /* userIcon.svg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
