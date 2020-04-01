@@ -20,18 +20,18 @@ class DateplanListViewController: UIViewController,UICollectionViewDataSource, U
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        DispatchQueue.main.asyncAfter(deadline: .now()+1, execute: {
-            let defaults = UserDefaults.standard
-            let popUp = defaults.bool(forKey: "popUp")
-            
-            if popUp {
-                let storyboard = UIStoryboard(name: "MainPageViewController", bundle: nil)
-                let controller = storyboard.instantiateViewController(identifier: "PopupViewController")
-                controller.modalPresentationStyle = .fullScreen
-                self.present(controller, animated: true, completion: nil)
-                defaults.set(false, forKey: "popUp")
-            }
-        })
+//        DispatchQueue.main.asyncAfter(deadline: .now()+1, execute: {
+//            let defaults = UserDefaults.standard
+//            let popUp = defaults.bool(forKey: "popUp")
+//
+//            if popUp {
+//                let storyboard = UIStoryboard(name: "MainPageViewController", bundle: nil)
+//                let controller = storyboard.instantiateViewController(identifier: "PopupViewController")
+//                controller.modalPresentationStyle = .fullScreen
+//                self.present(controller, animated: true, completion: nil)
+//                defaults.set(false, forKey: "popUp")
+//            }
+//        })
         
         collectionView.delegate = self
         collectionView.dataSource = self
@@ -90,21 +90,21 @@ class DateplanListViewController: UIViewController,UICollectionViewDataSource, U
         task.resume()
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        DispatchQueue.main.asyncAfter(deadline: .now()+1, execute: {
-            let defaults = UserDefaults.standard
-            let popUp = defaults.bool(forKey: "popUp")
-            
-            if popUp {
-                let storyboard = UIStoryboard(name: "MainPageViewController", bundle: nil)
-                let controller = storyboard.instantiateViewController(identifier: "PopupViewController")
-                controller.modalPresentationStyle = .fullScreen
-                self.present(controller, animated: true, completion: nil)
-                defaults.set(false, forKey: "popUp")
-            }
-        })
-    }
+//    override func viewDidAppear(_ animated: Bool) {
+//        super.viewDidAppear(animated)
+//        DispatchQueue.main.asyncAfter(deadline: .now()+1, execute: {
+//            let defaults = UserDefaults.standard
+//            let popUp = defaults.bool(forKey: "popUp")
+//
+//            if popUp {
+//                let storyboard = UIStoryboard(name: "MainPageViewController", bundle: nil)
+//                let controller = storyboard.instantiateViewController(identifier: "PopupViewController")
+//                controller.modalPresentationStyle = .fullScreen
+//                self.present(controller, animated: true, completion: nil)
+//                defaults.set(false, forKey: "popUp")
+//            }
+//        })
+//    }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         //セルの選択を解除

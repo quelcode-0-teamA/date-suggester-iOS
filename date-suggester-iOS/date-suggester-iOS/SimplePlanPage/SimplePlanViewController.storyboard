@@ -31,14 +31,14 @@
                                 <color key="textColor" name="MainColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <progressView opaque="NO" contentMode="scaleAspectFit" verticalHuggingPriority="750" progress="0.25" progressImage="test" translatesAutoresizingMaskIntoConstraints="NO" id="sIU-eE-IXU" customClass="CustomProgressView" customModule="date_suggester_iOS" customModuleProvider="target">
+                            <progressView opaque="NO" contentMode="scaleAspectFit" verticalHuggingPriority="750" progress="0.25" progressImage="NavBarBG" translatesAutoresizingMaskIntoConstraints="NO" id="sIU-eE-IXU" customClass="CustomProgressView" customModule="date_suggester_iOS" customModuleProvider="target">
                                 <rect key="frame" x="58" y="585" width="259" height="2"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="2" id="rS2-9d-IXx"/>
                                 </constraints>
                             </progressView>
                             <button opaque="NO" contentMode="right" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2vu-FV-Ocu" customClass="CustomYerrowButton" customModule="date_suggester_iOS" customModuleProvider="target">
-                                <rect key="frame" x="30" y="365" width="314" height="60"/>
+                                <rect key="frame" x="40" y="364" width="295" height="60"/>
                                 <color key="backgroundColor" name="ButtonColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="Xsx-sH-7QF"/>
@@ -51,8 +51,15 @@
                                     <action selector="nearButton:" destination="D01-Eu-ozo" eventType="touchUpInside" id="taA-3P-onv"/>
                                 </connections>
                             </button>
+                            <imageView clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="location" translatesAutoresizingMaskIntoConstraints="NO" id="Vf5-cL-Wxt">
+                                <rect key="frame" x="103.5" y="101" width="168" height="144"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="144" id="JyX-bD-mEs"/>
+                                    <constraint firstAttribute="width" constant="168" id="a3f-9p-Dg6"/>
+                                </constraints>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N7v-jp-lHw" customClass="CustomYerrowButton" customModule="date_suggester_iOS" customModuleProvider="target">
-                                <rect key="frame" x="30" y="445" width="314" height="60"/>
+                                <rect key="frame" x="40" y="444" width="295" height="60"/>
                                 <color key="backgroundColor" name="ButtonColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="GRN-Gs-wVb"/>
@@ -65,27 +72,20 @@
                                     <action selector="farButton:" destination="D01-Eu-ozo" eventType="touchUpInside" id="rs7-Dr-C78"/>
                                 </connections>
                             </button>
-                            <imageView clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="location" translatesAutoresizingMaskIntoConstraints="NO" id="Vf5-cL-Wxt">
-                                <rect key="frame" x="103.5" y="101" width="168" height="144"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="144" id="JyX-bD-mEs"/>
-                                    <constraint firstAttribute="width" constant="168" id="a3f-9p-Dg6"/>
-                                </constraints>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="2vu-FV-Ocu" firstAttribute="top" secondItem="QqP-39-pYc" secondAttribute="bottom" constant="70" id="1px-Nd-Saf"/>
+                            <constraint firstItem="2vu-FV-Ocu" firstAttribute="top" secondItem="QqP-39-pYc" secondAttribute="bottom" constant="69" id="1px-Nd-Saf"/>
                             <constraint firstItem="Vf5-cL-Wxt" firstAttribute="centerX" secondItem="yA3-fs-s4J" secondAttribute="centerX" id="4JC-Wh-UGJ"/>
                             <constraint firstItem="QqP-39-pYc" firstAttribute="centerX" secondItem="yA3-fs-s4J" secondAttribute="centerX" id="4e9-Ut-sMS"/>
                             <constraint firstItem="Vf5-cL-Wxt" firstAttribute="top" secondItem="aWG-hF-qaE" secondAttribute="top" constant="57" id="7Og-zG-2t8"/>
                             <constraint firstItem="sIU-eE-IXU" firstAttribute="leading" secondItem="yA3-fs-s4J" secondAttribute="leadingMargin" constant="42" id="EBb-Yv-Osj"/>
-                            <constraint firstItem="2vu-FV-Ocu" firstAttribute="leading" secondItem="aWG-hF-qaE" secondAttribute="leading" constant="30" id="I94-xs-vFG"/>
-                            <constraint firstItem="aWG-hF-qaE" firstAttribute="trailing" secondItem="2vu-FV-Ocu" secondAttribute="trailing" constant="31" id="LIo-jr-g56"/>
-                            <constraint firstItem="N7v-jp-lHw" firstAttribute="leading" secondItem="aWG-hF-qaE" secondAttribute="leading" constant="30" id="Nhe-We-ilT"/>
+                            <constraint firstItem="2vu-FV-Ocu" firstAttribute="leading" secondItem="aWG-hF-qaE" secondAttribute="leading" constant="40" id="I94-xs-vFG"/>
+                            <constraint firstItem="aWG-hF-qaE" firstAttribute="trailing" secondItem="2vu-FV-Ocu" secondAttribute="trailing" constant="40" id="LIo-jr-g56"/>
+                            <constraint firstItem="N7v-jp-lHw" firstAttribute="leading" secondItem="aWG-hF-qaE" secondAttribute="leading" constant="40" id="Nhe-We-ilT"/>
                             <constraint firstItem="N7v-jp-lHw" firstAttribute="top" secondItem="2vu-FV-Ocu" secondAttribute="bottom" constant="20" id="aIj-G7-bo9"/>
                             <constraint firstAttribute="trailingMargin" secondItem="sIU-eE-IXU" secondAttribute="trailing" constant="42" id="gYI-rE-Ab1"/>
-                            <constraint firstItem="aWG-hF-qaE" firstAttribute="trailing" secondItem="N7v-jp-lHw" secondAttribute="trailing" constant="31" id="hRf-81-D7V"/>
+                            <constraint firstItem="aWG-hF-qaE" firstAttribute="trailing" secondItem="N7v-jp-lHw" secondAttribute="trailing" constant="40" id="hRf-81-D7V"/>
                             <constraint firstItem="QqP-39-pYc" firstAttribute="top" secondItem="Vf5-cL-Wxt" secondAttribute="bottom" constant="29" id="mTe-GY-cag"/>
                             <constraint firstItem="aWG-hF-qaE" firstAttribute="bottom" secondItem="sIU-eE-IXU" secondAttribute="bottom" constant="80" id="vAV-Tj-f7g"/>
                         </constraints>
@@ -197,7 +197,7 @@
         <!--さくっとデートプラン-->
         <scene sceneID="q87-Xg-MY7">
             <objects>
-                <viewController storyboardIdentifier="DateTimeViewController" id="ZUd-mR-avH" customClass="DateTimeViewController" customModule="date_suggester_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="ZUd-mR-avH" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="aSo-y7-jm3">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -229,9 +229,6 @@
                                         <state key="normal" title="いちにち">
                                             <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
-                                        <connections>
-                                            <action selector="allDayButtonTap:" destination="ZUd-mR-avH" eventType="touchUpInside" id="aiQ-wp-2na"/>
-                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YNC-Zn-pTO" customClass="CustomButton" customModule="date_suggester_iOS" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="90" width="314" height="60"/>
@@ -240,9 +237,6 @@
                                         <state key="normal" title="ランチ">
                                             <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
-                                        <connections>
-                                            <action selector="lunchButtonTap:" destination="ZUd-mR-avH" eventType="touchUpInside" id="mAa-Ck-AdX"/>
-                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ShL-3z-A24" customClass="CustomButton" customModule="date_suggester_iOS" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="180" width="314" height="60"/>
@@ -251,9 +245,6 @@
                                         <state key="normal" title="よるデート">
                                             <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
-                                        <connections>
-                                            <action selector="dinnerButtonTap:" destination="ZUd-mR-avH" eventType="touchUpInside" id="kw9-8C-sV5"/>
-                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -288,15 +279,12 @@
                     </view>
                     <navigationItem key="navigationItem" title="さくっとデートプラン" id="tAT-6G-bbV"/>
                     <connections>
-                        <outlet property="allDayButton" destination="rAk-C7-4JA" id="ceY-Q7-idB"/>
-                        <outlet property="lunchButton" destination="YNC-Zn-pTO" id="vwG-MU-NJ4"/>
-                        <outlet property="nightButton" destination="ShL-3z-A24" id="0p7-XB-v4W"/>
                         <outlet property="roundProgressBar" destination="y5X-NB-d3O" id="Ba0-wx-gc7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KAQ-d8-BwL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-542.02898550724638" y="-797.54464285714278"/>
+            <point key="canvasLocation" x="-554" y="-1576"/>
         </scene>
         <!--Simple Plan View Controller5-->
         <scene sceneID="1eg-zM-sca">
@@ -354,7 +342,7 @@
         <!--さくっとデートプラン-->
         <scene sceneID="g4K-Kk-6tB">
             <objects>
-                <viewController storyboardIdentifier="DateFeelingViewController" id="K5J-lF-eb2" customClass="DateFeelingViewController" customModule="date_suggester_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="K5J-lF-eb2" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ZHS-cx-pRt">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -386,9 +374,6 @@
                                         <state key="normal" title="ごはん">
                                             <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
-                                        <connections>
-                                            <action selector="mealButtonTap:" destination="K5J-lF-eb2" eventType="touchUpInside" id="sPz-Qy-n0a"/>
-                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tKB-IR-bVx" customClass="CustomButton" customModule="date_suggester_iOS" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="90" width="314" height="60"/>
@@ -401,9 +386,6 @@
                                         <state key="normal" title="うごきたい">
                                             <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
-                                        <connections>
-                                            <action selector="outDoorButton:" destination="K5J-lF-eb2" eventType="touchUpInside" id="zdk-Zz-cFq"/>
-                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M9v-8t-ley" customClass="CustomButton" customModule="date_suggester_iOS" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="180" width="314" height="60"/>
@@ -416,9 +398,6 @@
                                         <state key="normal" title="まったり">
                                             <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
-                                        <connections>
-                                            <action selector="relaxButton:" destination="K5J-lF-eb2" eventType="touchUpInside" id="D7l-kZ-uVJ"/>
-                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -446,15 +425,12 @@
                     </view>
                     <navigationItem key="navigationItem" title="さくっとデートプラン" id="Zol-pG-mge"/>
                     <connections>
-                        <outlet property="mealButton" destination="lFL-po-UdW" id="MHH-R8-5cc"/>
-                        <outlet property="outDoorButton" destination="tKB-IR-bVx" id="CdI-dO-Lkt"/>
-                        <outlet property="relaxButton" destination="M9v-8t-ley" id="qbG-Xl-09s"/>
                         <outlet property="roundProgressBar" destination="sZm-oZ-Htq" id="8do-Fx-rvL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RXr-CC-fnc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="132" y="-798"/>
+            <point key="canvasLocation" x="97" y="-1576"/>
         </scene>
         <!--Date Plan Suggestion View Controlller-->
         <scene sceneID="2b2-IY-1ta">
@@ -464,10 +440,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TLi-U3-pbP">
-                                <rect key="frame" x="60" y="812" width="102" height="60"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TLi-U3-pbP">
+                                <rect key="frame" x="72" y="592" width="102" height="60"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="102" id="4IM-bB-zko"/>
+                                    <constraint firstAttribute="height" constant="60" id="bvg-Q6-q50"/>
+                                </constraints>
                                 <state key="normal" title="選び直す">
                                     <color key="titleColor" name="MainColor"/>
                                 </state>
@@ -475,20 +454,17 @@
                                     <action selector="againButton:" destination="zf0-QD-QPT" eventType="touchUpInside" id="od9-KB-g7u"/>
                                 </connections>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="test" translatesAutoresizingMaskIntoConstraints="NO" id="WtY-EC-33F">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="NavBarBG" translatesAutoresizingMaskIntoConstraints="NO" id="WtY-EC-33F">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="260"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="260" id="ffF-pV-gaH"/>
-                                </constraints>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="soq-1b-kr7">
-                                <rect key="frame" x="10" y="10" width="355" height="240"/>
+                                <rect key="frame" x="10" y="10" width="355" height="1"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="vms-sC-jUD">
-                                        <rect key="frame" x="0.0" y="0.0" width="355" height="240"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="vms-sC-jUD">
+                                        <rect key="frame" x="-7" y="0.0" width="369" height="222"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AB6-Y4-2op">
-                                                <rect key="frame" x="0.0" y="0.0" width="355" height="35"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="369" height="35"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eQM-n2-1aq">
                                                         <rect key="frame" x="0.0" y="0.0" width="35" height="35"/>
@@ -509,22 +485,24 @@
                                                     <constraint firstAttribute="bottom" secondItem="eQM-n2-1aq" secondAttribute="bottom" id="7yz-IB-yqk"/>
                                                     <constraint firstItem="eQM-n2-1aq" firstAttribute="top" secondItem="AB6-Y4-2op" secondAttribute="top" id="8pe-yx-J1p"/>
                                                     <constraint firstItem="eQM-n2-1aq" firstAttribute="leading" secondItem="AB6-Y4-2op" secondAttribute="leading" id="O7V-bV-Z3f"/>
+                                                    <constraint firstAttribute="width" constant="369" id="gE4-vW-ssy"/>
+                                                    <constraint firstAttribute="height" constant="35" id="mv7-pd-cGd"/>
                                                 </constraints>
                                             </view>
                                             <stackView opaque="NO" contentMode="scaleToFill" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="5J4-gz-GiF">
-                                                <rect key="frame" x="0.0" y="60" width="355" height="130"/>
+                                                <rect key="frame" x="0.0" y="41" width="369" height="150"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="Pcf-VA-jfA">
-                                                        <rect key="frame" x="0.0" y="0.0" width="225" height="54"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="219" height="54"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="猫カフェデート" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gsD-D7-2dl">
-                                                                <rect key="frame" x="0.0" y="0.0" width="225" height="22"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="219" height="22"/>
                                                                 <fontDescription key="fontDescription" name="HiraginoSans-W6" family="Hiragino Sans" pointSize="22"/>
                                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="にゃんことまったりしたい" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jAr-OX-2kh">
-                                                                <rect key="frame" x="0.0" y="37" width="225" height="17"/>
+                                                                <rect key="frame" x="0.0" y="37" width="219" height="17"/>
                                                                 <fontDescription key="fontDescription" name="HiraginoSans-W3" family="Hiragino Sans" pointSize="17"/>
                                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <nil key="highlightedColor"/>
@@ -532,15 +510,20 @@
                                                         </subviews>
                                                     </stackView>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="2" translatesAutoresizingMaskIntoConstraints="NO" id="ZoF-Rc-3Zp">
-                                                        <rect key="frame" x="225" y="0.0" width="130" height="130"/>
+                                                        <rect key="frame" x="219" y="0.0" width="150" height="150"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" secondItem="ZoF-Rc-3Zp" secondAttribute="height" multiplier="1:1" id="sF7-VT-Ybj"/>
                                                         </constraints>
                                                     </imageView>
                                                 </subviews>
+                                                <constraints>
+                                                    <constraint firstItem="Pcf-VA-jfA" firstAttribute="top" secondItem="5J4-gz-GiF" secondAttribute="top" id="OK2-pV-2cp"/>
+                                                    <constraint firstItem="ZoF-Rc-3Zp" firstAttribute="leading" secondItem="Pcf-VA-jfA" secondAttribute="trailing" id="kS5-Hu-cwP"/>
+                                                    <constraint firstItem="Pcf-VA-jfA" firstAttribute="leading" secondItem="5J4-gz-GiF" secondAttribute="leading" id="s85-Dt-aBG"/>
+                                                </constraints>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="sEL-pd-8oX">
-                                                <rect key="frame" x="0.0" y="215" width="355" height="25"/>
+                                                <rect key="frame" x="0.0" y="197" width="369" height="25"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="eoW-cy-SSB">
                                                         <rect key="frame" x="0.0" y="0.0" width="82" height="25"/>
@@ -577,7 +560,7 @@
                                                         </subviews>
                                                     </stackView>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YQW-Bb-96e">
-                                                        <rect key="frame" x="199" y="0.0" width="156" height="25"/>
+                                                        <rect key="frame" x="199" y="0.0" width="170" height="25"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </view>
                                                 </subviews>
@@ -586,26 +569,32 @@
                                                 </constraints>
                                             </stackView>
                                         </subviews>
+                                        <constraints>
+                                            <constraint firstItem="AB6-Y4-2op" firstAttribute="leading" secondItem="vms-sC-jUD" secondAttribute="leading" id="0Rd-Gm-3TV"/>
+                                            <constraint firstItem="5J4-gz-GiF" firstAttribute="top" secondItem="AB6-Y4-2op" secondAttribute="bottom" constant="6" id="DBX-4i-HzV"/>
+                                            <constraint firstItem="AB6-Y4-2op" firstAttribute="top" secondItem="vms-sC-jUD" secondAttribute="top" id="KhR-v5-vGw"/>
+                                            <constraint firstAttribute="trailing" secondItem="5J4-gz-GiF" secondAttribute="trailing" id="Nfa-y1-1Nq"/>
+                                            <constraint firstAttribute="trailing" secondItem="AB6-Y4-2op" secondAttribute="trailing" id="Zb3-e4-rdb"/>
+                                            <constraint firstItem="5J4-gz-GiF" firstAttribute="leading" secondItem="vms-sC-jUD" secondAttribute="leading" id="gcO-Nh-Oe7"/>
+                                        </constraints>
                                     </stackView>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstItem="vms-sC-jUD" firstAttribute="top" secondItem="soq-1b-kr7" secondAttribute="top" id="FbT-Ll-vmS"/>
-                                    <constraint firstAttribute="bottom" secondItem="vms-sC-jUD" secondAttribute="bottom" id="bIM-h4-XUb"/>
-                                    <constraint firstItem="vms-sC-jUD" firstAttribute="leading" secondItem="soq-1b-kr7" secondAttribute="leading" id="rLH-zM-I4z"/>
-                                    <constraint firstAttribute="trailing" secondItem="vms-sC-jUD" secondAttribute="trailing" id="tLK-Nc-UvS"/>
+                                    <constraint firstAttribute="trailing" secondItem="vms-sC-jUD" secondAttribute="trailing" constant="-7" id="5MB-KY-cEw"/>
+                                    <constraint firstItem="vms-sC-jUD" firstAttribute="top" secondItem="soq-1b-kr7" secondAttribute="top" id="H8N-yX-LfA"/>
+                                    <constraint firstItem="vms-sC-jUD" firstAttribute="leading" secondItem="soq-1b-kr7" secondAttribute="leading" constant="-7" id="LCk-61-o3r"/>
                                 </constraints>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="XMZ-sN-2WF" customClass="datePlanSuggestTV" customModule="date_suggester_iOS" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="303" width="376" height="366"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="XMZ-sN-2WF" customClass="datePlanSuggestTV" customModule="date_suggester_iOS" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="291" width="375" height="283"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="DateListCustomCell" rowHeight="135" id="Sna-xc-fwP" customClass="DateListCustomCell" customModule="date_suggester_iOS" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="376" height="135"/>
+                                        <rect key="frame" x="0.0" y="28" width="375" height="135"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Sna-xc-fwP" id="Y7o-Ke-JgZ">
-                                            <rect key="frame" x="0.0" y="0.0" width="376" height="135"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="135"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="moneyIcon" translatesAutoresizingMaskIntoConstraints="NO" id="25N-kQ-RdA">
@@ -615,41 +604,27 @@
                                                         <constraint firstAttribute="width" constant="25" id="XH9-RF-6rG"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="予算" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uaB-2n-lYS">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="予算" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uaB-2n-lYS">
                                                     <rect key="frame" x="168" y="73" width="187" height="21"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="187" id="7WU-XN-cop"/>
-                                                        <constraint firstAttribute="height" constant="21" id="Ece-tU-VpC"/>
-                                                    </constraints>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" name="HiraginoSans-W3" family="Hiragino Sans" pointSize="17"/>
                                                     <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="URL//image/path/.." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LtR-Ti-TIS">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="URL//image/path/.." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LtR-Ti-TIS">
                                                     <rect key="frame" x="168" y="105" width="165" height="17"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="17" id="Ku3-Bu-Ddy"/>
-                                                        <constraint firstAttribute="width" constant="165" id="RaJ-kQ-STh"/>
-                                                    </constraints>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" name="HiraginoSans-W3" family="Hiragino Sans" pointSize="17"/>
                                                     <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="linkIcon" translatesAutoresizingMaskIntoConstraints="NO" id="CJm-D6-VdY">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="linkIcon" translatesAutoresizingMaskIntoConstraints="NO" id="CJm-D6-VdY">
                                                     <rect key="frame" x="135" y="98" width="25" height="32"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="25" id="0m6-X4-bu7"/>
-                                                        <constraint firstAttribute="height" constant="32" id="Y0w-Pq-Oir"/>
-                                                        <constraint firstAttribute="width" constant="25" id="eOn-TA-rdF"/>
-                                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="32" id="jrB-sv-BD3"/>
-                                                    </constraints>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="タイトル" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1MY-1i-lLt">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="タイトル" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1MY-1i-lLt">
                                                     <rect key="frame" x="135" y="18" width="250" height="27"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="21" id="Jae-LD-3KX"/>
-                                                        <constraint firstAttribute="width" constant="250" id="lkz-7V-Uow"/>
-                                                    </constraints>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" name="HiraginoSans-W3" family="Hiragino Sans" pointSize="17"/>
                                                     <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
@@ -659,16 +634,6 @@
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
                                             </subviews>
-                                            <constraints>
-                                                <constraint firstItem="LtR-Ti-TIS" firstAttribute="leading" secondItem="CJm-D6-VdY" secondAttribute="trailing" constant="8" id="Fdw-ZH-5dM"/>
-                                                <constraint firstItem="uaB-2n-lYS" firstAttribute="leading" secondItem="25N-kQ-RdA" secondAttribute="trailing" constant="8" id="NC4-eA-pSD"/>
-                                                <constraint firstItem="CJm-D6-VdY" firstAttribute="top" secondItem="25N-kQ-RdA" secondAttribute="bottom" id="UpT-WA-Rd2"/>
-                                                <constraint firstItem="LtR-Ti-TIS" firstAttribute="top" secondItem="uaB-2n-lYS" secondAttribute="bottom" constant="11" id="VRD-ke-H6B"/>
-                                                <constraint firstItem="uaB-2n-lYS" firstAttribute="top" secondItem="1MY-1i-lLt" secondAttribute="bottom" constant="28" id="VYe-2x-OFM"/>
-                                                <constraint firstItem="25N-kQ-RdA" firstAttribute="top" secondItem="1MY-1i-lLt" secondAttribute="bottom" constant="21" id="dFe-vj-EJR"/>
-                                                <constraint firstItem="1MY-1i-lLt" firstAttribute="top" secondItem="Y7o-Ke-JgZ" secondAttribute="topMargin" constant="7" id="tDu-iq-Era"/>
-                                                <constraint firstAttribute="bottom" secondItem="CJm-D6-VdY" secondAttribute="bottom" constant="5" id="xVR-I9-wah"/>
-                                            </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="budget" destination="uaB-2n-lYS" id="bCj-lQ-2TI"/>
@@ -681,10 +646,13 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pDM-5M-GYb">
-                                <rect key="frame" x="252" y="812" width="102" height="60"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pDM-5M-GYb">
+                                <rect key="frame" x="201" y="592" width="102" height="60"/>
                                 <color key="backgroundColor" name="MainColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="RsG-7r-8ba"/>
+                                    <constraint firstAttribute="width" constant="102" id="ib6-R6-WCe"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="18"/>
                                 <state key="normal" title="決定">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -693,9 +661,12 @@
                                     <action selector="gotoMypage:" destination="zf0-QD-QPT" eventType="touchUpInside" id="9uP-BL-KM6"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="コース詳細" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2qp-5h-Jvd">
-                                <rect key="frame" x="15" y="273" width="74" height="15"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1日のデートコースプラン" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2qp-5h-Jvd">
+                                <rect key="frame" x="10" y="268" width="175" height="15"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="175" id="6m0-DA-l0e"/>
+                                    <constraint firstAttribute="height" constant="15" id="h9V-wB-BCE"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="HiraginoSans-W6" family="Hiragino Sans" pointSize="15"/>
                                 <color key="textColor" name="MainColor"/>
                                 <nil key="highlightedColor"/>
@@ -703,14 +674,29 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="Qcj-3O-yt9" firstAttribute="trailing" secondItem="WtY-EC-33F" secondAttribute="trailing" id="57a-s6-w2C"/>
-                            <constraint firstItem="WtY-EC-33F" firstAttribute="top" secondItem="sVP-J9-Yxb" secondAttribute="top" id="7Bq-ch-Qru"/>
-                            <constraint firstItem="WtY-EC-33F" firstAttribute="bottom" secondItem="soq-1b-kr7" secondAttribute="bottom" constant="10" id="Gvi-Vh-si5"/>
-                            <constraint firstItem="WtY-EC-33F" firstAttribute="leading" secondItem="sVP-J9-Yxb" secondAttribute="leading" id="HBZ-4Z-LZf"/>
+                            <constraint firstItem="2qp-5h-Jvd" firstAttribute="top" secondItem="WtY-EC-33F" secondAttribute="bottom" constant="8" id="6s0-Ga-vvG"/>
+                            <constraint firstItem="WtY-EC-33F" firstAttribute="leading" secondItem="Qcj-3O-yt9" secondAttribute="leading" id="EA0-Hg-9PS"/>
+                            <constraint firstItem="soq-1b-kr7" firstAttribute="centerX" secondItem="WtY-EC-33F" secondAttribute="centerX" id="Fk2-XM-onh"/>
                             <constraint firstItem="ZoF-Rc-3Zp" firstAttribute="width" secondItem="sVP-J9-Yxb" secondAttribute="width" multiplier="0.4" id="ISl-Cr-FKw"/>
+                            <constraint firstItem="2qp-5h-Jvd" firstAttribute="top" secondItem="sVP-J9-Yxb" secondAttribute="top" constant="268" id="L0l-mQ-b8G"/>
+                            <constraint firstItem="WtY-EC-33F" firstAttribute="top" secondItem="sVP-J9-Yxb" secondAttribute="top" id="On9-GV-Gvd"/>
+                            <constraint firstItem="XMZ-sN-2WF" firstAttribute="leading" secondItem="Qcj-3O-yt9" secondAttribute="leading" id="PdQ-lW-65i"/>
+                            <constraint firstAttribute="bottom" secondItem="soq-1b-kr7" secondAttribute="bottom" constant="656" id="Sw1-jz-uFi"/>
+                            <constraint firstItem="Qcj-3O-yt9" firstAttribute="trailing" secondItem="pDM-5M-GYb" secondAttribute="trailing" constant="72" id="T96-Nf-uCS"/>
+                            <constraint firstItem="XMZ-sN-2WF" firstAttribute="leading" secondItem="WtY-EC-33F" secondAttribute="leading" id="TpO-FM-T2e"/>
+                            <constraint firstAttribute="trailing" secondItem="XMZ-sN-2WF" secondAttribute="trailing" id="UC6-t8-MJm"/>
                             <constraint firstItem="soq-1b-kr7" firstAttribute="leading" secondItem="Qcj-3O-yt9" secondAttribute="leading" constant="10" id="Z5d-ri-xE4"/>
+                            <constraint firstItem="TLi-U3-pbP" firstAttribute="top" secondItem="XMZ-sN-2WF" secondAttribute="bottom" constant="18" id="frw-6f-anr"/>
+                            <constraint firstItem="2qp-5h-Jvd" firstAttribute="leading" secondItem="Qcj-3O-yt9" secondAttribute="leading" constant="10" id="izJ-bb-9ZL"/>
+                            <constraint firstItem="TLi-U3-pbP" firstAttribute="leading" secondItem="Qcj-3O-yt9" secondAttribute="leading" constant="72" id="nCP-9m-rM6"/>
                             <constraint firstItem="Qcj-3O-yt9" firstAttribute="trailing" secondItem="soq-1b-kr7" secondAttribute="trailing" constant="10" id="npI-JP-zFl"/>
                             <constraint firstItem="soq-1b-kr7" firstAttribute="top" secondItem="Qcj-3O-yt9" secondAttribute="top" constant="10" id="oFG-He-NUD"/>
+                            <constraint firstItem="XMZ-sN-2WF" firstAttribute="top" secondItem="2qp-5h-Jvd" secondAttribute="bottom" constant="8" id="sbQ-9m-Tjc"/>
+                            <constraint firstItem="pDM-5M-GYb" firstAttribute="top" relation="greaterThanOrEqual" secondItem="XMZ-sN-2WF" secondAttribute="bottom" constant="18" id="shN-YA-0s1"/>
+                            <constraint firstItem="WtY-EC-33F" firstAttribute="trailing" secondItem="Qcj-3O-yt9" secondAttribute="trailing" id="uuX-76-SBz"/>
+                            <constraint firstItem="Qcj-3O-yt9" firstAttribute="bottom" secondItem="pDM-5M-GYb" secondAttribute="bottom" constant="15" id="v66-hs-JIA"/>
+                            <constraint firstItem="Qcj-3O-yt9" firstAttribute="bottom" secondItem="TLi-U3-pbP" secondAttribute="bottom" constant="15" id="vyT-hq-svW"/>
+                            <constraint firstItem="TLi-U3-pbP" firstAttribute="top" relation="greaterThanOrEqual" secondItem="XMZ-sN-2WF" secondAttribute="bottom" constant="18" id="wBQ-k4-xOI"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Qcj-3O-yt9"/>
                     </view>
@@ -730,7 +716,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="E3r-xv-90g" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="132" y="-54"/>
+            <point key="canvasLocation" x="72.799999999999997" y="-65.217391304347828"/>
         </scene>
         <!--App Navigation Controller-->
         <scene sceneID="Bsg-o2-LCU">
@@ -781,80 +767,80 @@
                                     <constraint firstAttribute="height" constant="150" id="ma3-mW-bCi"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="予算はどのくらい？" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ckF-qu-Dsa">
-                                <rect key="frame" x="92.5" y="235" width="190" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="hg8-ee-ycA"/>
-                                    <constraint firstAttribute="width" constant="190" id="kOp-5D-xEz"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="HiraginoSans-W6" family="Hiragino Sans" pointSize="21"/>
-                                <color key="textColor" name="こうほ"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <progressView opaque="NO" contentMode="scaleAspectFit" verticalHuggingPriority="750" progress="0.25" progressImage="test" translatesAutoresizingMaskIntoConstraints="NO" id="nzn-0u-t7s" customClass="CustomProgressView" customModule="date_suggester_iOS" customModuleProvider="target">
+                            <progressView opaque="NO" contentMode="scaleAspectFit" verticalHuggingPriority="750" progress="0.25" progressImage="NavBarBG" translatesAutoresizingMaskIntoConstraints="NO" id="nzn-0u-t7s" customClass="CustomProgressView" customModule="date_suggester_iOS" customModuleProvider="target">
                                 <rect key="frame" x="58" y="585" width="259" height="2"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="2" id="4j8-FB-LUb"/>
                                 </constraints>
                             </progressView>
-                            <button opaque="NO" contentMode="right" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uSS-2q-LFV" customClass="CustomButton" customModule="date_suggester_iOS" customModuleProvider="target">
-                                <rect key="frame" x="40" y="307" width="295" height="60"/>
+                            <button opaque="NO" contentMode="right" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uSS-2q-LFV" customClass="CustomYerrowButton" customModule="date_suggester_iOS" customModuleProvider="target">
+                                <rect key="frame" x="40" y="312" width="295" height="60"/>
                                 <color key="backgroundColor" name="ButtonColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="u6V-l8-J8a"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="HiraginoSans-W6" family="Hiragino Sans" pointSize="21"/>
+                                <fontDescription key="fontDescription" name="NotoSans-Bold" family="Noto Sans" pointSize="21"/>
                                 <state key="normal" title="節約">
-                                    <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="titleColor" name="TextColor"/>
                                 </state>
                                 <connections>
-                                    <action selector="savingButtonTap:" destination="R0A-De-hYc" eventType="touchUpInside" id="m9Q-Qs-bfx"/>
+                                    <action selector="savingButtonTap:" destination="R0A-De-hYc" eventType="touchUpInside" id="7uv-Ao-ZlJ"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rt7-uk-odS" customClass="CustomButton" customModule="date_suggester_iOS" customModuleProvider="target">
-                                <rect key="frame" x="40" y="387" width="295" height="60"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rt7-uk-odS" customClass="CustomYerrowButton" customModule="date_suggester_iOS" customModuleProvider="target">
+                                <rect key="frame" x="40" y="392" width="295" height="60"/>
                                 <color key="backgroundColor" name="ButtonColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="4RD-yO-i0f"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="HiraginoSans-W6" family="Hiragino Sans" pointSize="21"/>
+                                <fontDescription key="fontDescription" name="NotoSans-Bold" family="Noto Sans" pointSize="21"/>
                                 <state key="normal" title="普通">
-                                    <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="titleColor" name="TextColor"/>
                                 </state>
                                 <connections>
                                     <action selector="normalButtonTap:" destination="R0A-De-hYc" eventType="touchUpInside" id="97d-3M-dfT"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w8w-2O-geN" customClass="CustomButton" customModule="date_suggester_iOS" customModuleProvider="target">
-                                <rect key="frame" x="40" y="467" width="295" height="60"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w8w-2O-geN" customClass="CustomYerrowButton" customModule="date_suggester_iOS" customModuleProvider="target">
+                                <rect key="frame" x="40" y="472" width="295" height="60"/>
                                 <color key="backgroundColor" name="ButtonColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="lGw-Wr-NbT"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="HiraginoSans-W6" family="Hiragino Sans" pointSize="21"/>
+                                <fontDescription key="fontDescription" name="NotoSans-Bold" family="Noto Sans" pointSize="21"/>
                                 <state key="normal" title="リッチ">
-                                    <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="titleColor" name="TextColor"/>
                                 </state>
                                 <connections>
                                     <action selector="richButtonTap:" destination="R0A-De-hYc" eventType="touchUpInside" id="ZSK-1R-Nbf"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="予算はどのくらい？" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O2Q-70-9Dy">
+                                <rect key="frame" x="102" y="235" width="171" height="26"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="26" id="8On-aw-gIJ"/>
+                                    <constraint firstAttribute="width" constant="171" id="IzG-4E-nP9"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="NotoSans-Bold" family="Noto Sans" pointSize="19"/>
+                                <color key="textColor" name="MainColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="uSS-2q-LFV" firstAttribute="top" secondItem="ckF-qu-Dsa" secondAttribute="bottom" constant="51" id="2M6-jS-cXr"/>
                             <constraint firstItem="Tsd-mp-INj" firstAttribute="top" secondItem="fN8-Zr-pgf" secondAttribute="top" constant="56" id="2YK-oe-GJf"/>
                             <constraint firstItem="fN8-Zr-pgf" firstAttribute="trailing" secondItem="Rt7-uk-odS" secondAttribute="trailing" constant="40" id="2jv-9k-zGF"/>
+                            <constraint firstItem="O2Q-70-9Dy" firstAttribute="top" secondItem="Tsd-mp-INj" secondAttribute="bottom" constant="29" id="3US-JY-3Lg"/>
                             <constraint firstItem="w8w-2O-geN" firstAttribute="top" secondItem="Rt7-uk-odS" secondAttribute="bottom" constant="20" id="51J-KG-dqz"/>
                             <constraint firstAttribute="trailingMargin" secondItem="nzn-0u-t7s" secondAttribute="trailing" constant="42" id="5Lv-6x-jYA"/>
+                            <constraint firstItem="uSS-2q-LFV" firstAttribute="top" secondItem="O2Q-70-9Dy" secondAttribute="bottom" constant="51" id="IuG-Rg-MSA"/>
+                            <constraint firstItem="O2Q-70-9Dy" firstAttribute="centerX" secondItem="ifP-bk-Cvp" secondAttribute="centerX" id="PGK-QW-j4I"/>
                             <constraint firstItem="fN8-Zr-pgf" firstAttribute="trailing" secondItem="uSS-2q-LFV" secondAttribute="trailing" constant="40" id="Vuy-VY-4lf"/>
                             <constraint firstItem="w8w-2O-geN" firstAttribute="leading" secondItem="fN8-Zr-pgf" secondAttribute="leading" constant="40" id="WoI-SL-qX9"/>
                             <constraint firstItem="fN8-Zr-pgf" firstAttribute="trailing" secondItem="w8w-2O-geN" secondAttribute="trailing" constant="40" id="agW-Nh-7Sc"/>
-                            <constraint firstItem="ckF-qu-Dsa" firstAttribute="centerX" secondItem="ifP-bk-Cvp" secondAttribute="centerX" id="fts-90-nVD"/>
                             <constraint firstItem="Rt7-uk-odS" firstAttribute="top" secondItem="uSS-2q-LFV" secondAttribute="bottom" constant="20" id="hkO-l9-edl"/>
                             <constraint firstItem="fN8-Zr-pgf" firstAttribute="bottom" secondItem="nzn-0u-t7s" secondAttribute="bottom" constant="80" id="kLz-Ur-UHT"/>
                             <constraint firstItem="uSS-2q-LFV" firstAttribute="leading" secondItem="fN8-Zr-pgf" secondAttribute="leading" constant="40" id="m4K-wk-leB"/>
-                            <constraint firstItem="ckF-qu-Dsa" firstAttribute="top" secondItem="Tsd-mp-INj" secondAttribute="bottom" constant="29" id="noi-mt-dwJ"/>
                             <constraint firstItem="nzn-0u-t7s" firstAttribute="leading" secondItem="ifP-bk-Cvp" secondAttribute="leadingMargin" constant="42" id="nue-jW-V2m"/>
                             <constraint firstItem="Rt7-uk-odS" firstAttribute="leading" secondItem="fN8-Zr-pgf" secondAttribute="leading" constant="40" id="xaF-3Q-iaR"/>
                             <constraint firstItem="Tsd-mp-INj" firstAttribute="centerX" secondItem="ifP-bk-Cvp" secondAttribute="centerX" id="zcj-hu-BOg"/>
@@ -873,10 +859,208 @@
             </objects>
             <point key="canvasLocation" x="-1218" y="-795"/>
         </scene>
+        <!--さくっとデートプラン-->
+        <scene sceneID="tdJ-eU-Lkz">
+            <objects>
+                <viewController storyboardIdentifier="DateTimeViewController" id="ZjC-Kc-I5e" customClass="DateTimeViewController" customModule="date_suggester_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="wI4-Pd-Uma">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="redraw" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="time" translatesAutoresizingMaskIntoConstraints="NO" id="QDa-7c-lz9">
+                                <rect key="frame" x="112.5" y="56" width="150" height="150"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="0y6-Fj-e3f"/>
+                                    <constraint firstAttribute="width" constant="150" id="8Uy-Cl-tkj"/>
+                                </constraints>
+                            </imageView>
+                            <progressView opaque="NO" contentMode="scaleAspectFit" verticalHuggingPriority="750" progress="0.5" progressImage="NavBarBG" translatesAutoresizingMaskIntoConstraints="NO" id="sPW-We-PTX" customClass="CustomProgressView" customModule="date_suggester_iOS" customModuleProvider="target">
+                                <rect key="frame" x="58" y="585" width="259" height="2"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="2" id="gRg-3s-WUY"/>
+                                </constraints>
+                            </progressView>
+                            <button opaque="NO" contentMode="right" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="65f-sx-SfD" customClass="CustomYerrowButton" customModule="date_suggester_iOS" customModuleProvider="target">
+                                <rect key="frame" x="40" y="312" width="295" height="60"/>
+                                <color key="backgroundColor" name="ButtonColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="GPv-O7-H2W"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="NotoSans-Bold" family="Noto Sans" pointSize="21"/>
+                                <state key="normal" title="一日中">
+                                    <color key="titleColor" name="TextColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="allDayButtonTap:" destination="ZjC-Kc-I5e" eventType="touchUpInside" id="Mzg-p6-szr"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qbF-95-7Ma" customClass="CustomYerrowButton" customModule="date_suggester_iOS" customModuleProvider="target">
+                                <rect key="frame" x="40" y="392" width="295" height="60"/>
+                                <color key="backgroundColor" name="ButtonColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="a7O-4M-cXL"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="NotoSans-Bold" family="Noto Sans" pointSize="21"/>
+                                <state key="normal" title="ランチ">
+                                    <color key="titleColor" name="TextColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="lunchButtonTap:" destination="ZjC-Kc-I5e" eventType="touchUpInside" id="DPe-zD-Mte"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z62-ak-hdl" customClass="CustomYerrowButton" customModule="date_suggester_iOS" customModuleProvider="target">
+                                <rect key="frame" x="40" y="472" width="295" height="60"/>
+                                <color key="backgroundColor" name="ButtonColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="PGz-ST-nl0"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="NotoSans-Bold" family="Noto Sans" pointSize="21"/>
+                                <state key="normal" title="ディナー">
+                                    <color key="titleColor" name="TextColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="dinnerButtonTap:" destination="ZjC-Kc-I5e" eventType="touchUpInside" id="x1f-ag-cfi"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="デートの時間帯は？" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fZO-lG-4eT">
+                                <rect key="frame" x="102" y="235" width="171" height="26"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="171" id="5AL-sh-NvE"/>
+                                    <constraint firstAttribute="height" constant="26" id="XK0-8W-1AR"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="NotoSans-Bold" family="Noto Sans" pointSize="19"/>
+                                <color key="textColor" name="MainColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="sPW-We-PTX" firstAttribute="leading" secondItem="wI4-Pd-Uma" secondAttribute="leadingMargin" constant="42" id="4Zx-25-b0j"/>
+                            <constraint firstItem="99M-Jm-uHs" firstAttribute="trailing" secondItem="65f-sx-SfD" secondAttribute="trailing" constant="40" id="Daq-6d-wsg"/>
+                            <constraint firstItem="qbF-95-7Ma" firstAttribute="top" secondItem="65f-sx-SfD" secondAttribute="bottom" constant="20" id="PjN-xC-z76"/>
+                            <constraint firstItem="Z62-ak-hdl" firstAttribute="leading" secondItem="99M-Jm-uHs" secondAttribute="leading" constant="40" id="TnS-fi-sbx"/>
+                            <constraint firstItem="Z62-ak-hdl" firstAttribute="top" secondItem="qbF-95-7Ma" secondAttribute="bottom" constant="20" id="Udi-sz-kTG"/>
+                            <constraint firstItem="65f-sx-SfD" firstAttribute="leading" secondItem="99M-Jm-uHs" secondAttribute="leading" constant="40" id="gIG-77-xbR"/>
+                            <constraint firstItem="65f-sx-SfD" firstAttribute="top" secondItem="fZO-lG-4eT" secondAttribute="bottom" constant="51" id="gJb-0e-DyY"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="sPW-We-PTX" secondAttribute="trailing" constant="42" id="gSz-Dj-KKW"/>
+                            <constraint firstItem="qbF-95-7Ma" firstAttribute="leading" secondItem="99M-Jm-uHs" secondAttribute="leading" constant="40" id="nQ9-Ai-I6b"/>
+                            <constraint firstItem="QDa-7c-lz9" firstAttribute="top" secondItem="99M-Jm-uHs" secondAttribute="top" constant="56" id="rkl-fk-8BF"/>
+                            <constraint firstItem="99M-Jm-uHs" firstAttribute="bottom" secondItem="sPW-We-PTX" secondAttribute="bottom" constant="80" id="sek-VV-9gw"/>
+                            <constraint firstItem="99M-Jm-uHs" firstAttribute="trailing" secondItem="qbF-95-7Ma" secondAttribute="trailing" constant="40" id="vLV-n7-ugO"/>
+                            <constraint firstItem="fZO-lG-4eT" firstAttribute="top" secondItem="QDa-7c-lz9" secondAttribute="bottom" constant="29" id="xJV-tx-cEV"/>
+                            <constraint firstItem="QDa-7c-lz9" firstAttribute="centerX" secondItem="wI4-Pd-Uma" secondAttribute="centerX" id="xUP-T4-7YJ"/>
+                            <constraint firstItem="99M-Jm-uHs" firstAttribute="trailing" secondItem="Z62-ak-hdl" secondAttribute="trailing" constant="40" id="xUi-Ii-LFE"/>
+                            <constraint firstItem="fZO-lG-4eT" firstAttribute="centerX" secondItem="wI4-Pd-Uma" secondAttribute="centerX" id="yjo-vp-KNe"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="99M-Jm-uHs"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="さくっとデートプラン" id="2bJ-WA-92u"/>
+                    <connections>
+                        <outlet property="allDayButton" destination="65f-sx-SfD" id="p6N-2w-iP6"/>
+                        <outlet property="lunchButton" destination="qbF-95-7Ma" id="nnr-FH-rHZ"/>
+                        <outlet property="nightButton" destination="Z62-ak-hdl" id="3kD-xE-jIe"/>
+                        <outlet property="roundProgressBar" destination="sPW-We-PTX" id="gT2-eZ-P9V"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ILC-XW-gBN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-572" y="-798"/>
+        </scene>
+        <!--さくっとデートプラン-->
+        <scene sceneID="0gn-3O-qlp">
+            <objects>
+                <viewController storyboardIdentifier="DateFeelingViewController" id="rfS-OF-Vio" customClass="DateFeelingViewController" customModule="date_suggester_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="HJW-J5-Moa">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="redraw" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="heartIcon" translatesAutoresizingMaskIntoConstraints="NO" id="6sc-5N-R1s">
+                                <rect key="frame" x="112.5" y="56" width="150" height="150"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="aOv-rQ-KiZ"/>
+                                    <constraint firstAttribute="height" constant="150" id="b24-OS-ImD"/>
+                                </constraints>
+                            </imageView>
+                            <progressView opaque="NO" contentMode="scaleAspectFit" verticalHuggingPriority="750" progress="1" progressImage="NavBarBG" translatesAutoresizingMaskIntoConstraints="NO" id="i61-3i-cRG" customClass="CustomProgressView" customModule="date_suggester_iOS" customModuleProvider="target">
+                                <rect key="frame" x="58" y="585" width="259" height="2"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="2" id="eqg-P0-vRk"/>
+                                </constraints>
+                            </progressView>
+                            <button opaque="NO" contentMode="right" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aHR-CO-ih7" customClass="CustomYerrowButton" customModule="date_suggester_iOS" customModuleProvider="target">
+                                <rect key="frame" x="40" y="312" width="295" height="60"/>
+                                <color key="backgroundColor" name="ButtonColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="bbX-eC-d4i"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="NotoSans-Bold" family="Noto Sans" pointSize="21"/>
+                                <state key="normal" title="非日常">
+                                    <color key="titleColor" name="TextColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="unusualButtonTap:" destination="rfS-OF-Vio" eventType="touchUpInside" id="6My-9X-E6N"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y5i-mW-eX7" customClass="CustomYerrowButton" customModule="date_suggester_iOS" customModuleProvider="target">
+                                <rect key="frame" x="40" y="392" width="295" height="60"/>
+                                <color key="backgroundColor" name="ButtonColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="BMP-Fi-M8H"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="NotoSans-Bold" family="Noto Sans" pointSize="21"/>
+                                <state key="normal" title="まったり">
+                                    <color key="titleColor" name="TextColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="relaxButton:" destination="rfS-OF-Vio" eventType="touchUpInside" id="MHP-Kh-P7U"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="どんなデートの気分？" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mbe-9H-mj0">
+                                <rect key="frame" x="92.5" y="235" width="190" height="26"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="190" id="4AC-Us-cTi"/>
+                                    <constraint firstAttribute="height" constant="26" id="z3R-u1-pmn"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="NotoSans-Bold" family="Noto Sans" pointSize="19"/>
+                                <color key="textColor" name="MainColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="tLH-Tf-Saa" firstAttribute="trailing" secondItem="y5i-mW-eX7" secondAttribute="trailing" constant="40" id="3B6-C0-f68"/>
+                            <constraint firstItem="y5i-mW-eX7" firstAttribute="top" secondItem="aHR-CO-ih7" secondAttribute="bottom" constant="20" id="8jG-3W-1Nu"/>
+                            <constraint firstItem="Mbe-9H-mj0" firstAttribute="centerX" secondItem="HJW-J5-Moa" secondAttribute="centerX" id="AaE-tU-xtN"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="i61-3i-cRG" secondAttribute="trailing" constant="42" id="VLa-Aw-jBk"/>
+                            <constraint firstItem="y5i-mW-eX7" firstAttribute="leading" secondItem="tLH-Tf-Saa" secondAttribute="leading" constant="40" id="YHo-Wh-xXe"/>
+                            <constraint firstItem="6sc-5N-R1s" firstAttribute="top" secondItem="tLH-Tf-Saa" secondAttribute="top" constant="56" id="ZD9-D9-01i"/>
+                            <constraint firstItem="aHR-CO-ih7" firstAttribute="top" secondItem="Mbe-9H-mj0" secondAttribute="bottom" constant="51" id="bUW-I8-TDg"/>
+                            <constraint firstItem="6sc-5N-R1s" firstAttribute="centerX" secondItem="HJW-J5-Moa" secondAttribute="centerX" id="cwv-iX-1HP"/>
+                            <constraint firstItem="Mbe-9H-mj0" firstAttribute="top" secondItem="6sc-5N-R1s" secondAttribute="bottom" constant="29" id="gMK-sK-Iv3"/>
+                            <constraint firstItem="aHR-CO-ih7" firstAttribute="leading" secondItem="tLH-Tf-Saa" secondAttribute="leading" constant="40" id="ig1-Qr-H4z"/>
+                            <constraint firstItem="i61-3i-cRG" firstAttribute="leading" secondItem="HJW-J5-Moa" secondAttribute="leadingMargin" constant="42" id="pgr-MF-sAc"/>
+                            <constraint firstItem="tLH-Tf-Saa" firstAttribute="bottom" secondItem="i61-3i-cRG" secondAttribute="bottom" constant="80" id="wZT-XD-tPP"/>
+                            <constraint firstItem="tLH-Tf-Saa" firstAttribute="trailing" secondItem="aHR-CO-ih7" secondAttribute="trailing" constant="40" id="yec-UV-1jy"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="tLH-Tf-Saa"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="さくっとデートプラン" id="ed3-Cs-EMc"/>
+                    <connections>
+                        <outlet property="relaxButton" destination="y5i-mW-eX7" id="U3X-0n-R0g"/>
+                        <outlet property="roundProgressBar" destination="i61-3i-cRG" id="6FV-Lb-wWe"/>
+                        <outlet property="unusualButton" destination="aHR-CO-ih7" id="L26-6y-zWb"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9xw-m7-6Pi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="74" y="-798"/>
+        </scene>
     </scenes>
     <resources>
         <image name="2" width="1920" height="1440"/>
         <image name="3" width="1600" height="1200"/>
+        <image name="NavBarBG" width="465.33334350585938" height="93"/>
+        <image name="heartIcon" width="256" height="256"/>
         <image name="linkIcon" width="32" height="32"/>
         <image name="location" width="128" height="128"/>
         <image name="mapIcon-White" width="16" height="16"/>
@@ -886,6 +1070,7 @@
         <image name="move" width="256" height="256"/>
         <image name="multiply" catalog="system" width="64" height="54"/>
         <image name="test" width="465.33334350585938" height="93"/>
+        <image name="time" width="256" height="256"/>
         <image name="time2" width="256" height="256"/>
         <image name="ハートマークの無料アイコン素材 10" width="256" height="256"/>
         <namedColor name="ButtonColor">

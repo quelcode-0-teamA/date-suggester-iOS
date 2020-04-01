@@ -29,6 +29,6 @@ class DatePlanDecideViewController: UIViewController {
         mainImage.image = svgImage?.uiImage
         
         self.gotoSimplePlanButtom.layer.masksToBounds = true
-        self.gotoSimplePlanButtom.layer.cornerRadius = 40
+        self.gotoSimplePlanButtom.layer.cornerRadius = 28
     }
 }

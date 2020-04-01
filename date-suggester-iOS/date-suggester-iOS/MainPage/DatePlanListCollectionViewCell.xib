@@ -23,7 +23,7 @@
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="1" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="i4D-sg-4iA">
                         <rect key="frame" x="0.0" y="0.0" width="249" height="284"/>
                     </imageView>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.69999999999999996" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="test" translatesAutoresizingMaskIntoConstraints="NO" id="frg-cn-1xw">
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.69999999999999996" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="NavBarBG" translatesAutoresizingMaskIntoConstraints="NO" id="frg-cn-1xw">
                         <rect key="frame" x="0.0" y="254" width="249" height="30"/>
                         <constraints>
                             <constraint firstAttribute="height" relation="lessThanOrEqual" constant="30" id="EwQ-Hk-xjA"/>
@@ -67,6 +67,6 @@
         </collectionViewCell>
     </objects>
     <resources>
-        <image name="test" width="465.33334350585938" height="93"/>
+        <image name="NavBarBG" width="465.33334350585938" height="93"/>
     </resources>
 </document>

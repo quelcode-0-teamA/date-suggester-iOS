@@ -36,15 +36,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         activityIndicatorView.style = .whiteLarge
         activityIndicatorView.color = .darkGray
         view.addSubview(activityIndicatorView)
-        
-        //キーボードを閉じる
-        func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-            textField.resignFirstResponder()
-            return true
-        }
-        func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-            self.view.endEditing(true)
-        }
 
         self.loginButton.layer.cornerRadius = 24
         
@@ -67,6 +58,15 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         navigationController?.setNavigationBarHidden(false, animated: false)
     }
     
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         loginButton.isEnabled = checkInput()
         return true
@@ -76,6 +76,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         let textCheck = myEmail.text! == "" || myPassword.text! == ""
         return !textCheck
       }
+    
     
     @IBAction func loginButtonTap(_ sender: Any) {
         func displayMyAlertMessage(userMessage: String){
