@@ -20,6 +20,7 @@
 		720D082C23E9A84E00569622 /* TutorialViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 720D082B23E9A84D00569622 /* TutorialViewController.storyboard */; };
 		721336EA240CE48400F8E967 /* CustomUnderlineTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 721336E9240CE48400F8E967 /* CustomUnderlineTextField.swift */; };
 		7214C7892434802C003EA80B /* userIcon.svg in Resources */ = {isa = PBXBuildFile; fileRef = 7214C7882434802C003EA80B /* userIcon.svg */; };
+		7214C78B24348E60003EA80B /* MypageNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7214C78A24348E60003EA80B /* MypageNavigationController.swift */; };
 		7215FF14240D600400AB3BBB /* SignUpCustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7215FF13240D600400AB3BBB /* SignUpCustomTextField.swift */; };
 		721D100123F509DD006DA520 /* MypageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 721D100023F509DD006DA520 /* MypageViewController.swift */; };
 		721D100323F50E6A006DA520 /* UIColorHex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 721D100223F50E6A006DA520 /* UIColorHex.swift */; };
@@ -95,6 +96,7 @@
 		720D082B23E9A84D00569622 /* TutorialViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TutorialViewController.storyboard; sourceTree = "<group>"; };
 		721336E9240CE48400F8E967 /* CustomUnderlineTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomUnderlineTextField.swift; sourceTree = "<group>"; };
 		7214C7882434802C003EA80B /* userIcon.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = userIcon.svg; sourceTree = "<group>"; };
+		7214C78A24348E60003EA80B /* MypageNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MypageNavigationController.swift; sourceTree = "<group>"; };
 		7215FF13240D600400AB3BBB /* SignUpCustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpCustomTextField.swift; sourceTree = "<group>"; };
 		721D100023F509DD006DA520 /* MypageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MypageViewController.swift; sourceTree = "<group>"; };
 		721D100223F50E6A006DA520 /* UIColorHex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorHex.swift; sourceTree = "<group>"; };
@@ -296,6 +298,7 @@
 				72A4E17D23F5344800B7607C /* ProfileEditViewController.swift */,
 				72A4E18023F57BB800B7607C /* DatePlanListCollectionViewCell.xib */,
 				7291BD2A23FE2D80001047D8 /* PopupViewController.swift */,
+				7214C78A24348E60003EA80B /* MypageNavigationController.swift */,
 			);
 			path = MainPage;
 			sourceTree = "<group>";
@@ -575,6 +578,7 @@
 				72A4E18623F68D4D00B7607C /* FirstViewController.swift in Sources */,
 				7276AEE023EAA9B7008864D7 /* DateLocationViewController.swift in Sources */,
 				721336EA240CE48400F8E967 /* CustomUnderlineTextField.swift in Sources */,
+				7214C78B24348E60003EA80B /* MypageNavigationController.swift in Sources */,
 				7276AEEC23EACE65008864D7 /* MainPageViewController.swift in Sources */,
 				727C4A5D240362890058AE58 /* CustomYerrowButton.swift in Sources */,
 				7291BD2B23FE2D80001047D8 /* PopupViewController.swift in Sources */,

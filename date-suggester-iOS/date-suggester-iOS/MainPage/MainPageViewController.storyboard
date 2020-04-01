@@ -345,7 +345,7 @@
         <!--マイページ-->
         <scene sceneID="OaI-k3-34g">
             <objects>
-                <navigationController storyboardIdentifier="AppNavigationController" id="5Dc-gd-bID" customClass="AppNavigationController" customModule="date_suggester_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="MypageNavigationController" id="5Dc-gd-bID" customClass="MypageNavigationController" customModule="date_suggester_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="マイページ" image="person.circle" catalog="system" selectedImage="person.circle" id="grw-zf-2Kb">
                         <color key="badgeColor" name="MainColor"/>
                     </tabBarItem>
@@ -354,7 +354,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="Miq-KR-ZyF" kind="relationship" relationship="rootViewController" id="zgQ-XM-49W"/>
+                        <segue destination="Miq-KR-ZyF" kind="relationship" relationship="rootViewController" id="pOH-VM-78h"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gx7-KR-i4w" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -415,7 +415,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hmK-RS-ndf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2231" y="797"/>
+            <point key="canvasLocation" x="2364" y="797"/>
         </scene>
         <!--Sign Up View Controller-->
         <scene sceneID="6Bq-in-HZC">
@@ -452,16 +452,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a01-He-Efm">
-                                <rect key="frame" x="0.0" y="737" width="414" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="back">
-                                    <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="backButton:" destination="bhK-oy-j5Y" eventType="touchUpInside" id="uB9-D5-KnY"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p8L-W9-s3F">
                                 <rect key="frame" x="98" y="425" width="176" height="48"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -478,21 +468,39 @@
                                 <rect key="frame" x="0.0" y="497" width="631" height="420"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1Kl-JE-gIB" customClass="CustomUnderlineTextField" customModule="date_suggester_iOS" customModuleProvider="target">
+                                <rect key="frame" x="30" y="372" width="314" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" name="MainColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="win-sa-LVc">
+                                <rect key="frame" x="184" y="79" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="backButton:" destination="bhK-oy-j5Y" eventType="touchUpInside" id="ylE-0d-TTo"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="0wc-UZ-COp"/>
                     </view>
                     <toolbarItems/>
+                    <navigationItem key="navigationItem" id="wZj-Va-TVh"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="myEmail" destination="pkg-fd-Y72" id="b8T-G4-5Td"/>
                         <outlet property="myPassword" destination="JBY-47-jP7" id="nWg-Jc-EnM"/>
+                        <outlet property="myPasswordConfirmation" destination="1Kl-JE-gIB" id="RZ2-DO-hpK"/>
                         <outlet property="signUpButton" destination="p8L-W9-s3F" id="bqO-CA-w1D"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="U4D-bZ-OlI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2231" y="1488"/>
+            <point key="canvasLocation" x="2364" y="1456"/>
         </scene>
         <!--プロフィール設定-->
         <scene sceneID="rBa-z8-vd0">
@@ -595,7 +603,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lFZ-nl-Qsv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2945" y="801"/>
+            <point key="canvasLocation" x="3111" y="801"/>
         </scene>
         <!--しおり-->
         <scene sceneID="Cb8-OI-oCk">

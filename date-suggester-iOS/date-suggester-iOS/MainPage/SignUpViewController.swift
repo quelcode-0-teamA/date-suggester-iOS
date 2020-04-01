@@ -14,7 +14,8 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var myEmail: SignUpCustomTextField!
     @IBOutlet weak var myPassword: SignUpCustomTextField!
-    @IBOutlet weak var myPasswordConfirmation: SignUpCustomTextField!
+    @IBOutlet weak var myPasswordConfirmation: CustomUnderlineTextField!
+    //    @IBOutlet weak var myPasswordConfirmation: SignUpCustomTextField!
     @IBOutlet weak var signUpButton: UIButton!
     
     override func viewDidLoad() {

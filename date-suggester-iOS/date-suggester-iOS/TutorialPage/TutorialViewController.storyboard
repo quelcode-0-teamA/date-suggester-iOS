@@ -522,7 +522,7 @@
         <image name="carIcon" width="256" height="256"/>
         <image name="chevron.left" catalog="system" width="48" height="64"/>
         <namedColor name="BarColor">
-            <color red="0.87058823529411766" green="0.2627450980392157" blue="0.41568627450980389" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.87099999189376831" green="0.2630000114440918" blue="0.41600000858306885" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="ButtonColor">
             <color red="1" green="0.90200001001358032" blue="0.5690000057220459" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

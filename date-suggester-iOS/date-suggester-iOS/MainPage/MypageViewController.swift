@@ -33,20 +33,80 @@ class MypageViewController: UIViewController {
             target: nil,
             action: nil
         )
-        
-//        self.profileEditButton.layer.borderColor = UIColor.init(red: 254.0/255, green: 84.0/255, blue: 146.0/255, alpha: 1.0).cgColor
-//        profileEditButton.layer.borderWidth = 1.0
-//        self.profileEditButton.layer.cornerRadius = 10
-        
-//        let defaults = UserDefaults.standard
-//        let signUpStatus = defaults.string(forKey: "signUpStatus")
-//        
-//        if signUpStatus != nil {
-//            profileEditButton.setTitle("プロフィールを編集する", for: .normal)
-//        } else {
-//            profileEditButton.setTitle("アカウントを作成する", for: .normal)
-//        }
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+//        self.view.alpha = 0
+        
+        super.viewWillDisappear(animated)
+        let defaults = UserDefaults.standard
+        let signUpStatus = defaults.bool(forKey: "signUpStatus")
+        debugPrint(signUpStatus)
+        
+        if signUpStatus == true{
+           self.view.alpha = 1
+            
+        }else{
+            let storyboard = UIStoryboard(name: "MainPageViewController", bundle: nil)
+            let signUpViewController = storyboard.instantiateViewController(withIdentifier: "SignUpViewController")
+            signUpViewController.modalPresentationStyle = .fullScreen
+            self.present(signUpViewController, animated: false, completion: nil)
+        }
+        /*
+         ユーザー情報取得API
+         */
+//        let config: URLSessionConfiguration = URLSessionConfiguration.default
+//        let session: URLSession = URLSession(configuration: config)
+//        let defaults = UserDefaults.standard
+//        let user_id = defaults.string(forKey: "userId")!
+//
+//        var urlComponents = URLComponents()
+//        urlComponents.scheme = "https"
+//        urlComponents.host = "api-date-suggester-dev.herokuapp.com"
+//        urlComponents.path = "/v1/users/\(user_id)"
+//
+//        let url: URL = urlComponents.url!
+//        var req: URLRequest = URLRequest(url: url)
+//        req.httpMethod = "GET"
+//
+//        let myToken = defaults.string(forKey: "responseToken")!
+//
+//        req.setValue("application/json", forHTTPHeaderField: "Content-Type")
+//        req.setValue("Bearer " + myToken, forHTTPHeaderField: "Authorization")
+//
+//        let task = session.dataTask(with: req){(data, response, error) in
+//
+//            do {
+//                let response: [[String: Any]] = try JSONSerialization.jsonObject(with: data!, options: []) as! [[String: Any]]
+//                print(response)
+//                DispatchQueue.main.async {
+//                    print("🍑")
+////                    print(response[id])
+////                    let id = response["id"]
+////                    self.userName.text = id
+//                }
+//            } catch{
+//            }
+//        }
+//        task.resume()
+    }
+    
+//override func viewWillDisappear(_ animated: Bool) {
+//     super.viewWillDisappear(animated)
+//     let defaults = UserDefaults.standard
+//     let signUpStatus = defaults.bool(forKey: "signUpStatus")
+//     debugPrint(signUpStatus)
+//
+//     if signUpStatus == true{
+//        self.view.alpha = 1
+//
+//     }else{
+//         let storyboard = UIStoryboard(name: "MainPageViewController", bundle: nil)
+//         let signUpViewController = storyboard.instantiateViewController(withIdentifier: "SignUpViewController")
+//         self.present(signUpViewController, animated: true, completion: nil)
+//     }
+// }
     
     @IBAction func gotoProfileEditButton(_ sender: Any) {
         let storyboard = UIStoryboard(name: "MainPageViewController", bundle: nil)

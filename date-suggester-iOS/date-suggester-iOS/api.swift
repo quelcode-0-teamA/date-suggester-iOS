@@ -61,6 +61,7 @@ class Api {
                     completion?(nil, NSError.init(domain: "error", code: 0, userInfo: nil))
                     return
                 }
+                print(response)
                 completion?(response, nil)
             }
             catch{
@@ -148,6 +149,7 @@ class Api {
                 let defaults = UserDefaults.standard
                 defaults.set(tokenValue, forKey: "responseToken")
                 
+                debugPrint("仮ログインのレスポンス:\(response)")
                 completion?(tokenValue, userId, nil)
             }
             catch{
