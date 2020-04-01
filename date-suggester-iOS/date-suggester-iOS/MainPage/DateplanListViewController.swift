@@ -36,7 +36,7 @@ class DateplanListViewController: UIViewController,UICollectionViewDataSource, U
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.register(UINib(nibName: "DatePlanListCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "DatePlanListCollectionViewCell")
-        self.navigationController?.navigationBar.setBackgroundImage(UIImage(named: "test"), for: .default)
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(named: "NavBarBG"), for: .default)
         self.navigationController?.navigationBar.titleTextAttributes = [
             .foregroundColor: UIColor.white
         ]

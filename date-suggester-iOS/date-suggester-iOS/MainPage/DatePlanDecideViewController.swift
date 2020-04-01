@@ -28,7 +28,13 @@ class DatePlanDecideViewController: UIViewController {
         svgImage?.size = mainImage.bounds.size
         mainImage.image = svgImage?.uiImage
         
-        self.gotoSimplePlanButtom.layer.masksToBounds = true
-        self.gotoSimplePlanButtom.layer.cornerRadius = 28
+        gotoSimplePlanButtom.layer.masksToBounds = true
+        gotoSimplePlanButtom.layer.cornerRadius = 28
+        
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(named: "NavBarBG"), for: .default)
+        self.navigationController?.navigationBar.titleTextAttributes = [
+            .foregroundColor: UIColor.white
+        ]
+        self.navigationItem.title = "Date Suggester"
     }
 }

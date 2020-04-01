@@ -19,16 +19,6 @@ class ListenBirthyearViewController: UIViewController, UIPickerViewDelegate, UIP
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        let svgImage = SVGKImage(named: "birthIcon")
-//        svgImage?.size = svgImageView.bounds.size
-//        svgImageView.image = svgImage?.uiImage
-        
-//        nextButton.layer.cornerRadius = 30
-//        nextButton.layer.shadowOffset = CGSize(width: 0.0, height: 6.0)
-//        nextButton.layer.shadowColor = UIColor.init(red: 217.0/255, green: 196.0/255, blue: 125.0/255, alpha: 1.0).cgColor
-//        nextButton.layer.shadowOpacity = 1.0
-//        nextButton.layer.shadowRadius = 0
-        
         // ピッカー設定
         yearPickerView.delegate = self
         yearPickerView.dataSource = self

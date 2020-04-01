@@ -287,14 +287,23 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mTm-TJ-n8X">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mTm-TJ-n8X">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ty8-YY-aUN">
-                                        <rect key="frame" x="32" y="226" width="308" height="57"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="858-8H-jIe">
+                                        <rect key="frame" x="-168" y="327" width="631" height="420"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="420" id="ORY-YZ-r0s"/>
+                                            <constraint firstAttribute="width" constant="631" id="oQk-5g-EbN"/>
+                                        </constraints>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ty8-YY-aUN">
+                                        <rect key="frame" x="33.666666666666657" y="203" width="308" height="57"/>
                                         <color key="backgroundColor" name="MainColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="57" id="XVH-eV-h7j"/>
+                                            <constraint firstAttribute="width" constant="308" id="mmv-J0-QLC"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" name="NotoSans-Bold" family="Noto Sans" pointSize="21"/>
                                         <state key="normal" title="早速デートプランを探す">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -303,15 +312,24 @@
                                             <action selector="simplePlan:" destination="AeU-Qy-PoA" eventType="touchUpInside" id="1Eo-Ke-0If"/>
                                         </connections>
                                     </button>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="858-8H-jIe">
-                                        <rect key="frame" x="0.0" y="327" width="631" height="420"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    </imageView>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstItem="858-8H-jIe" firstAttribute="top" secondItem="Ty8-YY-aUN" secondAttribute="bottom" constant="67" id="1NT-bP-ksH"/>
+                                    <constraint firstItem="Ty8-YY-aUN" firstAttribute="centerX" secondItem="mTm-TJ-n8X" secondAttribute="centerX" id="9SD-DP-Wbd"/>
+                                    <constraint firstItem="Ty8-YY-aUN" firstAttribute="top" secondItem="mTm-TJ-n8X" secondAttribute="top" constant="203" id="EjW-8q-b1U"/>
+                                    <constraint firstItem="858-8H-jIe" firstAttribute="leading" secondItem="mTm-TJ-n8X" secondAttribute="leading" constant="-168" id="TTt-oO-DUM"/>
+                                    <constraint firstAttribute="trailing" secondItem="858-8H-jIe" secondAttribute="trailing" constant="-88" id="oZI-Sf-cfs"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="mTm-TJ-n8X" firstAttribute="top" secondItem="j4B-tW-bju" secondAttribute="top" id="4L8-aE-cu3"/>
+                            <constraint firstItem="mTm-TJ-n8X" firstAttribute="trailing" secondItem="K5O-w4-k4S" secondAttribute="trailing" id="9CP-ck-jJ8"/>
+                            <constraint firstItem="mTm-TJ-n8X" firstAttribute="leading" secondItem="K5O-w4-k4S" secondAttribute="leading" id="EZR-ps-eDR"/>
+                            <constraint firstAttribute="bottom" secondItem="mTm-TJ-n8X" secondAttribute="bottom" id="jqm-1x-zn5"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="K5O-w4-k4S"/>
                     </view>
                     <navigationItem key="navigationItem" id="yEa-uM-4AB"/>
@@ -322,13 +340,15 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="APa-KC-1MP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="289.85507246376812" y="801.5625"/>
+            <point key="canvasLocation" x="288.80000000000001" y="800.98522167487693"/>
         </scene>
         <!--マイページ-->
         <scene sceneID="OaI-k3-34g">
             <objects>
                 <navigationController storyboardIdentifier="AppNavigationController" id="5Dc-gd-bID" customClass="AppNavigationController" customModule="date_suggester_iOS" customModuleProvider="target" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="マイページ" image="person.circle" catalog="system" selectedImage="person.circle" id="grw-zf-2Kb"/>
+                    <tabBarItem key="tabBarItem" title="マイページ" image="person.circle" catalog="system" selectedImage="person.circle" id="grw-zf-2Kb">
+                        <color key="badgeColor" name="MainColor"/>
+                    </tabBarItem>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="GF1-5i-HU8">
                         <rect key="frame" x="0.0" y="44" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -832,82 +852,12 @@
             </objects>
             <point key="canvasLocation" x="-318.84057971014494" y="1490.625"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="9pg-9J-3Dr">
-            <objects>
-                <viewController id="ROK-02-zTi" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="DxW-x4-QmD">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7rw-Y8-YCh">
-                                <rect key="frame" x="0.0" y="0.0" width="359" height="435"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YYH-Zu-4kZ">
-                                <rect key="frame" x="16" y="303" width="383" height="494"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="STw-ei-TPW">
-                                        <rect key="frame" x="66" y="269" width="250" height="65"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" name="HiraginoSans-W6" family="Hiragino Sans" pointSize="17"/>
-                                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <state key="normal" title="ログイン" backgroundImage="test">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                    </button>
-                                </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </view>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ghj-eb-RR6" customClass="CustomUnderlineTextField" customModule="date_suggester_iOS" customModuleProvider="target">
-                                <rect key="frame" x="50" y="409" width="314" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="tintColor" name="MainColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="F3Z-5G-EMN" customClass="CustomUnderlineTextField" customModule="date_suggester_iOS" customModuleProvider="target">
-                                <rect key="frame" x="50" y="488" width="314" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <color key="tintColor" name="MainColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T3d-vZ-uA9">
-                                <rect key="frame" x="0.0" y="732" width="414" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="HiraginoSans-W3" family="Hiragino Sans" pointSize="17"/>
-                                <state key="normal" title="back">
-                                    <color key="titleColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="backButton:" destination="bhK-oy-j5Y" eventType="touchUpInside" id="poD-QP-5o4"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Login" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hv2-QL-kOA">
-                                <rect key="frame" x="0.0" y="154" width="414" height="84"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="HiraginoSans-W6" family="Hiragino Sans" pointSize="40"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="ZOM-yR-tPe"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Ku3-dU-13j" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2229.5999999999999" y="8.5457271364317844"/>
-        </scene>
-        <!--デートを決める-->
+        <!--プランを探す-->
         <scene sceneID="4bH-FC-F5r">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="0Nd-eO-8ye" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="デートを決める" image="heart" catalog="system" selectedImage="heart" id="eVK-Kk-o6l">
-                        <color key="badgeColor" name="こうほ"/>
+                    <tabBarItem key="tabBarItem" title="プランを探す" image="heart" catalog="system" selectedImage="heart" id="eVK-Kk-o6l">
+                        <color key="badgeColor" name="MainColor"/>
                     </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="PyC-Lq-I3Y">
@@ -1013,7 +963,6 @@
         <image name="linkIcon" width="32" height="32"/>
         <image name="moneyIcon" width="10.666666984558105" height="10.666666984558105"/>
         <image name="person.circle" catalog="system" width="64" height="60"/>
-        <image name="test" width="465.33334350585938" height="93"/>
         <image name="ハートマークの無料アイコン素材 10" width="256" height="256"/>
         <namedColor name="MainColor">
             <color red="0.99599999189376831" green="0.32899999618530273" blue="0.57300001382827759" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

@@ -114,7 +114,7 @@ class ListenLocationViewController: UIViewController, UIPickerViewDelegate, UIPi
                     inComponent component: Int) {
         //コンポーネントごとに現在選択されているデータを取得する。
         let data1 = self.pickerView(pickerView, titleForRow: pickerView.selectedRow(inComponent: 0), forComponent: 0)
-        print("\(data1)えらばれたよ")
+        print("\(String(describing: data1))えらばれたよ")
         print("row: \(row)")
         //選択されたエリアをユーザーデフォルトに保存
         let defaults = UserDefaults.standard
