@@ -103,189 +103,6 @@
             </objects>
             <point key="canvasLocation" x="-1871.0144927536232" y="-794.19642857142856"/>
         </scene>
-        <!--さくっとデートプラン-->
-        <scene sceneID="88X-4f-fWF">
-            <objects>
-                <viewController id="Oz1-AM-QgG" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="wem-YJ-C4h">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="money" translatesAutoresizingMaskIntoConstraints="NO" id="oem-Fk-yPu">
-                                <rect key="frame" x="112" y="101" width="150" height="150"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <progressView opaque="NO" contentMode="scaleAspectFit" verticalHuggingPriority="750" progress="0.5" progressImage="test" translatesAutoresizingMaskIntoConstraints="NO" id="aVc-3H-WM3">
-                                <rect key="frame" x="58" y="613" width="259" height="2"/>
-                            </progressView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="予算はどのくらい？" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Brc-hJ-B8J">
-                                <rect key="frame" x="93" y="281" width="189" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="HiraginoSans-W6" family="Hiragino Sans" pointSize="21"/>
-                                <color key="textColor" name="こうほ"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="0RK-dq-6rJ">
-                                <rect key="frame" x="30" y="328" width="314" height="303"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xvb-Zs-tf0" customClass="CustomButton" customModule="date_suggester_iOS" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="314" height="33"/>
-                                        <color key="backgroundColor" name="Color-1"/>
-                                        <fontDescription key="fontDescription" name="HiraginoSans-W6" family="Hiragino Sans" pointSize="21"/>
-                                        <state key="normal" title="せつやく">
-                                            <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NgJ-SE-rib" customClass="CustomButton" customModule="date_suggester_iOS" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="63" width="314" height="60"/>
-                                        <color key="backgroundColor" name="Color-1"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="60" id="UUt-kd-65k"/>
-                                            <constraint firstAttribute="width" constant="314" id="frd-74-9hs"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="HiraginoSans-W6" family="Hiragino Sans" pointSize="21"/>
-                                        <state key="normal" title="せつやく">
-                                            <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LQg-oy-IKH" customClass="CustomButton" customModule="date_suggester_iOS" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="153" width="314" height="60"/>
-                                        <color key="backgroundColor" name="Color-1"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="60" id="eDv-co-Nqi"/>
-                                            <constraint firstAttribute="width" constant="314" id="nG7-kg-LnN"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="HiraginoSans-W6" family="Hiragino Sans" pointSize="21"/>
-                                        <state key="normal" title="ふつう">
-                                            <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UZj-ZA-ugb" customClass="CustomButton" customModule="date_suggester_iOS" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="243" width="314" height="60"/>
-                                        <color key="backgroundColor" name="Color-1"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="60" id="jCX-Ce-cdd"/>
-                                            <constraint firstAttribute="width" constant="314" id="rYl-x0-wvZ"/>
-                                        </constraints>
-                                        <viewLayoutGuide key="safeArea" id="ndF-ps-tmJ"/>
-                                        <fontDescription key="fontDescription" name="HiraginoSans-W6" family="Hiragino Sans" pointSize="21"/>
-                                        <state key="normal" title="ちょいリッチ">
-                                            <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                    </button>
-                                </subviews>
-                            </stackView>
-                        </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <constraints>
-                            <constraint firstItem="aVc-3H-WM3" firstAttribute="leading" secondItem="wem-YJ-C4h" secondAttribute="leadingMargin" constant="42" id="NTk-xB-9Aw"/>
-                            <constraint firstItem="uBM-Ex-ONk" firstAttribute="bottom" secondItem="aVc-3H-WM3" secondAttribute="bottom" constant="52" id="OQR-L3-YhH"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="aVc-3H-WM3" secondAttribute="trailing" constant="42" id="Tz5-xV-646"/>
-                            <constraint firstItem="0RK-dq-6rJ" firstAttribute="centerX" secondItem="wem-YJ-C4h" secondAttribute="centerX" id="wjr-lF-HUo"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="uBM-Ex-ONk"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="さくっとデートプラン" id="vLA-kC-QyT"/>
-                    <connections>
-                        <outlet property="roundProgressBar" destination="aVc-3H-WM3" id="bUB-2y-8Qk"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="eAC-ON-2Qq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-1218" y="-1576"/>
-        </scene>
-        <!--さくっとデートプラン-->
-        <scene sceneID="q87-Xg-MY7">
-            <objects>
-                <viewController id="ZUd-mR-avH" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="aSo-y7-jm3">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="デートの時間は？" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MAp-0c-aay">
-                                <rect key="frame" x="103.5" y="391" width="168" height="21"/>
-                                <fontDescription key="fontDescription" name="HiraginoSans-W6" family="Hiragino Sans" pointSize="21"/>
-                                <color key="textColor" name="こうほ"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <imageView clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="redraw" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="time2" translatesAutoresizingMaskIntoConstraints="NO" id="fW2-qm-gfv">
-                                <rect key="frame" x="72.5" y="139" width="230" height="217"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="230" id="Fkk-ie-KOX"/>
-                                    <constraint firstAttribute="height" constant="217" id="G4M-dO-ceJ"/>
-                                </constraints>
-                            </imageView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="9yj-Dd-y9r">
-                                <rect key="frame" x="30.5" y="472" width="314" height="240"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rAk-C7-4JA" customClass="CustomButton" customModule="date_suggester_iOS" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="314" height="60"/>
-                                        <color key="backgroundColor" name="Color-1"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="314" id="RID-BF-ylU"/>
-                                            <constraint firstAttribute="height" constant="60" id="jqz-g5-Brk"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="HiraginoSans-W6" family="Hiragino Sans" pointSize="21"/>
-                                        <state key="normal" title="いちにち">
-                                            <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YNC-Zn-pTO" customClass="CustomButton" customModule="date_suggester_iOS" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="90" width="314" height="60"/>
-                                        <color key="backgroundColor" name="Color-1"/>
-                                        <fontDescription key="fontDescription" name="HiraginoSans-W6" family="Hiragino Sans" pointSize="21"/>
-                                        <state key="normal" title="ランチ">
-                                            <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ShL-3z-A24" customClass="CustomButton" customModule="date_suggester_iOS" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="180" width="314" height="60"/>
-                                        <color key="backgroundColor" name="Color-1"/>
-                                        <fontDescription key="fontDescription" name="HiraginoSans-W6" family="Hiragino Sans" pointSize="21"/>
-                                        <state key="normal" title="よるデート">
-                                            <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                    </button>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstItem="rAk-C7-4JA" firstAttribute="width" secondItem="ShL-3z-A24" secondAttribute="height" multiplier="157:30" id="2yQ-c4-Te1"/>
-                                    <constraint firstItem="rAk-C7-4JA" firstAttribute="height" secondItem="YNC-Zn-pTO" secondAttribute="height" id="EGe-Jf-Wbc"/>
-                                    <constraint firstItem="rAk-C7-4JA" firstAttribute="width" secondItem="ShL-3z-A24" secondAttribute="width" id="ege-vw-29V"/>
-                                    <constraint firstItem="rAk-C7-4JA" firstAttribute="width" secondItem="YNC-Zn-pTO" secondAttribute="width" id="wrD-Lb-6TX"/>
-                                </constraints>
-                            </stackView>
-                            <navigationBar contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XQm-Sb-X41">
-                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                            </navigationBar>
-                            <progressView opaque="NO" contentMode="scaleAspectFit" verticalHuggingPriority="750" progress="0.75" progressImage="test" translatesAutoresizingMaskIntoConstraints="NO" id="y5X-NB-d3O">
-                                <rect key="frame" x="58" y="613" width="259" height="2"/>
-                            </progressView>
-                        </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <constraints>
-                            <constraint firstItem="9yj-Dd-y9r" firstAttribute="centerX" secondItem="aSo-y7-jm3" secondAttribute="centerX" id="AVU-bE-pr9"/>
-                            <constraint firstItem="9yj-Dd-y9r" firstAttribute="top" secondItem="MAp-0c-aay" secondAttribute="bottom" constant="60" id="BMV-Pv-8r9"/>
-                            <constraint firstItem="eQT-Fq-XCY" firstAttribute="bottom" secondItem="y5X-NB-d3O" secondAttribute="bottom" constant="52" id="CFl-va-beQ"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="y5X-NB-d3O" secondAttribute="trailing" constant="42" id="FTA-zL-0Xj"/>
-                            <constraint firstItem="MAp-0c-aay" firstAttribute="top" secondItem="fW2-qm-gfv" secondAttribute="bottom" constant="35" id="JFn-hi-RZl"/>
-                            <constraint firstItem="fW2-qm-gfv" firstAttribute="centerX" secondItem="aSo-y7-jm3" secondAttribute="centerX" id="Xp6-1z-5lA"/>
-                            <constraint firstItem="fW2-qm-gfv" firstAttribute="top" secondItem="aSo-y7-jm3" secondAttribute="top" constant="139" id="aBu-Ht-0om"/>
-                            <constraint firstItem="MAp-0c-aay" firstAttribute="centerX" secondItem="aSo-y7-jm3" secondAttribute="centerX" id="cFc-UK-HTM"/>
-                            <constraint firstItem="fW2-qm-gfv" firstAttribute="top" secondItem="XQm-Sb-X41" secondAttribute="bottom" constant="40" id="lQj-0f-Xv9"/>
-                            <constraint firstItem="y5X-NB-d3O" firstAttribute="leading" secondItem="aSo-y7-jm3" secondAttribute="leadingMargin" constant="42" id="uhn-6l-fwA"/>
-                            <constraint firstItem="MAp-0c-aay" firstAttribute="centerX" secondItem="aSo-y7-jm3" secondAttribute="centerX" id="wEU-E5-qqF"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="eQT-Fq-XCY"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="さくっとデートプラン" id="tAT-6G-bbV"/>
-                    <connections>
-                        <outlet property="roundProgressBar" destination="y5X-NB-d3O" id="Ba0-wx-gc7"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="KAQ-d8-BwL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-554" y="-1576"/>
-        </scene>
         <!--Simple Plan View Controller5-->
         <scene sceneID="1eg-zM-sca">
             <objects>
@@ -338,99 +155,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="M7G-XO-jJF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1025" y="-1709"/>
-        </scene>
-        <!--さくっとデートプラン-->
-        <scene sceneID="g4K-Kk-6tB">
-            <objects>
-                <viewController id="K5J-lF-eb2" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="ZHS-cx-pRt">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="どんなデートの気分？" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5n0-v7-dKt">
-                                <rect key="frame" x="82.5" y="386" width="210" height="21"/>
-                                <fontDescription key="fontDescription" name="HiraginoSans-W6" family="Hiragino Sans" pointSize="21"/>
-                                <color key="textColor" name="こうほ"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <imageView clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="redraw" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ハートマークの無料アイコン素材 10" translatesAutoresizingMaskIntoConstraints="NO" id="zBj-dk-wVq">
-                                <rect key="frame" x="72.5" y="144" width="230" height="217"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="217" id="x5i-8U-7EI"/>
-                                    <constraint firstAttribute="width" constant="230" id="yqU-rT-lUX"/>
-                                </constraints>
-                            </imageView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="oDf-kp-k9b">
-                                <rect key="frame" x="30.5" y="467" width="314" height="240"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lFL-po-UdW" customClass="CustomButton" customModule="date_suggester_iOS" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="314" height="60"/>
-                                        <color key="backgroundColor" name="Color-1"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="314" id="6Ln-Cc-nrq"/>
-                                            <constraint firstAttribute="height" constant="60" id="tty-oW-sF3"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="HiraginoSans-W6" family="Hiragino Sans" pointSize="21"/>
-                                        <state key="normal" title="ごはん">
-                                            <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tKB-IR-bVx" customClass="CustomButton" customModule="date_suggester_iOS" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="90" width="314" height="60"/>
-                                        <color key="backgroundColor" name="Color-1"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="314" id="Lh2-9r-XKu"/>
-                                            <constraint firstAttribute="height" constant="60" id="Rdo-IA-Slk"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="HiraginoSans-W6" family="Hiragino Sans" pointSize="21"/>
-                                        <state key="normal" title="うごきたい">
-                                            <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M9v-8t-ley" customClass="CustomButton" customModule="date_suggester_iOS" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="180" width="314" height="60"/>
-                                        <color key="backgroundColor" name="Color-1"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="314" id="kAi-N8-z9L"/>
-                                            <constraint firstAttribute="height" constant="60" id="yQ0-d8-Kcj"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="HiraginoSans-W6" family="Hiragino Sans" pointSize="21"/>
-                                        <state key="normal" title="まったり">
-                                            <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                    </button>
-                                </subviews>
-                            </stackView>
-                            <navigationBar contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="s6M-fN-jsT">
-                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                            </navigationBar>
-                            <progressView opaque="NO" contentMode="scaleAspectFit" verticalHuggingPriority="750" progress="1" progressImage="test" translatesAutoresizingMaskIntoConstraints="NO" id="sZm-oZ-Htq">
-                                <rect key="frame" x="58" y="613" width="259" height="2"/>
-                            </progressView>
-                        </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="sZm-oZ-Htq" secondAttribute="trailing" constant="42" id="1fy-f6-sXB"/>
-                            <constraint firstItem="sZm-oZ-Htq" firstAttribute="leading" secondItem="ZHS-cx-pRt" secondAttribute="leadingMargin" constant="42" id="B44-MN-1UE"/>
-                            <constraint firstItem="oDf-kp-k9b" firstAttribute="centerX" secondItem="ZHS-cx-pRt" secondAttribute="centerX" id="Bcj-iV-rsj"/>
-                            <constraint firstItem="5n0-v7-dKt" firstAttribute="centerX" secondItem="ZHS-cx-pRt" secondAttribute="centerX" id="Dhk-I0-Sm3"/>
-                            <constraint firstItem="oDf-kp-k9b" firstAttribute="top" secondItem="5n0-v7-dKt" secondAttribute="bottom" constant="60" id="Gls-5E-qGr"/>
-                            <constraint firstItem="zBj-dk-wVq" firstAttribute="centerX" secondItem="ZHS-cx-pRt" secondAttribute="centerX" id="Rf0-Qf-wgs"/>
-                            <constraint firstItem="5n0-v7-dKt" firstAttribute="top" secondItem="zBj-dk-wVq" secondAttribute="bottom" constant="25" id="fvJ-c5-JhE"/>
-                            <constraint firstItem="zBj-dk-wVq" firstAttribute="top" secondItem="s6M-fN-jsT" secondAttribute="bottom" constant="56" id="i21-dw-DV3"/>
-                            <constraint firstItem="7xt-yV-0oS" firstAttribute="bottom" secondItem="sZm-oZ-Htq" secondAttribute="bottom" constant="52" id="iL9-HW-rBe"/>
-                            <constraint firstItem="zBj-dk-wVq" firstAttribute="top" secondItem="ZHS-cx-pRt" secondAttribute="top" constant="144" id="tO0-IL-du1"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="7xt-yV-0oS"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="さくっとデートプラン" id="Zol-pG-mge"/>
-                    <connections>
-                        <outlet property="roundProgressBar" destination="sZm-oZ-Htq" id="8do-Fx-rvL"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="RXr-CC-fnc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="97" y="-1576"/>
         </scene>
         <!--Date Plan Suggestion View Controlller-->
         <scene sceneID="2b2-IY-1ta">
@@ -788,7 +512,7 @@
             </objects>
             <point key="canvasLocation" x="-2372" y="-54"/>
         </scene>
-        <!--さくっとデートプラン-->
+        <!--Date Suggester-->
         <scene sceneID="vLa-py-Xjy">
             <objects>
                 <viewController storyboardIdentifier="DateBudgetViewController" id="R0A-De-hYc" customClass="DateBudgetViewController" customModule="date_suggester_iOS" customModuleProvider="target" sceneMemberID="viewController">
@@ -883,7 +607,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="fN8-Zr-pgf"/>
                     </view>
-                    <navigationItem key="navigationItem" title="さくっとデートプラン" id="Q1O-al-gv2"/>
+                    <navigationItem key="navigationItem" title="Date Suggester" id="Q1O-al-gv2"/>
                     <connections>
                         <outlet property="normalButton" destination="Rt7-uk-odS" id="Pa1-lF-aOq"/>
                         <outlet property="richButton" destination="w8w-2O-geN" id="kcy-NK-v2A"/>
@@ -895,7 +619,7 @@
             </objects>
             <point key="canvasLocation" x="-1218" y="-795"/>
         </scene>
-        <!--さくっとデートプラン-->
+        <!--Date Suggester-->
         <scene sceneID="tdJ-eU-Lkz">
             <objects>
                 <viewController storyboardIdentifier="DateTimeViewController" id="ZjC-Kc-I5e" customClass="DateTimeViewController" customModule="date_suggester_iOS" customModuleProvider="target" sceneMemberID="viewController">
@@ -991,7 +715,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="99M-Jm-uHs"/>
                     </view>
-                    <navigationItem key="navigationItem" title="さくっとデートプラン" id="2bJ-WA-92u"/>
+                    <navigationItem key="navigationItem" title="Date Suggester" id="2bJ-WA-92u"/>
                     <connections>
                         <outlet property="allDayButton" destination="65f-sx-SfD" id="p6N-2w-iP6"/>
                         <outlet property="lunchButton" destination="qbF-95-7Ma" id="nnr-FH-rHZ"/>
@@ -1003,7 +727,7 @@
             </objects>
             <point key="canvasLocation" x="-572" y="-798"/>
         </scene>
-        <!--さくっとデートプラン-->
+        <!--Date Suggester-->
         <scene sceneID="0gn-3O-qlp">
             <objects>
                 <viewController storyboardIdentifier="DateFeelingViewController" id="rfS-OF-Vio" customClass="DateFeelingViewController" customModule="date_suggester_iOS" customModuleProvider="target" sceneMemberID="viewController">
@@ -1081,7 +805,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="tLH-Tf-Saa"/>
                     </view>
-                    <navigationItem key="navigationItem" title="さくっとデートプラン" id="ed3-Cs-EMc"/>
+                    <navigationItem key="navigationItem" title="Date Suggester" id="ed3-Cs-EMc"/>
                     <connections>
                         <outlet property="relaxButton" destination="y5i-mW-eX7" id="U3X-0n-R0g"/>
                         <outlet property="roundProgressBar" destination="i61-3i-cRG" id="6FV-Lb-wWe"/>
@@ -1104,15 +828,9 @@
         <image name="moneyIcon-White" width="16" height="16"/>
         <image name="move" width="256" height="256"/>
         <image name="multiply" catalog="system" width="64" height="54"/>
-        <image name="test" width="465.33334350585938" height="93"/>
         <image name="time" width="256" height="256"/>
-        <image name="time2" width="256" height="256"/>
-        <image name="ハートマークの無料アイコン素材 10" width="256" height="256"/>
         <namedColor name="ButtonColor">
             <color red="1" green="0.90200001001358032" blue="0.5690000057220459" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-        <namedColor name="Color-1">
-            <color red="0.85100001096725464" green="0.76899999380111694" blue="0.49000000953674316" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="MainColor">
             <color red="0.99599999189376831" green="0.32899999618530273" blue="0.57300001382827759" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

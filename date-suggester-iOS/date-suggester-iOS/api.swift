@@ -148,6 +148,7 @@ class Api {
                 debugPrint("userId:\(userId)")
                 let defaults = UserDefaults.standard
                 defaults.set(tokenValue, forKey: "responseToken")
+                defaults.set(userId, forKey: "userId")
                 
                 debugPrint("仮ログインのレスポンス:\(response)")
                 completion?(tokenValue, userId, nil)

@@ -11,6 +11,9 @@
         <array key="NotoSans-Bold.ttf">
             <string>NotoSans-Bold</string>
         </array>
+        <array key="NotoSans-Italic.ttf">
+            <string>NotoSans-Italic</string>
+        </array>
         <array key="NotoSans-Regular.ttf">
             <string>NotoSans</string>
         </array>
@@ -450,45 +453,6 @@
             </objects>
             <point key="canvasLocation" x="2541.5999999999999" y="796.55172413793105"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="6Bq-in-HZC">
-            <objects>
-                <viewController id="bhK-oy-j5Y" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="WMu-5L-Hk7">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Full" translatesAutoresizingMaskIntoConstraints="NO" id="EjS-Mw-eJs">
-                                <rect key="frame" x="0.0" y="-3" width="375" height="670"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="welcome!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="syV-50-Caa">
-                                <rect key="frame" x="0.0" y="117" width="372" height="72"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="NotoSans" family="Noto Sans" pointSize="34"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pkg-fd-Y72" customClass="CustomUnderlineTextField" customModule="date_suggester_iOS" customModuleProvider="target">
-                                <rect key="frame" x="30" y="252" width="314" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <color key="tintColor" name="MainColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                        </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="0wc-UZ-COp"/>
-                    </view>
-                    <toolbarItems/>
-                    <navigationItem key="navigationItem" id="wZj-Va-TVh"/>
-                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="U4D-bZ-OlI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3286" y="1501"/>
-        </scene>
         <!--プロフィール設定-->
         <scene sceneID="rBa-z8-vd0">
             <objects>
@@ -589,7 +553,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lFZ-nl-Qsv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3436" y="797"/>
+            <point key="canvasLocation" x="3254" y="797"/>
         </scene>
         <!--しおり-->
         <scene sceneID="Cb8-OI-oCk">
@@ -900,42 +864,62 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Full" translatesAutoresizingMaskIntoConstraints="NO" id="Iq4-DC-L2d">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="welcome!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I20-aH-8B7">
-                                <rect key="frame" x="3" y="120" width="372" height="72"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="NotoSans" family="Noto Sans" pointSize="34"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GVX-5R-mlA" customClass="CustomUnderlineTextField" customModule="date_suggester_iOS" customModuleProvider="target">
-                                <rect key="frame" x="32" y="228" width="314" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="28" translatesAutoresizingMaskIntoConstraints="NO" id="yz0-Ax-wKe">
+                                <rect key="frame" x="63.5" y="230" width="248" height="158"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="mail" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GVX-5R-mlA" customClass="CustomUnderlineTextField" customModule="date_suggester_iOS" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="248" height="34"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="tintColor" name="MainColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="34" id="I3i-8j-FCo"/>
+                                            <constraint firstAttribute="width" constant="248" id="ecw-NR-WNg"/>
+                                        </constraints>
+                                        <color key="textColor" name="TextColor"/>
+                                        <fontDescription key="fontDescription" name="NotoSans" family="Noto Sans" pointSize="17"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="pass" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JBY-47-jP7" customClass="CustomUnderlineTextField" customModule="date_suggester_iOS" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="62" width="248" height="34"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="tintColor" name="MainColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="34" id="Lc4-oL-wqb"/>
+                                            <constraint firstAttribute="width" constant="248" id="dX1-mf-Xgh"/>
+                                        </constraints>
+                                        <color key="textColor" name="TextColor"/>
+                                        <fontDescription key="fontDescription" name="NotoSans" family="Noto Sans" pointSize="17"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="reenter pass" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1Kl-JE-gIB" customClass="CustomUnderlineTextField" customModule="date_suggester_iOS" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="124" width="248" height="34"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="tintColor" name="MainColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="34" id="3Bh-7l-SGA"/>
+                                            <constraint firstAttribute="width" constant="248" id="j3Q-pN-om1"/>
+                                        </constraints>
+                                        <color key="textColor" name="TextColor"/>
+                                        <fontDescription key="fontDescription" name="NotoSans" family="Noto Sans" pointSize="17"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                            </stackView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="lcw-nh-D12">
+                                <rect key="frame" x="-168" y="486" width="631" height="420"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="420" id="SCh-GK-uIc"/>
+                                    <constraint firstAttribute="width" constant="631" id="uuO-Gg-2JN"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p8L-W9-s3F">
+                                <rect key="frame" x="99.5" y="441" width="176" height="48"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <color key="tintColor" name="MainColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JBY-47-jP7" customClass="CustomUnderlineTextField" customModule="date_suggester_iOS" customModuleProvider="target">
-                                <rect key="frame" x="30" y="292" width="314" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <color key="tintColor" name="MainColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1Kl-JE-gIB" customClass="CustomUnderlineTextField" customModule="date_suggester_iOS" customModuleProvider="target">
-                                <rect key="frame" x="32" y="361" width="314" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <color key="tintColor" name="MainColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p8L-W9-s3F">
-                                <rect key="frame" x="99" y="431" width="176" height="48"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" name="HiraginoSans-W6" family="Hiragino Sans" pointSize="17"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="Eja-Ew-mBn"/>
+                                    <constraint firstAttribute="width" constant="176" id="I3e-vS-vFm"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="NotoSans-Bold" family="Noto Sans" pointSize="20"/>
                                 <state key="normal" title="sign up!">
                                     <color key="titleColor" name="SubTextColor"/>
                                 </state>
@@ -943,19 +927,74 @@
                                     <action selector="signUpButton:" destination="Veo-r5-RYr" eventType="touchUpInside" id="iVE-jS-JS0"/>
                                 </connections>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lcw-nh-D12">
-                                <rect key="frame" x="0.0" y="487" width="631" height="420"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jxo-Q4-WLl">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="90"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" alpha="0.85000002384185791" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date Suggester" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zeH-sv-Mef">
+                                        <rect key="frame" x="0.0" y="45" width="375" height="45"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="45" id="fsL-jj-gjw"/>
+                                            <constraint firstAttribute="width" constant="375" id="lsa-sP-wwK"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="NotoSans-Italic" family="Noto Sans" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A7I-Tq-5Bg">
+                                        <rect key="frame" x="16" y="57" width="12.5" height="21"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="12.5" id="6Fi-en-gxU"/>
+                                            <constraint firstAttribute="height" constant="21" id="7d1-7k-A81"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="17"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" image="chevron.left" catalog="system"/>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" name="BarColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="90" id="LHd-XD-I3W"/>
+                                    <constraint firstItem="A7I-Tq-5Bg" firstAttribute="leading" secondItem="jxo-Q4-WLl" secondAttribute="leading" constant="16" id="SzH-XO-gdN"/>
+                                    <constraint firstAttribute="width" constant="375" id="V1E-6m-S5G"/>
+                                    <constraint firstAttribute="bottom" secondItem="A7I-Tq-5Bg" secondAttribute="bottom" constant="12" id="ejl-1x-imp"/>
+                                    <constraint firstItem="zeH-sv-Mef" firstAttribute="leading" secondItem="jxo-Q4-WLl" secondAttribute="leading" id="iX6-VW-Nqa"/>
+                                    <constraint firstAttribute="bottom" secondItem="zeH-sv-Mef" secondAttribute="bottom" id="lYl-Nn-b7r"/>
+                                    <constraint firstAttribute="trailing" secondItem="zeH-sv-Mef" secondAttribute="trailing" id="p7X-5C-ZiP"/>
+                                    <constraint firstItem="A7I-Tq-5Bg" firstAttribute="top" secondItem="jxo-Q4-WLl" secondAttribute="top" constant="57" id="sF6-Od-SLy"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="welcome!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I20-aH-8B7">
+                                <rect key="frame" x="0.0" y="125" width="375" height="47"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="47" id="FEe-JR-i7f"/>
+                                    <constraint firstAttribute="width" constant="375" id="l5y-Ti-hWf"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="NotoSans" family="Noto Sans" pointSize="34"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="jxo-Q4-WLl" firstAttribute="leading" secondItem="O0W-oO-eYa" secondAttribute="leading" id="0eT-YZ-qgW"/>
                             <constraint firstItem="Iq4-DC-L2d" firstAttribute="leading" secondItem="O0W-oO-eYa" secondAttribute="leading" id="3SX-wv-VwP"/>
+                            <constraint firstItem="I20-aH-8B7" firstAttribute="leading" secondItem="O0W-oO-eYa" secondAttribute="leading" id="66Z-oJ-Bfh"/>
+                            <constraint firstItem="I20-aH-8B7" firstAttribute="top" secondItem="jxo-Q4-WLl" secondAttribute="bottom" constant="35" id="874-rU-Ym1"/>
+                            <constraint firstItem="p8L-W9-s3F" firstAttribute="top" secondItem="yz0-Ax-wKe" secondAttribute="bottom" constant="53" id="C2p-Lo-pcX"/>
                             <constraint firstAttribute="bottom" secondItem="Iq4-DC-L2d" secondAttribute="bottom" id="Du5-mP-KgE"/>
+                            <constraint firstItem="p8L-W9-s3F" firstAttribute="centerX" secondItem="O0W-oO-eYa" secondAttribute="centerX" id="Dyq-mL-7q3"/>
                             <constraint firstAttribute="trailing" secondItem="Iq4-DC-L2d" secondAttribute="trailing" id="EDC-8s-sfL"/>
+                            <constraint firstItem="yz0-Ax-wKe" firstAttribute="top" secondItem="I20-aH-8B7" secondAttribute="bottom" constant="58" id="Eur-xg-wtQ"/>
                             <constraint firstItem="Iq4-DC-L2d" firstAttribute="top" secondItem="O0W-oO-eYa" secondAttribute="top" id="GaG-GC-mrD"/>
+                            <constraint firstItem="lcw-nh-D12" firstAttribute="top" secondItem="O0W-oO-eYa" secondAttribute="top" constant="486" id="M9y-7u-2eu"/>
+                            <constraint firstItem="yz0-Ax-wKe" firstAttribute="centerX" secondItem="O0W-oO-eYa" secondAttribute="centerX" id="OHx-rx-ar1"/>
+                            <constraint firstItem="jxo-Q4-WLl" firstAttribute="top" secondItem="O0W-oO-eYa" secondAttribute="top" id="Wgv-vz-m5A"/>
+                            <constraint firstItem="lcw-nh-D12" firstAttribute="leading" secondItem="O0W-oO-eYa" secondAttribute="leading" constant="-168" id="bWn-9i-wHK"/>
+                            <constraint firstAttribute="trailing" secondItem="lcw-nh-D12" secondAttribute="trailing" constant="-88" id="ep2-Ot-gal"/>
                             <constraint firstItem="Iq4-DC-L2d" firstAttribute="leading" secondItem="O0W-oO-eYa" secondAttribute="leading" id="eyK-hF-fW8"/>
                             <constraint firstAttribute="bottom" secondItem="Iq4-DC-L2d" secondAttribute="bottom" id="fuk-rB-7JQ"/>
+                            <constraint firstAttribute="trailing" secondItem="I20-aH-8B7" secondAttribute="trailing" id="gCS-Dy-4gV"/>
+                            <constraint firstAttribute="trailing" secondItem="jxo-Q4-WLl" secondAttribute="trailing" id="hsb-sn-KGl"/>
                             <constraint firstAttribute="trailing" secondItem="Iq4-DC-L2d" secondAttribute="trailing" id="i2I-sJ-7Tv"/>
                             <constraint firstItem="Iq4-DC-L2d" firstAttribute="top" secondItem="O0W-oO-eYa" secondAttribute="top" id="pOp-Sv-kV7"/>
                         </constraints>
@@ -965,6 +1004,7 @@
                         <outlet property="myPassword" destination="JBY-47-jP7" id="SWW-Ow-baK"/>
                         <outlet property="myPasswordConfirmation" destination="1Kl-JE-gIB" id="rgE-UR-CFs"/>
                         <outlet property="signUpButton" destination="p8L-W9-s3F" id="P9g-Uf-5Lc"/>
+                        <outlet property="svgImageView" destination="lcw-nh-D12" id="Tgm-tB-ru7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oJu-Ne-LJ2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -975,6 +1015,7 @@
     <resources>
         <image name="Full" width="414" height="896"/>
         <image name="book" catalog="system" width="64" height="50"/>
+        <image name="chevron.left" catalog="system" width="48" height="64"/>
         <image name="heart" catalog="system" width="64" height="54"/>
         <image name="heartMark" width="512" height="512"/>
         <image name="linkIcon" width="32" height="32"/>
@@ -982,11 +1023,17 @@
         <image name="person.circle" catalog="system" width="64" height="60"/>
         <image name="setting" width="16" height="16"/>
         <image name="userIcon" width="1245" height="1080"/>
+        <namedColor name="BarColor">
+            <color red="0.87099999189376831" green="0.2630000114440918" blue="0.41600000858306885" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="MainColor">
             <color red="0.99599999189376831" green="0.32899999618530273" blue="0.57300001382827759" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="SubTextColor">
             <color red="0.43900001049041748" green="0.43900001049041748" blue="0.43900001049041748" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="TextColor">
+            <color red="0.0" green="0.0" blue="0.0" alpha="0.87000000476837158" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <namedColor name="lowLightColor">
             <color red="0.85900002717971802" green="0.85900002717971802" blue="0.85900002717971802" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

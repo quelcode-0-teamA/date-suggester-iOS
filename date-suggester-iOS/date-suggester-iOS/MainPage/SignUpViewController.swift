@@ -7,11 +7,13 @@
 //
 
 import UIKit
+import SVGKit
 
 class SignUpViewController: UIViewController, UITextFieldDelegate {
     
     var activityIndicatorView = UIActivityIndicatorView()
     
+    @IBOutlet weak var svgImageView: UIImageView!
     @IBOutlet weak var myEmail: CustomUnderlineTextField!
     @IBOutlet weak var myPassword: SignUpCustomTextField!
     @IBOutlet weak var myPasswordConfirmation: CustomUnderlineTextField!
@@ -22,6 +24,14 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
         myEmail.delegate = self
         myPassword.delegate = self
         myPasswordConfirmation.delegate = self
+        
+        myEmail.attributedPlaceholder = NSAttributedString(string: "mail", attributes: [NSAttributedString.Key.foregroundColor : UIColor.white])
+        myPassword.attributedPlaceholder = NSAttributedString(string: "pass", attributes: [NSAttributedString.Key.foregroundColor : UIColor.white])
+        myPasswordConfirmation.attributedPlaceholder = NSAttributedString(string: "reenter pass", attributes: [NSAttributedString.Key.foregroundColor : UIColor.white])
+        
+        let svgImage = SVGKImage(named: "mainImage")
+        svgImage?.size = svgImageView.bounds.size
+        svgImageView.image = svgImage?.uiImage
         
         signUpButton.isEnabled = false
         signUpButton.layer.masksToBounds = true
