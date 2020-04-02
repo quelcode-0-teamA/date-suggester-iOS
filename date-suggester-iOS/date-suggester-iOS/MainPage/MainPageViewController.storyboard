@@ -369,29 +369,40 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="プロフィール" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tv6-Kq-LGO">
-                                <rect key="frame" x="129" y="200" width="117" height="18"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="プロフィール" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tv6-Kq-LGO">
+                                <rect key="frame" x="129" y="174" width="117" height="18"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="18" id="hjF-c5-Uso"/>
+                                    <constraint firstAttribute="width" constant="117" id="l0a-nC-C7G"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="NotoSans-Bold" family="Noto Sans" pointSize="18"/>
                                 <color key="textColor" name="SubTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="userIcon" translatesAutoresizingMaskIntoConstraints="NO" id="0Lx-Js-mYL">
-                                <rect key="frame" x="115" y="270" width="144" height="144"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="userIcon" translatesAutoresizingMaskIntoConstraints="NO" id="0Lx-Js-mYL">
+                                <rect key="frame" x="115.5" y="244" width="144" height="144"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="144" id="BpG-pZ-AYt"/>
+                                    <constraint firstAttribute="height" constant="144" id="Ujq-EX-stC"/>
+                                </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="名もなき恋愛の達人" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fQ3-bA-70c">
-                                <rect key="frame" x="109" y="460" width="144" height="22"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="名もなき恋愛の達人" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fQ3-bA-70c">
+                                <rect key="frame" x="115.5" y="434" width="144" height="22"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="22" id="YgY-4y-Jc8"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="NotoSans" family="Noto Sans" pointSize="16"/>
                                 <color key="textColor" name="SubTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MRH-tm-q1f">
-                                <rect key="frame" x="67" y="493" width="240" height="1"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MRH-tm-q1f">
+                                <rect key="frame" x="67.5" y="467" width="240" height="1"/>
                                 <color key="backgroundColor" name="SubTextColor"/>
                                 <color key="tintColor" name="SubTextColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="kie-IV-aM5"/>
+                                    <constraint firstAttribute="height" constant="1" id="zkH-V2-0ff"/>
+                                </constraints>
                             </view>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KxA-mM-Q6r">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
@@ -403,9 +414,18 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="KxA-mM-Q6r" firstAttribute="leading" secondItem="zqp-CJ-TMQ" secondAttribute="leading" id="0QP-AJ-b2n"/>
+                            <constraint firstItem="tv6-Kq-LGO" firstAttribute="top" secondItem="zqp-CJ-TMQ" secondAttribute="top" constant="130" id="6MF-yD-pCS"/>
                             <constraint firstItem="zqp-CJ-TMQ" firstAttribute="bottom" secondItem="KxA-mM-Q6r" secondAttribute="bottom" id="CzT-EF-QUg"/>
+                            <constraint firstItem="MRH-tm-q1f" firstAttribute="top" secondItem="fQ3-bA-70c" secondAttribute="bottom" constant="11" id="FOM-rp-Cf3"/>
                             <constraint firstItem="zqp-CJ-TMQ" firstAttribute="trailing" secondItem="KxA-mM-Q6r" secondAttribute="trailing" id="FSu-xt-QYJ"/>
+                            <constraint firstItem="0Lx-Js-mYL" firstAttribute="top" secondItem="tv6-Kq-LGO" secondAttribute="bottom" constant="52" id="Fmm-Ua-aCd"/>
+                            <constraint firstItem="MRH-tm-q1f" firstAttribute="centerX" secondItem="6c5-AQ-xM9" secondAttribute="centerX" id="g5L-He-GpG"/>
+                            <constraint firstItem="fQ3-bA-70c" firstAttribute="centerX" secondItem="6c5-AQ-xM9" secondAttribute="centerX" id="jrU-FY-ugH"/>
                             <constraint firstItem="zqp-CJ-TMQ" firstAttribute="top" secondItem="KxA-mM-Q6r" secondAttribute="top" constant="44" id="opc-GU-3J9"/>
+                            <constraint firstItem="zqp-CJ-TMQ" firstAttribute="trailing" secondItem="tv6-Kq-LGO" secondAttribute="trailing" constant="129" id="qcW-4g-D8X"/>
+                            <constraint firstItem="tv6-Kq-LGO" firstAttribute="leading" secondItem="zqp-CJ-TMQ" secondAttribute="leading" constant="129" id="uIl-u7-jmM"/>
+                            <constraint firstItem="fQ3-bA-70c" firstAttribute="top" secondItem="0Lx-Js-mYL" secondAttribute="bottom" constant="46" id="yqY-Fl-cTO"/>
+                            <constraint firstItem="0Lx-Js-mYL" firstAttribute="centerX" secondItem="6c5-AQ-xM9" secondAttribute="centerX" id="z6S-gN-2bn"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="zqp-CJ-TMQ"/>
                     </view>
@@ -457,46 +477,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JBY-47-jP7" customClass="CustomUnderlineTextField" customModule="date_suggester_iOS" customModuleProvider="target">
-                                <rect key="frame" x="30" y="330" width="314" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <color key="tintColor" name="MainColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p8L-W9-s3F">
-                                <rect key="frame" x="98" y="425" width="176" height="48"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" name="HiraginoSans-W6" family="Hiragino Sans" pointSize="17"/>
-                                <state key="normal" title="sign up!">
-                                    <color key="titleColor" name="SubTextColor"/>
-                                </state>
-                                <connections>
-                                    <action selector="signUpButton:" destination="bhK-oy-j5Y" eventType="touchUpInside" id="B1z-bm-clZ"/>
-                                </connections>
-                            </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lcw-nh-D12">
-                                <rect key="frame" x="0.0" y="497" width="631" height="420"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1Kl-JE-gIB" customClass="CustomUnderlineTextField" customModule="date_suggester_iOS" customModuleProvider="target">
-                                <rect key="frame" x="30" y="372" width="314" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <color key="tintColor" name="MainColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="win-sa-LVc">
-                                <rect key="frame" x="184" y="79" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <action selector="backButton:" destination="bhK-oy-j5Y" eventType="touchUpInside" id="ylE-0d-TTo"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="0wc-UZ-COp"/>
@@ -504,12 +484,6 @@
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="wZj-Va-TVh"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
-                    <connections>
-                        <outlet property="myEmail" destination="pkg-fd-Y72" id="b8T-G4-5Td"/>
-                        <outlet property="myPassword" destination="JBY-47-jP7" id="nWg-Jc-EnM"/>
-                        <outlet property="myPasswordConfirmation" destination="1Kl-JE-gIB" id="RZ2-DO-hpK"/>
-                        <outlet property="signUpButton" destination="p8L-W9-s3F" id="bqO-CA-w1D"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="U4D-bZ-OlI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -554,7 +528,6 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <action selector="backButton:" destination="bhK-oy-j5Y" eventType="touchUpInside" id="9ze-eY-bAx"/>
                                     <action selector="backButton:" destination="i8e-KK-juY" eventType="touchUpInside" id="PW6-lc-pV9"/>
                                 </connections>
                             </button>
@@ -916,10 +889,10 @@
             </objects>
             <point key="canvasLocation" x="1782" y="1651"/>
         </scene>
-        <!--View Controller-->
+        <!--Sign Up View Controller-->
         <scene sceneID="9DS-JY-sOA">
             <objects>
-                <viewController id="Veo-r5-RYr" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SignUpViewController" id="Veo-r5-RYr" customClass="SignUpViewController" customModule="date_suggester_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="O0W-oO-eYa">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -927,15 +900,72 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Full" translatesAutoresizingMaskIntoConstraints="NO" id="Iq4-DC-L2d">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="welcome!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I20-aH-8B7">
+                                <rect key="frame" x="3" y="120" width="372" height="72"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="NotoSans" family="Noto Sans" pointSize="34"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GVX-5R-mlA" customClass="CustomUnderlineTextField" customModule="date_suggester_iOS" customModuleProvider="target">
+                                <rect key="frame" x="32" y="228" width="314" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" name="MainColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JBY-47-jP7" customClass="CustomUnderlineTextField" customModule="date_suggester_iOS" customModuleProvider="target">
+                                <rect key="frame" x="30" y="292" width="314" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" name="MainColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1Kl-JE-gIB" customClass="CustomUnderlineTextField" customModule="date_suggester_iOS" customModuleProvider="target">
+                                <rect key="frame" x="32" y="361" width="314" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" name="MainColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p8L-W9-s3F">
+                                <rect key="frame" x="99" y="431" width="176" height="48"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name="HiraginoSans-W6" family="Hiragino Sans" pointSize="17"/>
+                                <state key="normal" title="sign up!">
+                                    <color key="titleColor" name="SubTextColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="signUpButton:" destination="Veo-r5-RYr" eventType="touchUpInside" id="iVE-jS-JS0"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lcw-nh-D12">
+                                <rect key="frame" x="0.0" y="487" width="631" height="420"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="Iq4-DC-L2d" firstAttribute="leading" secondItem="O0W-oO-eYa" secondAttribute="leading" id="3SX-wv-VwP"/>
+                            <constraint firstAttribute="bottom" secondItem="Iq4-DC-L2d" secondAttribute="bottom" id="Du5-mP-KgE"/>
+                            <constraint firstAttribute="trailing" secondItem="Iq4-DC-L2d" secondAttribute="trailing" id="EDC-8s-sfL"/>
                             <constraint firstItem="Iq4-DC-L2d" firstAttribute="top" secondItem="O0W-oO-eYa" secondAttribute="top" id="GaG-GC-mrD"/>
                             <constraint firstItem="Iq4-DC-L2d" firstAttribute="leading" secondItem="O0W-oO-eYa" secondAttribute="leading" id="eyK-hF-fW8"/>
                             <constraint firstAttribute="bottom" secondItem="Iq4-DC-L2d" secondAttribute="bottom" id="fuk-rB-7JQ"/>
                             <constraint firstAttribute="trailing" secondItem="Iq4-DC-L2d" secondAttribute="trailing" id="i2I-sJ-7Tv"/>
+                            <constraint firstItem="Iq4-DC-L2d" firstAttribute="top" secondItem="O0W-oO-eYa" secondAttribute="top" id="pOp-Sv-kV7"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="myEmail" destination="GVX-5R-mlA" id="oPS-4Y-DDi"/>
+                        <outlet property="myPassword" destination="JBY-47-jP7" id="SWW-Ow-baK"/>
+                        <outlet property="myPasswordConfirmation" destination="1Kl-JE-gIB" id="rgE-UR-CFs"/>
+                        <outlet property="signUpButton" destination="p8L-W9-s3F" id="P9g-Uf-5Lc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oJu-Ne-LJ2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

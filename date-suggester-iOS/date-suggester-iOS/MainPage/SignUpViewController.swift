@@ -12,10 +12,9 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
     
     var activityIndicatorView = UIActivityIndicatorView()
     
-    @IBOutlet weak var myEmail: SignUpCustomTextField!
+    @IBOutlet weak var myEmail: CustomUnderlineTextField!
     @IBOutlet weak var myPassword: SignUpCustomTextField!
     @IBOutlet weak var myPasswordConfirmation: CustomUnderlineTextField!
-    //    @IBOutlet weak var myPasswordConfirmation: SignUpCustomTextField!
     @IBOutlet weak var signUpButton: UIButton!
     
     override func viewDidLoad() {
@@ -26,12 +25,22 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
         
         signUpButton.isEnabled = false
         signUpButton.layer.masksToBounds = true
-        signUpButton.layer.cornerRadius = 30
+        signUpButton.layer.cornerRadius = 24
         
         activityIndicatorView.center = view.center
         activityIndicatorView.style = .whiteLarge
         activityIndicatorView.color = .darkGray
         view.addSubview(activityIndicatorView)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: false)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        navigationController?.setNavigationBarHidden(false, animated: false)
     }
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {

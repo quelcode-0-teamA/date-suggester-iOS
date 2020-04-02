@@ -39,8 +39,19 @@ class MypageViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-//        self.view.alpha = 0
+        self.navigationController?.setNavigationBarHidden(false, animated: false)
         containerView.alpha = 0
+        
+        let defaults = UserDefaults.standard
+        let signUpStatus = defaults.bool(forKey: "signUpStatus")
+        debugPrint(signUpStatus)
+        
+        if signUpStatus == true{
+            self.view.alpha = 1
+            
+        }else{
+            containerView.alpha = 1
+        }
         
         /*
          ユーザー情報取得API
@@ -82,21 +93,10 @@ class MypageViewController: UIViewController {
 
     }
     
-//override func viewWillDisappear(_ animated: Bool) {
-//     super.viewWillDisappear(animated)
-//     let defaults = UserDefaults.standard
-//     let signUpStatus = defaults.bool(forKey: "signUpStatus")
-//     debugPrint(signUpStatus)
+//    override func viewWillDisappear(_ animated: Bool) {
+//        super.viewWillDisappear(animated)
 //
-//     if signUpStatus == true{
-//        self.view.alpha = 1
-//
-//     }else{
-//         let storyboard = UIStoryboard(name: "MainPageViewController", bundle: nil)
-//         let signUpViewController = storyboard.instantiateViewController(withIdentifier: "SignUpViewController")
-//         self.present(signUpViewController, animated: true, completion: nil)
-//     }
-// }
+//    }
     
     @IBAction func gotoProfileEditButton(_ sender: Any) {
         let storyboard = UIStoryboard(name: "MainPageViewController", bundle: nil)
@@ -120,20 +120,3 @@ class MypageViewController: UIViewController {
 //        }
 //    }
 }
-
-
-//        super.viewWillDisappear(animated)
-//        let defaults = UserDefaults.standard
-//        let signUpStatus = defaults.bool(forKey: "signUpStatus")
-//        debugPrint(signUpStatus)
-//
-//        if signUpStatus == true{
-//           self.view.alpha = 1
-//
-//        }else{
-//            ContainerView.alpha = 1
-//            let storyboard = UIStoryboard(name: "MainPageViewController", bundle: nil)
-//            let signUpViewController = storyboard.instantiateViewController(withIdentifier: "SignUpViewController")
-//            signUpViewController.modalPresentationStyle = .fullScreen
-//            self.present(signUpViewController, animated: false, completion: nil)
-//        }
