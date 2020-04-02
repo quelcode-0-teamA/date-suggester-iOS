@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="a4H-3n-hQw">
-    <device id="retina5_9" orientation="portrait" appearance="light"/>
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
@@ -21,7 +21,7 @@
             <objects>
                 <viewController storyboardIdentifier="DateplanListViewController" id="Kk2-eY-6LZ" customClass="DateplanListViewController" customModule="date_suggester_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ano-sn-2em">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="JKy-Xy-Xw3">
@@ -67,7 +67,7 @@
                         <color key="badgeColor" name="MainColor"/>
                     </tabBarItem>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="EJe-7t-089">
-                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" red="0.92156862750000001" green="0.41176470590000003" blue="0.47843137250000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </navigationBar>
@@ -84,7 +84,7 @@
             <objects>
                 <viewController storyboardIdentifier="PopupViewController" modalTransitionStyle="crossDissolve" modalPresentationStyle="overCurrentContext" id="WaO-ja-jrB" customClass="PopupViewController" customModule="date_suggester_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="6H9-JF-Zum">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LF5-xX-2RS">
@@ -140,7 +140,7 @@
             <objects>
                 <viewController storyboardIdentifier="DateScheduleViewController" id="JRE-XS-wMQ" customClass="DateScheduleViewController" customModule="date_suggester_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="N0U-UR-aUV">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="CEz-aO-Eas" customClass="dateScheduleTV" customModule="date_suggester_iOS" customModuleProvider="target">
@@ -186,7 +186,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bES-zQ-Puh">
-                                                    <rect key="frame" x="15" y="13.666666666666671" width="135" height="135"/>
+                                                    <rect key="frame" x="15" y="13.5" width="135" height="135"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="135" id="7P0-2w-meY"/>
                                                         <constraint firstAttribute="height" constant="135" id="aaJ-AQ-nTC"/>
@@ -203,7 +203,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="予算" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AKj-Rg-DFY">
-                                                    <rect key="frame" x="208" y="88.666666666666671" width="120" height="20"/>
+                                                    <rect key="frame" x="208" y="88.5" width="120" height="20"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="120" id="K0H-16-haL"/>
                                                     </constraints>
@@ -284,11 +284,11 @@
             <objects>
                 <viewController id="AeU-Qy-PoA" customClass="DatePlanDecideViewController" customModule="date_suggester_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="j4B-tW-bju">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mTm-TJ-n8X">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="858-8H-jIe">
                                         <rect key="frame" x="-168" y="327" width="631" height="420"/>
@@ -298,7 +298,7 @@
                                         </constraints>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ty8-YY-aUN">
-                                        <rect key="frame" x="33.666666666666657" y="203" width="308" height="57"/>
+                                        <rect key="frame" x="33.5" y="203" width="308" height="57"/>
                                         <color key="backgroundColor" name="MainColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="57" id="XVH-eV-h7j"/>
@@ -350,11 +350,11 @@
                         <color key="badgeColor" name="MainColor"/>
                     </tabBarItem>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="GF1-5i-HU8">
-                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="Miq-KR-ZyF" kind="relationship" relationship="rootViewController" id="pOH-VM-78h"/>
+                        <segue destination="Miq-KR-ZyF" kind="relationship" relationship="rootViewController" id="J0y-Az-PUj"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gx7-KR-i4w" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -366,7 +366,7 @@
             <objects>
                 <viewController storyboardIdentifier="MypageViewController" id="Miq-KR-ZyF" customClass="MypageViewController" customModule="date_suggester_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="6c5-AQ-xM9">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="プロフィール" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tv6-Kq-LGO">
@@ -393,8 +393,20 @@
                                 <color key="backgroundColor" name="SubTextColor"/>
                                 <color key="tintColor" name="SubTextColor"/>
                             </view>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KxA-mM-Q6r">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
+                                <connections>
+                                    <segue destination="Veo-r5-RYr" kind="embed" id="Bqb-Oq-qqH"/>
+                                </connections>
+                            </containerView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="KxA-mM-Q6r" firstAttribute="leading" secondItem="zqp-CJ-TMQ" secondAttribute="leading" id="0QP-AJ-b2n"/>
+                            <constraint firstItem="zqp-CJ-TMQ" firstAttribute="bottom" secondItem="KxA-mM-Q6r" secondAttribute="bottom" id="CzT-EF-QUg"/>
+                            <constraint firstItem="zqp-CJ-TMQ" firstAttribute="trailing" secondItem="KxA-mM-Q6r" secondAttribute="trailing" id="FSu-xt-QYJ"/>
+                            <constraint firstItem="zqp-CJ-TMQ" firstAttribute="top" secondItem="KxA-mM-Q6r" secondAttribute="top" constant="44" id="opc-GU-3J9"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="zqp-CJ-TMQ"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="マイページ" image="person.circle" catalog="system" selectedImage="person.circle" id="pI2-rt-dtg">
@@ -409,20 +421,21 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="containerView" destination="KxA-mM-Q6r" id="7a4-c8-psB"/>
                         <outlet property="userIcon" destination="0Lx-Js-mYL" id="wU7-J7-pd9"/>
                         <outlet property="userName" destination="fQ3-bA-70c" id="2xf-Wx-1hP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hmK-RS-ndf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2364" y="797"/>
+            <point key="canvasLocation" x="2541.5999999999999" y="796.55172413793105"/>
         </scene>
-        <!--Sign Up View Controller-->
+        <!--View Controller-->
         <scene sceneID="6Bq-in-HZC">
             <objects>
-                <viewController storyboardIdentifier="SignUpViewController" id="bhK-oy-j5Y" customClass="SignUpViewController" customModule="date_suggester_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="bhK-oy-j5Y" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="WMu-5L-Hk7">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Full" translatesAutoresizingMaskIntoConstraints="NO" id="EjS-Mw-eJs">
@@ -500,14 +513,14 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="U4D-bZ-OlI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2364" y="1456"/>
+            <point key="canvasLocation" x="3286" y="1501"/>
         </scene>
         <!--プロフィール設定-->
         <scene sceneID="rBa-z8-vd0">
             <objects>
                 <viewController storyboardIdentifier="ProfileEditViewController" id="i8e-KK-juY" customClass="ProfileEditViewController" customModule="date_suggester_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="clk-MW-3sC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fQK-IA-EEd" customClass="CustomPlofielTextField" customModule="date_suggester_iOS" customModuleProvider="target">
@@ -603,18 +616,18 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lFZ-nl-Qsv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3111" y="801"/>
+            <point key="canvasLocation" x="3436" y="797"/>
         </scene>
         <!--しおり-->
         <scene sceneID="Cb8-OI-oCk">
             <objects>
                 <viewController storyboardIdentifier="DateDetailScheduleViewController" id="gae-Ot-Byw" customClass="DateDetailScheduleViewController" customModule="date_suggester_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="nMS-Pz-TIx">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ao3-kB-G19">
-                                <rect key="frame" x="0.0" y="44" width="375" height="734"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="85" id="kGi-i0-213">
@@ -877,7 +890,7 @@
                     </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="PyC-Lq-I3Y">
-                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -889,85 +902,44 @@
             </objects>
             <point key="canvasLocation" x="-396" y="798"/>
         </scene>
-        <!--Login View Controller-->
-        <scene sceneID="UG0-vy-kjt">
+        <!--View Controller-->
+        <scene sceneID="Mcl-dC-bO4">
             <objects>
-                <viewController storyboardIdentifier="LoginViewController" id="oNo-sd-AQ1" customClass="LoginViewController" customModule="date_suggester_iOS" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="0LL-JC-mtT">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                <viewController id="P7W-oh-3n6" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Slk-wA-qcH">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="V9H-gU-y58" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1782" y="1651"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="9DS-JY-sOA">
+            <objects>
+                <viewController id="Veo-r5-RYr" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="O0W-oO-eYa">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Full" translatesAutoresizingMaskIntoConstraints="NO" id="uPr-k6-bDt">
-                                <rect key="frame" x="0.0" y="-3" width="375" height="670"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Full" translatesAutoresizingMaskIntoConstraints="NO" id="Iq4-DC-L2d">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="welcome!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lm4-ir-vSZ">
-                                <rect key="frame" x="0.0" y="117" width="372" height="72"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="NotoSans" family="Noto Sans" pointSize="34"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="mail" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aTp-19-GVe" customClass="CustomUnderlineTextField" customModule="date_suggester_iOS" customModuleProvider="target">
-                                <rect key="frame" x="62" y="250" width="248" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <color key="tintColor" name="MainColor"/>
-                                <color key="textColor" name="TextColor"/>
-                                <fontDescription key="fontDescription" name="NotoSans" family="Noto Sans" pointSize="17"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hGC-m0-eV4">
-                                <rect key="frame" x="0.0" y="460" width="372" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="back">
-                                    <color key="titleColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="backButton:" destination="oNo-sd-AQ1" eventType="touchUpInside" id="JBv-4U-8ca"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CBy-7B-fIC">
-                                <rect key="frame" x="98" y="425" width="176" height="48"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" name="NotoSans-Bold" family="Noto Sans" pointSize="20"/>
-                                <state key="normal" title="login">
-                                    <color key="titleColor" name="SubTextColor"/>
-                                </state>
-                                <connections>
-                                    <action selector="loginButtonTap:" destination="oNo-sd-AQ1" eventType="touchUpInside" id="cim-2J-YOt"/>
-                                </connections>
-                            </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hob-ok-isc">
-                                <rect key="frame" x="-168" y="500" width="631" height="420"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="pass" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Te0-j3-nxo" customClass="CustomUnderlineTextField" customModule="date_suggester_iOS" customModuleProvider="target">
-                                <rect key="frame" x="62" y="328" width="248" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <color key="tintColor" name="MainColor"/>
-                                <color key="textColor" name="TextColor"/>
-                                <fontDescription key="fontDescription" name="NotoSans" family="Noto Sans" pointSize="17"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="I0M-tk-K4S"/>
+                        <constraints>
+                            <constraint firstItem="Iq4-DC-L2d" firstAttribute="top" secondItem="O0W-oO-eYa" secondAttribute="top" id="GaG-GC-mrD"/>
+                            <constraint firstItem="Iq4-DC-L2d" firstAttribute="leading" secondItem="O0W-oO-eYa" secondAttribute="leading" id="eyK-hF-fW8"/>
+                            <constraint firstAttribute="bottom" secondItem="Iq4-DC-L2d" secondAttribute="bottom" id="fuk-rB-7JQ"/>
+                            <constraint firstAttribute="trailing" secondItem="Iq4-DC-L2d" secondAttribute="trailing" id="i2I-sJ-7Tv"/>
+                        </constraints>
                     </view>
-                    <toolbarItems/>
-                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
-                    <connections>
-                        <outlet property="loginButton" destination="CBy-7B-fIC" id="TkF-tF-ryE"/>
-                        <outlet property="myEmail" destination="aTp-19-GVe" id="mKj-eE-DqQ"/>
-                        <outlet property="myPassword" destination="Te0-j3-nxo" id="Pz4-3E-k7k"/>
-                        <outlet property="svgImageView" destination="hob-ok-isc" id="fN0-ac-WRw"/>
-                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Beh-UB-UzU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oJu-Ne-LJ2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2944.8000000000002" y="8.5457271364317844"/>
+            <point key="canvasLocation" x="2541.5999999999999" y="1499.5502248875564"/>
         </scene>
     </scenes>
     <resources>
@@ -976,7 +948,7 @@
         <image name="heart" catalog="system" width="64" height="54"/>
         <image name="heartMark" width="512" height="512"/>
         <image name="linkIcon" width="32" height="32"/>
-        <image name="moneyIcon" width="10.666666984558105" height="10.666666984558105"/>
+        <image name="moneyIcon" width="16" height="16"/>
         <image name="person.circle" catalog="system" width="64" height="60"/>
         <image name="setting" width="16" height="16"/>
         <image name="userIcon" width="1245" height="1080"/>
@@ -985,9 +957,6 @@
         </namedColor>
         <namedColor name="SubTextColor">
             <color red="0.43900001049041748" green="0.43900001049041748" blue="0.43900001049041748" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-        <namedColor name="TextColor">
-            <color red="0.0" green="0.0" blue="0.0" alpha="0.87000000476837158" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <namedColor name="lowLightColor">
             <color red="0.85900002717971802" green="0.85900002717971802" blue="0.85900002717971802" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

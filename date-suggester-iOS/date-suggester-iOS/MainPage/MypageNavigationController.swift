@@ -16,7 +16,7 @@ class MypageNavigationController: UINavigationController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        print("🍑")
+        print("🍑🍑🍑")
 //        self.view.alpha = 0
 //        let defaults = UserDefaults.standard
 //        let signUpStatus = defaults.bool(forKey: "signUpStatus")

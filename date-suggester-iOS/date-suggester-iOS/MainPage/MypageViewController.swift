@@ -13,10 +13,11 @@ class MypageViewController: UIViewController {
     
     @IBOutlet weak var userIcon: UIImageView!
     @IBOutlet weak var userName: UILabel!
+    @IBOutlet weak var containerView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+//        containerView.alpha = 1
         userIcon.layer.cornerRadius = 70
 //        let svgImage = SVGKImage(named: "userIcon")
 //        svgImage?.size = userIcon.bounds.size
@@ -37,59 +38,48 @@ class MypageViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
 //        self.view.alpha = 0
+        containerView.alpha = 0
         
-        super.viewWillDisappear(animated)
-        let defaults = UserDefaults.standard
-        let signUpStatus = defaults.bool(forKey: "signUpStatus")
-        debugPrint(signUpStatus)
-        
-        if signUpStatus == true{
-           self.view.alpha = 1
-            
-        }else{
-            let storyboard = UIStoryboard(name: "MainPageViewController", bundle: nil)
-            let signUpViewController = storyboard.instantiateViewController(withIdentifier: "SignUpViewController")
-            signUpViewController.modalPresentationStyle = .fullScreen
-            self.present(signUpViewController, animated: false, completion: nil)
-        }
         /*
          ユーザー情報取得API
          */
-//        let config: URLSessionConfiguration = URLSessionConfiguration.default
-//        let session: URLSession = URLSession(configuration: config)
-//        let defaults = UserDefaults.standard
-//        let user_id = defaults.string(forKey: "userId")!
-//
-//        var urlComponents = URLComponents()
-//        urlComponents.scheme = "https"
-//        urlComponents.host = "api-date-suggester-dev.herokuapp.com"
-//        urlComponents.path = "/v1/users/\(user_id)"
-//
-//        let url: URL = urlComponents.url!
-//        var req: URLRequest = URLRequest(url: url)
-//        req.httpMethod = "GET"
-//
-//        let myToken = defaults.string(forKey: "responseToken")!
-//
-//        req.setValue("application/json", forHTTPHeaderField: "Content-Type")
-//        req.setValue("Bearer " + myToken, forHTTPHeaderField: "Authorization")
-//
-//        let task = session.dataTask(with: req){(data, response, error) in
-//
-//            do {
-//                let response: [[String: Any]] = try JSONSerialization.jsonObject(with: data!, options: []) as! [[String: Any]]
-//                print(response)
-//                DispatchQueue.main.async {
-//                    print("🍑")
-////                    print(response[id])
-////                    let id = response["id"]
-////                    self.userName.text = id
-//                }
-//            } catch{
-//            }
-//        }
-//        task.resume()
+        //        let config: URLSessionConfiguration = URLSessionConfiguration.default
+        //        let session: URLSession = URLSession(configuration: config)
+        //        let defaults = UserDefaults.standard
+        //        let user_id = defaults.string(forKey: "userId")!
+        //
+        //        var urlComponents = URLComponents()
+        //        urlComponents.scheme = "https"
+        //        urlComponents.host = "api-date-suggester-dev.herokuapp.com"
+        //        urlComponents.path = "/v1/users/\(user_id)"
+        //
+        //        let url: URL = urlComponents.url!
+        //        var req: URLRequest = URLRequest(url: url)
+        //        req.httpMethod = "GET"
+        //
+        //        let myToken = defaults.string(forKey: "responseToken")!
+        //
+        //        req.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        //        req.setValue("Bearer " + myToken, forHTTPHeaderField: "Authorization")
+        //
+        //        let task = session.dataTask(with: req){(data, response, error) in
+        //
+        //            do {
+        //                let response: [[String: Any]] = try JSONSerialization.jsonObject(with: data!, options: []) as! [[String: Any]]
+        //                print(response)
+        //                DispatchQueue.main.async {
+        //                    print("🍑")
+        ////                    print(response[id])
+        ////                    let id = response["id"]
+        ////                    self.userName.text = id
+        //                }
+        //            } catch{
+        //            }
+        //        }
+        //        task.resume()
+
     }
     
 //override func viewWillDisappear(_ animated: Bool) {
@@ -130,3 +120,20 @@ class MypageViewController: UIViewController {
 //        }
 //    }
 }
+
+
+//        super.viewWillDisappear(animated)
+//        let defaults = UserDefaults.standard
+//        let signUpStatus = defaults.bool(forKey: "signUpStatus")
+//        debugPrint(signUpStatus)
+//
+//        if signUpStatus == true{
+//           self.view.alpha = 1
+//
+//        }else{
+//            ContainerView.alpha = 1
+//            let storyboard = UIStoryboard(name: "MainPageViewController", bundle: nil)
+//            let signUpViewController = storyboard.instantiateViewController(withIdentifier: "SignUpViewController")
+//            signUpViewController.modalPresentationStyle = .fullScreen
+//            self.present(signUpViewController, animated: false, completion: nil)
+//        }
