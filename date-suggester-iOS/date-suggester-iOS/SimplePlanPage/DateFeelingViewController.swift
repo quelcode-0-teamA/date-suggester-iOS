@@ -10,18 +10,15 @@ import UIKit
 
 class DateFeelingViewController: UIViewController {
     var youserAnswer: AnswerModel = .init()
+    var activityIndicatorView = UIActivityIndicatorView()
     
     @IBOutlet weak var roundProgressBar: UIProgressView!
-    @IBOutlet weak var mealButton: UIButton!
-    @IBOutlet weak var outDoorButton: UIButton!
-    @IBOutlet weak var relaxButton: UIButton!
+    @IBOutlet weak var unusualButton: CustomYerrowButton!
+    @IBOutlet weak var relaxButton: CustomYerrowButton!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        mealButton.layer.cornerRadius = 5
-        outDoorButton.layer.cornerRadius = 5
-        relaxButton.layer.cornerRadius = 5
+
         navigationItem.backBarButtonItem = UIBarButtonItem(
             title:  "戻る",
             style:  .plain,
@@ -34,22 +31,25 @@ class DateFeelingViewController: UIViewController {
         roundProgressBar.clipsToBounds = true
         roundProgressBar.layer.sublayers![1].cornerRadius = 4
         roundProgressBar.subviews[1].clipsToBounds = true
+        
+        activityIndicatorView.center = view.center
+        activityIndicatorView.style = .whiteLarge
+        activityIndicatorView.color = .darkGray
+        view.addSubview(activityIndicatorView)
     }
     
-    @IBAction func mealButtonTap(_ sender: Any) {
+    
+    @IBAction func unusualButtonTap(_ sender: Any) {
         gotoDatePlanSuggestionVC(selectAnserNumber:0)
     }
-    
-    @IBAction func outDoorButton(_ sender: Any) {
-        gotoDatePlanSuggestionVC(selectAnserNumber:1)
-    }
-    
     @IBAction func relaxButton(_ sender: Any) {
-        gotoDatePlanSuggestionVC(selectAnserNumber:2)
+        gotoDatePlanSuggestionVC(selectAnserNumber:1)
     }
     
     private func gotoDatePlanSuggestionVC(selectAnserNumber: Int) {
         youserAnswer.answer4 = selectAnserNumber
+        
+        activityIndicatorView.startAnimating()
         
         /*
          デートプラン提案API
@@ -81,6 +81,23 @@ class DateFeelingViewController: UIViewController {
 
             do {
                 let response: [String: Any] = try (JSONSerialization.jsonObject(with: data!, options: []) as! [String: Any])
+                
+                if error != nil {
+                    // アラートを出す
+                    DispatchQueue.main.async {
+                        self.view.isUserInteractionEnabled = true
+                        self.activityIndicatorView.stopAnimating()
+                        let alert = UIAlertController(title: nil, message: nil, preferredStyle: .alert)
+                        alert.view.tintColor = UIColor.init(red: 254.0/255, green: 84.0/255, blue: 146.0/255, alpha: 1.0)
+                        alert.title = "検索結果が見つかりませんでした"
+                        alert.message = "もういちどやり直してみてください"
+                        alert.addAction(
+                            UIAlertAction(title: "悲しいです", style: .cancel, handler: nil)
+                        )
+                        self.present(alert,animated: true,completion: nil)
+                    }
+                    return
+                }
 
                 print(response)
                 DispatchQueue.main.async {

@@ -19,10 +19,10 @@ class ListenLocationViewController: UIViewController, UIPickerViewDelegate, UIPi
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = .lightGray
+//        view.backgroundColor = .lightGray
         activityIndicatorView.center = view.center
         activityIndicatorView.style = .whiteLarge
-        activityIndicatorView.color = .white
+        activityIndicatorView.color = .gray
 
         view.addSubview(activityIndicatorView)
         activityIndicatorView.startAnimating()
@@ -35,18 +35,24 @@ class ListenLocationViewController: UIViewController, UIPickerViewDelegate, UIPi
         areaPickerView.selectRow(30, inComponent: 0, animated: false)
         areaPickerView.layer.borderColor = UIColor(red: 0.86, green: 0.86, blue: 0.86, alpha: 1.0).cgColor
         
-        self.view.addBackground(name: "Full")
+        self.navigationItem.hidesBackButton = true
+        self.navigationController?.setNavigationBarHidden(false, animated: false)
+        navigationController?.navigationBar.setBackgroundImage(UIImage(named: "NavBarBG"), for: .default)
+        self.navigationItem.title = "Date Suggester"
+        navigationController?.navigationBar.titleTextAttributes = [
+            .foregroundColor: UIColor.white
+        ]
         
-        nextButton.layer.cornerRadius = 30
-        nextButton.layer.borderColor = UIColor.white.cgColor
-        nextButton.layer.borderWidth = 1.0
     }
     
     func areasList(){
         let config: URLSessionConfiguration = URLSessionConfiguration.default
         let session: URLSession = URLSession(configuration: config)
-        
+
         var urlComponents = URLComponents()
+//        urlComponents.scheme = "http"
+//        urlComponents.host = "datesuggestersta-env.eba-tjsexdfx.ap-northeast-1.elasticbeanstalk.com"
+//        urlComponents.path = "/v1/areas"
         urlComponents.scheme = "https"
         urlComponents.host = "api-date-suggester-dev.herokuapp.com"
         urlComponents.path = "/v1/areas"
@@ -108,7 +114,7 @@ class ListenLocationViewController: UIViewController, UIPickerViewDelegate, UIPi
                     inComponent component: Int) {
         //コンポーネントごとに現在選択されているデータを取得する。
         let data1 = self.pickerView(pickerView, titleForRow: pickerView.selectedRow(inComponent: 0), forComponent: 0)
-        print("\(data1)えらばれたよ")
+        print("\(String(describing: data1))えらばれたよ")
         print("row: \(row)")
         //選択されたエリアをユーザーデフォルトに保存
         let defaults = UserDefaults.standard
@@ -129,7 +135,7 @@ class ListenLocationViewController: UIViewController, UIPickerViewDelegate, UIPi
         
         Api().tempLogin(parameter: parameter, completion: {(token, id, error) in
             
-            if let _error = error {
+            if error != nil {
                 // アラートを出す
                 print("エラーがおこったよ")
                 return
@@ -137,9 +143,11 @@ class ListenLocationViewController: UIViewController, UIPickerViewDelegate, UIPi
             DispatchQueue.main.async {
                 let storyboard = UIStoryboard(name: "SimplePlanViewController", bundle: nil)
                 let controller = storyboard.instantiateViewController(identifier: "DatePlanViewController")
+//                self.navigationController?.pushViewController(controller, animated: true)
                 controller.modalPresentationStyle = .fullScreen
                 self.present(controller, animated: true, completion: nil)
             }
+            
         })
     }
 }

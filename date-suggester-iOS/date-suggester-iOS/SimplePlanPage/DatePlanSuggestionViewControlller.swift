@@ -143,7 +143,6 @@ class DatePlanSuggestionViewControlller: UIViewController, UITableViewDelegate, 
 class DateListCustomCell: UITableViewCell {
     @IBOutlet weak var thumbnail: UIImageView!
     @IBOutlet weak var location: UILabel!
-    @IBOutlet weak var dateDescription: UILabel!
     @IBOutlet weak var moneyIcon: UIImageView!
     @IBOutlet weak var budget: UILabel!
     @IBOutlet weak var linkIcon: UIImageView!

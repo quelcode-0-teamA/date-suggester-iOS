@@ -23,7 +23,7 @@ class DateLocationViewController: UIViewController {
         near.layer.cornerRadius = 10
         
         // navigationの設定
-        navigationController?.navigationBar.setBackgroundImage(UIImage(named: "test"), for: .default)
+        navigationController?.navigationBar.setBackgroundImage(UIImage(named: "NavBarBG"), for: .default)
         navigationController?.navigationBar.titleTextAttributes = [
             .foregroundColor: UIColor.white
         ]
