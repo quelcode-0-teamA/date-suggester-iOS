@@ -1,5 +1,5 @@
 # date-suggester-iOS
-## Date Suggester
+# Date Suggester
 デートをプランニングしてくれるアプリ
-# 使用ライブラリ
+## 使用ライブラリ
 SVGKit
