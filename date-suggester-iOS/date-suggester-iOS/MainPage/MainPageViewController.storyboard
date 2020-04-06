@@ -847,6 +847,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="D1A-zw-hMl"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="V9H-gU-y58" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -998,6 +999,7 @@
                             <constraint firstAttribute="trailing" secondItem="Iq4-DC-L2d" secondAttribute="trailing" id="i2I-sJ-7Tv"/>
                             <constraint firstItem="Iq4-DC-L2d" firstAttribute="top" secondItem="O0W-oO-eYa" secondAttribute="top" id="pOp-Sv-kV7"/>
                         </constraints>
+                        <viewLayoutGuide key="safeArea" id="x7D-x5-ZEm"/>
                     </view>
                     <connections>
                         <outlet property="myEmail" destination="GVX-5R-mlA" id="oPS-4Y-DDi"/>
@@ -1027,7 +1029,7 @@
             <color red="0.87099999189376831" green="0.2630000114440918" blue="0.41600000858306885" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="MainColor">
-            <color red="0.99599999189376831" green="0.32899999618530273" blue="0.57300001382827759" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.99607843137254903" green="0.32941176470588235" blue="0.5725490196078431" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="SubTextColor">
             <color red="0.43900001049041748" green="0.43900001049041748" blue="0.43900001049041748" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

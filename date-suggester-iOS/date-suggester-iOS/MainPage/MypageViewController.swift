@@ -81,8 +81,14 @@ class MypageViewController: UIViewController {
                         DispatchQueue.main.async {
                             debugPrint("ユーザー情報取得したお")
                             debugPrint(response)
-        //                    let id = response["id"]
-        //                    self.userName.text = id
+                            
+                            guard let id = response["id"] else {
+                                self.userName.text = "なもなき"
+                                return
+                            }
+                            self.userName.text = id as? String
+                            print(self.userName)
+                            //nilだと判断されてない説。ただの空白だと思われてる？
                         }
                     } catch{
                     }
