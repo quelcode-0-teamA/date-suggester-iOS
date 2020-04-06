@@ -1,2 +1,5 @@
 # date-suggester-iOS
-dummyファイルを編集しました
+## Date Suggester
+デートをプランニングしてくれるアプリ
+# 使用ライブラリ
+SVGKit
