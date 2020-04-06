@@ -941,27 +941,14 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A7I-Tq-5Bg">
-                                        <rect key="frame" x="16" y="57" width="12.5" height="21"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="12.5" id="6Fi-en-gxU"/>
-                                            <constraint firstAttribute="height" constant="21" id="7d1-7k-A81"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="17"/>
-                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <state key="normal" image="chevron.left" catalog="system"/>
-                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" name="BarColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="90" id="LHd-XD-I3W"/>
-                                    <constraint firstItem="A7I-Tq-5Bg" firstAttribute="leading" secondItem="jxo-Q4-WLl" secondAttribute="leading" constant="16" id="SzH-XO-gdN"/>
                                     <constraint firstAttribute="width" constant="375" id="V1E-6m-S5G"/>
-                                    <constraint firstAttribute="bottom" secondItem="A7I-Tq-5Bg" secondAttribute="bottom" constant="12" id="ejl-1x-imp"/>
                                     <constraint firstItem="zeH-sv-Mef" firstAttribute="leading" secondItem="jxo-Q4-WLl" secondAttribute="leading" id="iX6-VW-Nqa"/>
                                     <constraint firstAttribute="bottom" secondItem="zeH-sv-Mef" secondAttribute="bottom" id="lYl-Nn-b7r"/>
                                     <constraint firstAttribute="trailing" secondItem="zeH-sv-Mef" secondAttribute="trailing" id="p7X-5C-ZiP"/>
-                                    <constraint firstItem="A7I-Tq-5Bg" firstAttribute="top" secondItem="jxo-Q4-WLl" secondAttribute="top" constant="57" id="sF6-Od-SLy"/>
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="welcome!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I20-aH-8B7">
@@ -1017,7 +1004,6 @@
     <resources>
         <image name="Full" width="414" height="896"/>
         <image name="book" catalog="system" width="64" height="50"/>
-        <image name="chevron.left" catalog="system" width="48" height="64"/>
         <image name="heart" catalog="system" width="64" height="54"/>
         <image name="heartMark" width="512" height="512"/>
         <image name="linkIcon" width="32" height="32"/>

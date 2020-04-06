@@ -126,9 +126,11 @@ class DateplanListViewController: UIViewController,UICollectionViewDataSource, U
     }
     
     func getImageByUrl(url: String) -> UIImage{
-        let url = URL(string: url)
+        guard let url = URL(string: url) else {
+        return UIImage()
+        }
         do {
-            let data = try Data(contentsOf: url!)
+            let data = try Data(contentsOf: url)
             return UIImage(data: data)!
         } catch let err {
             print("Error : \(err.localizedDescription)")
