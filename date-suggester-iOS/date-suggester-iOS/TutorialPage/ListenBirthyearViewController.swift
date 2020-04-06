@@ -7,12 +7,10 @@
 //
 
 import UIKit
-import SVGKit
 
 class ListenBirthyearViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     @IBOutlet weak var yearPickerView: UIPickerView!
     @IBOutlet weak var nextButton: UIButton!
-    @IBOutlet weak var svgImageView: UIImageView!
     
     let years = (1965...2005).map { $0 }
     
@@ -44,11 +42,6 @@ class ListenBirthyearViewController: UIViewController, UIPickerViewDelegate, UIP
         let storyboard = UIStoryboard(name: "TutorialViewController", bundle: nil)
         let loginViewController = storyboard.instantiateViewController(withIdentifier: "LoginViewController")
         self.navigationController?.pushViewController(loginViewController, animated: true)
-        
-//        let storyboard = UIStoryboard(name: "MainPageViewController", bundle: nil)
-//        let LoginViewController = storyboard.instantiateViewController(identifier: "LoginViewController")
-//        LoginViewController.modalPresentationStyle = .fullScreen
-//        present(LoginViewController, animated: true, completion: nil)
     }
     
     // UIPickerViewの列の数
@@ -74,8 +67,8 @@ class ListenBirthyearViewController: UIViewController, UIPickerViewDelegate, UIP
                     inComponent component: Int) {
         // 処理
         let data1 = self.pickerView(pickerView, titleForRow: pickerView.selectedRow(inComponent: 0), forComponent: 0)
-        print("\(data1)えらばれたよ")
-        print("row: \(row)")
+        debugPrint("\(data1)えらばれたよ")
+        debugPrint("row: \(row)")
         
         let defaults = UserDefaults.standard
         defaults.set(data1, forKey: "responseBirthYear")

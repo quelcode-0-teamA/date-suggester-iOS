@@ -40,15 +40,11 @@ class FirstViewController: UIViewController {
             let storyboard = UIStoryboard(name: "SimplePlanViewController", bundle: nil)
             let controller = storyboard.instantiateViewController(identifier: "DatePlanViewController")
             self.navigationController?.pushViewController(controller, animated: true)
-//            controller.modalPresentationStyle = .fullScreen
-//            present(controller, animated: true, completion: nil)
             
         } else{
             let storyboard = UIStoryboard(name: "TutorialViewController", bundle: nil)
             let listenBirthyearViewController = storyboard.instantiateViewController(withIdentifier: "ListenBirthyearViewController")
             self.navigationController?.pushViewController(listenBirthyearViewController, animated: true)
-//            listenBirthyearViewController.modalPresentationStyle = .fullScreen
-//            self.present(listenBirthyearViewController, animated: true, completion: nil)
         }
     }
 }

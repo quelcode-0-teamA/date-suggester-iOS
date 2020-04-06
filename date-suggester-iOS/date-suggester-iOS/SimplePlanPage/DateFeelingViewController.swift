@@ -59,6 +59,7 @@ class DateFeelingViewController: UIViewController {
 
         var urlComponents = URLComponents()
         urlComponents.scheme = "https"
+//        urlComponents.host = "datesuggestersta-env.eba-tjsexdfx.ap-northeast-1.elasticbeanstalk.com"
         urlComponents.host = "api-date-suggester-dev.herokuapp.com"
         urlComponents.path = "/v1/plans/suggest"
         urlComponents.queryItems = [
