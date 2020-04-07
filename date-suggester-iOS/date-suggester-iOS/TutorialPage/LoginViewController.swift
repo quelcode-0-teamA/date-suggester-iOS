@@ -37,7 +37,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         activityIndicatorView.color = .darkGray
         view.addSubview(activityIndicatorView)
 
-        self.loginButton.layer.cornerRadius = 24
+        loginButton.layer.cornerRadius = 24
         
         myEmail.loginunderline.backgroundColor = UIColor.init(red: 255/255, green: 255/255, blue: 255/255, alpha: 1.0)
 //        

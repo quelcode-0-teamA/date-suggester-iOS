@@ -24,10 +24,10 @@ class ListenBirthyearViewController: UIViewController, UIPickerViewDelegate, UIP
         yearPickerView.selectRow(30, inComponent: 0, animated: false)
         yearPickerView.layer.borderColor = UIColor(red: 0.86, green: 0.86, blue: 0.86, alpha: 1.0).cgColor
         
-        self.navigationItem.hidesBackButton = true
-        self.navigationController?.setNavigationBarHidden(false, animated: false)
-        self.navigationController?.navigationBar.setBackgroundImage(UIImage(named: "NavBarBG"), for: .default)
-        self.navigationItem.title = "Date Suggester"
+        navigationItem.hidesBackButton = true
+        navigationController?.setNavigationBarHidden(false, animated: false)
+        navigationController?.navigationBar.setBackgroundImage(UIImage(named: "NavBarBG"), for: .default)
+        navigationItem.title = "Date Suggester"
         navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white]
         navigationItem.backBarButtonItem = UIBarButtonItem(title:  "", style:  .plain, target: nil, action: nil)
     }

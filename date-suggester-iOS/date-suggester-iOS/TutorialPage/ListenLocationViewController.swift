@@ -19,7 +19,6 @@ class ListenLocationViewController: UIViewController, UIPickerViewDelegate, UIPi
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        view.backgroundColor = .lightGray
         activityIndicatorView.center = view.center
         activityIndicatorView.style = .whiteLarge
         activityIndicatorView.color = .gray
@@ -35,10 +34,10 @@ class ListenLocationViewController: UIViewController, UIPickerViewDelegate, UIPi
         areaPickerView.selectRow(30, inComponent: 0, animated: false)
         areaPickerView.layer.borderColor = UIColor(red: 0.86, green: 0.86, blue: 0.86, alpha: 1.0).cgColor
         
-        self.navigationItem.hidesBackButton = true
-        self.navigationController?.setNavigationBarHidden(false, animated: false)
+        navigationItem.hidesBackButton = true
+        navigationController?.setNavigationBarHidden(false, animated: false)
         navigationController?.navigationBar.setBackgroundImage(UIImage(named: "NavBarBG"), for: .default)
-        self.navigationItem.title = "Date Suggester"
+        navigationItem.title = "Date Suggester"
         navigationController?.navigationBar.titleTextAttributes = [
             .foregroundColor: UIColor.white
         ]
@@ -54,7 +53,7 @@ class ListenLocationViewController: UIViewController, UIPickerViewDelegate, UIPi
 //        urlComponents.host = "datesuggestersta-env.eba-tjsexdfx.ap-northeast-1.elasticbeanstalk.com"
 //        urlComponents.path = "/v1/areas"
         urlComponents.scheme = "https"
-        urlComponents.host = "api-date-suggester-dev.herokuapp.com"
+        urlComponents.host = "api.date-suggester.com"
         urlComponents.path = "/v1/areas"
         urlComponents.queryItems = [
         ]
@@ -136,8 +135,7 @@ class ListenLocationViewController: UIViewController, UIPickerViewDelegate, UIPi
         Api().tempLogin(parameter: parameter, completion: {(token, id, error) in
             
             if error != nil {
-                // アラートを出す
-                print("エラーがおこったよ")
+                debugPrint("エラーがおこったよ")
                 return
             }
             DispatchQueue.main.async {

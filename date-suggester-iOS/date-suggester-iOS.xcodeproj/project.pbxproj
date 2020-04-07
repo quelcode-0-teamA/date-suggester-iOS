@@ -21,12 +21,11 @@
 		721336EA240CE48400F8E967 /* CustomUnderlineTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 721336E9240CE48400F8E967 /* CustomUnderlineTextField.swift */; };
 		7214C7892434802C003EA80B /* userIcon.svg in Resources */ = {isa = PBXBuildFile; fileRef = 7214C7882434802C003EA80B /* userIcon.svg */; };
 		7214C78B24348E60003EA80B /* MypageNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7214C78A24348E60003EA80B /* MypageNavigationController.swift */; };
-		7214C78D2434DD53003EA80B /* testViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7214C78C2434DD53003EA80B /* testViewController.swift */; };
-		7214C78F2434E429003EA80B /* test2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7214C78E2434E429003EA80B /* test2ViewController.swift */; };
 		7215FF14240D600400AB3BBB /* SignUpCustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7215FF13240D600400AB3BBB /* SignUpCustomTextField.swift */; };
 		721D100123F509DD006DA520 /* MypageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 721D100023F509DD006DA520 /* MypageViewController.swift */; };
 		721D100323F50E6A006DA520 /* UIColorHex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 721D100223F50E6A006DA520 /* UIColorHex.swift */; };
 		72513F5C23EBCFA9007B1499 /* DateFeelingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72513F5B23EBCFA9007B1499 /* DateFeelingViewController.swift */; };
+		725E5B74243C0D4B006CC332 /* MyProfileEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 725E5B73243C0D4B006CC332 /* MyProfileEditViewController.swift */; };
 		726903EF2431DB4F006312E6 /* NotoSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 726903EC2431DAF5006312E6 /* NotoSans-Bold.ttf */; };
 		726903F02431DB4F006312E6 /* NotoSans-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 726903EE2431DAF6006312E6 /* NotoSans-BoldItalic.ttf */; };
 		726903F12431DB4F006312E6 /* NotoSans-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 726903ED2431DAF6006312E6 /* NotoSans-Italic.ttf */; };
@@ -48,7 +47,6 @@
 		7281E60C241F4FB200886634 /* Plan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7281E60B241F4FB200886634 /* Plan.swift */; };
 		7281E60E241F502900886634 /* Spot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7281E60D241F502900886634 /* Spot.swift */; };
 		728562922431FF3900806867 /* mainImage.svg in Resources */ = {isa = PBXBuildFile; fileRef = 728562902431FF3900806867 /* mainImage.svg */; };
-		7291BD2B23FE2D80001047D8 /* PopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7291BD2A23FE2D80001047D8 /* PopupViewController.swift */; };
 		72A4E17E23F5344800B7607C /* ProfileEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A4E17D23F5344800B7607C /* ProfileEditViewController.swift */; };
 		72A4E18123F57BB800B7607C /* DatePlanListCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A4E17F23F57BB800B7607C /* DatePlanListCollectionViewCell.swift */; };
 		72A4E18223F57BB800B7607C /* DatePlanListCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 72A4E18023F57BB800B7607C /* DatePlanListCollectionViewCell.xib */; };
@@ -99,12 +97,11 @@
 		721336E9240CE48400F8E967 /* CustomUnderlineTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomUnderlineTextField.swift; sourceTree = "<group>"; };
 		7214C7882434802C003EA80B /* userIcon.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = userIcon.svg; sourceTree = "<group>"; };
 		7214C78A24348E60003EA80B /* MypageNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MypageNavigationController.swift; sourceTree = "<group>"; };
-		7214C78C2434DD53003EA80B /* testViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testViewController.swift; sourceTree = "<group>"; };
-		7214C78E2434E429003EA80B /* test2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = test2ViewController.swift; sourceTree = "<group>"; };
 		7215FF13240D600400AB3BBB /* SignUpCustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpCustomTextField.swift; sourceTree = "<group>"; };
 		721D100023F509DD006DA520 /* MypageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MypageViewController.swift; sourceTree = "<group>"; };
 		721D100223F50E6A006DA520 /* UIColorHex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorHex.swift; sourceTree = "<group>"; };
 		72513F5B23EBCFA9007B1499 /* DateFeelingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFeelingViewController.swift; sourceTree = "<group>"; };
+		725E5B73243C0D4B006CC332 /* MyProfileEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileEditViewController.swift; sourceTree = "<group>"; };
 		726903EB2431DAF5006312E6 /* NotoSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSans-Regular.ttf"; sourceTree = "<group>"; };
 		726903EC2431DAF5006312E6 /* NotoSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSans-Bold.ttf"; sourceTree = "<group>"; };
 		726903ED2431DAF6006312E6 /* NotoSans-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSans-Italic.ttf"; sourceTree = "<group>"; };
@@ -126,7 +123,6 @@
 		7281E60B241F4FB200886634 /* Plan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Plan.swift; sourceTree = "<group>"; };
 		7281E60D241F502900886634 /* Spot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spot.swift; sourceTree = "<group>"; };
 		728562902431FF3900806867 /* mainImage.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = mainImage.svg; sourceTree = "<group>"; };
-		7291BD2A23FE2D80001047D8 /* PopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupViewController.swift; sourceTree = "<group>"; };
 		72A4E17D23F5344800B7607C /* ProfileEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileEditViewController.swift; sourceTree = "<group>"; };
 		72A4E17F23F57BB800B7607C /* DatePlanListCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePlanListCollectionViewCell.swift; sourceTree = "<group>"; };
 		72A4E18023F57BB800B7607C /* DatePlanListCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DatePlanListCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -301,10 +297,8 @@
 				721D100023F509DD006DA520 /* MypageViewController.swift */,
 				72A4E17D23F5344800B7607C /* ProfileEditViewController.swift */,
 				72A4E18023F57BB800B7607C /* DatePlanListCollectionViewCell.xib */,
-				7291BD2A23FE2D80001047D8 /* PopupViewController.swift */,
 				7214C78A24348E60003EA80B /* MypageNavigationController.swift */,
-				7214C78C2434DD53003EA80B /* testViewController.swift */,
-				7214C78E2434E429003EA80B /* test2ViewController.swift */,
+				725E5B73243C0D4B006CC332 /* MyProfileEditViewController.swift */,
 			);
 			path = MainPage;
 			sourceTree = "<group>";
@@ -583,13 +577,12 @@
 				7281E60A241F4F5100886634 /* MyPlan.swift in Sources */,
 				72A4E18623F68D4D00B7607C /* FirstViewController.swift in Sources */,
 				7276AEE023EAA9B7008864D7 /* DateLocationViewController.swift in Sources */,
-				7214C78D2434DD53003EA80B /* testViewController.swift in Sources */,
 				721336EA240CE48400F8E967 /* CustomUnderlineTextField.swift in Sources */,
 				7214C78B24348E60003EA80B /* MypageNavigationController.swift in Sources */,
 				7276AEEC23EACE65008864D7 /* MainPageViewController.swift in Sources */,
 				727C4A5D240362890058AE58 /* CustomYerrowButton.swift in Sources */,
-				7291BD2B23FE2D80001047D8 /* PopupViewController.swift in Sources */,
 				7281E60C241F4FB200886634 /* Plan.swift in Sources */,
+				725E5B74243C0D4B006CC332 /* MyProfileEditViewController.swift in Sources */,
 				72513F5C23EBCFA9007B1499 /* DateFeelingViewController.swift in Sources */,
 				7276AEF023EAD63C008864D7 /* DatePlanDecideViewController.swift in Sources */,
 				720D07FC23E984AE00569622 /* ViewController.swift in Sources */,
@@ -605,7 +598,6 @@
 				72A4E17E23F5344800B7607C /* ProfileEditViewController.swift in Sources */,
 				7276AEF423EBC1CD008864D7 /* AppNavigationController.swift in Sources */,
 				7276AEF623EBCADE008864D7 /* DateBudgetViewController.swift in Sources */,
-				7214C78F2434E429003EA80B /* test2ViewController.swift in Sources */,
 				72BED50823EC062E00A254BC /* SignUpViewController.swift in Sources */,
 				72A4E18A23F7E3AB00B7607C /* api.swift in Sources */,
 				7276AEEE23EAD1B1008864D7 /* DateplanListViewController.swift in Sources */,

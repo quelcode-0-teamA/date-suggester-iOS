@@ -61,7 +61,7 @@ class MypageViewController: UIViewController {
         
                 var urlComponents = URLComponents()
                 urlComponents.scheme = "https"
-                urlComponents.host = "api-date-suggester-dev.herokuapp.com"
+                urlComponents.host = "api.date-suggester.com"
                 urlComponents.path = "/v1/users/\(user_id)"
         
                 let url: URL = urlComponents.url!

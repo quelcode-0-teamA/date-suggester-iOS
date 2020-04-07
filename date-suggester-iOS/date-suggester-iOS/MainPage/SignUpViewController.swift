@@ -63,7 +63,6 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
         return !textCheck
     }
     
-    //キーボードを閉じる
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
@@ -99,7 +98,6 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
             return
         }
         
-        // くるくるをだす SVProgressHUD.show()
         activityIndicatorView.startAnimating()
         
         //isUserInteractionEnabledはタッチ可能かどうかをコントロールする

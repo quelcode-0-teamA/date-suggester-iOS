@@ -20,12 +20,12 @@ class DateplanListViewController: UIViewController,UICollectionViewDataSource, U
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.register(UINib(nibName: "DatePlanListCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "DatePlanListCollectionViewCell")
-        self.navigationController?.navigationBar.setBackgroundImage(UIImage(named: "NavBarBG"), for: .default)
-        self.navigationController?.navigationBar.titleTextAttributes = [
+        navigationController?.navigationBar.setBackgroundImage(UIImage(named: "NavBarBG"), for: .default)
+        navigationController?.navigationBar.titleTextAttributes = [
             .foregroundColor: UIColor.white
         ]
-        self.navigationItem.title = "Date Suggester"
-        self.navigationItem.backBarButtonItem = UIBarButtonItem(
+        navigationItem.title = "Date Suggester"
+        navigationItem.backBarButtonItem = UIBarButtonItem(
             title:  "戻る",
             style:  .plain,
             target: nil,
@@ -42,7 +42,7 @@ class DateplanListViewController: UIViewController,UICollectionViewDataSource, U
         
         var urlComponents = URLComponents()
         urlComponents.scheme = "https"
-        urlComponents.host = "api-date-suggester-dev.herokuapp.com"
+        urlComponents.host = "api.date-suggester.com"
         urlComponents.path = "/v1/my_plans"
         
         let url: URL = urlComponents.url!
@@ -63,10 +63,12 @@ class DateplanListViewController: UIViewController,UICollectionViewDataSource, U
                     let myplan = MyPlan(myPlanDicitionary: i)
                     _myplans.append(myplan)
                 }
+                print("_myplans:\(_myplans)")
                 self.resPlanList = _myplans
                 
                 DispatchQueue.main.async {
                     self.collectionView.reloadData()
+                    debugPrint("リストのレスポンス：\(self.resPlanList)")
                 }
             } catch{
             }

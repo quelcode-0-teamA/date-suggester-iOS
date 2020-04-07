@@ -11,7 +11,7 @@ import Foundation
 class Api {
     private let postMethod = "POST"
     private let getMethod = "GET"
-    private let host = "https://api-date-suggester-dev.herokuapp.com"
+    private let host = "https://api.date-suggester.com"
     private let config: URLSessionConfiguration = URLSessionConfiguration.default
     private lazy var session: URLSession = URLSession(configuration: config)
     
