@@ -101,8 +101,6 @@ class DatePlanSuggestionViewControlller: UIViewController, UITableViewDelegate, 
             
             DispatchQueue.main.async {
                 debugPrint("デートプラン決定成功")
-                let defaults = UserDefaults.standard
-                defaults.set(true, forKey: "popUp")
                 let storyboard = UIStoryboard(name: "MainPageViewController", bundle: nil)
                 let MainPageViewController = storyboard.instantiateViewController(withIdentifier: "MainPageViewController")
                 MainPageViewController.modalPresentationStyle = .fullScreen

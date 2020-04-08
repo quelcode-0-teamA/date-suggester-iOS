@@ -292,7 +292,7 @@
         <!--マイページ-->
         <scene sceneID="OaI-k3-34g">
             <objects>
-                <navigationController storyboardIdentifier="MypageNavigationController" id="5Dc-gd-bID" customClass="MypageNavigationController" customModule="date_suggester_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="AppNavigationController" id="5Dc-gd-bID" customClass="AppNavigationController" customModule="date_suggester_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="マイページ" image="person.circle" catalog="system" selectedImage="person.circle" id="grw-zf-2Kb">
                         <color key="badgeColor" name="MainColor"/>
                     </tabBarItem>
