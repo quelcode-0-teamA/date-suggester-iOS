@@ -392,10 +392,10 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="28" translatesAutoresizingMaskIntoConstraints="NO" id="95f-SO-2F4">
                                 <rect key="frame" x="62" y="258" width="248" height="96"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="mail" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ffc-9R-BJg" customClass="CustomUnderlineTextField" customModule="date_suggester_iOS" customModuleProvider="target">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="mail" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ffc-9R-BJg" customClass="CustomUnderlineTextField" customModule="date_suggester_iOS" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="248" height="34"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <color key="tintColor" name="MainColor"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="248" id="3hw-S2-BoO"/>
                                             <constraint firstAttribute="height" constant="34" id="IPq-19-dUb"/>
@@ -407,7 +407,7 @@
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="pass" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wXa-Ew-DCP" customClass="CustomUnderlineTextField" customModule="date_suggester_iOS" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="62" width="248" height="34"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <color key="tintColor" name="MainColor"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="248" id="5JD-H3-a65"/>
                                             <constraint firstAttribute="height" constant="34" id="Vxi-Wc-hyP"/>

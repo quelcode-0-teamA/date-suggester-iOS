@@ -793,7 +793,7 @@
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="mail" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GVX-5R-mlA" customClass="CustomUnderlineTextField" customModule="date_suggester_iOS" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="248" height="34"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <color key="tintColor" name="MainColor"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="34" id="I3i-8j-FCo"/>
                                             <constraint firstAttribute="width" constant="248" id="ecw-NR-WNg"/>
@@ -805,7 +805,7 @@
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="pass" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JBY-47-jP7" customClass="CustomUnderlineTextField" customModule="date_suggester_iOS" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="62" width="248" height="34"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <color key="tintColor" name="MainColor"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="34" id="Lc4-oL-wqb"/>
                                             <constraint firstAttribute="width" constant="248" id="dX1-mf-Xgh"/>
@@ -817,7 +817,7 @@
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="reenter pass" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1Kl-JE-gIB" customClass="CustomUnderlineTextField" customModule="date_suggester_iOS" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="124" width="248" height="34"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <color key="tintColor" name="MainColor"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="34" id="3Bh-7l-SGA"/>
                                             <constraint firstAttribute="width" constant="248" id="j3Q-pN-om1"/>

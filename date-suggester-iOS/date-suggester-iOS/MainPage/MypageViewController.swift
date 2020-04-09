@@ -18,9 +18,6 @@ class MypageViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         userIcon.layer.cornerRadius = 70
-//        let svgImage = SVGKImage(named: "userIcon")
-//        svgImage?.size = userIcon.bounds.size
-//        userIcon.image = svgImage?.uiImage
         
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(named: "NavBarBG"), for: .default)
         self.navigationController?.navigationBar.titleTextAttributes = [
