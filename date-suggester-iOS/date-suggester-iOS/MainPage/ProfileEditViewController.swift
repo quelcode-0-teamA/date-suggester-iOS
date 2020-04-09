@@ -11,15 +11,13 @@ import UIKit
 class ProfileEditViewController: UIViewController {
 
     @IBOutlet weak var myName: CustomPlofielTextField!
-    @IBOutlet weak var myEmail: CustomPlofielTextField!
     @IBOutlet weak var logoutButton: UIButton!
-    
     @IBOutlet weak var plofileEditButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //入力フォームにj初期値で現在の名前、自己紹介を表示させる
+        //入力フォームに初期値で現在の名前、自己紹介を表示させる
 //        let defaults = UserDefaults.standard
 //        if defaults.string(forKey: "responseName") !== {
 //            myName.placeholder = defaults.string(forKey: "responseName")
@@ -27,10 +25,8 @@ class ProfileEditViewController: UIViewController {
 //
 //        myEmail.placeholder = defaults.string(forKey: "responseBio")
 
-        //外枠の色を指定
-        self.plofileEditButton.layer.borderColor = UIColor.white.cgColor
-        //外枠の太さを指定
-        self.plofileEditButton.layer.borderWidth = 1.0
+        plofileEditButton.layer.borderColor = UIColor.white.cgColor
+        plofileEditButton.layer.borderWidth = 1.0
         
         /*
          ユーザー情報取得API
@@ -43,7 +39,7 @@ class ProfileEditViewController: UIViewController {
         //URLを組み立てている
         var urlComponents = URLComponents()
         urlComponents.scheme = "https"
-        urlComponents.host = "api-date-suggester-dev.herokuapp.com"
+        urlComponents.host = "api.date-suggester.com"
         urlComponents.path = "/v1/users/\(user_id)"
         
         let url: URL = urlComponents.url!
@@ -86,63 +82,18 @@ class ProfileEditViewController: UIViewController {
     }
     
     
-    @IBOutlet weak var womanButton: UIButton!
-    @IBAction func WomenButton(_ sender: Any) {
-        womanButton.setTitleColor(UIColor.red, for: .highlighted)
-    }
-    @IBAction func ManButton(_ sender: Any) {
-    }
-    @IBAction func OtherButton(_ sender: Any) {
-    }
-    
-    
     @IBAction func logout(_ sender: Any) {
     }
     
     @IBAction func plofileEditButton(_ sender: Any) {
     }
+    
     @IBAction func backButton(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
+    
     @IBAction func accountDelete(_ sender: Any) {
-        let config: URLSessionConfiguration = URLSessionConfiguration.default
-        let session: URLSession = URLSession(configuration: config)
         
-        //URLオブジェクトの生成
-        let defaults = UserDefaults.standard
-        //        let myplan_id = defaults.string(forKey: "responseMyPlanId")!
-
-//        let myplan_id = 66
-//        print(myplan_id)
-//        let url = URL(string: "https://api-date-suggester-dev.herokuapp.com/v1/users/\(user_id)")!
-//        print(url)
-//        //URLRequestの生成
-//        var req: URLRequest = URLRequest(url: url)
-//        req.httpMethod = "DELETE"
-//
-//        //ヘッダーを付与
-//        let myToken = defaults.string(forKey: "responseToken")!
-//        req.setValue("application/json", forHTTPHeaderField: "Content-Type")
-//        req.setValue("Bearer " + myToken, forHTTPHeaderField: "Authorization")
-//
-//        //APIを呼ぶよ
-//        let task = session.dataTask(with: req){(data, response, error) in
-//            do {
-//                //                let response: [String: Any] = try JSONSerialization.jsonObject(with: data!, options: []) as! [String: Any]
-//                let httpResponse = response as? HTTPURLResponse
-//                debugPrint(httpResponse!.statusCode)
-//
-//                debugPrint("デートプランがリストから削除されたよ")
-//                DispatchQueue.main.async {
-//                    //                    self.dismiss(animated: true, completion: nil)
-//                    self.dateScheduleTV.reloadData()
-//                }
-//
-//            } catch{
-//            }
-//
-//        }
-//        task.resume()
     }
 }
 

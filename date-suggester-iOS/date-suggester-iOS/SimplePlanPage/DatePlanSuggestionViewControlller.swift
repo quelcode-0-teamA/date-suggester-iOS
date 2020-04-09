@@ -101,8 +101,6 @@ class DatePlanSuggestionViewControlller: UIViewController, UITableViewDelegate, 
             
             DispatchQueue.main.async {
                 debugPrint("デートプラン決定成功")
-                let defaults = UserDefaults.standard
-                defaults.set(true, forKey: "popUp")
                 let storyboard = UIStoryboard(name: "MainPageViewController", bundle: nil)
                 let MainPageViewController = storyboard.instantiateViewController(withIdentifier: "MainPageViewController")
                 MainPageViewController.modalPresentationStyle = .fullScreen
@@ -128,9 +126,11 @@ class DatePlanSuggestionViewControlller: UIViewController, UITableViewDelegate, 
     }
     
     func getImageByUrl(url: String) -> UIImage{
-        let url = URL(string: url)
+        guard let url = URL(string: url) else {
+        return UIImage()
+        }
         do {
-            let data = try Data(contentsOf: url!)
+            let data = try Data(contentsOf: url)
             return UIImage(data: data)!
         } catch let err {
             print("Error : \(err.localizedDescription)")

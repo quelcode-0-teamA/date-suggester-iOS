@@ -33,7 +33,7 @@ class DateScheduleViewController: UIViewController, UITableViewDelegate, UITable
          */
         let config: URLSessionConfiguration = URLSessionConfiguration.default
         let session: URLSession = URLSession(configuration: config)
-        let url = URL(string: "https://api-date-suggester-dev.herokuapp.com/v1/my_plans/\(my_plan_id!)")!
+        let url = URL(string: "https://api.date-suggester.com/v1/my_plans/\(my_plan_id!)")!
         
         var req: URLRequest = URLRequest(url: url)
         req.httpMethod = "GET"
@@ -159,7 +159,6 @@ class DateScheduleViewController: UIViewController, UITableViewDelegate, UITable
 class DateScheduleCustomCell: UITableViewCell {
     @IBOutlet weak var thumbnail: UIImageView!
     @IBOutlet weak var location: UILabel!
-    @IBOutlet weak var planDescription: UILabel!
     @IBOutlet weak var moneyIcon: UIImageView!
     @IBOutlet weak var budget: UILabel!
     @IBOutlet weak var linkIcon: UIImageView!

@@ -7,12 +7,10 @@
 //
 
 import UIKit
-import SVGKit
 
 class ListenBirthyearViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     @IBOutlet weak var yearPickerView: UIPickerView!
     @IBOutlet weak var nextButton: UIButton!
-    @IBOutlet weak var svgImageView: UIImageView!
     
     let years = (1965...2005).map { $0 }
     
@@ -26,10 +24,10 @@ class ListenBirthyearViewController: UIViewController, UIPickerViewDelegate, UIP
         yearPickerView.selectRow(30, inComponent: 0, animated: false)
         yearPickerView.layer.borderColor = UIColor(red: 0.86, green: 0.86, blue: 0.86, alpha: 1.0).cgColor
         
-        self.navigationItem.hidesBackButton = true
-        self.navigationController?.setNavigationBarHidden(false, animated: false)
-        self.navigationController?.navigationBar.setBackgroundImage(UIImage(named: "NavBarBG"), for: .default)
-        self.navigationItem.title = "Date Suggester"
+        navigationItem.hidesBackButton = true
+        navigationController?.setNavigationBarHidden(false, animated: false)
+        navigationController?.navigationBar.setBackgroundImage(UIImage(named: "NavBarBG"), for: .default)
+        navigationItem.title = "Date Suggester"
         navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white]
         navigationItem.backBarButtonItem = UIBarButtonItem(title:  "", style:  .plain, target: nil, action: nil)
     }
@@ -44,11 +42,6 @@ class ListenBirthyearViewController: UIViewController, UIPickerViewDelegate, UIP
         let storyboard = UIStoryboard(name: "TutorialViewController", bundle: nil)
         let loginViewController = storyboard.instantiateViewController(withIdentifier: "LoginViewController")
         self.navigationController?.pushViewController(loginViewController, animated: true)
-        
-//        let storyboard = UIStoryboard(name: "MainPageViewController", bundle: nil)
-//        let LoginViewController = storyboard.instantiateViewController(identifier: "LoginViewController")
-//        LoginViewController.modalPresentationStyle = .fullScreen
-//        present(LoginViewController, animated: true, completion: nil)
     }
     
     // UIPickerViewの列の数
@@ -74,8 +67,8 @@ class ListenBirthyearViewController: UIViewController, UIPickerViewDelegate, UIP
                     inComponent component: Int) {
         // 処理
         let data1 = self.pickerView(pickerView, titleForRow: pickerView.selectedRow(inComponent: 0), forComponent: 0)
-        print("\(data1)えらばれたよ")
-        print("row: \(row)")
+        debugPrint("\(data1)えらばれたよ")
+        debugPrint("row: \(row)")
         
         let defaults = UserDefaults.standard
         defaults.set(data1, forKey: "responseBirthYear")

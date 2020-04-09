@@ -59,7 +59,7 @@ class DateFeelingViewController: UIViewController {
 
         var urlComponents = URLComponents()
         urlComponents.scheme = "https"
-        urlComponents.host = "api-date-suggester-dev.herokuapp.com"
+        urlComponents.host = "api.date-suggester.com"
         urlComponents.path = "/v1/plans/suggest"
         urlComponents.queryItems = [
             URLQueryItem(name: "date_area", value: String(youserAnswer.answer1)),
@@ -78,18 +78,34 @@ class DateFeelingViewController: UIViewController {
         req.setValue("Bearer " + myToken, forHTTPHeaderField: "Authorization")
 
         let task = session.dataTask(with: req){(data, response, error) in
+            
+            if let _error = error {
+                debugPrint(_error)
+                // アラートを出す
+                DispatchQueue.main.async {
+                    self.view.isUserInteractionEnabled = true
+                    self.activityIndicatorView.stopAnimating()
+                    let alert = UIAlertController(title: nil, message: nil, preferredStyle: .alert)
+                    alert.view.tintColor = UIColor.init(red: 254.0/255, green: 84.0/255, blue: 146.0/255, alpha: 1.0)
+                    alert.title = "予期せぬエラーが発生しました"
+                    alert.message = "もういちどやり直してみてください"
+                    alert.addAction(
+                        UIAlertAction(title: "悲しいです", style: .cancel, handler: nil)
+                    )
+                    self.present(alert,animated: true,completion: nil)
+                }
+                return
+            }
 
             do {
                 let response: [String: Any] = try (JSONSerialization.jsonObject(with: data!, options: []) as! [String: Any])
-                
-                if error != nil {
-                    // アラートを出す
+                if let errors = response["errors"] as? String {
                     DispatchQueue.main.async {
                         self.view.isUserInteractionEnabled = true
                         self.activityIndicatorView.stopAnimating()
                         let alert = UIAlertController(title: nil, message: nil, preferredStyle: .alert)
                         alert.view.tintColor = UIColor.init(red: 254.0/255, green: 84.0/255, blue: 146.0/255, alpha: 1.0)
-                        alert.title = "検索結果が見つかりませんでした"
+                        alert.title = errors
                         alert.message = "もういちどやり直してみてください"
                         alert.addAction(
                             UIAlertAction(title: "悲しいです", style: .cancel, handler: nil)

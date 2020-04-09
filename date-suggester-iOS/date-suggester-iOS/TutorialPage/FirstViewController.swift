@@ -29,6 +29,7 @@ class FirstViewController: UIViewController {
         //トークンがなかった場合に最初に表示させる画面を確認するため、暫定的に書いている
         let defaults = UserDefaults.standard
         defaults.removeObject(forKey: "responseToken")
+//        defaults.set(true, forKey: "signUpStatus")
         defaults.removeObject(forKey: "signUpStatus")
         
         self.navigationController?.setNavigationBarHidden(true, animated: false)
@@ -39,15 +40,11 @@ class FirstViewController: UIViewController {
             let storyboard = UIStoryboard(name: "SimplePlanViewController", bundle: nil)
             let controller = storyboard.instantiateViewController(identifier: "DatePlanViewController")
             self.navigationController?.pushViewController(controller, animated: true)
-//            controller.modalPresentationStyle = .fullScreen
-//            present(controller, animated: true, completion: nil)
             
         } else{
             let storyboard = UIStoryboard(name: "TutorialViewController", bundle: nil)
             let listenBirthyearViewController = storyboard.instantiateViewController(withIdentifier: "ListenBirthyearViewController")
             self.navigationController?.pushViewController(listenBirthyearViewController, animated: true)
-//            listenBirthyearViewController.modalPresentationStyle = .fullScreen
-//            self.present(listenBirthyearViewController, animated: true, completion: nil)
         }
     }
 }
@@ -57,15 +54,15 @@ extension UIView {
         // スクリーンサイズの取得
         let width = UIScreen.main.bounds.size.width
         let height = UIScreen.main.bounds.size.height
-        
+
         // スクリーンサイズにあわせてimageViewの配置
         let imageViewBackground = UIImageView(frame: CGRect(x: 0, y: 0, width: width, height: height))
         //imageViewに背景画像を表示
         imageViewBackground.image = UIImage(named: name)
-        
+
         // 画像の表示モードを変更。
         imageViewBackground.contentMode = UIView.ContentMode.scaleAspectFill
-        
+
         // subviewをメインビューに追加
         self.addSubview(imageViewBackground)
         // 加えたsubviewを、最背面に設置する

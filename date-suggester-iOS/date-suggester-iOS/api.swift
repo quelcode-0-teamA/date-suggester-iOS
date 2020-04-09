@@ -11,7 +11,7 @@ import Foundation
 class Api {
     private let postMethod = "POST"
     private let getMethod = "GET"
-    private let host = "https://api-date-suggester-dev.herokuapp.com"
+    private let host = "https://api.date-suggester.com"
     private let config: URLSessionConfiguration = URLSessionConfiguration.default
     private lazy var session: URLSession = URLSession(configuration: config)
     
@@ -61,6 +61,7 @@ class Api {
                     completion?(nil, NSError.init(domain: "error", code: 0, userInfo: nil))
                     return
                 }
+                print(response)
                 completion?(response, nil)
             }
             catch{
@@ -147,7 +148,9 @@ class Api {
                 debugPrint("userId:\(userId)")
                 let defaults = UserDefaults.standard
                 defaults.set(tokenValue, forKey: "responseToken")
+                defaults.set(userId, forKey: "userId")
                 
+                debugPrint("仮ログインのレスポンス:\(response)")
                 completion?(tokenValue, userId, nil)
             }
             catch{

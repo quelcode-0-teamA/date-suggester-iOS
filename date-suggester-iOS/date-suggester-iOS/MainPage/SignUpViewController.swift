@@ -7,15 +7,16 @@
 //
 
 import UIKit
+import SVGKit
 
 class SignUpViewController: UIViewController, UITextFieldDelegate {
     
     var activityIndicatorView = UIActivityIndicatorView()
     
-    @IBOutlet weak var subView: UIView!
-    @IBOutlet weak var myEmail: SignUpCustomTextField!
+    @IBOutlet weak var svgImageView: UIImageView!
+    @IBOutlet weak var myEmail: CustomUnderlineTextField!
     @IBOutlet weak var myPassword: SignUpCustomTextField!
-    @IBOutlet weak var myPasswordConfirmation: SignUpCustomTextField!
+    @IBOutlet weak var myPasswordConfirmation: CustomUnderlineTextField!
     @IBOutlet weak var signUpButton: UIButton!
     
     override func viewDidLoad() {
@@ -24,22 +25,32 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
         myPassword.delegate = self
         myPasswordConfirmation.delegate = self
         
+        myEmail.attributedPlaceholder = NSAttributedString(string: "mail", attributes: [NSAttributedString.Key.foregroundColor : UIColor.white])
+        myPassword.attributedPlaceholder = NSAttributedString(string: "pass", attributes: [NSAttributedString.Key.foregroundColor : UIColor.white])
+        myPasswordConfirmation.attributedPlaceholder = NSAttributedString(string: "reenter pass", attributes: [NSAttributedString.Key.foregroundColor : UIColor.white])
+        
+        let svgImage = SVGKImage(named: "mainImage")
+        svgImage?.size = svgImageView.bounds.size
+        svgImageView.image = svgImage?.uiImage
+        
         signUpButton.isEnabled = false
+        signUpButton.layer.masksToBounds = true
+        signUpButton.layer.cornerRadius = 24
         
         activityIndicatorView.center = view.center
         activityIndicatorView.style = .whiteLarge
         activityIndicatorView.color = .darkGray
         view.addSubview(activityIndicatorView)
-        
-        signUpButton.layer.masksToBounds = true
-        signUpButton.layer.cornerRadius = 30
-        
-        subView.layer.cornerRadius = 30
-        subView.layer.shadowRadius = 3.0
-        subView.layer.masksToBounds = false
-        subView.layer.shadowColor = UIColor.gray.cgColor
-        subView.layer.shadowOffset = CGSize(width: 0.0, height: 5.0)
-        subView.layer.shadowOpacity = 0.3
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+//        navigationController?.setNavigationBarHidden(true, animated: false)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        navigationController?.setNavigationBarHidden(false, animated: false)
     }
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
@@ -52,7 +63,6 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
         return !textCheck
     }
     
-    //キーボードを閉じる
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
@@ -88,7 +98,6 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
             return
         }
         
-        // くるくるをだす SVProgressHUD.show()
         activityIndicatorView.startAnimating()
         
         //isUserInteractionEnabledはタッチ可能かどうかをコントロールする
