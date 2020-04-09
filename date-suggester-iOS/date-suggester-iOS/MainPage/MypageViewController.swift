@@ -18,7 +18,7 @@ class MypageViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         userIcon.layer.cornerRadius = 70
-        userName.text = "名もなき恋の達人"
+//        userName.text = "名もなき恋の達人"
         
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(named: "NavBarBG"), for: .default)
         self.navigationController?.navigationBar.titleTextAttributes = [
@@ -86,7 +86,7 @@ class MypageViewController: UIViewController {
 //                                self.userName.text = "なもなき"
                                 return
                             }
-//                            self.userName.text = id as? String
+                            self.userName.text = name as? String
                             print(self.userName)
                             //nilだと判断されてない説。ただの空白だと思われてる？
                         }

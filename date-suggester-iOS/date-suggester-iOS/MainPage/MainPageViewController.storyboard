@@ -430,6 +430,7 @@
                                 <rect key="frame" x="99" y="435" width="177" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" name="MainColor"/>
+                                <fontDescription key="fontDescription" name="HiraginoSans-W6" family="Hiragino Sans" pointSize="19"/>
                                 <state key="normal" title="保存">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
@@ -437,24 +438,10 @@
                                     <action selector="profileEditButton:" destination="i8e-KK-juY" eventType="touchUpInside" id="VKu-e7-lmY"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CMl-t7-WZt" customClass="CustomButton" customModule="date_suggester_iOS" customModuleProvider="target">
-                                <rect key="frame" x="99" y="492" width="177" height="40"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" name="lowLightColor"/>
-                                <state key="normal" title="キャンセル">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                            </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="userIcon" translatesAutoresizingMaskIntoConstraints="NO" id="sBI-ah-BTZ">
                                 <rect key="frame" x="115" y="168" width="144" height="144"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZEZ-vk-R1E" customClass="CustomPlofielTextField" customModule="date_suggester_iOS" customModuleProvider="target">
-                                <rect key="frame" x="30" y="332" width="314" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zGA-4C-1Sn">
                                 <rect key="frame" x="0.0" y="693" width="375" height="59"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -466,13 +453,37 @@
                                     <action selector="userDelete:" destination="i8e-KK-juY" eventType="touchUpInside" id="rXL-k6-ohF"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZEZ-vk-R1E">
+                                <rect key="frame" x="67" y="344" width="240" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" name="MainColor"/>
+                                <color key="textColor" name="SubTextColor"/>
+                                <fontDescription key="fontDescription" name="NotoSans" family="Noto Sans" pointSize="17"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TZY-Rt-UGE">
+                                <rect key="frame" x="99" y="495" width="177" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" name="lowLightColor"/>
+                                <fontDescription key="fontDescription" name="HiraginoSans-W6" family="Hiragino Sans" pointSize="19"/>
+                                <state key="normal" title="キャンセル">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="canselButton:" destination="i8e-KK-juY" eventType="touchUpInside" id="Ldu-Dv-e3m"/>
+                                    <action selector="profileEditButton:" destination="i8e-KK-juY" eventType="touchUpInside" id="naP-5l-4zp"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="IWz-53-bgf"/>
                     </view>
                     <navigationItem key="navigationItem" title="プロフィール設定" id="gAE-kw-4Ee"/>
                     <connections>
+                        <outlet property="cancelButton" destination="TZY-Rt-UGE" id="i8L-SV-gLB"/>
                         <outlet property="profileEditButton" destination="VfN-wN-sH2" id="oNO-le-IOa"/>
+                        <outlet property="userIcon" destination="sBI-ah-BTZ" id="AnM-fh-8cM"/>
                         <outlet property="userName" destination="ZEZ-vk-R1E" id="2ti-PW-Vve"/>
                     </connections>
                 </viewController>

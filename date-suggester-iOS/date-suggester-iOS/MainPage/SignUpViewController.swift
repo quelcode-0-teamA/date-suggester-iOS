@@ -125,6 +125,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
             DispatchQueue.main.async {
                 let defaults = UserDefaults.standard
                 defaults.set(true, forKey: "signUpStatus")
+                defaults.set(email, forKey: "userEmail")
                 
                 self.view.isUserInteractionEnabled = true
                 self.activityIndicatorView.stopAnimating()
