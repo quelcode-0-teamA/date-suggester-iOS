@@ -15,8 +15,6 @@ class MyProfileEditViewController: UIViewController {
     @IBOutlet weak var profileEditButton: UIButton!
     @IBOutlet weak var cancelButton: UIButton!
     
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 //        profileEditButton.layer.borderColor = UIColor.white.cgColor
@@ -34,7 +32,7 @@ class MyProfileEditViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
          super.viewWillAppear(animated)
-        
+
         let defaults = UserDefaults.standard
         debugPrint("responseUserName:\(defaults.string(forKey: "responseUserName"))")
         guard let userName = defaults.string(forKey: "responseUserName") else{
@@ -43,9 +41,6 @@ class MyProfileEditViewController: UIViewController {
         }
         self.userName.placeholder = userName
     }
-   
-    
-    
     
     @IBAction func canselButton(_ sender: Any) {
          self.navigationController?.popViewController(animated: true)
@@ -56,7 +51,6 @@ class MyProfileEditViewController: UIViewController {
         let session: URLSession = URLSession(configuration: config)
         let defaults = UserDefaults.standard
         
-        //テキストフィールドに入力されたStringと取得して変数にいれる
         let name = userName.text
 
         let userEditParams = [
