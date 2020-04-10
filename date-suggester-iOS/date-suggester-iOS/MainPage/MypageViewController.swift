@@ -18,6 +18,7 @@ class MypageViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         userIcon.layer.cornerRadius = 70
+        userName.text = "名もなき恋の達人"
         
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(named: "NavBarBG"), for: .default)
         self.navigationController?.navigationBar.titleTextAttributes = [
@@ -47,6 +48,8 @@ class MypageViewController: UIViewController {
             
         }else{
             containerView.alpha = 1
+            navigationController?.setNavigationBarHidden(true, animated: false)
+            
         }
         
         /*
@@ -79,11 +82,11 @@ class MypageViewController: UIViewController {
                             debugPrint("ユーザー情報取得したお")
                             debugPrint(response)
                             
-                            guard let id = response["id"] else {
-                                self.userName.text = "なもなき"
+                            guard let name = response["name"] else {
+//                                self.userName.text = "なもなき"
                                 return
                             }
-                            self.userName.text = id as? String
+//                            self.userName.text = id as? String
                             print(self.userName)
                             //nilだと判断されてない説。ただの空白だと思われてる？
                         }
@@ -101,7 +104,7 @@ class MypageViewController: UIViewController {
     
     @IBAction func gotoProfileEditButton(_ sender: Any) {
         let storyboard = UIStoryboard(name: "MainPageViewController", bundle: nil)
-        let profileEditViewController = storyboard.instantiateViewController(withIdentifier: "ProfileEditViewController")
-        self.navigationController?.pushViewController(profileEditViewController, animated: true)
+        let myProfileEditViewController = storyboard.instantiateViewController(withIdentifier: "MyProfileEditViewController")
+        self.navigationController?.pushViewController(myProfileEditViewController, animated: true)
     }
 }

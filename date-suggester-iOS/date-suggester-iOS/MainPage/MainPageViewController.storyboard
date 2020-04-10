@@ -366,9 +366,9 @@
                             <constraint firstItem="MRH-tm-q1f" firstAttribute="top" secondItem="fQ3-bA-70c" secondAttribute="bottom" constant="11" id="FOM-rp-Cf3"/>
                             <constraint firstItem="zqp-CJ-TMQ" firstAttribute="trailing" secondItem="KxA-mM-Q6r" secondAttribute="trailing" id="FSu-xt-QYJ"/>
                             <constraint firstItem="0Lx-Js-mYL" firstAttribute="top" secondItem="tv6-Kq-LGO" secondAttribute="bottom" constant="52" id="Fmm-Ua-aCd"/>
+                            <constraint firstItem="zqp-CJ-TMQ" firstAttribute="top" secondItem="KxA-mM-Q6r" secondAttribute="top" constant="44" id="Ldb-Lc-YaH"/>
                             <constraint firstItem="MRH-tm-q1f" firstAttribute="centerX" secondItem="6c5-AQ-xM9" secondAttribute="centerX" id="g5L-He-GpG"/>
                             <constraint firstItem="fQ3-bA-70c" firstAttribute="centerX" secondItem="6c5-AQ-xM9" secondAttribute="centerX" id="jrU-FY-ugH"/>
-                            <constraint firstItem="zqp-CJ-TMQ" firstAttribute="top" secondItem="KxA-mM-Q6r" secondAttribute="top" constant="44" id="opc-GU-3J9"/>
                             <constraint firstItem="zqp-CJ-TMQ" firstAttribute="trailing" secondItem="tv6-Kq-LGO" secondAttribute="trailing" constant="129" id="qcW-4g-D8X"/>
                             <constraint firstItem="tv6-Kq-LGO" firstAttribute="leading" secondItem="zqp-CJ-TMQ" secondAttribute="leading" constant="129" id="uIl-u7-jmM"/>
                             <constraint firstItem="fQ3-bA-70c" firstAttribute="top" secondItem="0Lx-Js-mYL" secondAttribute="bottom" constant="46" id="yqY-Fl-cTO"/>
@@ -381,7 +381,7 @@
                     </tabBarItem>
                     <navigationItem key="navigationItem" title="Date Suggester" id="oBo-oK-iVU">
                         <barButtonItem key="rightBarButtonItem" title="Item" image="setting" id="QPk-iZ-eUO">
-                            <color key="tintColor" name="BarColor"/>
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
                                 <action selector="gotoProfileEditButton:" destination="Miq-KR-ZyF" id="4xQ-Y0-gGN"/>
                             </connections>
@@ -417,14 +417,6 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="back">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yhs-SH-Obo" customClass="CustomButton" customModule="date_suggester_iOS" customModuleProvider="target">
-                                <rect key="frame" x="-6" y="566" width="381" height="60"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="ログアウト">
-                                    <color key="titleColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="プロフィール" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hAm-1b-kl6">
@@ -463,6 +455,17 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zGA-4C-1Sn">
+                                <rect key="frame" x="0.0" y="693" width="375" height="59"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="NotoSans" family="Noto Sans" pointSize="17"/>
+                                <state key="normal" title="アカウント削除">
+                                    <color key="titleColor" red="0.92156862750000001" green="0.41176470590000003" blue="0.47843137250000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                                <connections>
+                                    <action selector="userDelete:" destination="i8e-KK-juY" eventType="touchUpInside" id="rXL-k6-ohF"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="IWz-53-bgf"/>
