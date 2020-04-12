@@ -6,9 +6,8 @@ target 'date-suggester-iOS' do
   use_frameworks!
 
   # Pods for date-suggester-iOS
-　 pod 'SVGKit'
-  pod 'Alamofire', '~> 5.1'
-  pod 'AlamofireImage', '~> 4.1'
+  pod 'SVGKit'
+  pod 'ActiveLabel'
 
   target 'date-suggester-iOSTests' do
     inherit! :search_paths

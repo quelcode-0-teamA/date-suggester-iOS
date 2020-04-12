@@ -17,8 +17,7 @@ class MyProfileEditViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        profileEditButton.layer.borderColor = UIColor.white.cgColor
-//        profileEditButton.layer.borderWidth = 1.0
+
         userIcon.layer.cornerRadius = 70
         profileEditButton.layer.masksToBounds = true
         profileEditButton.layer.cornerRadius = 20
@@ -40,6 +39,15 @@ class MyProfileEditViewController: UIViewController {
             return
         }
         self.userName.placeholder = userName
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
     }
     
     @IBAction func canselButton(_ sender: Any) {
