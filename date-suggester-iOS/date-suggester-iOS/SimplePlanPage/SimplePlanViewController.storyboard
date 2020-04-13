@@ -304,7 +304,7 @@
                                             <outlet property="location" destination="1MY-1i-lLt" id="pxJ-6c-FwI"/>
                                             <outlet property="moneyIcon" destination="25N-kQ-RdA" id="0g4-AW-b6l"/>
                                             <outlet property="thumbnail" destination="u7h-qK-tn1" id="GKA-8A-Lki"/>
-                                            <outlet property="url" destination="LtR-Ti-TIS" id="4F1-t7-dQp"/>
+                                            <outlet property="urlLabel" destination="LtR-Ti-TIS" id="b1G-kQ-PJD"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

@@ -40,12 +40,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         loginButton.layer.cornerRadius = 24
         
         myEmail.loginunderline.backgroundColor = UIColor.init(red: 255/255, green: 255/255, blue: 255/255, alpha: 1.0)
-//        
-//        self.navigationItem.title = "Date Suggester"
-//        navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white]
-//        self.navigationController?.navigationBar.tintColor = UIColor.white
-//        self.navigationController?.navigationBar.barTintColor = UIColor.init(red: 222/255, green: 67/255, blue: 106/255, alpha: 1.0)
-//         self.navigationController?.setNavigationBarHidden(true, animated: false)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -107,7 +101,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                     self.activityIndicatorView.stopAnimating()
                     let alert = UIAlertController(title: nil, message: nil, preferredStyle: .alert)
                     alert.view.tintColor = UIColor.init(red: 254.0/255, green: 84.0/255, blue: 146.0/255, alpha: 1.0)
-                    alert.title = "エラーが発生しました"
+                    alert.title = "そのEmailはすでに登録されています"
                     alert.message = "ログインをやり直してください"
                     alert.addAction(
                         UIAlertAction(title: "悲しいです", style: .cancel, handler: nil)
@@ -136,8 +130,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func backButton(_ sender: Any) {
-//        self.navigationController?.popToRootViewController(animated: true)
         self.navigationController?.popViewController(animated: true)
-//        self.dismiss(animated: true, completion: nil)
     }
 }
