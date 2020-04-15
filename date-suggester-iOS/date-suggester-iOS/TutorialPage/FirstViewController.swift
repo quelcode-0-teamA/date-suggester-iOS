@@ -38,7 +38,10 @@ class FirstViewController: UIViewController {
 
 //            let url = URL(string:"https://twitter.com/pocoochan")
             label.handleURLTap { self.sumpleURL(url: $0) }
-
+            label.handleURLTap { url in
+            debugPrint("\(url)")
+            }
+            
             label.configureLinkAttribute = { (type, attributes, isSelected) in
                 var atts = attributes
                 switch type {
@@ -50,7 +53,7 @@ class FirstViewController: UIViewController {
             }
         }
 
-        label.frame = CGRect(x: 20, y: 40, width: view.frame.width - 40, height: 40)
+        label.frame = CGRect(x: 20, y: 40, width: view.frame.width - 40, height: 44)
         view.addSubview(label)
         
 //        let label = ActiveLabel()

@@ -66,17 +66,21 @@ class DatePlanSuggestionViewControlller: UIViewController, UITableViewDelegate, 
         
         let cellIdentifier: String = "DateListCustomCell"
         let spotsThumbImage:UIImage = getImageByUrl(url:((self.suggetsPlan?.spots?[indexPath.row].thumb)!))
+        
         if let myCell: DateListCustomCell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier) as? DateListCustomCell {
             myCell.thumbnail?.image = spotsThumbImage
             myCell.location?.text = self.suggetsPlan?.spots?[indexPath.row].name
             myCell.moneyIcon?.image = UIImage(named: "moneyIcon")!
             myCell.budget?.text = self.suggetsPlan?.spots?[indexPath.row].budget
             myCell.linkIcon?.image = UIImage(named: "linkIcon")
-            myCell.urlLabel?.text = self.suggetsPlan?.spots?[indexPath.row].url as? String
-            myCell.urlLabel?.handleURLTap { self.sumpleURL(url: $0) }
-            print("🍑")
-            print(type(of: myCell.urlLabel?.text))
-//            print(type(of: myCell.urlLabel?.handleURLTap))
+            
+            myCell.urlLabel.customize { label in
+                label.text = self.suggetsPlan?.spots?[indexPath.row].url as? String
+                label.textColor = .blue
+                label.handleURLTap{ url in
+                    UIApplication.shared.open(url, options: [:], completionHandler: nil)
+                }
+            }
             return myCell
         }
         
@@ -87,12 +91,17 @@ class DatePlanSuggestionViewControlller: UIViewController, UITableViewDelegate, 
         myCell.budget?.text = self.suggetsPlan?.spots?[indexPath.row].budget
         myCell.linkIcon?.image = UIImage(named: "linkIcon")
         myCell.urlLabel?.text = self.suggetsPlan?.spots?[indexPath.row].url as? String
-        myCell.urlLabel?.handleURLTap { self.sumpleURL(url: $0) }
-        print("🍌")
-        print(type(of: myCell.urlLabel?.text))
-//        print(type(of: myCell.urlLabel?.handleURLTap))
+        
+        myCell.urlLabel.customize { label in
+            label.text = self.suggetsPlan?.spots?[indexPath.row].url as? String
+            label.textColor = .blue
+            label.handleURLTap{ url in
+                UIApplication.shared.open(url, options: [:], completionHandler: nil)
+            }
+        }
         return myCell
     }
+
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.suggetsPlan?.spots?.count ?? 0
@@ -167,31 +176,4 @@ class DateListCustomCell: UITableViewCell {
     @IBOutlet weak var budget: UILabel!
     @IBOutlet weak var linkIcon: UIImageView!
     @IBOutlet weak var urlLabel: ActiveLabel!
-    
-//    let customType3 = ActiveType.custom(pattern: "\\ssupports\\b") //Looks for "supports"
-//    urlLabel.enabledTypes.append(customType3)
-//    urlLabel.urlMaximumLength = 31
-//
-//    urlLabel.customize { label in
-//    urlLabel.text = "Let's trim a long link: \nhttps://twitter.com/pocoochan"
-//    urlLabel.numberOfLines = 0
-//    urlLabel.lineSpacing = 4
-//
-//    urlLabel.textColor = UIColor(red: 102.0/255, green: 117.0/255, blue: 127.0/255, alpha: 1)
-//    urlLabel.URLColor = UIColor(red: 85.0/255, green: 238.0/255, blue: 151.0/255, alpha: 1)
-//    urlLabel.URLSelectedColor = UIColor(red: 82.0/255, green: 190.0/255, blue: 41.0/255, alpha: 1)
-//
-//    //            let url = URL(string:"https://twitter.com/pocoochan")
-//    urlLabel.handleURLTap { self.sumpleURL(url: $0) }
-//
-//    urlLabel.configureLinkAttribute = { (type, attributes, isSelected) in
-//    var atts = attributes
-//    switch type {
-//    case customType3:
-//    atts[NSAttributedString.Key.font] = isSelected ? UIFont.boldSystemFont(ofSize: 16) : UIFont.boldSystemFont(ofSize: 14)
-//    default: ()
-//    }
-//    return atts
-//    }
-//    }
 }
