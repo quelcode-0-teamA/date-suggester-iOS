@@ -12,7 +12,7 @@ class DatePlanSuggestionViewControlller: UIViewController, UITableViewDelegate, 
     
     var suggetsPlan: Plan?
     
-    @IBOutlet weak var gotoMypage: UIButton!
+    @IBOutlet weak var planDecision: UIButton!
     @IBOutlet weak var againButton: UIButton!
     @IBOutlet weak var gotoMyPage: UIButton!
     @IBOutlet weak var datePlanTitle: UILabel!
@@ -32,12 +32,16 @@ class DatePlanSuggestionViewControlller: UIViewController, UITableViewDelegate, 
         datePlanSuggestTV.dataSource = self
         
         //ボタン装飾
-        gotoMypage.layer.cornerRadius = 30
-        gotoMypage.layer.borderColor = UIColor.white.cgColor
-        gotoMypage.layer.borderWidth = 1.0
+        planDecision.layer.cornerRadius = 30
+        planDecision.layer.borderColor = UIColor.white.cgColor
+        planDecision.layer.borderWidth = 1.0
         againButton.layer.borderColor = UIColor.init(red: 254.0/255, green: 84.0/255, blue: 146.0/255, alpha: 1.0).cgColor
         againButton.layer.borderWidth = 1.0
         againButton.layer.cornerRadius = 30
+        
+        gotoMyPage.layer.borderColor = UIColor.white.cgColor
+        gotoMyPage.layer.borderWidth = 1.0
+        gotoMyPage.layer.cornerRadius = 15
         
         DispatchQueue.main.async {
             self.datePlanSuggestTV.reloadData()

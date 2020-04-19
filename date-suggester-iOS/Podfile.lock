@@ -1,4 +1,5 @@
 PODS:
+  - ActiveLabel (1.1.0)
   - CocoaLumberjack (3.6.1):
     - CocoaLumberjack/Core (= 3.6.1)
   - CocoaLumberjack/Core (3.6.1)
@@ -6,17 +7,20 @@ PODS:
     - CocoaLumberjack (~> 3.0)
 
 DEPENDENCIES:
+  - ActiveLabel
   - SVGKit
 
 SPEC REPOS:
   trunk:
+    - ActiveLabel
     - CocoaLumberjack
     - SVGKit
 
 SPEC CHECKSUMS:
+  ActiveLabel: 5e3f4de79a1952d4604b845a0610d4776e4b82b3
   CocoaLumberjack: b17ae15142558d08bbacf69775fa10c4abbebcc9
   SVGKit: 652cdf7bef8bec8564d04a8511d3ab50c7595fac
 
-PODFILE CHECKSUM: 7f12b437809912291453a6ad6b463cb2eb2ef106
+PODFILE CHECKSUM: 67cd71f6101651c0ef887ccebef5c088c8788006
 
 COCOAPODS: 1.8.4

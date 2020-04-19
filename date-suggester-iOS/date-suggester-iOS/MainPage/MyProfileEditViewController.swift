@@ -10,39 +10,68 @@ import UIKit
 
 class MyProfileEditViewController: UIViewController {
     
+    @IBOutlet weak var userIcon: UIImageView!
     @IBOutlet weak var userName: CustomPlofielTextField!
     @IBOutlet weak var profileEditButton: UIButton!
-    
+    @IBOutlet weak var cancelButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        profileEditButton.layer.borderColor = UIColor.white.cgColor
-        profileEditButton.layer.borderWidth = 1.0
+
+        userIcon.layer.cornerRadius = 70
+        profileEditButton.layer.masksToBounds = true
+        profileEditButton.layer.cornerRadius = 20
+        cancelButton.layer.masksToBounds = true
+        cancelButton.layer.cornerRadius = 20
+        
+        
+//        userName.placeholder = "名もなき恋の達人"
+//        defaults.string(forKey: "responseUserName")
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+         super.viewWillAppear(animated)
+
+        let defaults = UserDefaults.standard
+        debugPrint("responseUserName:\(defaults.string(forKey: "responseUserName"))")
+        guard let userName = defaults.string(forKey: "responseUserName") else{
+            self.userName.placeholder = "名もなき恋の達人"
+            return
+        }
+        self.userName.placeholder = userName
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    
+    @IBAction func canselButton(_ sender: Any) {
+         self.navigationController?.popViewController(animated: true)
     }
     
     @IBAction func profileEditButton(_ sender: Any) {
-//        /v1/users/{user_id}
-        
         let config: URLSessionConfiguration = URLSessionConfiguration.default
-        
         let session: URLSession = URLSession(configuration: config)
-        
-        //テキストフィールドに入力されたStringと取得して変数にいれる
-        let name = editName.text
-        let bio = editBio.text
-        
-        //その変数たちを集めた変数をつくって、それをJSON形式でボディに付与する（1つめの辞書）
-        let userEditParams = [
-            "name": name,
-            "bio": bio
-        ]
-        
-        //URLオブジェクトの生成
         let defaults = UserDefaults.standard
-        let myId = defaults.string(forKey: "responseId")!
-        print(myId)
-        let url = URL(string: "https://teachapi.herokuapp.com/users/\(myId)")!
-        //URLRequestの生成atal error: Unexpectedly f
+        
+        let name = userName.text
+
+        let userEditParams = [
+           "name": name,
+            "email": defaults.string(forKey: "userEmail"),
+            "birth_year": defaults.string(forKey: "responseBirthYear"),
+            "gender": "",
+            "area_id": defaults.string(forKey: "responseUserArea")
+        ]
+
+        let user_id = defaults.string(forKey: "userId")!
+        let url = URL(string: "https://api.date-suggester.com/v1/users/\(user_id)")!
+
         var req: URLRequest = URLRequest(url: url)
         req.httpMethod = "PUT"
         
@@ -51,21 +80,17 @@ class MyProfileEditViewController: UIViewController {
         req.setValue("application/json", forHTTPHeaderField: "Content-Type")
         req.setValue("Bearer " + myToken, forHTTPHeaderField: "Authorization")
         
-        //ボディーを付与（2つめの辞書）
-        let parameter = ["user_params": userEditParams]
-        
+        let parameter = ["user": userEditParams]
         req.httpBody = try! JSONSerialization.data(withJSONObject: parameter, options: .prettyPrinted)
-        
         print(String(data: req.httpBody!, encoding: .utf8))
         
-        //APIを呼ぶよ
         let task = session.dataTask(with: req){(data, response, error) in
             print(data)
-            print(response)
+            print("response:\(response)")
             print(error)
             
             let responseString: String =  String(data: data!, encoding: .utf8)!
-            print(responseString)
+            print("responseString:\(responseString)")
             
             
             do {
@@ -74,24 +99,17 @@ class MyProfileEditViewController: UIViewController {
                 print(response)
                 
                 let nameValue = response["name"]
-                let bioValue = response["bio"]
-                print("\(nameValue!)\(bioValue!)に変更されたよ")
-                
+                 defaults.set(nameValue, forKey: "responseUserName")
                 
                 DispatchQueue.main.async {
-                    let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                    let MyPageController = storyboard.instantiateViewController(withIdentifier: "MyPageController")
-                    //                    self.navigationController?.pushViewController(MyPageController, animated: true)
-                    //                    self.present(MyPageController, animated: true, completion: nil)
-                    print("ここで前のハーフモーグルっぽい感じを解除して下に消えるようにしてマイページに戻りたい")
-                    self.dismiss(animated: true, completion: nil)
-                    print("マイページへの画面遷移成功だよ")
+//                    self.dismiss(animated: true, completion: nil)
+                    self.navigationController?.popViewController(animated: true)
+                    print("プロフィール変更完了")
                 }
                 
             } catch{
                 
             }
-            
         }
         task.resume()
 

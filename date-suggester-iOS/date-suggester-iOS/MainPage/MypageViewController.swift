@@ -18,7 +18,8 @@ class MypageViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         userIcon.layer.cornerRadius = 70
-        userName.text = "名もなき恋の達人"
+
+        debugPrint("🍒")
         
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(named: "NavBarBG"), for: .default)
         self.navigationController?.navigationBar.titleTextAttributes = [
@@ -82,12 +83,26 @@ class MypageViewController: UIViewController {
                             debugPrint("ユーザー情報取得したお")
                             debugPrint(response)
                             
-                            guard let name = response["name"] else {
-//                                self.userName.text = "なもなき"
+                            guard let responseUserName = response["name"] as? String else{
+                                self.userName.text = "名もなき恋の達人"
                                 return
                             }
-//                            self.userName.text = id as? String
-                            print(self.userName)
+                            print("💩resuponseUserName:\(responseUserName)")
+                            if responseUserName != nil {
+                                debugPrint("trueきてるよ")
+                                self.userName.text = responseUserName as? String
+                                
+                            }else{
+                                debugPrint("elseきてるよ")
+                                self.userName.text = "名もなき恋の達人"
+                            }
+                            
+//                            guard let name = response["name"] else {
+//                                self.userName.text = "名もなき恋の達人"
+//                                return
+//                            }
+//                            self.userName.text = name as? String
+                            print("resuponseUserName:\(responseUserName)")
                             //nilだと判断されてない説。ただの空白だと思われてる？
                         }
                     } catch{
@@ -96,11 +111,6 @@ class MypageViewController: UIViewController {
                 task.resume()
 
     }
-    
-//    override func viewWillDisappear(_ animated: Bool) {
-//        super.viewWillDisappear(animated)
-//
-//    }
     
     @IBAction func gotoProfileEditButton(_ sender: Any) {
         let storyboard = UIStoryboard(name: "MainPageViewController", bundle: nil)

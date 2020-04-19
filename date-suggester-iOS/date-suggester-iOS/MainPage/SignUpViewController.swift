@@ -45,7 +45,6 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-//        navigationController?.setNavigationBarHidden(true, animated: false)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -125,6 +124,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
             DispatchQueue.main.async {
                 let defaults = UserDefaults.standard
                 defaults.set(true, forKey: "signUpStatus")
+                defaults.set(email, forKey: "userEmail")
                 
                 self.view.isUserInteractionEnabled = true
                 self.activityIndicatorView.stopAnimating()
