@@ -11,8 +11,6 @@ import UIKit
 class CustomYerrowButton: UIButton {
     override func layoutSubviews() {
         super.layoutSubviews()
-//        self.layer.masksToBounds = false
-//        self.layer.cornerRadius = 30
         self.layer.cornerRadius = 30
         self.layer.shadowOffset = CGSize(width: 0.0, height: 6.0)
         self.layer.shadowColor = UIColor.init(red: 217.0/255, green: 196.0/255, blue: 125.0/255, alpha: 1.0).cgColor

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import ActiveLabel
 
 class DatePlanSuggestionViewControlller: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
@@ -53,18 +54,33 @@ class DatePlanSuggestionViewControlller: UIViewController, UITableViewDelegate, 
         }
     }
     
+    func sumpleURL(url: URL) {
+       if( UIApplication.shared.canOpenURL(url) ) {
+       UIApplication.shared.open(url)
+        }
+       }
+
+
     //カスタムセルの作成
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cellIdentifier: String = "DateListCustomCell"
         let spotsThumbImage:UIImage = getImageByUrl(url:((self.suggetsPlan?.spots?[indexPath.row].thumb)!))
+        
         if let myCell: DateListCustomCell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier) as? DateListCustomCell {
             myCell.thumbnail?.image = spotsThumbImage
             myCell.location?.text = self.suggetsPlan?.spots?[indexPath.row].name
             myCell.moneyIcon?.image = UIImage(named: "moneyIcon")!
             myCell.budget?.text = self.suggetsPlan?.spots?[indexPath.row].budget
             myCell.linkIcon?.image = UIImage(named: "linkIcon")
-            myCell.url?.text = "URL//image/path/.."
+            
+            myCell.urlLabel.customize { label in
+                label.text = self.suggetsPlan?.spots?[indexPath.row].url as? String
+                label.textColor = .blue
+                label.handleURLTap{ url in
+                    UIApplication.shared.open(url, options: [:], completionHandler: nil)
+                }
+            }
             return myCell
         }
         
@@ -74,9 +90,18 @@ class DatePlanSuggestionViewControlller: UIViewController, UITableViewDelegate, 
         myCell.moneyIcon?.image = UIImage(named: "moneyIcon")!
         myCell.budget?.text = self.suggetsPlan?.spots?[indexPath.row].budget
         myCell.linkIcon?.image = UIImage(named: "linkIcon")
-        myCell.url?.text = "URL//image/path/.."
+        myCell.urlLabel?.text = self.suggetsPlan?.spots?[indexPath.row].url as? String
+        
+        myCell.urlLabel.customize { label in
+            label.text = self.suggetsPlan?.spots?[indexPath.row].url as? String
+            label.textColor = .blue
+            label.handleURLTap{ url in
+                UIApplication.shared.open(url, options: [:], completionHandler: nil)
+            }
+        }
         return myCell
     }
+
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.suggetsPlan?.spots?.count ?? 0
@@ -150,5 +175,5 @@ class DateListCustomCell: UITableViewCell {
     @IBOutlet weak var moneyIcon: UIImageView!
     @IBOutlet weak var budget: UILabel!
     @IBOutlet weak var linkIcon: UIImageView!
-    @IBOutlet weak var url: UILabel!
+    @IBOutlet weak var urlLabel: ActiveLabel!
 }

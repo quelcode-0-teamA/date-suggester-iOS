@@ -7,58 +7,25 @@
 //
 
 import UIKit
+import ActiveLabel
 
 class ViewController: UIViewController{
-     var response: [[String: Any]]?
-    
-    @IBOutlet weak var button: UIButton!
-    @IBAction func button(_ sender: Any) {
-        
-        
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let config: URLSessionConfiguration = URLSessionConfiguration.default
-        let session: URLSession = URLSession(configuration: config)
-        
-        var urlComponents = URLComponents()
-        urlComponents.scheme = "https"
-        urlComponents.host = "api-date-suggester-dev.herokuapp.com"
-        urlComponents.path = "/v1/areas"
-        urlComponents.queryItems = [
-        ]
-        
-        let url: URL = urlComponents.url!
-        var req: URLRequest = URLRequest(url: url)
-        req.httpMethod = "GET"
-        
-        print(url)
-        
-        //APIを呼ぶよ
-        let task = session.dataTask(with: req){(data, response, error) in
- 
-            do {
-                let response: [[String: Any]] = try JSONSerialization.jsonObject(with: data!, options: []) as! [[String: Any]]
-                
-                print(response)
-                self.response = response
-                for value in response {
-                    print("\(value["name"]!)")
-                }
-                
-                
-            } catch{
-                
-            }
-            
+        let label = ActiveLabel()
+        label.numberOfLines = 0
+        label.enabledTypes = [.mention, .hashtag, .url]
+        label.text = "This is a post with #hashtags and a @userhandle."
+        label.textColor = .black
+        label.handleHashtagTap { hashtag in
+            print("Success. You just tapped the \(hashtag) hashtag")
         }
-        task.resume()
         
-       
+        
     }
-
+    
 }
 
 

@@ -20,7 +20,7 @@ class DateScheduleViewController: UIViewController, UITableViewDelegate, UITable
         dateScheduleTV.delegate = self
         dateScheduleTV.dataSource = self
         dateScheduleTV.rowHeight = 162
-        // navigation設定
+
         navigationController?.navigationBar.titleTextAttributes = [
             .foregroundColor: UIColor.white
         ]
@@ -138,17 +138,6 @@ class DateScheduleViewController: UIViewController, UITableViewDelegate, UITable
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.myPlan?.plan.spots?.count ?? 0
-    }
-    
-    //画面にもし複数のteableViewがあっても、どっちが呼んだかわかるようにこのパラメータがある
-    //せるのパス→せるほごとに高さ買えられる
-    //そういう使い方のために用意されてるのではないだろうか
-    //せるのたかさが必ず固定なら、デリゲートを使う必要はないよね！
-    //手段を何パターンかあるものを調べて、理由を調査して、どれが適切か検討する
-    //完成を１番の目標にしたので時間がないからできてないけど、なにかあることは知ってます
-    //とりあえずシンプルに動いたこれでやってます
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return UITableView.automaticDimension
     }
     
     func getImageByUrl(url: String) -> UIImage{
