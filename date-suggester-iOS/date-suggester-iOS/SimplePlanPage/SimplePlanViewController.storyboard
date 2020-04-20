@@ -168,13 +168,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="j8D-1f-vz0" userLabel="header">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="245.5"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="253.5"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="NavBarBG" translatesAutoresizingMaskIntoConstraints="NO" id="GS1-qa-haL" userLabel="headerBGImageView">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="245.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="253.5"/>
                                     </imageView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uVl-mc-Xct" userLabel="headerItemsView">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="245.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="253.5"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eQM-n2-1aq">
                                                 <rect key="frame" x="16" y="10" width="30" height="30"/>
@@ -247,7 +247,7 @@
                                             <constraint firstItem="5wH-9e-Zgi" firstAttribute="leading" secondItem="uVl-mc-Xct" secondAttribute="leading" constant="16" id="dto-ZH-7Of"/>
                                             <constraint firstItem="ZoF-Rc-3Zp" firstAttribute="top" secondItem="uVl-mc-Xct" secondAttribute="top" constant="30" id="ht6-ZD-wnI"/>
                                             <constraint firstItem="5wH-9e-Zgi" firstAttribute="bottom" relation="lessThanOrEqual" secondItem="ZoF-Rc-3Zp" secondAttribute="bottom" id="mdh-LJ-WAC"/>
-                                            <constraint firstAttribute="bottom" secondItem="jAr-OX-2kh" secondAttribute="bottom" constant="8" id="paM-RJ-639"/>
+                                            <constraint firstAttribute="bottom" secondItem="jAr-OX-2kh" secondAttribute="bottom" constant="16" id="paM-RJ-639"/>
                                             <constraint firstItem="ZoF-Rc-3Zp" firstAttribute="top" secondItem="eQM-n2-1aq" secondAttribute="top" constant="20" id="rV8-pi-oV7"/>
                                             <constraint firstItem="gsD-D7-2dl" firstAttribute="top" secondItem="eQM-n2-1aq" secondAttribute="bottom" constant="24" id="u2B-Mu-7CA"/>
                                             <constraint firstItem="eQM-n2-1aq" firstAttribute="leading" secondItem="uVl-mc-Xct" secondAttribute="leading" constant="16" id="w7z-Pc-UTz"/>
@@ -305,13 +305,13 @@
                                 </subviews>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1日のデートコースプラン" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2qp-5h-Jvd">
-                                <rect key="frame" x="16" y="261.5" width="343" height="15"/>
+                                <rect key="frame" x="16" y="269.5" width="343" height="15"/>
                                 <fontDescription key="fontDescription" name="HiraginoSans-W6" family="Hiragino Sans" pointSize="15"/>
                                 <color key="textColor" name="MainColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="155" estimatedRowHeight="155" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="XMZ-sN-2WF" customClass="datePlanSuggestTV" customModule="date_suggester_iOS" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="292.5" width="375" height="282.5"/>
+                                <rect key="frame" x="0.0" y="300.5" width="375" height="274.5"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="DateListCustomCell" id="Sna-xc-fwP" customClass="DateListCustomCell" customModule="date_suggester_iOS" customModuleProvider="target">

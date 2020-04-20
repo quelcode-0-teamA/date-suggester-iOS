@@ -13,13 +13,27 @@ class Spot {
     let name: String
     let budget: String
     let thumb: String
-    let url: Any
-    
+    let url: String
+
     init(spotsDicitionary: [String: Any]) {
-        self.id = spotsDicitionary["id"] as! Int
-        self.name = spotsDicitionary["name"] as! String
-        self.budget = spotsDicitionary["budget"] as! String
-        self.thumb = spotsDicitionary["thumb"] as! String
-        self.url = spotsDicitionary["url"] as! Any
+        
+        guard let id = spotsDicitionary["id"] as? Int,
+            let name = spotsDicitionary["name"] as? String,
+            let budget = spotsDicitionary["budget"] as? String,
+            let thumb = spotsDicitionary["thumb"] as? String,
+            let url = spotsDicitionary["url"] as? String else{
+                self.id = 0
+                self.name = ""
+                self.budget = ""
+                self.thumb = ""
+                self.url = ""
+                return
+        }
+        
+        self.id = id
+        self.name = name
+        self.budget = budget
+        self.thumb = thumb
+        self.url = url
     }
 }

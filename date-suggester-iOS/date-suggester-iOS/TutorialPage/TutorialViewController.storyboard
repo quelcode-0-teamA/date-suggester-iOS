@@ -67,25 +67,21 @@
                                     <action selector="dateDecideButton:" destination="DUH-t6-QyA" eventType="touchUpInside" id="ljC-7g-Jhd"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q1e-fP-iMX">
-                                <rect key="frame" x="166" y="356" width="42" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A9e-3f-Zxf">
-                                <rect key="frame" x="67" y="347" width="62" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="サファリ"/>
+                            <button opaque="NO" alpha="0.59999999999999998" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rWL-Kg-6Hs">
+                                <rect key="frame" x="82.666666666666686" y="411" width="210" height="32"/>
+                                <fontDescription key="fontDescription" name="NotoSans" family="Noto Sans" pointSize="14"/>
+                                <state key="normal" title="アカウントをお持ちの方はこちら">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
                                 <connections>
-                                    <action selector="safari:" destination="DUH-t6-QyA" eventType="touchUpInside" id="oSD-VF-m4W"/>
+                                    <action selector="loginButton:" destination="DUH-t6-QyA" eventType="touchUpInside" id="QOA-uw-0Fl"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="0RE-5g-Q9M" firstAttribute="leading" secondItem="coH-he-UW2" secondAttribute="leading" constant="-168" id="0VY-lg-lyz"/>
+                            <constraint firstItem="rWL-Kg-6Hs" firstAttribute="centerX" secondItem="coH-he-UW2" secondAttribute="centerX" id="1aP-Fe-7aJ"/>
                             <constraint firstItem="U0U-4q-Ick" firstAttribute="leading" secondItem="c7J-rb-glh" secondAttribute="leading" id="9PT-Ky-rAG"/>
                             <constraint firstItem="0RE-5g-Q9M" firstAttribute="top" secondItem="R9V-Rm-UWS" secondAttribute="bottom" constant="70.5" id="HG5-fh-mxm"/>
                             <constraint firstItem="R9V-Rm-UWS" firstAttribute="leading" secondItem="c7J-rb-glh" secondAttribute="leading" constant="33" id="UOj-IH-ba8"/>
@@ -93,6 +89,7 @@
                             <constraint firstItem="c7J-rb-glh" firstAttribute="trailing" secondItem="R9V-Rm-UWS" secondAttribute="trailing" constant="34" id="hzw-zV-XaX"/>
                             <constraint firstItem="U0U-4q-Ick" firstAttribute="top" secondItem="c7J-rb-glh" secondAttribute="top" constant="139.5" id="meM-s6-MNE"/>
                             <constraint firstItem="U0U-4q-Ick" firstAttribute="trailing" secondItem="c7J-rb-glh" secondAttribute="trailing" id="ows-UO-0hn"/>
+                            <constraint firstItem="rWL-Kg-6Hs" firstAttribute="top" secondItem="R9V-Rm-UWS" secondAttribute="bottom" constant="16" id="sEO-om-k0G"/>
                             <constraint firstAttribute="trailing" secondItem="0RE-5g-Q9M" secondAttribute="trailing" constant="-88" id="zIY-De-8Nu"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="c7J-rb-glh"/>
@@ -100,7 +97,6 @@
                     <navigationItem key="navigationItem" title="Date Suggester" id="1MM-Fc-frq"/>
                     <connections>
                         <outlet property="dateDecideButton" destination="R9V-Rm-UWS" id="dGB-lN-hgS"/>
-                        <outlet property="sumpleLabel" destination="q1e-fP-iMX" id="CDK-C2-30Q"/>
                         <outlet property="svgImageView" destination="0RE-5g-Q9M" id="dme-m3-yAH"/>
                     </connections>
                 </viewController>
@@ -215,20 +211,6 @@
                                             <action selector="nextPage:" destination="8at-cS-52S" eventType="touchUpInside" id="DES-eW-fRY"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TXe-XN-xe3">
-                                        <rect key="frame" x="75" y="619" width="225" height="33"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="225" id="Ywx-fr-wi7"/>
-                                            <constraint firstAttribute="height" constant="33" id="yg6-L7-jv0"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="NotoSans" family="Noto Sans" pointSize="15"/>
-                                        <state key="normal" title="アカウントをお持ちの方はこちら">
-                                            <color key="titleColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="loginButton:" destination="8at-cS-52S" eventType="touchUpInside" id="Fmk-jl-2KK"/>
-                                        </connections>
-                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <rect key="contentStretch" x="0.0" y="0.0" width="0.0" height="0.0"/>
@@ -236,17 +218,13 @@
                                     <constraint firstAttribute="trailing" secondItem="Oc7-QO-fp0" secondAttribute="trailing" id="0sx-iQ-2Mg"/>
                                     <constraint firstItem="d99-N7-pEO" firstAttribute="top" secondItem="1gb-AK-vSk" secondAttribute="bottom" constant="29" id="797-8K-wLD"/>
                                     <constraint firstItem="YOc-3M-NBe" firstAttribute="top" secondItem="Oc7-QO-fp0" secondAttribute="bottom" constant="20" id="BTK-VI-WQJ"/>
-                                    <constraint firstItem="TXe-XN-xe3" firstAttribute="top" secondItem="YOc-3M-NBe" secondAttribute="bottom" constant="58" id="EF9-23-AKe"/>
                                     <constraint firstAttribute="trailing" secondItem="YOc-3M-NBe" secondAttribute="trailing" constant="31" id="Fay-yn-gP4"/>
                                     <constraint firstAttribute="trailing" secondItem="1gb-AK-vSk" secondAttribute="trailing" constant="104" id="Gow-VB-Dgs"/>
-                                    <constraint firstItem="TXe-XN-xe3" firstAttribute="leading" secondItem="ANp-GZ-mhF" secondAttribute="leading" constant="75" id="IvY-cU-uH3"/>
                                     <constraint firstAttribute="trailing" secondItem="d99-N7-pEO" secondAttribute="trailing" id="MAk-O7-stX"/>
                                     <constraint firstItem="1gb-AK-vSk" firstAttribute="top" secondItem="ANp-GZ-mhF" secondAttribute="top" constant="60" id="OeH-FX-05V"/>
                                     <constraint firstItem="Oc7-QO-fp0" firstAttribute="top" secondItem="d99-N7-pEO" secondAttribute="bottom" constant="12" id="RkJ-93-Qs3"/>
-                                    <constraint firstAttribute="trailing" secondItem="TXe-XN-xe3" secondAttribute="trailing" constant="75" id="Zk4-Dz-bY2"/>
                                     <constraint firstItem="YOc-3M-NBe" firstAttribute="leading" secondItem="ANp-GZ-mhF" secondAttribute="leading" constant="30" id="h6E-gL-0VQ"/>
                                     <constraint firstItem="Oc7-QO-fp0" firstAttribute="leading" secondItem="ANp-GZ-mhF" secondAttribute="leading" id="iPU-Ke-r25"/>
-                                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="TXe-XN-xe3" secondAttribute="bottom" constant="15" id="lh9-Hl-K93"/>
                                     <constraint firstItem="1gb-AK-vSk" firstAttribute="leading" secondItem="ANp-GZ-mhF" secondAttribute="leading" constant="103" id="spf-rN-i2g"/>
                                     <constraint firstItem="d99-N7-pEO" firstAttribute="leading" secondItem="ANp-GZ-mhF" secondAttribute="leading" id="uKN-ho-OQS"/>
                                 </constraints>
