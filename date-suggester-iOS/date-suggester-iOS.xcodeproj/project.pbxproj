@@ -788,6 +788,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
+				DEVELOPMENT_TEAM = J6V2UNL325;
 				INFOPLIST_FILE = "date-suggester-iOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -796,7 +798,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "jp.co.sample.date-suggester-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -806,6 +808,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
+				DEVELOPMENT_TEAM = J6V2UNL325;
 				INFOPLIST_FILE = "date-suggester-iOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -814,7 +818,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "jp.co.sample.date-suggester-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -825,6 +829,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = J6V2UNL325;
 				INFOPLIST_FILE = "date-suggester-iOSTests/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -835,7 +840,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "jp.co.sample.date-suggester-iOSTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/date-suggester-iOS.app/date-suggester-iOS";
 			};
 			name = Debug;
@@ -847,6 +852,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = J6V2UNL325;
 				INFOPLIST_FILE = "date-suggester-iOSTests/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -857,7 +863,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "jp.co.sample.date-suggester-iOSTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/date-suggester-iOS.app/date-suggester-iOS";
 			};
 			name = Release;
@@ -868,6 +874,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = J6V2UNL325;
 				INFOPLIST_FILE = "date-suggester-iOSUITests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -877,7 +884,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "jp.co.sample.date-suggester-iOSUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 				TEST_TARGET_NAME = "date-suggester-iOS";
 			};
 			name = Debug;
@@ -888,6 +895,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = J6V2UNL325;
 				INFOPLIST_FILE = "date-suggester-iOSUITests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -897,7 +905,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "jp.co.sample.date-suggester-iOSUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 				TEST_TARGET_NAME = "date-suggester-iOS";
 			};
 			name = Release;

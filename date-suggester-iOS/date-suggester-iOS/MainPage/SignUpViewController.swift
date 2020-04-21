@@ -36,6 +36,9 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
         signUpButton.isEnabled = false
         signUpButton.layer.masksToBounds = true
         signUpButton.layer.cornerRadius = 24
+         
+        myPassword.isSecureTextEntry = true
+        myPasswordConfirmation.isSecureTextEntry = true
         
         activityIndicatorView.center = view.center
         activityIndicatorView.style = .whiteLarge
