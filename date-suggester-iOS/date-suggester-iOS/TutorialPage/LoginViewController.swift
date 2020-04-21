@@ -38,6 +38,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         view.addSubview(activityIndicatorView)
 
         loginButton.layer.cornerRadius = 24
+        myPassword.isSecureTextEntry = true
         
         myEmail.loginunderline.backgroundColor = UIColor.init(red: 255/255, green: 255/255, blue: 255/255, alpha: 1.0)
     }
