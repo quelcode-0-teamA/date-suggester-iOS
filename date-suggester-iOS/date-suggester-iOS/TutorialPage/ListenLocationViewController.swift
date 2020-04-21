@@ -49,9 +49,6 @@ class ListenLocationViewController: UIViewController, UIPickerViewDelegate, UIPi
         let session: URLSession = URLSession(configuration: config)
 
         var urlComponents = URLComponents()
-//        urlComponents.scheme = "http"
-//        urlComponents.host = "datesuggestersta-env.eba-tjsexdfx.ap-northeast-1.elasticbeanstalk.com"
-//        urlComponents.path = "/v1/areas"
         urlComponents.scheme = "https"
         urlComponents.host = "api.date-suggester.com"
         urlComponents.path = "/v1/areas"
@@ -122,8 +119,12 @@ class ListenLocationViewController: UIViewController, UIPickerViewDelegate, UIPi
     
     @IBAction func gotoSinplePlan(_ sender: Any) {
         let defaults = UserDefaults.standard
-        let responseBirthYear = defaults.string(forKey: "responseBirthYear")!
-        let responseUserArea = defaults.string(forKey: "responseUserArea")!
+        guard let responseBirthYear = defaults.string(forKey: "responseBirthYear") else{
+            return
+        }
+        guard let responseUserArea = defaults.string(forKey: "responseUserArea") else{
+            return
+        }
         
         let TempSignInParams = [
             "birth_year": responseBirthYear,
@@ -141,7 +142,6 @@ class ListenLocationViewController: UIViewController, UIPickerViewDelegate, UIPi
             DispatchQueue.main.async {
                 let storyboard = UIStoryboard(name: "SimplePlanViewController", bundle: nil)
                 let controller = storyboard.instantiateViewController(identifier: "DatePlanViewController")
-//                self.navigationController?.pushViewController(controller, animated: true)
                 controller.modalPresentationStyle = .fullScreen
                 self.present(controller, animated: true, completion: nil)
             }

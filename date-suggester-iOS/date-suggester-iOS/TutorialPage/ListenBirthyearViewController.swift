@@ -38,12 +38,6 @@ class ListenBirthyearViewController: UIViewController, UIPickerViewDelegate, UIP
         self.navigationController?.pushViewController(listenLocationViewController, animated: true)
     }
     
-    @IBAction func loginButton(_ sender: Any) {
-        let storyboard = UIStoryboard(name: "TutorialViewController", bundle: nil)
-        let loginViewController = storyboard.instantiateViewController(withIdentifier: "LoginViewController")
-        self.navigationController?.pushViewController(loginViewController, animated: true)
-    }
-    
     // UIPickerViewの列の数
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1

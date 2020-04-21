@@ -19,14 +19,13 @@ class DatePlanSuggestionViewControlller: UIViewController, UITableViewDelegate, 
     @IBOutlet weak var datePlanTitle: UILabel!
     @IBOutlet weak var datePlanDescription: UILabel!
     @IBOutlet weak var datePlanImage: UIImageView!
-    @IBOutlet weak var moneyIconTotal: UIImageView!
     @IBOutlet weak var totalBudget: UILabel!
-    @IBOutlet weak var mapIconWhite: UIImageView!
     @IBOutlet weak var datePlanArea: UILabel!
     @IBOutlet weak var datePlanSuggestTV: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         let thumbImage:UIImage = getImageByUrl(url:self.suggetsPlan!.thumb)
         
         datePlanSuggestTV.delegate = self
@@ -44,6 +43,8 @@ class DatePlanSuggestionViewControlller: UIViewController, UITableViewDelegate, 
         gotoMyPage.layer.borderWidth = 1.0
         gotoMyPage.layer.cornerRadius = 15
         
+        datePlanImage.layer.cornerRadius = 10
+        
         DispatchQueue.main.async {
             self.datePlanSuggestTV.reloadData()
             self.datePlanTitle.text = self.suggetsPlan?.title
@@ -59,7 +60,6 @@ class DatePlanSuggestionViewControlller: UIViewController, UITableViewDelegate, 
        UIApplication.shared.open(url)
         }
        }
-
 
     //カスタムセルの作成
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -101,14 +101,9 @@ class DatePlanSuggestionViewControlller: UIViewController, UITableViewDelegate, 
         }
         return myCell
     }
-
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.suggetsPlan?.spots?.count ?? 0
-    }
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return UITableView.automaticDimension
     }
     
     @IBAction func gotoMypage(_ sender: Any) {

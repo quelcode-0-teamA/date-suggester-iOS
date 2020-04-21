@@ -14,57 +14,10 @@ class FirstViewController: UIViewController {
     
     @IBOutlet weak var dateDecideButton: UIButton!
     @IBOutlet weak var svgImageView: UIImageView!
-
-    @IBOutlet weak var sumpleLabel: ActiveLabel!
-    let label = ActiveLabel()
-
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
-        let customType3 = ActiveType.custom(pattern: "\\ssupports\\b") //Looks for "supports"
-        label.enabledTypes.append(customType3)
-        label.urlMaximumLength = 31
-        
-        label.customize { label in
-            label.text = "Let's trim a long link: \nhttps://twitter.com/pocoochan"
-            label.numberOfLines = 0
-            label.lineSpacing = 4
-            
-            label.textColor = UIColor(red: 102.0/255, green: 117.0/255, blue: 127.0/255, alpha: 1)
-            label.URLColor = UIColor(red: 85.0/255, green: 238.0/255, blue: 151.0/255, alpha: 1)
-            label.URLSelectedColor = UIColor(red: 82.0/255, green: 190.0/255, blue: 41.0/255, alpha: 1)
 
-//            let url = URL(string:"https://twitter.com/pocoochan")
-            label.handleURLTap { self.sumpleURL(url: $0) }
-            label.handleURLTap { url in
-            debugPrint("\(url)")
-            }
-            
-            label.configureLinkAttribute = { (type, attributes, isSelected) in
-                var atts = attributes
-                switch type {
-                case customType3:
-                    atts[NSAttributedString.Key.font] = isSelected ? UIFont.boldSystemFont(ofSize: 16) : UIFont.boldSystemFont(ofSize: 14)
-                default: ()
-                }
-                return atts
-            }
-        }
-
-        label.frame = CGRect(x: 20, y: 40, width: view.frame.width - 40, height: 44)
-        view.addSubview(label)
-        
-//        let label = ActiveLabel()
-//        sumpleLabel.numberOfLines = 0
-//        sumpleLabel.enabledTypes = [.url]
-//        sumpleLabel.text = "This is a post"
-//        sumpleLabel.textColor = .red
-//        sumpleLabel.handleHashtagTap { hashtag in
-//            print("Success. You just tapped the \(hashtag) hashtag")
-//        }
-        
         let svgImage = SVGKImage(named: "mainImage")
         svgImage?.size = svgImageView.bounds.size
         svgImageView.image = svgImage?.uiImage
@@ -83,6 +36,11 @@ class FirstViewController: UIViewController {
         self.navigationController?.setNavigationBarHidden(true, animated: false)
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+         super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: false)
+    }
+    
     func sumpleURL(url: URL) {
         if( UIApplication.shared.canOpenURL(url) ) {
           UIApplication.shared.open(url)
@@ -94,15 +52,7 @@ class FirstViewController: UIViewController {
         vc.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: nil))
         present(vc, animated: true, completion: nil)
     }
-    
-    @IBAction func safari(_ sender: Any) {
-        print("🍒")
-        let url = URL(string:"https://github.com/pocoochan")
-        if( UIApplication.shared.canOpenURL(url!) ) {
-            UIApplication.shared.open(url!)
-        }
-    }
-    
+
     @IBAction func dateDecideButton(_ sender: Any) {
         if UserDefaults.standard.string(forKey: "responseToken") != nil{
             let storyboard = UIStoryboard(name: "SimplePlanViewController", bundle: nil)
@@ -114,6 +64,12 @@ class FirstViewController: UIViewController {
             let listenBirthyearViewController = storyboard.instantiateViewController(withIdentifier: "ListenBirthyearViewController")
             self.navigationController?.pushViewController(listenBirthyearViewController, animated: true)
         }
+    }
+    
+    @IBAction func loginButton(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "TutorialViewController", bundle: nil)
+        let loginViewController = storyboard.instantiateViewController(withIdentifier: "LoginViewController")
+        self.navigationController?.pushViewController(loginViewController, animated: true)
     }
 }
 
