@@ -115,7 +115,7 @@ class Api {
         task.resume()
     }
     
-    func tempLogin(parameter:[String : Any], completion:((String?, Int?, Error?)->Void)?=nil){
+    func tempSignUp(parameter:[String : Any], completion:((String?, Int?, Error?)->Void)?=nil){
         let endpoint = "/v1/temp_user/sign_up"
         
         let url = URL(string: host + endpoint)!
