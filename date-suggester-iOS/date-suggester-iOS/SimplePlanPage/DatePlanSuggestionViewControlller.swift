@@ -43,8 +43,6 @@ class DatePlanSuggestionViewControlller: UIViewController, UITableViewDelegate, 
         gotoMyPage.layer.borderWidth = 1.0
         gotoMyPage.layer.cornerRadius = 15
         
-        datePlanImage.layer.cornerRadius = 10
-        
         DispatchQueue.main.async {
             self.datePlanSuggestTV.reloadData()
             self.datePlanTitle.text = self.suggetsPlan?.title
@@ -54,12 +52,6 @@ class DatePlanSuggestionViewControlller: UIViewController, UITableViewDelegate, 
             self.datePlanImage.image = thumbImage
         }
     }
-    
-    func sumpleURL(url: URL) {
-       if( UIApplication.shared.canOpenURL(url) ) {
-       UIApplication.shared.open(url)
-        }
-       }
 
     //カスタムセルの作成
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

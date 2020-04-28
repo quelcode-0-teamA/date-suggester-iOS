@@ -30,6 +30,9 @@ class ListenBirthyearViewController: UIViewController, UIPickerViewDelegate, UIP
         navigationItem.title = "Date Suggester"
         navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white]
         navigationItem.backBarButtonItem = UIBarButtonItem(title:  "", style:  .plain, target: nil, action: nil)
+        
+        let defaults = UserDefaults.standard
+        defaults.set(1995, forKey: "responseBirthYear")
     }
 
     @IBAction func nextPage(_ sender: Any) {

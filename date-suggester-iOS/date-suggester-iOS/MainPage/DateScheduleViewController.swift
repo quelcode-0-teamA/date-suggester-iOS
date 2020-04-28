@@ -7,7 +7,10 @@
 //
 
 import UIKit
+import ActiveLabel
+
 class DateScheduleViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    
     var my_plan_id: Any?
     var myPlan: MyPlan?
     var trashBarButtonItem: UIBarButtonItem!
@@ -20,7 +23,6 @@ class DateScheduleViewController: UIViewController, UITableViewDelegate, UITable
         dateScheduleTV.delegate = self
         dateScheduleTV.dataSource = self
         dateScheduleTV.rowHeight = 162
-
         navigationController?.navigationBar.titleTextAttributes = [
             .foregroundColor: UIColor.white
         ]
@@ -122,7 +124,15 @@ class DateScheduleViewController: UIViewController, UITableViewDelegate, UITable
             myCell.moneyIcon?.image = UIImage(named: "moneyIcon")!
             myCell.budget?.text = self.myPlan?.plan.spots?[indexPath.row].budget
             myCell.linkIcon?.image = UIImage(named: "linkIcon")
-            myCell.URL?.text = "URL//image/path/.."
+            myCell.urlLabel.customize { label in
+                label.text = self.myPlan?.plan.spots?[indexPath.row].url as? String
+                label.textColor = .blue
+                label.handleURLTap{ url in
+                    UIApplication.shared.open(url, options: [:], completionHandler: nil)
+                }
+            }
+            
+//            myCell.URL?.text = "URL//image/path/.."
             return myCell
         }
         
@@ -132,7 +142,13 @@ class DateScheduleViewController: UIViewController, UITableViewDelegate, UITable
         myCell.moneyIcon?.image = UIImage(named: "moneyIcon")!
         myCell.budget?.text = self.myPlan?.plan.spots?[indexPath.row].budget
         myCell.linkIcon?.image = UIImage(named: "linkIcon")
-        myCell.URL?.text = "URL//image/path/.."
+        myCell.urlLabel.customize { label in
+            label.text = self.myPlan?.plan.spots?[indexPath.row].url as? String
+            label.textColor = .blue
+            label.handleURLTap{ url in
+                UIApplication.shared.open(url, options: [:], completionHandler: nil)
+            }
+        }
         return myCell
     }
     
@@ -141,9 +157,11 @@ class DateScheduleViewController: UIViewController, UITableViewDelegate, UITable
     }
     
     func getImageByUrl(url: String) -> UIImage{
-        let url = URL(string: url)
+        guard let url = URL(string: url) else {
+        return UIImage()
+        }
         do {
-            let data = try Data(contentsOf: url!)
+            let data = try Data(contentsOf: url)
             return UIImage(data: data)!
         } catch let err {
             print("Error : \(err.localizedDescription)")
@@ -158,5 +176,5 @@ class DateScheduleCustomCell: UITableViewCell {
     @IBOutlet weak var moneyIcon: UIImageView!
     @IBOutlet weak var budget: UILabel!
     @IBOutlet weak var linkIcon: UIImageView!
-    @IBOutlet weak var URL: UILabel!
+    @IBOutlet weak var urlLabel: ActiveLabel!
 }

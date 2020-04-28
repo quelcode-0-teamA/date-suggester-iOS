@@ -9,10 +9,12 @@
 import UIKit
 class ListenLocationViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     
+    var userArea: UserArea?
+    
     var activityIndicatorView = UIActivityIndicatorView()
+    var userAreas = [UserArea]()
     var values = [String]()
     var areaId = [Int]()
-    var response: [[String: Any]]?
     
     @IBOutlet weak var areaPickerView: UIPickerView!
     @IBOutlet weak var nextButton: UIButton!
@@ -43,6 +45,9 @@ class ListenLocationViewController: UIViewController, UIPickerViewDelegate, UIPi
             .foregroundColor: UIColor.white
         ]
         
+        let defaults = UserDefaults.standard
+        defaults.set(13, forKey: "responseUserArea")
+        
     }
     
     func areasList(){
@@ -66,29 +71,13 @@ class ListenLocationViewController: UIViewController, UIPickerViewDelegate, UIPi
                 let response: [[String: Any]] = try JSONSerialization.jsonObject(with: data!, options: []) as! [[String: Any]]
                 
                 debugPrint(response)
-                self.response = response
-                var responseArea = self.response?[0]["id"] as? Int
-                debugPrint("🍒\(responseArea)")
-                self.values.removeAll()
-                for value in response {
-                    if let name = value["name"] as? String {
-                        self.values.append(name)
-                       debugPrint(name)
-                    }
+
+                self.userAreas.removeAll()
+                for responseArea in response {
+                    let userArea = UserArea.init(areaData: responseArea)
+                    self.userAreas.append(userArea)
                 }
-                
-                //デバッグ用
-                self.areaId.removeAll()
-                for areaid in response {
-                    if let id = areaid["id"] as? Int{
-                        self.areaId.append(id)
-                        debugPrint(id)
-                    }
-                }
-                
-                debugPrint(self.values)
-                debugPrint(self.areaId)
-                
+               
                 DispatchQueue.main.async {
                     self.areaPickerView.reloadAllComponents()
                     // 非同期処理などが終了したらメインスレッドでアニメーション終了
@@ -108,14 +97,16 @@ class ListenLocationViewController: UIViewController, UIPickerViewDelegate, UIPi
     // UIPickerViewの行数、要素の全数
     func pickerView(_ pickerView: UIPickerView,
                     numberOfRowsInComponent component: Int) -> Int {
-        return values.count
+        return userAreas.count
     }
     
     // UIPickerViewに表示する配列
+    //せるが順番に呼ばれるたびにでりげーとメソッドが呼ばれる。そのたびにrow
     func pickerView(_ pickerView: UIPickerView,
                     titleForRow row: Int,
                     forComponent component: Int) -> String? {
-        return String(values[row])
+        debugPrint(row)
+        return userAreas[row].name
     }
     
     // UIPickerViewのRowが選択された時の挙動
@@ -125,11 +116,14 @@ class ListenLocationViewController: UIViewController, UIPickerViewDelegate, UIPi
         //コンポーネントごとに現在選択されているデータを取得する。
         let data1 = self.pickerView(pickerView, titleForRow: pickerView.selectedRow(inComponent: 0), forComponent: 0)
         debugPrint("\(String(describing: data1))えらばれたよ")
-        debugPrint("key: \(row)")
         debugPrint("row: \(row)")
+        
+        let selectAreaId = userAreas[row].id
+        debugPrint(selectAreaId)
+        
         //選択されたエリアをユーザーデフォルトに保存
         let defaults = UserDefaults.standard
-        defaults.set(row, forKey: "responseUserArea")
+        defaults.set(selectAreaId, forKey: "responseUserArea")
     }
     
     @IBAction func gotoSinplePlan(_ sender: Any) {
@@ -139,6 +133,8 @@ class ListenLocationViewController: UIViewController, UIPickerViewDelegate, UIPi
             else{
                 return
         }
+        debugPrint(responseUserArea)
+        debugPrint(responseBirthYear)
         
         let TempSignInParams = [
             "birth_year": responseBirthYear,
