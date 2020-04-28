@@ -24,6 +24,7 @@
 		7215FF14240D600400AB3BBB /* SignUpCustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7215FF13240D600400AB3BBB /* SignUpCustomTextField.swift */; };
 		721D100123F509DD006DA520 /* MypageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 721D100023F509DD006DA520 /* MypageViewController.swift */; };
 		721D100323F50E6A006DA520 /* UIColorHex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 721D100223F50E6A006DA520 /* UIColorHex.swift */; };
+		724C39CF2452C5500028652A /* UserArea.swift in Sources */ = {isa = PBXBuildFile; fileRef = 724C39CE2452C5500028652A /* UserArea.swift */; };
 		72513F5C23EBCFA9007B1499 /* DateFeelingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72513F5B23EBCFA9007B1499 /* DateFeelingViewController.swift */; };
 		725E5B74243C0D4B006CC332 /* MyProfileEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 725E5B73243C0D4B006CC332 /* MyProfileEditViewController.swift */; };
 		725F851A244D9E5000E08ADE /* CustomPlofielTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 725F8519244D9E5000E08ADE /* CustomPlofielTextField.swift */; };
@@ -100,6 +101,7 @@
 		7215FF13240D600400AB3BBB /* SignUpCustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpCustomTextField.swift; sourceTree = "<group>"; };
 		721D100023F509DD006DA520 /* MypageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MypageViewController.swift; sourceTree = "<group>"; };
 		721D100223F50E6A006DA520 /* UIColorHex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorHex.swift; sourceTree = "<group>"; };
+		724C39CE2452C5500028652A /* UserArea.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserArea.swift; sourceTree = "<group>"; };
 		72513F5B23EBCFA9007B1499 /* DateFeelingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFeelingViewController.swift; sourceTree = "<group>"; };
 		725E5B73243C0D4B006CC332 /* MyProfileEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileEditViewController.swift; sourceTree = "<group>"; };
 		725F8519244D9E5000E08ADE /* CustomPlofielTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPlofielTextField.swift; sourceTree = "<group>"; };
@@ -253,6 +255,7 @@
 				7281E609241F4F5100886634 /* MyPlan.swift */,
 				7281E60B241F4FB200886634 /* Plan.swift */,
 				7281E60D241F502900886634 /* Spot.swift */,
+				724C39CE2452C5500028652A /* UserArea.swift */,
 			);
 			path = common;
 			sourceTree = "<group>";
@@ -605,6 +608,7 @@
 				7276AEF823EBCE4A008864D7 /* DateTimeViewController.swift in Sources */,
 				72BED50C23EC073600A254BC /* ListenBirthyearViewController.swift in Sources */,
 				7276AEF423EBC1CD008864D7 /* AppNavigationController.swift in Sources */,
+				724C39CF2452C5500028652A /* UserArea.swift in Sources */,
 				7276AEF623EBCADE008864D7 /* DateBudgetViewController.swift in Sources */,
 				72BED50823EC062E00A254BC /* SignUpViewController.swift in Sources */,
 				72A4E18A23F7E3AB00B7607C /* api.swift in Sources */,

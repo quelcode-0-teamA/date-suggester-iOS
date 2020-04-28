@@ -9,9 +9,12 @@
 import UIKit
 class ListenLocationViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     
+    var userArea: UserArea?
+    
     var activityIndicatorView = UIActivityIndicatorView()
+    var userAreas = [UserArea]()
     var values = [String]()
-    var response: [[String: Any]]?
+    var areaId = [Int]()
     
     @IBOutlet weak var areaPickerView: UIPickerView!
     @IBOutlet weak var nextButton: UIButton!
@@ -42,6 +45,9 @@ class ListenLocationViewController: UIViewController, UIPickerViewDelegate, UIPi
             .foregroundColor: UIColor.white
         ]
         
+        let defaults = UserDefaults.standard
+        defaults.set(13, forKey: "responseUserArea")
+        
     }
     
     func areasList(){
@@ -64,17 +70,14 @@ class ListenLocationViewController: UIViewController, UIPickerViewDelegate, UIPi
             do {
                 let response: [[String: Any]] = try JSONSerialization.jsonObject(with: data!, options: []) as! [[String: Any]]
                 
-                print(response)
-                self.response = response
-                self.values.removeAll()
-                for value in response {
-                    if let name = value["name"] as? String {
-                        self.values.append(name)
-                        print(name)
-                    }
+                debugPrint(response)
+
+                self.userAreas.removeAll()
+                for responseArea in response {
+                    let userArea = UserArea.init(areaData: responseArea)
+                    self.userAreas.append(userArea)
                 }
-                print(self.values)
-                
+               
                 DispatchQueue.main.async {
                     self.areaPickerView.reloadAllComponents()
                     // 非同期処理などが終了したらメインスレッドでアニメーション終了
@@ -94,14 +97,16 @@ class ListenLocationViewController: UIViewController, UIPickerViewDelegate, UIPi
     // UIPickerViewの行数、要素の全数
     func pickerView(_ pickerView: UIPickerView,
                     numberOfRowsInComponent component: Int) -> Int {
-        return values.count
+        return userAreas.count
     }
     
     // UIPickerViewに表示する配列
+    //せるが順番に呼ばれるたびにでりげーとメソッドが呼ばれる。そのたびにrow
     func pickerView(_ pickerView: UIPickerView,
                     titleForRow row: Int,
                     forComponent component: Int) -> String? {
-        return String(values[row])
+        debugPrint(row)
+        return userAreas[row].name
     }
     
     // UIPickerViewのRowが選択された時の挙動
@@ -110,21 +115,26 @@ class ListenLocationViewController: UIViewController, UIPickerViewDelegate, UIPi
                     inComponent component: Int) {
         //コンポーネントごとに現在選択されているデータを取得する。
         let data1 = self.pickerView(pickerView, titleForRow: pickerView.selectedRow(inComponent: 0), forComponent: 0)
-        print("\(String(describing: data1))えらばれたよ")
-        print("row: \(row)")
+        debugPrint("\(String(describing: data1))えらばれたよ")
+        debugPrint("row: \(row)")
+        
+        let selectAreaId = userAreas[row].id
+        debugPrint(selectAreaId)
+        
         //選択されたエリアをユーザーデフォルトに保存
         let defaults = UserDefaults.standard
-        defaults.set(row, forKey: "responseUserArea")
+        defaults.set(selectAreaId, forKey: "responseUserArea")
     }
     
     @IBAction func gotoSinplePlan(_ sender: Any) {
         let defaults = UserDefaults.standard
-        guard let responseBirthYear = defaults.string(forKey: "responseBirthYear") else{
-            return
+        guard let responseBirthYear = defaults.string(forKey: "responseBirthYear"),
+            let responseUserArea = defaults.string(forKey: "responseUserArea")
+            else{
+                return
         }
-        guard let responseUserArea = defaults.string(forKey: "responseUserArea") else{
-            return
-        }
+        debugPrint(responseUserArea)
+        debugPrint(responseBirthYear)
         
         let TempSignInParams = [
             "birth_year": responseBirthYear,
@@ -133,10 +143,11 @@ class ListenLocationViewController: UIViewController, UIPickerViewDelegate, UIPi
         
         let parameter = ["temp_user": TempSignInParams]
         
-        Api().tempLogin(parameter: parameter, completion: {(token, id, error) in
+        Api().tempSignUp(parameter: parameter, completion: {(token, id, error) in
             
             if error != nil {
                 debugPrint("エラーがおこったよ")
+                debugPrint(error)
                 return
             }
             DispatchQueue.main.async {
