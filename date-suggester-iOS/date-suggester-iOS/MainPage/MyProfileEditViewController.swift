@@ -23,10 +23,7 @@ class MyProfileEditViewController: UIViewController {
         profileEditButton.layer.cornerRadius = 20
         cancelButton.layer.masksToBounds = true
         cancelButton.layer.cornerRadius = 20
-        
-        
-//        userName.placeholder = "名もなき恋の達人"
-//        defaults.string(forKey: "responseUserName")
+    
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -102,7 +99,6 @@ class MyProfileEditViewController: UIViewController {
                  defaults.set(nameValue, forKey: "responseUserName")
                 
                 DispatchQueue.main.async {
-//                    self.dismiss(animated: true, completion: nil)
                     self.navigationController?.popViewController(animated: true)
                     print("プロフィール変更完了")
                 }
@@ -123,7 +119,6 @@ class MyProfileEditViewController: UIViewController {
         let defaults = UserDefaults.standard
         let user_id = defaults.string(forKey: "userId")!
         
-        //        let myplan_id = 66
         print(user_id)
         let url = URL(string: "https://api.date-suggester.com/v1/users/\(user_id)")!
         print(url)

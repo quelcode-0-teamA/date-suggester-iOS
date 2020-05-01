@@ -75,8 +75,7 @@ class DateScheduleViewController: UIViewController, UITableViewDelegate, UITable
                     
                     self.my_plan_id = self.myPlan?.id
                     
-                    let url = URL(string: "https://api-date-suggester-dev.herokuapp.com/v1/my_plans/\(self.my_plan_id!)")!
-                    
+                    let url = URL(string: "https://api.date-suggester.com/v1/my_plans/\(self.my_plan_id!)")!
                     var req: URLRequest = URLRequest(url: url)
                     req.httpMethod = "DELETE"
                     
@@ -116,34 +115,33 @@ class DateScheduleViewController: UIViewController, UITableViewDelegate, UITable
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cellIdentifier: String = "DateScheduleCustomCell"
-        let detailSpotsThumbImage:UIImage = getImageByUrl(url:self.myPlan!.plan.spots![indexPath.row].thumb)
+        let detailSpotsThumbImage:UIImage = getImageByUrl(url:(self.myPlan!.plan?.spots![indexPath.row].thumb)!)
         
         if let myCell: DateScheduleCustomCell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier) as? DateScheduleCustomCell {
             myCell.thumbnail?.image = detailSpotsThumbImage
-            myCell.location?.text = self.myPlan?.plan.spots?[indexPath.row].name
+            myCell.location?.text = self.myPlan?.plan?.spots?[indexPath.row].name
             myCell.moneyIcon?.image = UIImage(named: "moneyIcon")!
-            myCell.budget?.text = self.myPlan?.plan.spots?[indexPath.row].budget
+            myCell.budget?.text = self.myPlan?.plan?.spots?[indexPath.row].budget
             myCell.linkIcon?.image = UIImage(named: "linkIcon")
             myCell.urlLabel.customize { label in
-                label.text = self.myPlan?.plan.spots?[indexPath.row].url as? String
+                label.text = self.myPlan?.plan?.spots?[indexPath.row].url as? String
                 label.textColor = .blue
                 label.handleURLTap{ url in
                     UIApplication.shared.open(url, options: [:], completionHandler: nil)
                 }
             }
             
-//            myCell.URL?.text = "URL//image/path/.."
             return myCell
         }
         
         let myCell = DateScheduleCustomCell(style: .default, reuseIdentifier: "DateScheduleCustomCell")
         myCell.thumbnail?.image = detailSpotsThumbImage
-        myCell.location?.text = self.myPlan?.plan.spots?[indexPath.row].name
+        myCell.location?.text = self.myPlan?.plan?.spots?[indexPath.row].name
         myCell.moneyIcon?.image = UIImage(named: "moneyIcon")!
-        myCell.budget?.text = self.myPlan?.plan.spots?[indexPath.row].budget
+        myCell.budget?.text = self.myPlan?.plan?.spots?[indexPath.row].budget
         myCell.linkIcon?.image = UIImage(named: "linkIcon")
         myCell.urlLabel.customize { label in
-            label.text = self.myPlan?.plan.spots?[indexPath.row].url as? String
+            label.text = self.myPlan?.plan?.spots?[indexPath.row].url as? String
             label.textColor = .blue
             label.handleURLTap{ url in
                 UIApplication.shared.open(url, options: [:], completionHandler: nil)
@@ -153,7 +151,7 @@ class DateScheduleViewController: UIViewController, UITableViewDelegate, UITable
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.myPlan?.plan.spots?.count ?? 0
+        return self.myPlan?.plan?.spots?.count ?? 0
     }
     
     func getImageByUrl(url: String) -> UIImage{
