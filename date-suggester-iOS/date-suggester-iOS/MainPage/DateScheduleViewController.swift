@@ -20,6 +20,12 @@ class DateScheduleViewController: UIViewController, UITableViewDelegate, UITable
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setupView()
+        selectedDatePlan_Get()
+
+    }
+    
+    private func setupView() {
         dateScheduleTV.delegate = self
         dateScheduleTV.dataSource = self
         dateScheduleTV.rowHeight = 162
@@ -29,9 +35,12 @@ class DateScheduleViewController: UIViewController, UITableViewDelegate, UITable
         navigationController?.navigationBar.tintColor = UIColor.white
         trashBarButtonItem = UIBarButtonItem(barButtonSystemItem: .trash, target: self, action: #selector(trashBarButtonTapped(_:)))
         navigationItem.rightBarButtonItems = [trashBarButtonItem]
+    }
+    
+    private func selectedDatePlan_Get() {
         
         /*
-         選択したデートリスト取得API
+         ユーザーが選択したデートリスト取得API
          */
         let config: URLSessionConfiguration = URLSessionConfiguration.default
         let session: URLSession = URLSession(configuration: config)
@@ -59,6 +68,7 @@ class DateScheduleViewController: UIViewController, UITableViewDelegate, UITable
             }
         }
         task.resume()
+        
     }
     
     @objc func trashBarButtonTapped(_ sender: UIBarButtonItem) {
@@ -134,7 +144,7 @@ class DateScheduleViewController: UIViewController, UITableViewDelegate, UITable
             return myCell
         }
         
-        let myCell = DateScheduleCustomCell(style: .default, reuseIdentifier: "DateScheduleCustomCell")
+        let myCell = DateScheduleCustomCell(style: .default, reuseIdentifier: cellIdentifier)
         myCell.thumbnail?.image = detailSpotsThumbImage
         myCell.location?.text = self.myPlan?.plan?.spots?[indexPath.row].name
         myCell.moneyIcon?.image = UIImage(named: "moneyIcon")!

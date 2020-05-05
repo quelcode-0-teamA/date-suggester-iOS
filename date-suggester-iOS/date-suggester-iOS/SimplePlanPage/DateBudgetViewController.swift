@@ -22,6 +22,11 @@ class DateBudgetViewController: UIViewController {
         super.viewDidLoad()
         print("前の画面から\(youserAnswer.answer1)という値が渡されました")
         
+        setupView()
+        
+    }
+    
+    private func setupView() {
         savingButton.layer.cornerRadius = 5
         normalButton.layer.cornerRadius = 5
         richButton.layer.cornerRadius = 5

@@ -17,6 +17,12 @@ class DateplanListViewController: UIViewController,UICollectionViewDataSource, U
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        setupView()
+        datePlanList_Get()
+
+    }
+    
+    private func setupView() {
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.register(UINib(nibName: "DatePlanListCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "DatePlanListCollectionViewCell")
@@ -33,7 +39,9 @@ class DateplanListViewController: UIViewController,UICollectionViewDataSource, U
         )
         
         collectionView.reloadData()
-        
+    }
+    
+    private func datePlanList_Get() {
         /*
          デートリスト取得API
          */

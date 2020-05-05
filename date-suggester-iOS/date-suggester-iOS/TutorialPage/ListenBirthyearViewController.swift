@@ -17,7 +17,10 @@ class ListenBirthyearViewController: UIViewController, UIPickerViewDelegate, UIP
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // ピッカー設定
+           setupView()
+    }
+    
+    private func setupView() {
         yearPickerView.delegate = self
         yearPickerView.dataSource = self
         
@@ -62,7 +65,6 @@ class ListenBirthyearViewController: UIViewController, UIPickerViewDelegate, UIP
     func pickerView(_ pickerView: UIPickerView,
                     didSelectRow row: Int,
                     inComponent component: Int) {
-        // 処理
         let data1 = self.pickerView(pickerView, titleForRow: pickerView.selectedRow(inComponent: 0), forComponent: 0)
         debugPrint("\(data1)えらばれたよ")
         debugPrint("row: \(row)")

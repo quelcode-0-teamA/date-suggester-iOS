@@ -21,6 +21,11 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+    
+        setupView()
+    }
+    
+    private func setupView() {
         myEmail.delegate = self
         myPassword.delegate = self
         myPasswordConfirmation.delegate = self
@@ -36,7 +41,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
         signUpButton.isEnabled = false
         signUpButton.layer.masksToBounds = true
         signUpButton.layer.cornerRadius = 24
-         
+        
         myPassword.isSecureTextEntry = true
         myPasswordConfirmation.isSecureTextEntry = true
         

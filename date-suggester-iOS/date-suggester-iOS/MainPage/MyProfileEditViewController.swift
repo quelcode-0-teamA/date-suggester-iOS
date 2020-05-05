@@ -17,13 +17,18 @@ class MyProfileEditViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        setupView()
 
+    
+    }
+    
+    private func setupView() {
         userIcon.layer.cornerRadius = 70
         profileEditButton.layer.masksToBounds = true
         profileEditButton.layer.cornerRadius = 20
         cancelButton.layer.masksToBounds = true
         cancelButton.layer.cornerRadius = 20
-    
     }
     
     override func viewWillAppear(_ animated: Bool) {

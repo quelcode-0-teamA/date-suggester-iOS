@@ -19,6 +19,11 @@ class DateLocationViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setupView()
+
+    }
+    
+    private func setupView() {
         far.layer.cornerRadius = 10
         near.layer.cornerRadius = 10
         

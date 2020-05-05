@@ -17,6 +17,12 @@ class MypageViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        setupView()
+
+    }
+    
+    private func setupView() {
         userIcon.layer.cornerRadius = 70
         
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(named: "NavBarBG"), for: .default)

@@ -20,6 +20,11 @@ class DateTimeViewController: UIViewController {
         super.viewDidLoad()
         print("前の画面から\(youserAnswer.answer1)と\(youserAnswer.answer2)という値が渡されました")
         
+        setupView()
+
+    }
+    
+    private func setupView() {
         allDayButton.layer.cornerRadius = 5
         lunchButton.layer.cornerRadius = 5
         nightButton.layer.cornerRadius = 5

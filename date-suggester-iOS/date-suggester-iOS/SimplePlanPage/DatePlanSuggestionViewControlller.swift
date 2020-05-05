@@ -25,10 +25,22 @@ class DatePlanSuggestionViewControlller: UIViewController, UITableViewDelegate, 
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("👿\(suggetsPlan)")
+        
+        setupView()
         
         let thumbImage:UIImage = getImageByUrl(url:self.suggetsPlan!.thumb)
         
+        DispatchQueue.main.async {
+            self.datePlanSuggestTV.reloadData()
+            self.datePlanTitle.text = self.suggetsPlan?.title
+            self.datePlanDescription.text = self.suggetsPlan?.des
+            self.totalBudget.text = self.suggetsPlan?.totalBudget
+            self.datePlanArea.text = self.suggetsPlan?.area
+            self.datePlanImage.image = thumbImage
+        }
+    }
+    
+    private func setupView() {
         datePlanSuggestTV.delegate = self
         datePlanSuggestTV.dataSource = self
         
@@ -44,14 +56,6 @@ class DatePlanSuggestionViewControlller: UIViewController, UITableViewDelegate, 
         gotoMyPage.layer.borderWidth = 1.0
         gotoMyPage.layer.cornerRadius = 15
         
-        DispatchQueue.main.async {
-            self.datePlanSuggestTV.reloadData()
-            self.datePlanTitle.text = self.suggetsPlan?.title
-            self.datePlanDescription.text = self.suggetsPlan?.des
-            self.totalBudget.text = self.suggetsPlan?.totalBudget
-            self.datePlanArea.text = self.suggetsPlan?.area
-            self.datePlanImage.image = thumbImage
-        }
     }
 
     //カスタムセルの作成
@@ -77,7 +81,7 @@ class DatePlanSuggestionViewControlller: UIViewController, UITableViewDelegate, 
             return myCell
         }
         
-        let myCell = DateListCustomCell(style: .default, reuseIdentifier: "DateListCustomCell")
+        let myCell = DateListCustomCell(style: .default, reuseIdentifier: cellIdentifier)
         myCell.thumbnail?.image = spotsThumbImage
         myCell.location?.text = self.suggetsPlan?.spots?[indexPath.row].name
         myCell.moneyIcon?.image = UIImage(named: "moneyIcon")!

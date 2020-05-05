@@ -18,7 +18,12 @@ class DateFeelingViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        setupView()
 
+    }
+    
+    private func setupView() {
         navigationItem.backBarButtonItem = UIBarButtonItem(
             title:  "戻る",
             style:  .plain,
@@ -37,7 +42,6 @@ class DateFeelingViewController: UIViewController {
         activityIndicatorView.color = .darkGray
         view.addSubview(activityIndicatorView)
     }
-    
     
     @IBAction func unusualButtonTap(_ sender: Any) {
         gotoDatePlanSuggestionVC(selectAnserNumber:0)

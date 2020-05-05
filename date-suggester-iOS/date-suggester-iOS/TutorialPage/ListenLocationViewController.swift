@@ -22,16 +22,20 @@ class ListenLocationViewController: UIViewController, UIPickerViewDelegate, UIPi
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setupView()
+        
+    }
+    
+    private func setupView() {
         activityIndicatorView.center = view.center
         activityIndicatorView.style = .whiteLarge
         activityIndicatorView.color = .gray
-
+        
         view.addSubview(activityIndicatorView)
         activityIndicatorView.startAnimating()
         
         areasList()
-                
-        // ピッカー設定
+        
         areaPickerView.delegate = self
         areaPickerView.dataSource = self
         areaPickerView.selectRow(30, inComponent: 0, animated: false)
@@ -47,7 +51,6 @@ class ListenLocationViewController: UIViewController, UIPickerViewDelegate, UIPi
         
         let defaults = UserDefaults.standard
         defaults.set(13, forKey: "responseUserArea")
-        
     }
     
     func areasList(){
