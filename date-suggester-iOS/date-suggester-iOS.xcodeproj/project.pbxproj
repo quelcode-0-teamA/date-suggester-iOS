@@ -24,6 +24,7 @@
 		7215FF14240D600400AB3BBB /* SignUpCustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7215FF13240D600400AB3BBB /* SignUpCustomTextField.swift */; };
 		721D100123F509DD006DA520 /* MypageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 721D100023F509DD006DA520 /* MypageViewController.swift */; };
 		721D100323F50E6A006DA520 /* UIColorHex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 721D100223F50E6A006DA520 /* UIColorHex.swift */; };
+		7229FA6524617ABA00D9FD2B /* UserDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7229FA6424617ABA00D9FD2B /* UserDefault.swift */; };
 		724C39CF2452C5500028652A /* UserArea.swift in Sources */ = {isa = PBXBuildFile; fileRef = 724C39CE2452C5500028652A /* UserArea.swift */; };
 		72513F5C23EBCFA9007B1499 /* DateFeelingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72513F5B23EBCFA9007B1499 /* DateFeelingViewController.swift */; };
 		725E5B74243C0D4B006CC332 /* MyProfileEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 725E5B73243C0D4B006CC332 /* MyProfileEditViewController.swift */; };
@@ -101,6 +102,7 @@
 		7215FF13240D600400AB3BBB /* SignUpCustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpCustomTextField.swift; sourceTree = "<group>"; };
 		721D100023F509DD006DA520 /* MypageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MypageViewController.swift; sourceTree = "<group>"; };
 		721D100223F50E6A006DA520 /* UIColorHex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorHex.swift; sourceTree = "<group>"; };
+		7229FA6424617ABA00D9FD2B /* UserDefault.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefault.swift; sourceTree = "<group>"; };
 		724C39CE2452C5500028652A /* UserArea.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserArea.swift; sourceTree = "<group>"; };
 		72513F5B23EBCFA9007B1499 /* DateFeelingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFeelingViewController.swift; sourceTree = "<group>"; };
 		725E5B73243C0D4B006CC332 /* MyProfileEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileEditViewController.swift; sourceTree = "<group>"; };
@@ -256,6 +258,7 @@
 				7281E60B241F4FB200886634 /* Plan.swift */,
 				7281E60D241F502900886634 /* Spot.swift */,
 				724C39CE2452C5500028652A /* UserArea.swift */,
+				7229FA6424617ABA00D9FD2B /* UserDefault.swift */,
 			);
 			path = common;
 			sourceTree = "<group>";
@@ -597,6 +600,7 @@
 				725E5B74243C0D4B006CC332 /* MyProfileEditViewController.swift in Sources */,
 				72513F5C23EBCFA9007B1499 /* DateFeelingViewController.swift in Sources */,
 				7276AEF023EAD63C008864D7 /* DatePlanDecideViewController.swift in Sources */,
+				7229FA6524617ABA00D9FD2B /* UserDefault.swift in Sources */,
 				720D07FC23E984AE00569622 /* ViewController.swift in Sources */,
 				727C4A5B240362300058AE58 /* AnswerModel.swift in Sources */,
 				7276AEE523EAACC0008864D7 /* DatePlanSuggestionViewControlller.swift in Sources */,
