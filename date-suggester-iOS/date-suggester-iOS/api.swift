@@ -14,6 +14,7 @@ class Api {
     private let host = "https://api.date-suggester.com"
     private let config: URLSessionConfiguration = URLSessionConfiguration.default
     private lazy var session: URLSession = URLSession(configuration: config)
+    private let myToken = UserDefaults.standard.getResponseToken()
     
     private func createRequest(url:URL, method:String, parameter: [String: Any], token:String ) -> URLRequest {
         //URLRequestの生成
@@ -30,9 +31,6 @@ class Api {
     
     func fomalSignUp(parameter:[String : Any], completion:((Any?, Error?)->Void)?=nil){
         let endpoint = "/v1/formal_user/sign_up"
-        
-        let defaults = UserDefaults.standard
-        let myToken = defaults.string(forKey: "responseToken")!
 
         let url = URL(string: host + endpoint)!
         
@@ -146,9 +144,8 @@ class Api {
                 }
                 
                 debugPrint("userId:\(userId)")
-                let defaults = UserDefaults.standard
-                defaults.set(tokenValue, forKey: "responseToken")
-                defaults.set(userId, forKey: "userId")
+                UserDefaults.standard.setResponseToken(token: tokenValue)
+                UserDefaults.standard.setUserId(id: userId)
                 
                 debugPrint("仮ログインのレスポンス:\(response)")
                 completion?(tokenValue, userId, nil)
@@ -163,11 +160,6 @@ class Api {
     func datePlanFix(parameter:[String : Any], completion:((Any?, Error?)->Void)?=nil){
         let endpoint = "/v1/my_plans"
         
-        let defaults = UserDefaults.standard
-        let myToken = defaults.string(forKey: "responseToken")!
-        
-        debugPrint(myToken)
-
         let url = URL(string: host + endpoint)!
         
         let req = createRequest(url: url, method: postMethod, parameter: parameter, token: myToken)
@@ -194,9 +186,7 @@ class Api {
     
     func area(parameter:[String : Any], completion:((String?, Error?)->Void)?=nil){
         let endpoint = "/v1/areas"
-        
-        let defaults = UserDefaults.standard
-        let myToken = defaults.string(forKey: "responseToken")!
+
         //URLオブジェクトの生成
         let url = URL(string: host + endpoint)!
         
@@ -232,9 +222,6 @@ class Api {
     
     func plansSuggest(parameter:[String : Any], completion:((Any?, Error?)->Void)?=nil){
         let endpoint = "/v1/plans/suggest"
-        
-        let defaults = UserDefaults.standard
-        let myToken = defaults.string(forKey: "responseToken")!
 
         let url = URL(string: host + endpoint)!
         

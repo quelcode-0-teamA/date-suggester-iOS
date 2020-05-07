@@ -75,9 +75,9 @@ class DateFeelingViewController: UIViewController {
         let url: URL = urlComponents.url!
         var req: URLRequest = URLRequest(url: url)
         req.httpMethod = "GET"
-
-        let defaults = UserDefaults.standard
-        let myToken = defaults.string(forKey: "responseToken")!
+        
+        let myToken = UserDefaults.standard.getResponseToken()
+        
         req.setValue("application/json", forHTTPHeaderField: "Content-Type")
         req.setValue("Bearer " + myToken, forHTTPHeaderField: "Authorization")
 
@@ -132,6 +132,6 @@ class DateFeelingViewController: UIViewController {
             }
         }
         task.resume()
-        print("デートプラン提案成功してるよ")
+        debugPrint("デートプラン提案成功してるよ")
     }
 }

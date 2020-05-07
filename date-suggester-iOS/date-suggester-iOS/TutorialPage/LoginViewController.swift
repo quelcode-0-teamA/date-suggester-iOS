@@ -123,10 +123,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                 displayMyAlertMessage(userMessage: "このアカウントは登録されていません")
                 return
             }
-            
-            let defaults = UserDefaults.standard
-            defaults.set(_token, forKey: "responseToken")
-            
+            UserDefaults.standard.setResponseToken(token: _token)
+
             DispatchQueue.main.async {
                 let storyboard = UIStoryboard(name: "SimplePlanViewController", bundle: nil)
                 let controller = storyboard.instantiateViewController(identifier: "DatePlanViewController")

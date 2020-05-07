@@ -19,10 +19,8 @@ class DateScheduleViewController: UIViewController, UITableViewDelegate, UITable
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         setupView()
         selectedDatePlan_Get()
-
     }
     
     private func setupView() {
@@ -49,8 +47,8 @@ class DateScheduleViewController: UIViewController, UITableViewDelegate, UITable
         var req: URLRequest = URLRequest(url: url)
         req.httpMethod = "GET"
         
-        let defaults = UserDefaults.standard
-        let myToken = defaults.string(forKey: "responseToken")!
+        let myToken = UserDefaults.standard.getResponseToken()
+        
         req.setValue("application/json", forHTTPHeaderField: "Content-Type")
         req.setValue("Bearer " + myToken, forHTTPHeaderField: "Authorization")
         
@@ -89,8 +87,7 @@ class DateScheduleViewController: UIViewController, UITableViewDelegate, UITable
                     var req: URLRequest = URLRequest(url: url)
                     req.httpMethod = "DELETE"
                     
-                    let defaults = UserDefaults.standard
-                    let myToken = defaults.string(forKey: "responseToken")!
+                    let myToken = UserDefaults.standard.getResponseToken()
                     req.setValue("application/json", forHTTPHeaderField: "Content-Type")
                     req.setValue("Bearer " + myToken, forHTTPHeaderField: "Authorization")
                     

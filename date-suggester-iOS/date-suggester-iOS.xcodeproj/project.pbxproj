@@ -803,7 +803,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1;
+				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = "jp.co.sample.date-suggester-iOS";
 				PRODUCT_NAME = "date-suggester-iOS";
 				SWIFT_VERSION = 5.0;
@@ -824,7 +824,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1;
+				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = "jp.co.sample.date-suggester-iOS";
 				PRODUCT_NAME = "date-suggester-iOS";
 				SWIFT_VERSION = 5.0;

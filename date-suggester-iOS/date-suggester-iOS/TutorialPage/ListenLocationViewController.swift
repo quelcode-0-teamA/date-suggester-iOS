@@ -49,6 +49,8 @@ class ListenLocationViewController: UIViewController, UIPickerViewDelegate, UIPi
             .foregroundColor: UIColor.white
         ]
         
+        //ユーザーがpickerViewを操作せずに次へボタンを押下した場合、
+        //pickerViewがdefaultで選択中の値がsetされるようにしている
         let defaults = UserDefaults.standard
         defaults.set(13, forKey: "responseUserArea")
     }
@@ -117,27 +119,22 @@ class ListenLocationViewController: UIViewController, UIPickerViewDelegate, UIPi
                     didSelectRow row: Int,
                     inComponent component: Int) {
         //コンポーネントごとに現在選択されているデータを取得する。
-        let data1 = self.pickerView(pickerView, titleForRow: pickerView.selectedRow(inComponent: 0), forComponent: 0)
-        debugPrint("\(String(describing: data1))えらばれたよ")
-        debugPrint("row: \(row)")
+        let selectedData = self.pickerView(pickerView, titleForRow: pickerView.selectedRow(inComponent: 0), forComponent: 0)
+        debugPrint("\(String(describing: selectedData))えらばれたよ")
         
-        let selectAreaId = userAreas[row].id
-        debugPrint(selectAreaId)
+        let selectedAreaId = userAreas[row].id
+        debugPrint(selectedAreaId)
         
         //選択されたエリアをユーザーデフォルトに保存
-        let defaults = UserDefaults.standard
-        defaults.set(selectAreaId, forKey: "responseUserArea")
+        UserDefaults.standard.setSelectedAreaId(id: selectedAreaId)
     }
     
     @IBAction func gotoSinplePlan(_ sender: Any) {
-        let defaults = UserDefaults.standard
-        guard let responseBirthYear = defaults.string(forKey: "responseBirthYear"),
-            let responseUserArea = defaults.string(forKey: "responseUserArea")
+        guard let responseBirthYear = UserDefaults.standard.string(forKey: "responseBirthYear"),
+            let responseUserArea = UserDefaults.standard.string(forKey: "responseUserArea")
             else{
                 return
         }
-        debugPrint(responseUserArea)
-        debugPrint(responseBirthYear)
         
         let TempSignInParams = [
             "birth_year": responseBirthYear,

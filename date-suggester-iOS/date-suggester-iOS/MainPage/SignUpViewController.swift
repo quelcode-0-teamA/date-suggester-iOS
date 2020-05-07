@@ -50,10 +50,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
         activityIndicatorView.color = .darkGray
         view.addSubview(activityIndicatorView)
     }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-    }
+
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
@@ -130,9 +127,8 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
             }
             
             DispatchQueue.main.async {
-                let defaults = UserDefaults.standard
-                defaults.set(true, forKey: "signUpStatus")
-                defaults.set(email, forKey: "userEmail")
+                UserDefaults.standard.setSignUpStatus(status: true)
+                UserDefaults.standard.setUserEmail(email: self.myEmail.text ?? "")
                 
                 self.view.isUserInteractionEnabled = true
                 self.activityIndicatorView.stopAnimating()

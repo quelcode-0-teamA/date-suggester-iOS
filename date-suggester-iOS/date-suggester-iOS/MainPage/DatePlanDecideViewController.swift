@@ -23,9 +23,7 @@ class DatePlanDecideViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         setupView()
-
     }
     
     private func setupView() {
