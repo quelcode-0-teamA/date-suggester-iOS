@@ -62,7 +62,7 @@ class DatePlanSuggestionViewControlller: UIViewController, UITableViewDelegate, 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cellIdentifier: String = "DateListCustomCell"
-        let spotsThumbImage:UIImage = getImageByUrl(url:((self.suggetsPlan?.spots?[indexPath.row].thumb)!))
+        let spotsThumbImage:UIImage = ChangeUrlToImage.shared.getImageByUrl(url:((self.suggetsPlan?.spots?[indexPath.row].thumb)!))
         
         if let myCell: DateListCustomCell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier) as? DateListCustomCell {
             myCell.thumbnail?.image = spotsThumbImage
@@ -142,19 +142,6 @@ class DatePlanSuggestionViewControlller: UIViewController, UITableViewDelegate, 
         let controller = storyboard.instantiateViewController(identifier: "DatePlanViewController")
         controller.modalPresentationStyle = .fullScreen
         present(controller, animated: true, completion: nil)
-    }
-    
-    func getImageByUrl(url: String) -> UIImage{
-        guard let url = URL(string: url) else {
-        return UIImage()
-        }
-        do {
-            let data = try Data(contentsOf: url)
-            return UIImage(data: data)!
-        } catch let err {
-            print("Error : \(err.localizedDescription)")
-        }
-        return UIImage()
     }
 }
 

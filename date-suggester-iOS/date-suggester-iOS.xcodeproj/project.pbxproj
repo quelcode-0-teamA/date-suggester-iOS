@@ -50,6 +50,7 @@
 		7281E60C241F4FB200886634 /* Plan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7281E60B241F4FB200886634 /* Plan.swift */; };
 		7281E60E241F502900886634 /* Spot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7281E60D241F502900886634 /* Spot.swift */; };
 		728562922431FF3900806867 /* mainImage.svg in Resources */ = {isa = PBXBuildFile; fileRef = 728562902431FF3900806867 /* mainImage.svg */; };
+		728839162463D8F400FA7B99 /* ChangeUrlToImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 728839152463D8F400FA7B99 /* ChangeUrlToImage.swift */; };
 		72A4E18123F57BB800B7607C /* DatePlanListCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A4E17F23F57BB800B7607C /* DatePlanListCollectionViewCell.swift */; };
 		72A4E18223F57BB800B7607C /* DatePlanListCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 72A4E18023F57BB800B7607C /* DatePlanListCollectionViewCell.xib */; };
 		72A4E18423F668B600B7607C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A4E18323F668B600B7607C /* LoginViewController.swift */; };
@@ -128,6 +129,7 @@
 		7281E60B241F4FB200886634 /* Plan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Plan.swift; sourceTree = "<group>"; };
 		7281E60D241F502900886634 /* Spot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spot.swift; sourceTree = "<group>"; };
 		728562902431FF3900806867 /* mainImage.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = mainImage.svg; sourceTree = "<group>"; };
+		728839152463D8F400FA7B99 /* ChangeUrlToImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeUrlToImage.swift; sourceTree = "<group>"; };
 		72A4E17F23F57BB800B7607C /* DatePlanListCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePlanListCollectionViewCell.swift; sourceTree = "<group>"; };
 		72A4E18023F57BB800B7607C /* DatePlanListCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DatePlanListCollectionViewCell.xib; sourceTree = "<group>"; };
 		72A4E18323F668B600B7607C /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -259,6 +261,7 @@
 				7281E60D241F502900886634 /* Spot.swift */,
 				724C39CE2452C5500028652A /* UserArea.swift */,
 				7229FA6424617ABA00D9FD2B /* UserDefault.swift */,
+				728839152463D8F400FA7B99 /* ChangeUrlToImage.swift */,
 			);
 			path = common;
 			sourceTree = "<group>";
@@ -597,6 +600,7 @@
 				7276AEEC23EACE65008864D7 /* MainPageViewController.swift in Sources */,
 				727C4A5D240362890058AE58 /* CustomYerrowButton.swift in Sources */,
 				7281E60C241F4FB200886634 /* Plan.swift in Sources */,
+				728839162463D8F400FA7B99 /* ChangeUrlToImage.swift in Sources */,
 				725E5B74243C0D4B006CC332 /* MyProfileEditViewController.swift in Sources */,
 				72513F5C23EBCFA9007B1499 /* DateFeelingViewController.swift in Sources */,
 				7276AEF023EAD63C008864D7 /* DatePlanDecideViewController.swift in Sources */,

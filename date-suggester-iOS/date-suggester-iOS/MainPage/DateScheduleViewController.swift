@@ -122,7 +122,7 @@ class DateScheduleViewController: UIViewController, UITableViewDelegate, UITable
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cellIdentifier: String = "DateScheduleCustomCell"
-        let detailSpotsThumbImage:UIImage = getImageByUrl(url:(self.myPlan!.plan?.spots![indexPath.row].thumb)!)
+        let detailSpotsThumbImage: UIImage = ChangeUrlToImage.shared.getImageByUrl(url:(self.myPlan!.plan?.spots![indexPath.row].thumb)!)
         
         if let myCell: DateScheduleCustomCell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier) as? DateScheduleCustomCell {
             myCell.thumbnail?.image = detailSpotsThumbImage
@@ -159,19 +159,6 @@ class DateScheduleViewController: UIViewController, UITableViewDelegate, UITable
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.myPlan?.plan?.spots?.count ?? 0
-    }
-    
-    func getImageByUrl(url: String) -> UIImage{
-        guard let url = URL(string: url) else {
-        return UIImage()
-        }
-        do {
-            let data = try Data(contentsOf: url)
-            return UIImage(data: data)!
-        } catch let err {
-            print("Error : \(err.localizedDescription)")
-        }
-        return UIImage()
     }
 }
 

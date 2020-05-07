@@ -51,8 +51,7 @@ class ListenLocationViewController: UIViewController, UIPickerViewDelegate, UIPi
         
         //ユーザーがpickerViewを操作せずに次へボタンを押下した場合、
         //pickerViewがdefaultで選択中の値がsetされるようにしている
-        let defaults = UserDefaults.standard
-        defaults.set(13, forKey: "responseUserArea")
+        UserDefaults.standard.setSelectedAreaId(id: 13)
     }
     
     func areasList(){
@@ -130,15 +129,10 @@ class ListenLocationViewController: UIViewController, UIPickerViewDelegate, UIPi
     }
     
     @IBAction func gotoSinplePlan(_ sender: Any) {
-        guard let responseBirthYear = UserDefaults.standard.string(forKey: "responseBirthYear"),
-            let responseUserArea = UserDefaults.standard.string(forKey: "responseUserArea")
-            else{
-                return
-        }
         
         let TempSignInParams = [
-            "birth_year": responseBirthYear,
-            "area_id": responseUserArea
+            "birth_year": UserDefaults.standard.getSelectedBirthYear(),
+            "area_id": UserDefaults.standard.getSelectedAreaId()
             ] as [String : Any]
         
         let parameter = ["temp_user": TempSignInParams]

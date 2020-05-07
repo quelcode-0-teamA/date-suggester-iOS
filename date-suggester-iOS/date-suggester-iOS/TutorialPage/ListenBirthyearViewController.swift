@@ -36,8 +36,7 @@ class ListenBirthyearViewController: UIViewController, UIPickerViewDelegate, UIP
         
         //ユーザーがpickerViewを操作せずに次へボタンを押下した場合、
         //pickerViewがdefaultで選択中の値がsetされるようにしている
-        let defaults = UserDefaults.standard
-        defaults.set(1995, forKey: "responseBirthYear")
+        UserDefaults.standard.setSelectedBirthYear(birthYear: "1995")
     }
 
     @IBAction func nextPage(_ sender: Any) {
@@ -71,6 +70,6 @@ class ListenBirthyearViewController: UIViewController, UIPickerViewDelegate, UIP
         debugPrint("\(selectedBirthYear)えらばれたよ")
         debugPrint("row: \(row)")
         
-        UserDefaults.standard.setResponseBirthYear(birthYear: selectedBirthYear ?? "")
+        UserDefaults.standard.setSelectedBirthYear(birthYear: selectedBirthYear ?? "")
     }
 }
