@@ -9,11 +9,7 @@
 import UIKit
 
 class ChangeUrlToImage {
-    
-    static let shared = ChangeUrlToImage()
-    private init() {}
-    
-    func getImageByUrl(url: String) -> UIImage{
+    static func getImageByUrl(url: String) -> UIImage{
         guard let url = URL(string: url) else {
         return UIImage()
         }

@@ -28,7 +28,8 @@ class DatePlanSuggestionViewControlller: UIViewController, UITableViewDelegate, 
         
         setupView()
         
-        let thumbImage:UIImage = getImageByUrl(url:self.suggetsPlan!.thumb)
+        //デートプランヘッダー部分に反映される情報
+        let thumbImage :UIImage = ChangeUrlToImage.getImageByUrl(url:self.suggetsPlan!.thumb)
         
         DispatchQueue.main.async {
             self.datePlanSuggestTV.reloadData()
@@ -39,7 +40,6 @@ class DatePlanSuggestionViewControlller: UIViewController, UITableViewDelegate, 
             self.datePlanImage.image = thumbImage
         }
     }
-    
     private func setupView() {
         datePlanSuggestTV.delegate = self
         datePlanSuggestTV.dataSource = self
@@ -62,7 +62,7 @@ class DatePlanSuggestionViewControlller: UIViewController, UITableViewDelegate, 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cellIdentifier: String = "DateListCustomCell"
-        let spotsThumbImage:UIImage = ChangeUrlToImage.shared.getImageByUrl(url:((self.suggetsPlan?.spots?[indexPath.row].thumb)!))
+        let spotsThumbImage:UIImage = ChangeUrlToImage.getImageByUrl(url:((self.suggetsPlan?.spots?[indexPath.row].thumb)!))
         
         if let myCell: DateListCustomCell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier) as? DateListCustomCell {
             myCell.thumbnail?.image = spotsThumbImage

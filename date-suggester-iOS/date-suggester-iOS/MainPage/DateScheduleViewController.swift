@@ -122,7 +122,7 @@ class DateScheduleViewController: UIViewController, UITableViewDelegate, UITable
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cellIdentifier: String = "DateScheduleCustomCell"
-        let detailSpotsThumbImage: UIImage = ChangeUrlToImage.shared.getImageByUrl(url:(self.myPlan!.plan?.spots![indexPath.row].thumb)!)
+        let detailSpotsThumbImage: UIImage = ChangeUrlToImage.getImageByUrl(url:(self.myPlan!.plan?.spots![indexPath.row].thumb)!)
         
         if let myCell: DateScheduleCustomCell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier) as? DateScheduleCustomCell {
             myCell.thumbnail?.image = detailSpotsThumbImage

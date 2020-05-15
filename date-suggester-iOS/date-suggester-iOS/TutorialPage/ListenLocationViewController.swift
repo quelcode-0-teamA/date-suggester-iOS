@@ -23,7 +23,7 @@ class ListenLocationViewController: UIViewController, UIPickerViewDelegate, UIPi
         super.viewDidLoad()
         
         setupView()
-        
+        AppNavigationController.shared.navigationSetUp()
     }
     
     private func setupView() {

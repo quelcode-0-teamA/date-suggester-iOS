@@ -17,9 +17,13 @@ class FirstViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         setupView()
         
+        #if DEBUG
+        print("デバッグもーどだお")
+        #else
+        print("🍑")
+        #endif
     }
     
     private func setupView() {
@@ -45,18 +49,6 @@ class FirstViewController: UIViewController {
          super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(true, animated: false)
     }
-    
-    func sumpleURL(url: URL) {
-        if( UIApplication.shared.canOpenURL(url) ) {
-          UIApplication.shared.open(url)
-        }
-    }
-    
-    func alert(_ title: String, message: String) {
-        let vc = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
-        vc.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: nil))
-        present(vc, animated: true, completion: nil)
-    }
 
     @IBAction func dateDecideButton(_ sender: Any) {
         if UserDefaults.standard.string(forKey: "responseToken") != nil{
@@ -75,24 +67,5 @@ class FirstViewController: UIViewController {
         let storyboard = UIStoryboard(name: "TutorialViewController", bundle: nil)
         let loginViewController = storyboard.instantiateViewController(withIdentifier: "LoginViewController")
         self.navigationController?.pushViewController(loginViewController, animated: true)
-    }
-}
-
-extension UIView {
-    func addBackground(name: String) {
-        // スクリーンサイズの取得
-        let width = UIScreen.main.bounds.size.width
-        let height = UIScreen.main.bounds.size.height
-
-        let imageViewBackground = UIImageView(frame: CGRect(x: 0, y: 0, width: width, height: height))
-        imageViewBackground.image = UIImage(named: name)
-
-        // 画像の表示モードを変更
-        imageViewBackground.contentMode = UIView.ContentMode.scaleAspectFill
-
-        // subviewをメインビューに追加
-        self.addSubview(imageViewBackground)
-        // 加えたsubviewを、最背面に設置する
-        self.sendSubviewToBack(imageViewBackground)
     }
 }

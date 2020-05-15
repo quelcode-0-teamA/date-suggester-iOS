@@ -18,6 +18,7 @@ class ListenBirthyearViewController: UIViewController, UIPickerViewDelegate, UIP
         super.viewDidLoad()
         
            setupView()
+        AppNavigationController.shared.navigationSetUp()
     }
     
     private func setupView() {
