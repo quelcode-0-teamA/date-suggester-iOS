@@ -18,8 +18,6 @@ class MypageViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         userIcon.layer.cornerRadius = 70
-
-        debugPrint("🍒")
         
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(named: "NavBarBG"), for: .default)
         self.navigationController?.navigationBar.titleTextAttributes = [
@@ -87,7 +85,7 @@ class MypageViewController: UIViewController {
                                 self.userName.text = "名もなき恋の達人"
                                 return
                             }
-                            print("💩resuponseUserName:\(responseUserName)")
+                            
                             if responseUserName != nil {
                                 debugPrint("trueきてるよ")
                                 self.userName.text = responseUserName as? String
@@ -97,13 +95,8 @@ class MypageViewController: UIViewController {
                                 self.userName.text = "名もなき恋の達人"
                             }
                             
-//                            guard let name = response["name"] else {
-//                                self.userName.text = "名もなき恋の達人"
-//                                return
-//                            }
-//                            self.userName.text = name as? String
-                            print("resuponseUserName:\(responseUserName)")
-                            //nilだと判断されてない説。ただの空白だと思われてる？
+                            debugPrint("resuponseUserName:\(responseUserName)")
+
                         }
                     } catch{
                     }

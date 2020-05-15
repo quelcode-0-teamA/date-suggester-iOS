@@ -99,10 +99,10 @@ class DateplanListViewController: UIViewController,UICollectionViewDataSource, U
         let datePlanListCell: UICollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: "DatePlanListCollectionViewCell", for: indexPath) as! DatePlanListCollectionViewCell
         // Tag番号を使ってインスタンスをつくる
         let photoImageView = datePlanListCell.contentView.viewWithTag(1)  as! UIImageView
-        photoImageView.image =  getImageByUrl(url: resPlanList?[indexPath.row].plan.thumb ?? "")
+        photoImageView.image =  getImageByUrl(url: resPlanList?[indexPath.row].plan?.thumb ?? "")
         
         let titleLabel = datePlanListCell.contentView.viewWithTag(2) as! UILabel
-        titleLabel.text = resPlanList?[indexPath.row].plan.title
+        titleLabel.text = resPlanList?[indexPath.row].plan?.title
         
         return datePlanListCell
     }

@@ -25,6 +25,7 @@ class DatePlanSuggestionViewControlller: UIViewController, UITableViewDelegate, 
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        print("👿\(suggetsPlan)")
         
         let thumbImage:UIImage = getImageByUrl(url:self.suggetsPlan!.thumb)
         
