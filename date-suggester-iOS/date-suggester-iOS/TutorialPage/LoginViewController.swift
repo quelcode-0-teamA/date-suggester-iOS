@@ -21,6 +21,11 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setupView()
+
+    }
+    
+    private func setupView() {
         myEmail.attributedPlaceholder = NSAttributedString(string: "mail", attributes: [NSAttributedString.Key.foregroundColor : UIColor.white])
         myPassword.attributedPlaceholder = NSAttributedString(string: "pass", attributes: [NSAttributedString.Key.foregroundColor : UIColor.white])
         
@@ -36,7 +41,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         activityIndicatorView.style = .whiteLarge
         activityIndicatorView.color = .darkGray
         view.addSubview(activityIndicatorView)
-
+        
         loginButton.layer.cornerRadius = 24
         myPassword.isSecureTextEntry = true
         
@@ -74,6 +79,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     
     
     @IBAction func loginButtonTap(_ sender: Any) {
+        
         func displayMyAlertMessage(userMessage: String){
             let myAlert = UIAlertController(title:"Alert", message: userMessage, preferredStyle:  UIAlertController.Style.alert)
             let okAction = UIAlertAction(title:"OK", style: UIAlertAction.Style.default, handler:nil)
@@ -117,10 +123,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                 displayMyAlertMessage(userMessage: "このアカウントは登録されていません")
                 return
             }
-            
-            let defaults = UserDefaults.standard
-            defaults.set(_token, forKey: "responseToken")
-            
+            UserDefaults.standard.setResponseToken(token: _token)
+
             DispatchQueue.main.async {
                 let storyboard = UIStoryboard(name: "SimplePlanViewController", bundle: nil)
                 let controller = storyboard.instantiateViewController(identifier: "DatePlanViewController")

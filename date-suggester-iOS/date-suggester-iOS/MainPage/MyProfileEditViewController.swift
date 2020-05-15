@@ -17,13 +17,15 @@ class MyProfileEditViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        setupView()
+    }
+    
+    private func setupView() {
         userIcon.layer.cornerRadius = 70
         profileEditButton.layer.masksToBounds = true
         profileEditButton.layer.cornerRadius = 20
         cancelButton.layer.masksToBounds = true
         cancelButton.layer.cornerRadius = 20
-    
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -54,26 +56,25 @@ class MyProfileEditViewController: UIViewController {
     @IBAction func profileEditButton(_ sender: Any) {
         let config: URLSessionConfiguration = URLSessionConfiguration.default
         let session: URLSession = URLSession(configuration: config)
-        let defaults = UserDefaults.standard
         
         let name = userName.text
 
         let userEditParams = [
            "name": name,
-            "email": defaults.string(forKey: "userEmail"),
-            "birth_year": defaults.string(forKey: "responseBirthYear"),
+           "email": UserDefaults.standard.getUserEmail(),
+           "birth_year": UserDefaults.standard.getSelectedBirthYear(),
             "gender": "",
-            "area_id": defaults.string(forKey: "responseUserArea")
-        ]
+            "area_id": UserDefaults.standard.getSelectedAreaId()
+            ] as [String : Any]
 
-        let user_id = defaults.string(forKey: "userId")!
+        let user_id = UserDefaults.standard.getUserId()
         let url = URL(string: "https://api.date-suggester.com/v1/users/\(user_id)")!
 
         var req: URLRequest = URLRequest(url: url)
         req.httpMethod = "PUT"
         
         //ヘッダーを付与
-        let myToken = defaults.string(forKey: "responseToken")!
+        let myToken = UserDefaults.standard.getResponseToken()
         req.setValue("application/json", forHTTPHeaderField: "Content-Type")
         req.setValue("Bearer " + myToken, forHTTPHeaderField: "Authorization")
         
@@ -95,8 +96,8 @@ class MyProfileEditViewController: UIViewController {
                 
                 print(response)
                 
-                let nameValue = response["name"]
-                 defaults.set(nameValue, forKey: "responseUserName")
+
+                UserDefaults.standard.setUserName(userName: response["name"] as? String ?? "")
                 
                 DispatchQueue.main.async {
                     self.navigationController?.popViewController(animated: true)
@@ -116,8 +117,7 @@ class MyProfileEditViewController: UIViewController {
         let config: URLSessionConfiguration = URLSessionConfiguration.default
         let session: URLSession = URLSession(configuration: config)
         
-        let defaults = UserDefaults.standard
-        let user_id = defaults.string(forKey: "userId")!
+        let user_id = UserDefaults.standard.getUserId()
         
         print(user_id)
         let url = URL(string: "https://api.date-suggester.com/v1/users/\(user_id)")!
@@ -127,7 +127,7 @@ class MyProfileEditViewController: UIViewController {
         req.httpMethod = "DELETE"
         
         //ヘッダーを付与
-        let myToken = defaults.string(forKey: "responseToken")!
+        let myToken = UserDefaults.standard.getResponseToken()
         req.setValue("application/json", forHTTPHeaderField: "Content-Type")
         req.setValue("Bearer " + myToken, forHTTPHeaderField: "Authorization")
         
@@ -150,8 +150,6 @@ class MyProfileEditViewController: UIViewController {
         }
         task.resume()
     }
-    
-    
 }
 
 

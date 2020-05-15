@@ -17,7 +17,11 @@ class ListenBirthyearViewController: UIViewController, UIPickerViewDelegate, UIP
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // ピッカー設定
+           setupView()
+        AppNavigationController.shared.navigationSetUp()
+    }
+    
+    private func setupView() {
         yearPickerView.delegate = self
         yearPickerView.dataSource = self
         
@@ -31,8 +35,9 @@ class ListenBirthyearViewController: UIViewController, UIPickerViewDelegate, UIP
         navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white]
         navigationItem.backBarButtonItem = UIBarButtonItem(title:  "", style:  .plain, target: nil, action: nil)
         
-        let defaults = UserDefaults.standard
-        defaults.set(1995, forKey: "responseBirthYear")
+        //ユーザーがpickerViewを操作せずに次へボタンを押下した場合、
+        //pickerViewがdefaultで選択中の値がsetされるようにしている
+        UserDefaults.standard.setSelectedBirthYear(birthYear: "1995")
     }
 
     @IBAction func nextPage(_ sender: Any) {
@@ -62,12 +67,10 @@ class ListenBirthyearViewController: UIViewController, UIPickerViewDelegate, UIP
     func pickerView(_ pickerView: UIPickerView,
                     didSelectRow row: Int,
                     inComponent component: Int) {
-        // 処理
-        let data1 = self.pickerView(pickerView, titleForRow: pickerView.selectedRow(inComponent: 0), forComponent: 0)
-        debugPrint("\(data1)えらばれたよ")
+        let selectedBirthYear = self.pickerView(pickerView, titleForRow: pickerView.selectedRow(inComponent: 0), forComponent: 0)
+        debugPrint("\(selectedBirthYear)えらばれたよ")
         debugPrint("row: \(row)")
         
-        let defaults = UserDefaults.standard
-        defaults.set(data1, forKey: "responseBirthYear")
+        UserDefaults.standard.setSelectedBirthYear(birthYear: selectedBirthYear ?? "")
     }
 }

@@ -8,6 +8,7 @@ target 'date-suggester-iOS' do
   # Pods for date-suggester-iOS
   pod 'SVGKit'
   pod 'ActiveLabel'
+  pod 'IQKeyboardManagerSwift'
 
   target 'date-suggester-iOSTests' do
     inherit! :search_paths

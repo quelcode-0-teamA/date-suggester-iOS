@@ -3,24 +3,28 @@ PODS:
   - CocoaLumberjack (3.6.1):
     - CocoaLumberjack/Core (= 3.6.1)
   - CocoaLumberjack/Core (3.6.1)
+  - IQKeyboardManagerSwift (6.5.5)
   - SVGKit (2.1.1):
     - CocoaLumberjack (~> 3.0)
 
 DEPENDENCIES:
   - ActiveLabel
+  - IQKeyboardManagerSwift
   - SVGKit
 
 SPEC REPOS:
   trunk:
     - ActiveLabel
     - CocoaLumberjack
+    - IQKeyboardManagerSwift
     - SVGKit
 
 SPEC CHECKSUMS:
   ActiveLabel: 5e3f4de79a1952d4604b845a0610d4776e4b82b3
   CocoaLumberjack: b17ae15142558d08bbacf69775fa10c4abbebcc9
+  IQKeyboardManagerSwift: 0fb93310284665245591f50f7a5e38de615960b7
   SVGKit: 652cdf7bef8bec8564d04a8511d3ab50c7595fac
 
-PODFILE CHECKSUM: 67cd71f6101651c0ef887ccebef5c088c8788006
+PODFILE CHECKSUM: 3300af5d1ce55053ee0674c56990e8c4dc093f56
 
 COCOAPODS: 1.8.4

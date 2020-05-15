@@ -189,7 +189,7 @@
                                                     <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="gotoMyPage:" destination="zf0-QD-QPT" eventType="touchUpInside" id="cbe-OT-VWQ"/>
+                                                    <action selector="gotoMyPageWithoutDecidingPlan:" destination="zf0-QD-QPT" eventType="touchUpInside" id="zUl-ft-G5d"/>
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" text="..." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gsD-D7-2dl">
@@ -284,7 +284,7 @@
                                             <color key="titleColor" name="MainColor"/>
                                         </state>
                                         <connections>
-                                            <action selector="againButton:" destination="zf0-QD-QPT" eventType="touchUpInside" id="od9-KB-g7u"/>
+                                            <action selector="replanningButton:" destination="zf0-QD-QPT" eventType="touchUpInside" id="q6B-3j-sYk"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pDM-5M-GYb">
@@ -299,7 +299,7 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
-                                            <action selector="gotoMypage:" destination="zf0-QD-QPT" eventType="touchUpInside" id="9uP-BL-KM6"/>
+                                            <action selector="DesideDatePlan:" destination="zf0-QD-QPT" eventType="touchUpInside" id="bxJ-Pq-IDF"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -433,14 +433,14 @@
                         <viewLayoutGuide key="safeArea" id="Qcj-3O-yt9"/>
                     </view>
                     <connections>
-                        <outlet property="againButton" destination="TLi-U3-pbP" id="r5g-dQ-vd8"/>
                         <outlet property="datePlanArea" destination="Jwq-U3-mtn" id="Hzo-Vl-OXa"/>
                         <outlet property="datePlanDescription" destination="jAr-OX-2kh" id="LQM-ka-IE2"/>
                         <outlet property="datePlanImage" destination="ZoF-Rc-3Zp" id="FAh-qm-bLu"/>
                         <outlet property="datePlanSuggestTV" destination="XMZ-sN-2WF" id="alW-i6-IZw"/>
                         <outlet property="datePlanTitle" destination="gsD-D7-2dl" id="Xhh-Ir-3oi"/>
-                        <outlet property="gotoMyPage" destination="eQM-n2-1aq" id="VJ3-O2-ggP"/>
+                        <outlet property="gotoMyPage" destination="eQM-n2-1aq" id="lXp-H2-lal"/>
                         <outlet property="planDecision" destination="pDM-5M-GYb" id="Yj0-L6-ZDo"/>
+                        <outlet property="replanningButton" destination="TLi-U3-pbP" id="PFr-8y-bdX"/>
                         <outlet property="totalBudget" destination="q1n-pn-cxW" id="6ey-eo-RUg"/>
                     </connections>
                 </viewController>

@@ -22,16 +22,20 @@ class ListenLocationViewController: UIViewController, UIPickerViewDelegate, UIPi
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setupView()
+        AppNavigationController.shared.navigationSetUp()
+    }
+    
+    private func setupView() {
         activityIndicatorView.center = view.center
         activityIndicatorView.style = .whiteLarge
         activityIndicatorView.color = .gray
-
+        
         view.addSubview(activityIndicatorView)
         activityIndicatorView.startAnimating()
         
         areasList()
-                
-        // ピッカー設定
+        
         areaPickerView.delegate = self
         areaPickerView.dataSource = self
         areaPickerView.selectRow(30, inComponent: 0, animated: false)
@@ -45,9 +49,9 @@ class ListenLocationViewController: UIViewController, UIPickerViewDelegate, UIPi
             .foregroundColor: UIColor.white
         ]
         
-        let defaults = UserDefaults.standard
-        defaults.set(13, forKey: "responseUserArea")
-        
+        //ユーザーがpickerViewを操作せずに次へボタンを押下した場合、
+        //pickerViewがdefaultで選択中の値がsetされるようにしている
+        UserDefaults.standard.setSelectedAreaId(id: 13)
     }
     
     func areasList(){
@@ -114,31 +118,21 @@ class ListenLocationViewController: UIViewController, UIPickerViewDelegate, UIPi
                     didSelectRow row: Int,
                     inComponent component: Int) {
         //コンポーネントごとに現在選択されているデータを取得する。
-        let data1 = self.pickerView(pickerView, titleForRow: pickerView.selectedRow(inComponent: 0), forComponent: 0)
-        debugPrint("\(String(describing: data1))えらばれたよ")
-        debugPrint("row: \(row)")
+        let selectedData = self.pickerView(pickerView, titleForRow: pickerView.selectedRow(inComponent: 0), forComponent: 0)
+        debugPrint("\(String(describing: selectedData))えらばれたよ")
         
-        let selectAreaId = userAreas[row].id
-        debugPrint(selectAreaId)
+        let selectedAreaId = userAreas[row].id
+        debugPrint(selectedAreaId)
         
         //選択されたエリアをユーザーデフォルトに保存
-        let defaults = UserDefaults.standard
-        defaults.set(selectAreaId, forKey: "responseUserArea")
+        UserDefaults.standard.setSelectedAreaId(id: selectedAreaId)
     }
     
     @IBAction func gotoSinplePlan(_ sender: Any) {
-        let defaults = UserDefaults.standard
-        guard let responseBirthYear = defaults.string(forKey: "responseBirthYear"),
-            let responseUserArea = defaults.string(forKey: "responseUserArea")
-            else{
-                return
-        }
-        debugPrint(responseUserArea)
-        debugPrint(responseBirthYear)
         
         let TempSignInParams = [
-            "birth_year": responseBirthYear,
-            "area_id": responseUserArea
+            "birth_year": UserDefaults.standard.getSelectedBirthYear(),
+            "area_id": UserDefaults.standard.getSelectedAreaId()
             ] as [String : Any]
         
         let parameter = ["temp_user": TempSignInParams]

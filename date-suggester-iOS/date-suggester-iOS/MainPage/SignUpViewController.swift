@@ -21,6 +21,10 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupView()
+    }
+    
+    private func setupView() {
         myEmail.delegate = self
         myPassword.delegate = self
         myPasswordConfirmation.delegate = self
@@ -36,7 +40,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
         signUpButton.isEnabled = false
         signUpButton.layer.masksToBounds = true
         signUpButton.layer.cornerRadius = 24
-         
+        
         myPassword.isSecureTextEntry = true
         myPasswordConfirmation.isSecureTextEntry = true
         
@@ -45,10 +49,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
         activityIndicatorView.color = .darkGray
         view.addSubview(activityIndicatorView)
     }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-    }
+
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
@@ -125,9 +126,8 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
             }
             
             DispatchQueue.main.async {
-                let defaults = UserDefaults.standard
-                defaults.set(true, forKey: "signUpStatus")
-                defaults.set(email, forKey: "userEmail")
+                UserDefaults.standard.setSignUpStatus(status: true)
+                UserDefaults.standard.setUserEmail(email: self.myEmail.text ?? "")
                 
                 self.view.isUserInteractionEnabled = true
                 self.activityIndicatorView.stopAnimating()

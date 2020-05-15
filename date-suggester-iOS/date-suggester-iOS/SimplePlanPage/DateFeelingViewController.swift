@@ -18,7 +18,12 @@ class DateFeelingViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        setupView()
 
+    }
+    
+    private func setupView() {
         navigationItem.backBarButtonItem = UIBarButtonItem(
             title:  "戻る",
             style:  .plain,
@@ -37,7 +42,6 @@ class DateFeelingViewController: UIViewController {
         activityIndicatorView.color = .darkGray
         view.addSubview(activityIndicatorView)
     }
-    
     
     @IBAction func unusualButtonTap(_ sender: Any) {
         gotoDatePlanSuggestionVC(selectAnserNumber:0)
@@ -71,9 +75,9 @@ class DateFeelingViewController: UIViewController {
         let url: URL = urlComponents.url!
         var req: URLRequest = URLRequest(url: url)
         req.httpMethod = "GET"
-
-        let defaults = UserDefaults.standard
-        let myToken = defaults.string(forKey: "responseToken")!
+        
+        let myToken = UserDefaults.standard.getResponseToken()
+        
         req.setValue("application/json", forHTTPHeaderField: "Content-Type")
         req.setValue("Bearer " + myToken, forHTTPHeaderField: "Authorization")
 
@@ -128,6 +132,6 @@ class DateFeelingViewController: UIViewController {
             }
         }
         task.resume()
-        print("デートプラン提案成功してるよ")
+        debugPrint("デートプラン提案成功してるよ")
     }
 }

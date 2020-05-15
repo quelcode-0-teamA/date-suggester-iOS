@@ -24,6 +24,7 @@
 		7215FF14240D600400AB3BBB /* SignUpCustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7215FF13240D600400AB3BBB /* SignUpCustomTextField.swift */; };
 		721D100123F509DD006DA520 /* MypageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 721D100023F509DD006DA520 /* MypageViewController.swift */; };
 		721D100323F50E6A006DA520 /* UIColorHex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 721D100223F50E6A006DA520 /* UIColorHex.swift */; };
+		7229FA6524617ABA00D9FD2B /* UserDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7229FA6424617ABA00D9FD2B /* UserDefault.swift */; };
 		724C39CF2452C5500028652A /* UserArea.swift in Sources */ = {isa = PBXBuildFile; fileRef = 724C39CE2452C5500028652A /* UserArea.swift */; };
 		72513F5C23EBCFA9007B1499 /* DateFeelingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72513F5B23EBCFA9007B1499 /* DateFeelingViewController.swift */; };
 		725E5B74243C0D4B006CC332 /* MyProfileEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 725E5B73243C0D4B006CC332 /* MyProfileEditViewController.swift */; };
@@ -49,6 +50,8 @@
 		7281E60C241F4FB200886634 /* Plan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7281E60B241F4FB200886634 /* Plan.swift */; };
 		7281E60E241F502900886634 /* Spot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7281E60D241F502900886634 /* Spot.swift */; };
 		728562922431FF3900806867 /* mainImage.svg in Resources */ = {isa = PBXBuildFile; fileRef = 728562902431FF3900806867 /* mainImage.svg */; };
+		728839162463D8F400FA7B99 /* ChangeUrlToImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 728839152463D8F400FA7B99 /* ChangeUrlToImage.swift */; };
+		728839192463E2B300FA7B99 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 728839182463E2B300FA7B99 /* UIView.swift */; };
 		72A4E18123F57BB800B7607C /* DatePlanListCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A4E17F23F57BB800B7607C /* DatePlanListCollectionViewCell.swift */; };
 		72A4E18223F57BB800B7607C /* DatePlanListCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 72A4E18023F57BB800B7607C /* DatePlanListCollectionViewCell.xib */; };
 		72A4E18423F668B600B7607C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A4E18323F668B600B7607C /* LoginViewController.swift */; };
@@ -101,6 +104,7 @@
 		7215FF13240D600400AB3BBB /* SignUpCustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpCustomTextField.swift; sourceTree = "<group>"; };
 		721D100023F509DD006DA520 /* MypageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MypageViewController.swift; sourceTree = "<group>"; };
 		721D100223F50E6A006DA520 /* UIColorHex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorHex.swift; sourceTree = "<group>"; };
+		7229FA6424617ABA00D9FD2B /* UserDefault.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefault.swift; sourceTree = "<group>"; };
 		724C39CE2452C5500028652A /* UserArea.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserArea.swift; sourceTree = "<group>"; };
 		72513F5B23EBCFA9007B1499 /* DateFeelingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFeelingViewController.swift; sourceTree = "<group>"; };
 		725E5B73243C0D4B006CC332 /* MyProfileEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileEditViewController.swift; sourceTree = "<group>"; };
@@ -126,6 +130,8 @@
 		7281E60B241F4FB200886634 /* Plan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Plan.swift; sourceTree = "<group>"; };
 		7281E60D241F502900886634 /* Spot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spot.swift; sourceTree = "<group>"; };
 		728562902431FF3900806867 /* mainImage.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = mainImage.svg; sourceTree = "<group>"; };
+		728839152463D8F400FA7B99 /* ChangeUrlToImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeUrlToImage.swift; sourceTree = "<group>"; };
+		728839182463E2B300FA7B99 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		72A4E17F23F57BB800B7607C /* DatePlanListCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePlanListCollectionViewCell.swift; sourceTree = "<group>"; };
 		72A4E18023F57BB800B7607C /* DatePlanListCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DatePlanListCollectionViewCell.xib; sourceTree = "<group>"; };
 		72A4E18323F668B600B7607C /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -211,6 +217,7 @@
 				7276AEE623EABBAB008864D7 /* MainPage */,
 				7276AEE123EAA9C1008864D7 /* SimplePlanPage */,
 				720D082823E9A7DD00569622 /* TutorialPage */,
+				7288391A2463E88300FA7B99 /* Utils */,
 				720D082723E9A7CA00569622 /* common */,
 				720D07F723E984AE00569622 /* AppDelegate.swift */,
 				720D07F923E984AE00569622 /* SceneDelegate.swift */,
@@ -256,6 +263,8 @@
 				7281E60B241F4FB200886634 /* Plan.swift */,
 				7281E60D241F502900886634 /* Spot.swift */,
 				724C39CE2452C5500028652A /* UserArea.swift */,
+				7229FA6424617ABA00D9FD2B /* UserDefault.swift */,
+				728839182463E2B300FA7B99 /* UIView.swift */,
 			);
 			path = common;
 			sourceTree = "<group>";
@@ -321,6 +330,14 @@
 				728562902431FF3900806867 /* mainImage.svg */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		7288391A2463E88300FA7B99 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				728839152463D8F400FA7B99 /* ChangeUrlToImage.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 		780B2EEA4FE7BD75B9F7705C /* Pods */ = {
@@ -594,11 +611,14 @@
 				7276AEEC23EACE65008864D7 /* MainPageViewController.swift in Sources */,
 				727C4A5D240362890058AE58 /* CustomYerrowButton.swift in Sources */,
 				7281E60C241F4FB200886634 /* Plan.swift in Sources */,
+				728839162463D8F400FA7B99 /* ChangeUrlToImage.swift in Sources */,
 				725E5B74243C0D4B006CC332 /* MyProfileEditViewController.swift in Sources */,
 				72513F5C23EBCFA9007B1499 /* DateFeelingViewController.swift in Sources */,
 				7276AEF023EAD63C008864D7 /* DatePlanDecideViewController.swift in Sources */,
+				7229FA6524617ABA00D9FD2B /* UserDefault.swift in Sources */,
 				720D07FC23E984AE00569622 /* ViewController.swift in Sources */,
 				727C4A5B240362300058AE58 /* AnswerModel.swift in Sources */,
+				728839192463E2B300FA7B99 /* UIView.swift in Sources */,
 				7276AEE523EAACC0008864D7 /* DatePlanSuggestionViewControlller.swift in Sources */,
 				721D100323F50E6A006DA520 /* UIColorHex.swift in Sources */,
 				7215FF14240D600400AB3BBB /* SignUpCustomTextField.swift in Sources */,
@@ -792,15 +812,16 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = J6V2UNL325;
 				INFOPLIST_FILE = "date-suggester-iOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = "jp.co.sample.date-suggester-iOS";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "date-suggester-iOS";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -812,15 +833,16 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = J6V2UNL325;
 				INFOPLIST_FILE = "date-suggester-iOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = "jp.co.sample.date-suggester-iOS";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "date-suggester-iOS";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};

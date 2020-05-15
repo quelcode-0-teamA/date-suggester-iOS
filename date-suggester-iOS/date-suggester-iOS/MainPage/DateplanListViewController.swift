@@ -7,6 +7,7 @@
 //
 
 import UIKit
+
 class DateplanListViewController: UIViewController,UICollectionViewDataSource, UICollectionViewDelegate,  UICollectionViewDelegateFlowLayout{
     
     var resPlanList: [MyPlan]?
@@ -16,7 +17,11 @@ class DateplanListViewController: UIViewController,UICollectionViewDataSource, U
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        setupView()
+        datePlanList_Get()
+    }
+    
+    private func setupView() {
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.register(UINib(nibName: "DatePlanListCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "DatePlanListCollectionViewCell")
@@ -33,7 +38,9 @@ class DateplanListViewController: UIViewController,UICollectionViewDataSource, U
         )
         
         collectionView.reloadData()
-        
+    }
+    
+    private func datePlanList_Get() {
         /*
          デートリスト取得API
          */
@@ -49,8 +56,8 @@ class DateplanListViewController: UIViewController,UICollectionViewDataSource, U
         var req: URLRequest = URLRequest(url: url)
         req.httpMethod = "GET"
         
-        let defaults = UserDefaults.standard
-        let myToken = defaults.string(forKey: "responseToken")!
+        let myToken = UserDefaults.standard.getResponseToken()
+        
         req.setValue("application/json", forHTTPHeaderField: "Content-Type")
         req.setValue("Bearer " + myToken, forHTTPHeaderField: "Authorization")
         
@@ -99,7 +106,7 @@ class DateplanListViewController: UIViewController,UICollectionViewDataSource, U
         let datePlanListCell: UICollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: "DatePlanListCollectionViewCell", for: indexPath) as! DatePlanListCollectionViewCell
         // Tag番号を使ってインスタンスをつくる
         let photoImageView = datePlanListCell.contentView.viewWithTag(1)  as! UIImageView
-        photoImageView.image =  getImageByUrl(url: resPlanList?[indexPath.row].plan?.thumb ?? "")
+        photoImageView.image =  ChangeUrlToImage.getImageByUrl(url: resPlanList?[indexPath.row].plan?.thumb ?? "")
         
         let titleLabel = datePlanListCell.contentView.viewWithTag(2) as! UILabel
         titleLabel.text = resPlanList?[indexPath.row].plan?.title
@@ -125,18 +132,5 @@ class DateplanListViewController: UIViewController,UICollectionViewDataSource, U
     //垂直方向の余白
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         return 12.0
-    }
-    
-    func getImageByUrl(url: String) -> UIImage{
-        guard let url = URL(string: url) else {
-        return UIImage()
-        }
-        do {
-            let data = try Data(contentsOf: url)
-            return UIImage(data: data)!
-        } catch let err {
-            print("Error : \(err.localizedDescription)")
-        }
-        return UIImage()
     }
 }

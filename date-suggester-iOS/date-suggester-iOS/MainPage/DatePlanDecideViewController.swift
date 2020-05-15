@@ -23,7 +23,10 @@ class DatePlanDecideViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        setupView()
+    }
+    
+    private func setupView() {
         let svgImage = SVGKImage(named: "mainImage")
         svgImage?.size = mainImage.bounds.size
         mainImage.image = svgImage?.uiImage

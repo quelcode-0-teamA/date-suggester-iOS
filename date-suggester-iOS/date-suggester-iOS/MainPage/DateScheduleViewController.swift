@@ -19,7 +19,11 @@ class DateScheduleViewController: UIViewController, UITableViewDelegate, UITable
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        setupView()
+        selectedDatePlan_Get()
+    }
+    
+    private func setupView() {
         dateScheduleTV.delegate = self
         dateScheduleTV.dataSource = self
         dateScheduleTV.rowHeight = 162
@@ -29,9 +33,12 @@ class DateScheduleViewController: UIViewController, UITableViewDelegate, UITable
         navigationController?.navigationBar.tintColor = UIColor.white
         trashBarButtonItem = UIBarButtonItem(barButtonSystemItem: .trash, target: self, action: #selector(trashBarButtonTapped(_:)))
         navigationItem.rightBarButtonItems = [trashBarButtonItem]
+    }
+    
+    private func selectedDatePlan_Get() {
         
         /*
-         選択したデートリスト取得API
+         ユーザーが選択したデートリスト取得API
          */
         let config: URLSessionConfiguration = URLSessionConfiguration.default
         let session: URLSession = URLSession(configuration: config)
@@ -40,8 +47,8 @@ class DateScheduleViewController: UIViewController, UITableViewDelegate, UITable
         var req: URLRequest = URLRequest(url: url)
         req.httpMethod = "GET"
         
-        let defaults = UserDefaults.standard
-        let myToken = defaults.string(forKey: "responseToken")!
+        let myToken = UserDefaults.standard.getResponseToken()
+        
         req.setValue("application/json", forHTTPHeaderField: "Content-Type")
         req.setValue("Bearer " + myToken, forHTTPHeaderField: "Authorization")
         
@@ -59,6 +66,7 @@ class DateScheduleViewController: UIViewController, UITableViewDelegate, UITable
             }
         }
         task.resume()
+        
     }
     
     @objc func trashBarButtonTapped(_ sender: UIBarButtonItem) {
@@ -79,8 +87,7 @@ class DateScheduleViewController: UIViewController, UITableViewDelegate, UITable
                     var req: URLRequest = URLRequest(url: url)
                     req.httpMethod = "DELETE"
                     
-                    let defaults = UserDefaults.standard
-                    let myToken = defaults.string(forKey: "responseToken")!
+                    let myToken = UserDefaults.standard.getResponseToken()
                     req.setValue("application/json", forHTTPHeaderField: "Content-Type")
                     req.setValue("Bearer " + myToken, forHTTPHeaderField: "Authorization")
                     
@@ -115,7 +122,7 @@ class DateScheduleViewController: UIViewController, UITableViewDelegate, UITable
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cellIdentifier: String = "DateScheduleCustomCell"
-        let detailSpotsThumbImage:UIImage = getImageByUrl(url:(self.myPlan!.plan?.spots![indexPath.row].thumb)!)
+        let detailSpotsThumbImage: UIImage = ChangeUrlToImage.getImageByUrl(url:(self.myPlan!.plan?.spots![indexPath.row].thumb)!)
         
         if let myCell: DateScheduleCustomCell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier) as? DateScheduleCustomCell {
             myCell.thumbnail?.image = detailSpotsThumbImage
@@ -134,7 +141,7 @@ class DateScheduleViewController: UIViewController, UITableViewDelegate, UITable
             return myCell
         }
         
-        let myCell = DateScheduleCustomCell(style: .default, reuseIdentifier: "DateScheduleCustomCell")
+        let myCell = DateScheduleCustomCell(style: .default, reuseIdentifier: cellIdentifier)
         myCell.thumbnail?.image = detailSpotsThumbImage
         myCell.location?.text = self.myPlan?.plan?.spots?[indexPath.row].name
         myCell.moneyIcon?.image = UIImage(named: "moneyIcon")!
@@ -152,19 +159,6 @@ class DateScheduleViewController: UIViewController, UITableViewDelegate, UITable
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.myPlan?.plan?.spots?.count ?? 0
-    }
-    
-    func getImageByUrl(url: String) -> UIImage{
-        guard let url = URL(string: url) else {
-        return UIImage()
-        }
-        do {
-            let data = try Data(contentsOf: url)
-            return UIImage(data: data)!
-        } catch let err {
-            print("Error : \(err.localizedDescription)")
-        }
-        return UIImage()
     }
 }
 
